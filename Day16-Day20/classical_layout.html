@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: Verdana, '宋体'; 
+			}
+			body {
+				width: 960px;
+				margin: 10px auto;
+				background-image: url(img/dark-wood.jpg);
+			}
+			#header, #main, #footer {
+				background-color: lightgray;
+				margin: 10px 0;
+				clear: both;
+			}
+			#header h1 {
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+			}
+			#nav {
+				height: 35px;
+				text-align: center;
+			}
+			#nav ul li {
+				line-height: 35px;
+				width: 100px;
+				margin:0 10px;
+				display: inline-block;
+			}
+			a {
+				text-decoration: none;
+			}
+			a:link, a:visited, a:active {
+				color: black;
+			}
+			#nav ul li:hover {
+				border-bottom: 4px solid red;
+			}
+			.feature {
+				height: 250px;
+				text-align: center;
+				background-color: #ADD8E6;
+			}
+			.one, .two, .three {
+				width: 300px;
+				height: 150px;
+				float: left;
+			}
+			.one {
+				margin: 10px 15px 0 0;
+				background-color: #FFEBCD;
+			}
+			.two {
+				margin: 10px 15px;
+				background-color: coral;
+			}
+			.three {
+				margin: 10px 0 0 15px;
+				background-color: darkseagreen;
+			}
+			#footer {
+				text-align: center;
+				line-height: 45px;
+				height: 45px;
+				font-size: 1.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Logo</h1>
+			<div id="nav">
+				<ul>
+					<li><a href="">Home</a></li>
+					<li><a href="">Products</a></li>
+					<li><a href="">Services</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main">
+			<div class="feature">
+				<!-- 这一块相当于是页面的最主要的区域 -->
+			</div>
+			<div class="one"></div>
+			<div class="two"></div>
+			<div class="three"></div>
+		</div>
+		<div id="footer">
+			&copy; Copyright 2011
+		</div>
+	</body>
+</html>

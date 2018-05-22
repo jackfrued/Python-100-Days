@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="" />
+		<title>用户登录</title>
+		<style>
+			body {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 16px;
+			}
+			#login {
+				width: 290px;
+				margin: 20px auto;
+			}
+			#login fieldset {
+				border-radius: 5px;
+			}
+			#login legend {
+				background-color: lightgray;
+				padding: 2px 15px;
+				border-radius: 5px;
+			}
+			#login span {
+				display: inline-block;
+				width: 60px;
+				text-align: right;
+			}
+			#login input {
+				margin: 12px 5px;
+				border: none;
+			}
+			#login input[name^="user"] {
+				width: 175px;
+				outline: none;
+				border-bottom: 1px dotted darkgray;
+			}
+			#login input[type="submit"] {
+				margin-left: 195px;
+				color: white;
+				background-color: chocolate;
+				border-radius: 5px;
+			}
+			#login input[type="submit"]:hover {
+				background-color: darkgreen;
+				cursor: pointer;
+			}
+			#data {
+				margin: 10px auto;
+				border-collapse: collapse;
+			}
+			#data td {
+				border-bottom: 1px solid gray;
+				border-right: 1px solid gray;
+				width: 160px;
+				height: 60px;
+			}
+			#data td.tl {
+				border-top-left-radius: 10px;
+			}
+			#data td.tr {
+				border-top-right-radius: 10px;
+			}
+			#data td.bl {
+				border-bottom-left-radius: 10px;
+			}
+			#data td.br {
+				border-bottom-right-radius: 10px;
+			}
+			#data td.last {
+				border-right: none;
+			}
+			#data td.first {
+				width: 250px;
+				padding-left: 10px;
+			}
+			#data td.center {
+				color: white;
+				text-align: center;
+			}
+			#data td.bottom {
+				border-bottom: none;
+			}
+			#data tr.head {
+				background-color:lightblue;
+			}
+			#data tr.odd {
+				background-color: beige;
+			}
+			#data tr.even {
+				background-color: blanchedalmond;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form id="login" action="" method="post">
+			<fieldset>
+				<legend>用户登录</legend>
+				<span>用户名: </span>
+				<input type="text" name="username" required>
+				<span>密码: </span>
+				<input type="password" name="userpass" required>
+				<span>邮箱: </span>
+				<input type="email" name="useremail" required>
+				<input type="submit" value="登录" />
+			</fieldset>
+		</form>
+		<table id="data">
+			<tr class="head">
+				<td class="tl first"></td>
+				<td class="center">成都</td>
+				<td class="center">北京</td>
+				<td class="tr center last">杭州</td>
+			</tr>
+			<tr class="odd">
+				<td class="first">Python从入门到住院全国巡演</td>
+				<td class="after">2018年2月28日 上午9:30</td>
+				<td class="after">2018年3月28日 上午9:30</td>
+				<td class="last">2018年4月28日 上午9:30</td>
+			</tr>
+			<tr class="even">
+				<td class="first">MySQL从删库到跑路公开课</td>
+				<td>2018年2月27日 上午9:30</td>
+				<td>2018年3月5日 上午9:30</td>
+				<td class="last">2018年4月2日 上午9:30</td>
+			</tr>
+			<tr class="odd">
+				<td class="first">Django从学习到上吊交流会</td>
+				<td>2018年2月28日 上午9:30</td>
+				<td></td>
+				<td class="last">2018年5月21日 上午9:30</td>
+			</tr>
+			<tr class="even">
+				<td class="first bottom bl">爬虫从精通到坐牢无遮大会</td>
+				<td class="bottom">2018年3月3日 上午9:30</td>
+				<td class="bottom">2018年4月17日 上午9:30</td>
+				<td class="last bottom br">2018年1月15日 上午9:30</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

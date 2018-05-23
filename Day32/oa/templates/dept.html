@@ -22,6 +22,7 @@
                     <th>部门编号</th>
                     <th>部门名称</th>
                     <th>部门所在地</th>
+                    <th>是否优秀</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -30,11 +31,19 @@
                     <tr>
                         <td>{{ dept.no }}</td>
                         <td>
-                            <a href="/hrs/emps?dno={{ dept.no }}">{{ dept.name }}</a>
+                            <!-- 写代码时要尽量避免使用硬编码(hard code) -->
+                            <a href="{% url 'empsindept' %}?no={{ dept.no }}">{{ dept.name }}</a>
                         </td>
                         <td>{{ dept.location }}</td>
                         <td>
-                            <a href="/hrs/deldept?dno={{ dept.no }}" class="btn btn-xs btn-warning">删除</a>
+                            {% if dept.excellent %}
+                                <span style="color: green;">√</span>
+                            {% else %}
+                                <span style="color: red;">×</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'ddel' %}?dno={{ dept.no }}" class="btn btn-xs btn-warning">删除</a>
                         </td>
                     </tr>
                     {% endfor %}

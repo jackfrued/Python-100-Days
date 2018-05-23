@@ -106,19 +106,20 @@
    class Dept(models.Model):
        """部门类"""
        
-       no = models.IntegerField(primary_key=True, verbose_name='部门编号')
-       name = models.CharField(max_length=20, verbose_name='部门名称')
-       location = models.CharField(max_length=10, verbose_name='部门所在地')
+       no = models.IntegerField(primary_key=True, db_column='dno', verbose_name='部门编号')
+       name = models.CharField(max_length=20, db_column='dname', verbose_name='部门名称')
+       location = models.CharField(max_length=10, db_column='dloc', verbose_name='部门所在地')
    
        class Meta:
+           
            db_table = 'tb_dept'
    
    
    class Emp(models.Model):
        """员工类"""
        
-       no = models.IntegerField(primary_key=True, verbose_name='员工编号')
-       name = models.CharField(max_length=20, verbose_name='员工姓名')
+       no = models.IntegerField(primary_key=True, db_column='eno', verbose_name='员工编号')
+       name = models.CharField(max_length=20, db_column='ename', verbose_name='员工姓名')
        job = models.CharField(max_length=10, verbose_name='职位')
        mgr = models.IntegerField(null=True, blank=True, verbose_name='主管编号')
        sal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='月薪')
@@ -126,9 +127,11 @@
        dept = models.ForeignKey(Dept, on_delete=models.PROTECT, verbose_name='所在部门')
    
        class Meta:
+           
            db_table = 'tb_emp'
    
    ```
+   > 说明：如果不能理解定义模型类使用的字段类及其属性的含义，可以参考文末字段类、字段属性、元数据选项的说明。
 
 5. 通过模型创建数据表。
 
@@ -248,40 +251,42 @@ Django模型字段类
 
 ForeignKey属性
 
-1. limit_choices_to
-2. related_name
-3. relate_query_name
-4. to_field
-5. db_constraint
-6. on_delete
+1. limit_choices_to：值是一个Q对象或返回一个Q对象，用于限制后台显示哪些对象。
+2. related_name：用于获取关联对象的关联管理器对象（反向查询），如果不允许反向，该属性应该被设置为`'+'`，或者以`'+'`结尾。
+3. to_field：指定关联的字段，默认关联对象的主键字段。
+4. db_constraint：是否为外键创建约束，默认值为True。
+5. on_delete：外键关联的对象被删除时对应的动作，可取的值包括django.db.models中定义的：
+   - CASCADE：级联删除。
+   - PROTECT：抛出ProtectedError异常，阻止删除引用的对象。
+   - SET_NULL：把外键设置为null，当null属性被设置为True时才能这么做。
+   - SET_DEFAULT：把外键设置为默认值，提供了默认值才能这么做。
 
 ManyToManyField属性
 
-1. symmetrical
-2. through
-3. throughfields
-4. db_table
+1. symmetrical：是否建立对称的多对多关系。
+2. through：指定维持多对多关系的中间表的Django模型。
+3. throughfields：定义了中间模型时可以指定建立多对多关系的字段。
+4. db_table：指定维持多对多关系的中间表的表名。
 
 #### 模型元数据选项
 
 | 选项                  | 说明                                                         |
 | --------------------- | ------------------------------------------------------------ |
-| abstract              |                                                              |
+| abstract              | 设置为True时模型是抽象父类                                   |
 | app_label             | 如果定义模型的应用不在INSTALLED_APPS中可以用该属性指定       |
 | db_table              | 模型使用的数据表名称                                         |
-| db_tablespace         |                                                              |
+| db_tablespace         | 模型使用的数据表空间                                         |
 | default_related_name  | 关联对象回指这个模型时默认使用的名称，默认为<model_name>_set |
-| get_latest_by         |                                                              |
+| get_latest_by         | 模型中可排序字段的名称。                                     |
 | managed               | 设置为True时，Django在迁移中创建数据表并在执行flush管理命令时把表移除 |
-| order_with_respect_to |                                                              |
+| order_with_respect_to | 标记对象为可排序的                                           |
 | ordering              | 对象的默认排序                                               |
-| permissions           |                                                              |
+| permissions           | 创建对象时写入权限表的额外权限                               |
 | default_permissions   | 默认为`('add', 'change', 'delete')`                          |
-| proxy                 |                                                              |
-| unique_together       |                                                              |
-| index_together        |                                                              |
-| verbose_name          |                                                              |
-| verbose_name_plural   |                                                              |
+| unique_together       | 设定组合在一起时必须独一无二的字段名                         |
+| index_together        | 设定一起建立索引的多个字段名                                 |
+| verbose_name          | 为对象设定人类可读的名称                                     |
+| verbose_name_plural   | 设定对象的复数名称                                           |
 
 ### 数据库API参考
 

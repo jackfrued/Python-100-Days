@@ -111,7 +111,6 @@
        location = models.CharField(max_length=10, db_column='dloc', verbose_name='部门所在地')
    
        class Meta:
-           
            db_table = 'tb_dept'
    
    
@@ -121,17 +120,17 @@
        no = models.IntegerField(primary_key=True, db_column='eno', verbose_name='员工编号')
        name = models.CharField(max_length=20, db_column='ename', verbose_name='员工姓名')
        job = models.CharField(max_length=10, verbose_name='职位')
-       mgr = models.IntegerField(null=True, blank=True, verbose_name='主管编号')
+       mgr = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='主管编号')
        sal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='月薪')
        comm = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True, verbose_name='补贴')
-       dept = models.ForeignKey(Dept, on_delete=models.PROTECT, verbose_name='所在部门')
+       dept = models.ForeignKey(Dept, db_column='dno', on_delete=models.PROTECT, verbose_name='所在部门')
    
        class Meta:
-           
            db_table = 'tb_emp'
    
+   
    ```
-   > 说明：如果不能理解定义模型类使用的字段类及其属性的含义，可以参考文末字段类、字段属性、元数据选项的说明。
+   > 说明：上面定义模型时使用了字段类及其属性，其中IntegerField对应数据库中的integer类型，CharField对应数据库的varchar类型，DecimalField对应数据库的decimal类型，ForeignKey用来建立多对一外键关联。字段属性primary_key用于设置主键，max_length用来设置字段的最大长度，db_column用来设置数据库中与字段对应的列，verbose_name则设置了Django后台管理系统中该字段显示的名称。如果对这些东西感到很困惑也不要紧，文末提供了字段类、字段属性、元数据选项等设置的相关说明，不清楚的读者可以稍后查看对应的参考指南。
 
 5. 通过模型创建数据表。
 
@@ -155,23 +154,31 @@
 
 ### 在后台管理模型
 
-
+1. 创建超级管理员账号。
+2. 登录后台管理系统。
+3. 注册模型类。
+4. 对模型进行CRUD操作。
+5. 注册模型管理类。
 
 ### 使用ORM完成模型的CRUD操作
 
 #### 新增
 
+
+
 #### 删除
 
+
+
 #### 更新
+
+
 
 #### 查询
 
 
 
-最后，我们通过上面掌握的知识来实现部门展示以及根据部门获取部门对应员工信息的功能。
-
-
+最后，我们通过上面掌握的知识来实现部门展示以及根据部门获取部门对应员工信息的功能，效果如下图所示，对应的代码可以访问<https://github.com/jackfrued/Python-100-Days/tree/master/Day31-Day35/oa>。
 
 ### Django模型最佳实践
 
@@ -203,31 +210,31 @@
 
 Django模型字段类
 
-| 字段类                | 默认小组件         | 说明                                                         |
-| --------------------- | ------------------ | ------------------------------------------------------------ |
-| AutoField             | 无                 | 自增ID字段                                                   |
-| BigIntegerField       | NumberInput        | 64位有符号整数                                               |
-| BinaryField           | 无                 | 存储二进制数据的字段，对应Python的bytes类型                  |
-| BooleanField          | CheckboxInput      | 存储True或False                                              |
-| CharField             | TextInput          | 长度较小的字符串                                             |
-| DateField             | DateInput          | 存储日期，有auto_now和auto_now_add属性                       |
-| DateTimeField         | DateTimeInput      | 存储日期和日期，两个附加属性同上                             |
-| DecimalField          | TextInput          | 存储固定精度小数，有max_digits（有效位数）和decimal_places（小数点后面）两个必要的参数 |
-| DurationField         | TextInput          | 存储时间跨度                                                 |
-| EmailField            | TextInput          | 与CharField相同，可以用EmailValidator验证                    |
-| FileField             | ClearableFileInput | 文件上传字段                                                 |
-| FloatField            | TextInput          | 存储浮点数                                                   |
-| ImageField            | ClearableFileInput | 其他同FileFiled，要验证上传的是不是有效图像                  |
-| IntegerField          | NumberInput        | 存储32位有符号整数。                                         |
-| GenericIPAddressField | TextInput          | 存储IPv4或IPv6地址                                           |
-| NullBooleanField      | NullBooleanSelect  | 存储True、False或null值                                      |
-| PositiveIntegerField  | NumberInput        | 存储无符号整数（只能存储正数）                               |
-| SlugField             | TextInput          | 存储slug（简短标注）                                         |
-| SmallIntegerField     | NumberInput        | 存储16位有符号整数                                           |
-| TextField             | Textarea           | 存储数据量较大的文本                                         |
-| TimeField             | TextInput          | 存储时间                                                     |
-| URLField              | URLInput           | 存储URL的CharField                                           |
-| UUIDField             | TextInput          | 存储全局唯一标识符                                           |
+| 字段类                |  说明                                                         |
+| --------------------- | ------------------------------------------------------------ |
+| AutoField             |自增ID字段                                                   |
+| BigIntegerField       |64位有符号整数                                               |
+| BinaryField           | 存储二进制数据的字段，对应Python的bytes类型                  |
+| BooleanField          | 存储True或False                                              |
+| CharField             | 长度较小的字符串                                             |
+| DateField             | 存储日期，有auto_now和auto_now_add属性                       |
+| DateTimeField         | 存储日期和日期，两个附加属性同上                             |
+| DecimalField          |存储固定精度小数，有max_digits（有效位数）和decimal_places（小数点后面）两个必要的参数 |
+| DurationField         |存储时间跨度                                                 |
+| EmailField            | 与CharField相同，可以用EmailValidator验证                    |
+| FileField             | 文件上传字段                                                 |
+| FloatField            | 存储浮点数                                                   |
+| ImageField            | 其他同FileFiled，要验证上传的是不是有效图像                  |
+| IntegerField          | 存储32位有符号整数。                                         |
+| GenericIPAddressField | 存储IPv4或IPv6地址                                           |
+| NullBooleanField      | 存储True、False或null值                                      |
+| PositiveIntegerField  | 存储无符号整数（只能存储正数）                               |
+| SlugField             | 存储slug（简短标注）                                         |
+| SmallIntegerField     | 存储16位有符号整数                                           |
+| TextField             | 存储数据量较大的文本                                         |
+| TimeField             | 存储时间                                                     |
+| URLField              | 存储URL的CharField                                           |
+| UUIDField             | 存储全局唯一标识符                                           |
 
 #### 字段属性
 

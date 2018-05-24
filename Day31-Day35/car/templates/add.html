@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>添加</title>
+    <style>
+        .err {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <h2>添加违章记录</h2>
     <hr>
     <p>
         {% for err in errors %}
-        <div style="color: red; font-size: 12px;">{{ err }}</div>
+        <div class="err">{{ err }}</div>
         {% endfor %}
     </p>
     <form action="/add" method="post">

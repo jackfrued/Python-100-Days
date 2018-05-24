@@ -4,6 +4,7 @@ from hrs import views
 
 urlpatterns = [
     path('depts', views.depts, name='depts'),
-    path('depts/emps', views.emps, name='empsindept'),
-    path('deldepts', views.del_dept, name='ddel')
+    # url('depts/emps/(?P<no>[0-9]+)', views.emps, name='empsindept'),
+    path('depts/emps/<int:no>', views.emps, name='empsindept'),
+    path('deldept/<int:no>', views.del_dept, name='ddel')
 ]

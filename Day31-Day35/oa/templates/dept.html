@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>部门</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        #dept td, #dept th {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -14,6 +19,7 @@
             <hr>
 		</div>
 	</div>
+
     <div class="row clearfix">
         <div class="col-md-8 column">
             <table id="dept" class="table table-striped table-hover">
@@ -32,7 +38,7 @@
                         <td>{{ dept.no }}</td>
                         <td>
                             <!-- 写代码时要尽量避免使用硬编码(hard code) -->
-                            <a href="{% url 'empsindept' %}?no={{ dept.no }}">{{ dept.name }}</a>
+                            <a href="{% url 'empsindept' dept.no %}">{{ dept.name }}</a>
                         </td>
                         <td>{{ dept.location }}</td>
                         <td>
@@ -43,7 +49,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            <a href="{% url 'ddel' %}?dno={{ dept.no }}" class="btn btn-xs btn-warning">删除</a>
+                            <a id="{{ dept.no }}" href="javascript:void(0);" class="btn btn-xs btn-warning">删除</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -60,6 +66,18 @@
     $(function() {
         $('#dept tbody tr:even').addClass('info');
         $('#dept tbody tr:odd').addClass('warning');
+        $('#dept a[id]').on('click', function(evt) {
+            var a = $(evt.target);
+            if (confirm('确定要删除吗?')) {
+                $.getJSON('/hrs/deldept/' + a.attr('id'), function(json) {
+                    if (json.code == 200) {
+                        a.parent().parent().remove();
+                        $('#dept tbody tr:even').addClass('info');
+                        $('#dept tbody tr:odd').addClass('warning');
+                    }
+                });
+            }
+        });
     });
 </script>
 </body>

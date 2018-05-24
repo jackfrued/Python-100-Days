@@ -1,5 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.db.models import ObjectDoesNotExist
+
+from json import dumps
 
 from hrs.models import Dept, Emp
 
@@ -11,13 +14,21 @@ def index(request):
     return render(request, 'index.html', context=ctx)
 
 
-def del_dept(request):
-    # 重定向 - 重新请求一个指定的页面
-    return redirect(reverse('depts'))
+def del_dept(request, no='0'):
+    try:
+        Dept.objects.get(pk=no).delete()
+        ctx = {'code': 200}
+    except (ObjectDoesNotExist, ValueError):
+        ctx = {'code': 404}
+    return HttpResponse(
+        dumps(ctx), content_type='application/json; charset=utf-8')
+    # 重定向 - 给浏览器一个URL, 让浏览器重新请求指定的页面
+    # return redirect(reverse('depts'))
+    # return depts(request)
 
 
-def emps(request):
-    no = request.GET['no']
+def emps(request, no='0'):
+    # no = request.GET['no']
     # dept = Dept.objects.get(no=no)
     # ForeignKey(Dept, on_delete=models.PROTECT, related_name='emps')
     # dept.emps.all()

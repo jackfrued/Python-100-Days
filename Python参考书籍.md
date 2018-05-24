@@ -20,24 +20,30 @@
 
 ### Web框架
 
-1. 《Python Web开发：测试驱动方法》（*Test-Driven Development with Python*）
-2. 《Web Development with Django Cookbook》
-3. 《Test-Driven Development with Django》
-4. 《Django Project Blueprints 》
-5. 《Flask Web开发：基于Python的Web应用开发实战》（*Flask Web Development: Developing Web Applications with Python*）
-6. 《深入理解Flash》（*Mastering Flask*）
+1. 《Django基础教程》（*Tango with Django*）
+2. 《轻量级Django》（*Lightweight Django*）
+3. 《Python Web开发：测试驱动方法》（*Test-Driven Development with Python*）
+4. 《Web Development with Django Cookbook》
+5. 《Test-Driven Development with Django》
+6. 《Django Project Blueprints 》
+7. 《Flask Web开发：基于Python的Web应用开发实战》（*Flask Web Development: Developing Web Applications with Python*）
+8. 《深入理解Flask》（*Mastering Flask*）
 
 ### 爬虫开发
 
 1. 《用Python写网络爬虫》（*Web Scraping with Python*）
 2. 《精通Python爬虫框架Scrapy》（*Learning Scrapy*）
 3. 《Python网络数据采集》（*Web Scraping with Python*）
+4. 《Python爬虫开发与项目实战》
+5. 《Python 3网络爬虫开发实战》
 
 ### 数据分析
 
 1. 《利用Python进行数据分析》（*Python for Data Analysis*）
 2. 《Python数据科学手册》（*Python Data Science Handbook*）
 3. 《Python金融大数据分析》（*Python for Finance*）
+4. 《Python数据可视化编程实战》（*Python Data Visualization Cookbook*）
+5. 《Python数据处理》（*Data Wrangling with Python*）
 
 ### 机器学习
 

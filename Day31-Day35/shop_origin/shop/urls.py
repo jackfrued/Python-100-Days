@@ -20,7 +20,7 @@ from cart import views
 
 urlpatterns = [
     path('', views.index),
-    path('add_to_cart/<int:id>', views.add_to_cart),
     path('show_cart', views.show_cart),
+    path('add_to_cart/<int:no>', views.add_to_cart),
     path('admin/', admin.site.urls),
 ]

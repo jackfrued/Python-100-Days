@@ -21,9 +21,9 @@
 			<hr>
 		</div>
 		<div class="right">
-			<a href="/" class="back">返回</a>
+			<a href="list_goods" class="back">返回</a>
 		</div>
-		{% if cart %}
+		{% if cart_items %}
 		<table style="clear: both;">
 			<tr>
 				<th>商品名称</th>
@@ -32,12 +32,12 @@
 				<th>商品总价</th>
 				<th>操作</th>
 			</tr>
-			{% for item in cart.cart_items %}
+			{% for item in cart_items %}
 			<tr>
-				<td class="name">{{ item.goods.name }}</td>
-				<td class="price">&yen;{{ item.goods.price }}</td>
+				<td class="name">{{ item.name }}</td>
+				<td class="price">&yen;{{ item.unit_price }}</td>
 				<td>{{ item.amount }}</td>
-				<td class="price">&yen;{{ item.total }}</td>
+				<td class="price">&yen;{{ item.total_price }}</td>
 				<td>
 					<a href="" class="del">删除</a>
 				</td>
@@ -47,7 +47,7 @@
 				<td colspan="5" class="total price">&yen;{{ cart.total }}元</td>
 			</tr>
 		</table>
-		<a href="" class="back">清空购物车</a>
+		<a href="clear_cart" class="back">清空购物车</a>
 		{% else %}
 		<h3 style="clear: both;">购物车中暂时没有商品!</h3>
 		{% endif %}

@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Goods(models.Model):
-    """商品模型类"""
 
     id = models.AutoField(primary_key=True, db_column='gid')
     name = models.CharField(max_length=50, db_column='gname')
@@ -10,6 +9,5 @@ class Goods(models.Model):
     image = models.CharField(max_length=255, db_column='gimage')
 
     class Meta:
-
         db_table = 'tb_goods'
-        ordering = ('id', )
+        ordering = ('id',)

@@ -162,7 +162,7 @@
 
 ### Web前端+Linux基础+数据库基础
 
-#### Day21~30
+#### [Day21~30](./Day21-30/Web前端概述.md)
 
 - 用HTML标签承载页面内容
 - 用CSS渲染页面
@@ -170,7 +170,7 @@
 - jQuery入门和提高
 - Bootstrap在Web项目中的应用
 
-#### Day31-35
+#### [Day31-35](./Day31-35/玩转Linux操作系统.md)
 
 - 操作系统发展史和Linux概述
 - Linux基础命令
@@ -184,7 +184,7 @@
 
 #### Day36-40
 
-- 关系型数据库MySQL
+- [关系型数据库MySQL](./Day36-40/关系型数据库MySQL.md)
   - 关系型数据库概述
   - MySQL的安装和使用
   - SQL的使用
@@ -194,7 +194,7 @@
     - DCL
   - 在Python中操作MySQL
   - MySQL高级知识
-- 非关系型数据库Redis
+- [非关系型数据库Redis](./Day36-40/非关系型数据库Redis.md)
   - Redis的安装和基本配置
   - Redis的常用命令和数据类型
   - Redis的主从复制和哨兵模式

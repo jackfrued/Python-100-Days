@@ -47,7 +47,7 @@
 
    其他的配置可以参考官方文档中[数据库配置](https://docs.djangoproject.com/zh-hans/2.0/ref/databases/#third-party-notes)的部分。
 
-   NAME属性代表数据库的名称，如果使用SQLite它对应着一个文件，在这种情况下NAME的属性值应该是一个绝对路径。如果使用其他关系型数据库，还要配置对应的USER、PASSWORD、HOST、PORT等属性。
+   NAME属性代表数据库的名称，如果使用SQLite它对应着一个文件，在这种情况下NAME的属性值应该是一个绝对路径。如果使用其他关系型数据库，还要配置对应的HOST（主机）、PORT（端口）、USER（用户名）、PASSWORD（口令）等属性。
 
 2. 安装MySQL客户端工具，Python 3中使用PyMySQL，Python 2中用MySQLdb。
 
@@ -92,7 +92,7 @@
      Applying sessions.0001_initial... OK
    ```
 
-4. 可以看到，Django帮助我们创建了10张二维表，这些都是使用Django框架需要的东西，除了这些之外，我们还应该为我们自己的应用创建数据模型。如果要在hrs应用中实现对部门和员工的管理，我们可以创建如下所示的数据模型。
+4. 可以看到，Django帮助我们创建了10张表，这些都是使用Django框架需要的东西，稍后我们就会用到这些表。除此之外，我们还应该为我们自己的应用创建数据模型。如果要在hrs应用中实现对部门和员工的管理，我们可以创建如下所示的数据模型。
 
    ```Shell
    (venv)$ cd hrs
@@ -161,6 +161,19 @@
 5. 注册模型管理类。
 
 ### 使用ORM完成模型的CRUD操作
+
+我们先在shell中演示如何利用Django中内置的ORM框架对模型进行CRUD（Create / Read / Update / Delete）操作。
+
+```Shell
+(venv)$ python manage.py shell
+Python 3.6.4 (v3.6.4:d48ecebad5, Dec 18 2017, 21:07:28) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> 
+```
+
+
 
 #### 新增
 

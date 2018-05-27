@@ -5,7 +5,7 @@
 简单的说，Python是一个“优雅”、“明确”、“简单”的编程语言。
 
  - 学习曲线低，适合非专业人士
- - 开源软件，强大的生态圈
+ - 开源系统，拥有强大的生态圈
  - 解释型语言，完美的平台可移植性
  - 支持面向对象和函数式编程
  - 可扩展性，能调用C/C++代码
@@ -19,7 +19,7 @@
  - 数据分析挖掘 - Python / R / Scala / Matlab
  - 机器学习 - Python / R / Java / Lisp
 
-Python的就业市场分析，以下是相关的职位。
+作为一名Python开发者，主要的就业领域包括：
 
 - Python服务器后台开发 / 游戏服务器开发 / 数据接口开发工程师
 - Python自动化运维工程师
@@ -27,13 +27,15 @@ Python的就业市场分析，以下是相关的职位。
 - Python爬虫工程师
 - Python聊天机器人开发 / 图像识别和视觉算法 / 深度学习工程师
 
+下图显示了主要城市Python招聘需求量及薪资待遇排行榜（截止到2018年5月）。
+
 ![Python招聘需求及薪资待遇Top 10](./res/python-top-10.png)
 
 ![](./res/python-bj-salary.png)
 
 ![](./res/python-cd-salary.png)
 
-给初学者的几个建议（老司机的忠告）。
+给初学者的几个建议（老司机的忠告）：
 
 - Make English as your working language.
 - Practice makes perfect.
@@ -118,7 +120,7 @@ Python的就业市场分析，以下是相关的职位。
 - 继承和多态 - 什么是继承 / 继承的语法 / 调用父类方法 / 方法重写 / 类型判定 / 多重继承 / 菱形继承(钻石继承)和C3算法
 - 综合案例 - 工资结算系统 / 图书自动折扣系统 / 自定义分数类
 
-#### Day10 - 图形用户界面和游戏开发
+#### Day10 - [图形用户界面和游戏开发](./Day10/图形用户界面和游戏开发.md)
 
 #### Day11 - [文件和异常](./Day11/文件和异常.md)
 
@@ -147,30 +149,133 @@ Python的就业市场分析，以下是相关的职位。
 - 网络应用架构 - “客户端-服务器”架构 / “浏览器-服务器”架构
 - Python网络编程 - 套接字的概念 / socket模块 /  socket函数 / 创建TCP服务器 / 创建TCP客户端 / 创建UDP服务器 / 创建UDP客户端 / SocketServer模块
 
-#### Day15 - [网络应用开发](./Day20/网络应用开发.md)
+#### Day15 - [网络应用开发](./Day15/网络应用开发.md)
 
 - 访问网络API - 网络API概述 / 访问URL / requests模块 / 解析JSON格式数据
 - 文件传输 - FTP协议 / ftplib模块 / 交互式FTP应用
 - 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
 - 短信服务 - twilio模块 / 国内的短信服务
 
-### Web前端
-
-#### Day16-20
-
-### Linux基础
-
-#### Day21-25
-
-### 数据库入门
-
-#### Day26-30
-
-### Web框架之Django
-
-#### Day31 - Django实战(01) - 快速上手
+#### Day16~Day20 - [Python进阶知识 ](./Day16-20/Python进阶知识.md)
 
 
 
-#### Day32 - Django实战(02) - 深入模型
+### Web前端+Linux基础+数据库基础
+
+#### Day21~30
+
+- 用HTML标签承载页面内容
+- 用CSS渲染页面
+- 用JavaScript处理交互式行为
+- jQuery入门和提高
+- Bootstrap在Web项目中的应用
+
+#### Day31-35
+
+- 操作系统发展史和Linux概述
+- Linux基础命令
+- Linux中的实用程序
+- Linux的文件系统
+- Vim编辑器的应用
+- 环境变量和Shell编程
+- 软件的安装和服务的配置
+- 网络访问和管理
+- 其他相关内容
+
+#### Day36-40
+
+- 关系型数据库MySQL
+  - 关系型数据库概述
+  - MySQL的安装和使用
+  - SQL的使用
+    - DDL
+    - DML
+    - DQL
+    - DCL
+  - 在Python中操作MySQL
+  - MySQL高级知识
+- 非关系型数据库Redis
+  - Redis的安装和基本配置
+  - Redis的常用命令和数据类型
+  - Redis的主从复制和哨兵模式
+  - Redis高级操作和集群
+  - 在Python中操作Redis
+
+### Python的Web框架 - Django
+
+#### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django 2.x实战(01))
+
+#### Day42 - [Django实战(02) - 深入模型](./Day41-55/Django 2.x实战(02))
+
+#### Day43 - [Django实战(03) - 视图和模板](./Day41-55/Django 2.x实战(03))
+
+#### Day44 - [Django实战(04) - 表单的应用](./Day41-55/Django 2.x实战(04))
+
+#### Day45 - [Django实战(05) - Cookie和会话](./Day41-55/Django 2.x实战(05))
+
+#### Day46 - [Django实战(06) - 日志和缓存](./Day41-55/Django 2.x实战(06))
+
+#### Day47 - [Django实战(07) - 文件上传和通用视图](./Day41-55/Django 2.x实战(07))
+
+#### Day48 - [Django实战(08) - 用户/角色/权限和中间件](./Day41-55/Django 2.x实战(08))
+
+#### Day49 - [Django实战(09) - RESTful架构和应用(上)](./Day41-55/Django 2.x实战(09))
+
+#### Day50 - [Django实战(10) - RESTful架构和应用(下)](./Day41-55/Django 2.x实战(10))
+
+#### Day51-55 - [Django项目实战](./Day41-55/Django项目实战.md)
+
+- 项目开发流程和相关工具
+- 生成非HTML内容
+- 项目部署和测试
+- 项目性能调优
+- Web应用安全保护
+
+
+### Python的Web框架 - Flask
+
+#### Day56 - [Flask安装和入门](./Day56-65/Flash安装和入门.md) 
+
+#### Day57 - [模板的使用](./Day56-65/模板的使用.md) 
+
+#### Day58 - [表单的处理](./Day56-65/表单的处理.md) 
+
+#### Day59 - [数据库操作](./Day56-65/数据库操作.md)
+
+####Day60 - [使用Flask进行项目开发](./Day56-65/使用Flask进行项目开发)  
+
+#### Day61-65 - Flask项目实战
+
+- 性能和测试
+- 项目部署
+
+### 爬虫
+
+#### Day66 - [爬虫简介和相关工具](./Day66-75/爬虫简介和相关工具.md)
+
+#### Day67 - [数据采集和解析](./Day66-75/数据采集和解析.md)
+
+#### Day68 - [缓存数据](./Day66-75/缓存数据.md)
+
+#### Day69 - [并发下载](./Day66-75/并发下载.md)
+
+#### Day70 - [解析动态内容](./Day66-75/解析动态内容.md)
+
+#### Day71 - [表单交互和验证码处理](./Day66-75/表单交互和验证码处理.md)
+
+#### Day72 - [爬虫中的陷阱](./Day66-75/爬虫中的陷阱.md)
+
+#### Day73 - [Scrapy的应用(1)](./Day66-75/Scrapy的应用1.md)
+
+#### Day74 - [Scrapy的应用(2)](./Day66-75/Scrapy的应用2.md)
+
+#### Day75 - [Scrapy的应用(3)](./Day66-75/Scrapy的应用3.md)
+
+### 数据处理和机器学习
+
+
+
+### 团队项目开发
+
+
 

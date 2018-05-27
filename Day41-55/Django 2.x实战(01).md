@@ -410,4 +410,4 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
 
 至此，我们已经利用Django框架完成了一个非常小的Web应用，虽然它并没有任何的实际价值，但是我们需要通过这个项目了解到Django框架的使用方式。当然，如果使用PyCharm的Professional版本，也可以通过PyCharm的创建项目的选项直接创建Django项目，使用PyCharm的好处在于编写代码时可以获得代码提示、错误修复、自动导入等功能，从而提升开发效率，但是代价是需要支付对应的费用才能使用专业版的PyCharm，社区版的PyCharm中并未包含对Web框架的支持。
 
-此外，学习Django最好的资料肯定是它的[官方文档](https://docs.djangoproject.com/zh-hans/2.0/)，除此之外图灵社区最近出版的[《Django基础教程》](http://www.ituring.com.cn/book/2630)也是非常适合初学者的读物。
+此外，学习Django最好的资料肯定是它的[官方文档](https://docs.djangoproject.com/zh-hans/2.0/)，除此之外图灵社区最近出版的[《Django基础教程》](http://www.ituring.com.cn/book/2630)也是非常适合初学者的读物。 

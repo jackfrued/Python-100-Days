@@ -203,25 +203,25 @@
 
 ### Python的Web框架 - Django
 
-#### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django2实战01)
+#### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django2实战01.md)
 
-#### Day42 - [Django实战(02) - 深入模型](./Day41-55/Django2实战02)
+#### Day42 - [Django实战(02) - 深入模型](./Day41-55/Django2实战02.md)
 
-#### Day43 - [Django实战(03) - 视图和模板](./Day41-55/Django2实战03)
+#### Day43 - [Django实战(03) - 视图和模板](./Day41-55/Django2实战03.md)
 
-#### Day44 - [Django实战(04) - 表单的应用](./Day41-55/Django2实战04)
+#### Day44 - [Django实战(04) - 表单的应用](./Day41-55/Django2实战04.md)
 
-#### Day45 - [Django实战(05) - Cookie和会话](./Day41-55/Django2实战05)
+#### Day45 - [Django实战(05) - Cookie和会话](./Day41-55/Django2实战05.md)
 
-#### Day46 - [Django实战(06) - 日志和缓存](./Day41-55/Django2实战06)
+#### Day46 - [Django实战(06) - 日志和缓存](./Day41-55/Django2实战06.md)
 
-#### Day47 - [Django实战(07) - 文件上传和通用视图](./Day41-55/Django2实战07)
+#### Day47 - [Django实战(07) - 文件上传和通用视图](./Day41-55/Django2实战07.md)
 
-#### Day48 - [Django实战(08) - 用户/角色/权限和中间件](./Day41-55/Django2实战08)
+#### Day48 - [Django实战(08) - 用户/角色/权限和中间件](./Day41-55/Django2实战08.md)
 
-#### Day49 - [Django实战(09) - RESTful架构和应用(上)](./Day41-55/Django2实战09)
+#### Day49 - [Django实战(09) - RESTful架构和应用(上)](./Day41-55/Django2实战09.md)
 
-#### Day50 - [Django实战(10) - RESTful架构和应用(下)](./Day41-55/Django2实战10)
+#### Day50 - [Django实战(10) - RESTful架构和应用(下)](./Day41-55/Django2实战10.md)
 
 #### Day51-55 - [Django项目实战](./Day41-55/Django2项目实战.md)
 
@@ -242,9 +242,9 @@
 
 #### Day59 - [数据库操作](./Day56-65/数据库操作.md)
 
-#### Day60 - [使用Flask进行项目开发](./Day56-65/使用Flask进行项目开发)  
+#### Day60 - [使用Flask进行项目开发](./Day56-65/使用Flask进行项目开发.md)  
 
-#### Day61-65 - Flask项目实战
+#### Day61-65 - [Flask项目实战](./Day56-65/Flask项目实战.md)
 
 - 性能和测试
 - 项目部署

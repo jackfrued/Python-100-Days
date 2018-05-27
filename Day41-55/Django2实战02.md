@@ -63,7 +63,7 @@
    pymysql.install_as_MySQLdb()
    ```
 
-3. 运行manage.py并指定migrate参数实现数据库迁移，为应用程序创建对应的数据表，当然在此之前需要先启动MySQL数据库服务器并创建名为oa的数据库，在MySQL中创建数据库的语句如下所示。
+3. 运行manage.py并指定migrate参数实现数据库迁移，为应用程序创建对应的数据表，当然在此之前需要**先启动MySQL数据库服务器并创建名为oa的数据库**，在MySQL中创建数据库的语句如下所示。
 
    ```SQL
    drop database if exists oa;
@@ -120,6 +120,7 @@
        no = models.IntegerField(primary_key=True, db_column='eno', verbose_name='员工编号')
        name = models.CharField(max_length=20, db_column='ename', verbose_name='员工姓名')
        job = models.CharField(max_length=10, verbose_name='职位')
+       # 自参照完整性多对一外键关联
        mgr = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='主管编号')
        sal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='月薪')
        comm = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True, verbose_name='补贴')
@@ -155,16 +156,145 @@
 ### 在后台管理模型
 
 1. 创建超级管理员账号。
-2. 登录后台管理系统。
+
+   ```Shell
+   (venv)$ python manage.py createsuperuser
+   Username (leave blank to use 'hao'): jackfrued
+   Email address: jackfrued@126.com
+   Password: 
+   Password (again): 
+   Superuser created successfully.
+   ```
+
+2. 启动Web服务器，登录后台管理系统。
+
+   ```Shell
+   (venv)$ python manage.py runserver
+   ```
+
+   访问<http://127.0.0.1:8000/admin>，会来到如下图所示的登录界面。
+
+   ![](./res/admin-login.png)
+
+   登录后进入管理员操作平台。
+
+   ![](./res/admin-welcome.png)
+
+   至此我们还没有看到之前创建的模型类，需要在应用的admin.py文件中模型进行注册。
+
 3. 注册模型类。
+
+   ```Shell
+   (venv)$ cd hrs
+   (venv)$ vim admin.py
+   ```
+
+   ```Python
+   from django.contrib import admin
+   
+   from hrs.models import Emp, Dept
+   
+   admin.site.register(Dept)
+   admin.site.register(Emp)
+   
+   ```
+
+   注册模型类后，就可以在后台管理系统中看到它们。
+
+   ![](./res/admin-model.png)
+
 4. 对模型进行CRUD操作。
+
+   可以在管理员平台对模型进行C（新增）R（查看）U（更新）D（删除）操作，如下图所示。
+
+   添加新的部门。
+
+   ![](./res/admin-model-create.png)
+
+   查看所有部门。
+
+   ![](./res/admin-model-read.png)
+
+   更新和删除部门。
+
+   ![](./res/admin-model-delete-and-update.png)
+
 5. 注册模型管理类。
+
+   再次修改admin.py文件，通过注册模型管理类，可以在后台管理系统中更好的管理模型。
+
+   ```Python
+   from django.contrib import admin
+   
+   from hrs.models import Emp, Dept
+   
+   
+   class DeptAdmin(admin.ModelAdmin):
+   
+       list_display = ('no', 'name', 'location')
+       ordering = ('no', )
+   
+   
+   class EmpAdmin(admin.ModelAdmin):
+   
+       list_display = ('no', 'name', 'job', 'mgr', 'sal', 'comm', 'dept')
+       search_fields = ('name', 'job')
+   
+   
+   admin.site.register(Dept, DeptAdmin)
+   admin.site.register(Emp, EmpAdmin)
+   
+   ```
+
+   ![](./res/admin-model-depts.png)
+
+   ![](./res/admin-model-emps.png)
+
+   为了更好的查看模型数据，可以为Dept和Emp两个模型类添加`__str__`魔法方法。
+
+   ```Python
+   from django.db import models
+   
+   
+   class Dept(models.Model):
+       """部门类"""
+       
+       # 此处省略上面的代码
+       
+       def __str__(self):
+           return self.name
+   
+       # 此处省略下面的代码
+   
+   
+   class Emp(models.Model):
+       """员工类"""
+       
+       # 此处省略上面的代码
+       
+       mgr = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='直接主管')
+       
+       # 此处省略下面的代码
+       
+       # 此处省略上面的代码
+   
+       def __str__(self):
+           return self.name
+   
+       # 此处省略下面的代码
+   
+   ```
+
+   修改代码后刷新查看Emp模型的页面，效果如下图所示。
+
+   ![](./res/admin-model-emps-modified.png)
 
 ### 使用ORM完成模型的CRUD操作
 
-我们先在shell中演示如何利用Django中内置的ORM框架对模型进行CRUD（Create / Read / Update / Delete）操作。
+在了解了Django提供的模型管理平台之后，我们来看看如何从代码层面完成对模型的CRUD（Create / Read / Update / Delete）操作。我们可以通过manage.py开启Shell交互式环境，然后使用Django内置的ORM框架对模型进行CRUD操作。
 
 ```Shell
+(venv)$ cd ..
 (venv)$ python manage.py shell
 Python 3.6.4 (v3.6.4:d48ecebad5, Dec 18 2017, 21:07:28) 
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
@@ -173,25 +303,100 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
-
-
 #### 新增
 
-
-
-#### 删除
-
-
+```Shell
+>>>
+>>> from hrs.models import Dept, Emp
+>>> dept = Dept(40, '研发2部', '深圳')
+>>> dept.save()
+```
 
 #### 更新
 
-
+```Shell
+>>>
+>>> dept.name = '研发3部'
+>>> dept.save()
+```
 
 #### 查询
 
+查询所有对象。
 
+```Shell
+>>>
+>>> Dept.objects.all()
+<QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>, <Dept: 研发3部>]>
+```
 
-最后，我们通过上面掌握的知识来实现部门展示以及根据部门获取部门对应员工信息的功能，效果如下图所示，对应的代码可以访问<https://github.com/jackfrued/Python-100-Days/tree/master/Day31-Day35/oa>。
+过滤数据。
+
+```Shell
+>>> 
+>>> Dept.objects.filter(name='研发3部') # 查询部门名称为“研发3部”的部门
+<QuerySet [<Dept: 研发3部>]>
+>>>
+>>> Dept.objects.filter(name__contains='研发') # 查询部门名称包含“研发”的部门(模糊查询)
+<QuerySet [<Dept: 研发1部>, <Dept: 研发3部>]>
+>>>
+>>> Dept.objects.filter(no__gt=10).filter(no__lt=40) # 查询部门编号大于10小于40的部门
+<QuerySet [<Dept: 销售1部>, <Dept: 运维1部>]>
+```
+
+查询单个对象。
+
+```Shell
+>>> 
+>>> Dept.objects.get(pk=10)
+<Dept: 研发1部>
+>>> Dept.objects.get(no=20)
+<Dept: 销售1部>
+>>> Dept.objects.get(no__exact=30)
+<Dept: 运维1部>
+```
+
+排序数据。
+
+```Shell
+>>>
+>>> Dept.objects.order_by('no') # 查询所有部门按部门编号升序排列
+<QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>, <Dept: 研发3部>]>
+>>> Dept.objects.order_by('-no') # 查询所有部门按部门编号降序排列
+<QuerySet [<Dept: 研发3部>, <Dept: 运维1部>, <Dept: 销售1部>, <Dept: 研发1部>]>
+```
+
+切片数据。
+
+```Shell
+>>>
+>>> Dept.objects.order_by('no')[0:2] # 按部门编号排序查询1~2部门
+<QuerySet [<Dept: 研发1部>, <Dept: 销售1部>]>
+>>> Dept.objects.order_by('no')[2:4] # 按部门编号排序查询3~4部门
+<QuerySet [<Dept: 运维1部>, <Dept: 研发3部>]>
+```
+
+高级查询。
+
+```Shell
+>>>
+>>> Emp.objects.filter(dept__no=10) # 根据部门编号查询该部门的员工
+<QuerySet [<Emp: 乔峰>, <Emp: 张无忌>, <Emp: 张三丰>]>
+>>> Emp.objects.filter(dept__name__contains='销售') # 查询名字包含“销售”的部门的员工
+<QuerySet [<Emp: 黄蓉>]>
+>>> Dept.objects.get(pk=10).emp_set.all() # 通过部门反查部门所有的员工
+<QuerySet [<Emp: 乔峰>, <Emp: 张无忌>, <Emp: 张三丰>]>
+```
+
+> 说明：由于员工与部门之间存在外键关联，所以也能通过部门反向查询该部门的员工（从一对多关系中“一”的一方查询“多”的一方），默认情况下反查属性名是`类名小写_set`（例子中的`emp_set`），当然也可以在创建模型时通过`related_name`指定反查属性的名字。
+
+#### 删除
+
+```Shell
+
+```
+
+最后，我们通过上面掌握的知识来实现部门展示以及根据部门获取部门对应员工信息的功能，效果如下图所示，对应的代码可以访问<>。
 
 ### Django模型最佳实践
 

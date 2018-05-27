@@ -43,7 +43,7 @@
 - Don't be one of the leeches.
 - Either stand out or kicked out.
 
-### Python语言基础
+### Day01~15 - [Python语言基础](./Day01-15)
 
 #### Day01 - [初识Python](./Day01/初识Python.md)
 
@@ -156,13 +156,11 @@
 - 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
 - 短信服务 - twilio模块 / 国内的短信服务
 
-#### Day16~Day20 - [Python进阶知识 ](./Day16-20/Python进阶知识.md)
+### Day16~Day20 - [Python语言进阶 ](./Day16-20/Python语言进阶.md)
 
 
 
-### Web前端+Linux基础+数据库基础
-
-#### [Day21~30](./Day21-30/Web前端概述.md)
+### [Day21~30](./Day21-30/Web前端概述.md)
 
 - 用HTML标签承载页面内容
 - 用CSS渲染页面
@@ -170,7 +168,7 @@
 - jQuery入门和提高
 - Bootstrap在Web项目中的应用
 
-#### [Day31-35](./Day31-35/玩转Linux操作系统.md)
+### [Day31-35](./Day31-35/玩转Linux操作系统.md)
 
 - 操作系统发展史和Linux概述
 - Linux基础命令
@@ -182,7 +180,7 @@
 - 网络访问和管理
 - 其他相关内容
 
-#### Day36-40
+### Day36-40
 
 - [关系型数据库MySQL](./Day36-40/关系型数据库MySQL.md)
   - 关系型数据库概述
@@ -201,7 +199,7 @@
   - Redis高级操作和集群
   - 在Python中操作Redis
 
-### Python的Web框架 - Django
+### Day41~55 - [Django](./Day41-55)
 
 #### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django2实战01.md)
 
@@ -232,7 +230,7 @@
 - Web应用安全保护
 
 
-### Python的Web框架 - Flask
+### Day56~65 - [Flask](./Day56-65)
 
 #### Day56 - [Flask安装和入门](./Day56-65/Flash安装和入门.md) 
 
@@ -249,7 +247,7 @@
 - 性能和测试
 - 项目部署
 
-### 爬虫
+### Day66~75 - [爬虫](./Day66-75)
 
 #### Day66 - [爬虫简介和相关工具](./Day66-75/爬虫简介和相关工具.md)
 
@@ -271,11 +269,11 @@
 
 #### Day75 - [Scrapy的应用(3)](./Day66-75/Scrapy的应用3.md)
 
-### 数据处理和机器学习
+### Day76~90 - 数据处理和机器学习
 
 
 
-### 团队项目开发
+### Day91~100 - 团队项目开发
 
 
 

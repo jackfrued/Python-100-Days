@@ -203,7 +203,7 @@
 
 ### Python的Web框架 - Django
 
-#### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django2实战01))
+#### Day41 - [Django实战(01) - 快速上手](./Day41-55/Django2实战01)
 
 #### Day42 - [Django实战(02) - 深入模型](./Day41-55/Django2实战02)
 

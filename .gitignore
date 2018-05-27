@@ -2,4 +2,5 @@ venv
 .idea
 *.pyc
 __pycache__
+.gitignore
 

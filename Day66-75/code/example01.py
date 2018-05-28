@@ -3,58 +3,73 @@ from urllib.request import urlopen
 
 import re
 import pymysql
+import ssl
+
+from pymysql import Error
 
 
-def get_page_code(start_url, *, retry_times=3, charsets=('utf-8', )):
+def decode_page(page_bytes, charsets=('utf-8', )):
+    page_html = None
+    for charset in charsets:
+        try:
+            page_html = page_bytes.decode(charset)
+            break
+        except UnicodeDecodeError:
+            pass
+            # logging.error('Decode:', error)
+    return page_html
+
+
+def get_page_html(seed_url, *, retry_times=3, charsets=('utf-8', )):
+    page_html = None
     try:
-        for charset in charsets:
-            try:
-                html = urlopen(start_url).read().decode(charset)
-                break
-            except UnicodeDecodeError:
-                html = None
-    except URLError as ex:
-        print('Error:', ex)
-        return get_page_code(start_url, retry_times=retry_times - 1, charsets=charsets) if \
-            retry_times > 0 else None
-    return html
+        page_html = decode_page(urlopen(seed_url).read(), charsets)
+    except URLError:
+        # logging.error('URL:', error)
+        if retry_times > 0:
+            return get_page_html(seed_url, retry_times=retry_times - 1,
+                                 charsets=charsets)
+    return page_html
+
+
+def get_matched_parts(page_html, pattern_str, pattern_ignore_case=re.I):
+    pattern_regex = re.compile(pattern_str, pattern_ignore_case)
+    return pattern_regex.findall(page_html) if page_html else []
+
+
+def start_crawl(seed_url, match_pattern):
+    conn = pymysql.connect(host='localhost', port=3306,
+                           database='crawler', user='root',
+                           password='123456', charset='utf8')
+    try:
+        with conn.cursor() as cursor:
+            url_list = [seed_url]
+            while url_list:
+                current_url = url_list.pop(0)
+                page_html = get_page_html(current_url, charsets=('utf-8', 'gbk', 'gb2312'))
+                links_list = get_matched_parts(page_html, match_pattern)
+                url_list += links_list
+                param_list = []
+                for link in links_list:
+                    page_html = get_page_html(link, charsets=('utf-8', 'gbk', 'gb2312'))
+                    headings = get_matched_parts(page_html, r'<h1>(.*)<span')
+                    if headings:
+                        param_list.append((headings[0], link))
+                cursor.executemany('insert into tb_result values (default, %s, %s)',
+                                   param_list)
+                conn.commit()
+    except Error:
+        pass
+        # logging.error('SQL:', error)
+    finally:
+        conn.close()
 
 
 def main():
-    url_list = ['http://sports.sohu.com/nba_a.shtml']
-    visited_list = set({})
-    while len(url_list) > 0:
-        current_url = url_list.pop(0)
-        visited_list.add(current_url)
-        print(current_url)
-        html = get_page_code(current_url, charsets=('utf-8', 'gbk', 'gb2312'))
-        if html:
-            link_regex = re.compile(r'<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
-            link_list = re.findall(link_regex, html)
-            url_list += link_list
-            conn = pymysql.connect(host='localhost', port=3306,
-                                   db='crawler', user='root',
-                                   passwd='123456', charset='utf8')
-            try:
-                for link in link_list:
-                    if link not in visited_list:
-                        visited_list.add(link)
-                        print(link)
-                        html = get_page_code(link, charsets=('utf-8', 'gbk', 'gb2312'))
-                        if html:
-                            title_regex = re.compile(r'<h1>(.*)<span', re.IGNORECASE)
-                            match_list = title_regex.findall(html)
-                            if len(match_list) > 0:
-                                title = match_list[0]
-                                with conn.cursor() as cursor:
-                                    cursor.execute('insert into tb_result (rtitle, rurl) values (%s, %s)',
-                                               (title, link))
-                                conn.commit()
-            finally:
-                conn.close()
-    print('执行完成!')
+    ssl._create_default_https_context = ssl._create_unverified_context
+    start_crawl('http://sports.sohu.com/nba_a.shtml', 
+                r'<a[^>]+test=a\s[^>]*href=["\'](.*?)["\']')
 
 
 if __name__ == '__main__':
     main()
-

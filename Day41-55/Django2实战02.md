@@ -342,6 +342,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 >>> Dept.objects.filter(no__gt=10).filter(no__lt=40) # 查询部门编号大于10小于40的部门
 <QuerySet [<Dept: 销售1部>, <Dept: 运维1部>]>
+>>>
+>>> Dept.objects.filter(no__range=(10, 30)) # 查询部门编号在10到30之间的部门
+<QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>]>
 ```
 
 查询单个对象。
@@ -350,8 +353,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 >>> Dept.objects.get(pk=10)
 <Dept: 研发1部>
+>>>
 >>> Dept.objects.get(no=20)
 <Dept: 销售1部>
+>>>
 >>> Dept.objects.get(no__exact=30)
 <Dept: 运维1部>
 ```
@@ -362,6 +367,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 >>> Dept.objects.order_by('no') # 查询所有部门按部门编号升序排列
 <QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>, <Dept: 研发3部>]>
+>>>
 >>> Dept.objects.order_by('-no') # 查询所有部门按部门编号降序排列
 <QuerySet [<Dept: 研发3部>, <Dept: 运维1部>, <Dept: 销售1部>, <Dept: 研发1部>]>
 ```
@@ -372,6 +378,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 >>> Dept.objects.order_by('no')[0:2] # 按部门编号排序查询1~2部门
 <QuerySet [<Dept: 研发1部>, <Dept: 销售1部>]>
+>>>
 >>> Dept.objects.order_by('no')[2:4] # 按部门编号排序查询3~4部门
 <QuerySet [<Dept: 运维1部>, <Dept: 研发3部>]>
 ```
@@ -382,37 +389,43 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 >>> Emp.objects.filter(dept__no=10) # 根据部门编号查询该部门的员工
 <QuerySet [<Emp: 乔峰>, <Emp: 张无忌>, <Emp: 张三丰>]>
+>>>
 >>> Emp.objects.filter(dept__name__contains='销售') # 查询名字包含“销售”的部门的员工
 <QuerySet [<Emp: 黄蓉>]>
+>>>
 >>> Dept.objects.get(pk=10).emp_set.all() # 通过部门反查部门所有的员工
 <QuerySet [<Emp: 乔峰>, <Emp: 张无忌>, <Emp: 张三丰>]>
 ```
 
-> 说明：由于员工与部门之间存在外键关联，所以也能通过部门反向查询该部门的员工（从一对多关系中“一”的一方查询“多”的一方），默认情况下反查属性名是`类名小写_set`（例子中的`emp_set`），当然也可以在创建模型时通过`related_name`指定反查属性的名字。
+> 说明1：由于员工与部门之间存在多对一外键关联，所以也能通过部门反向查询该部门的员工（从一对多关系中“一”的一方查询“多”的一方），反向查询属性默认的名字是`类名小写_set`（如上面例子中的`emp_set`），当然也可以在创建模型时通过`ForeingKey`的`related_name`属性指定反向查询属性的名字。如果不希望执行反向查询可以将`related_name`属性设置为`'+'`或以`'+'`开头的字符串。
+
+> 说明2：查询多个对象的时候返回的是QuerySet对象，QuerySet使用了惰性查询，即在创建QuerySet对象的过程中不涉及任何数据库活动，等真正用到对象时（求值QuerySet）才向数据库发送SQL语句并获取对应的结果，这一点在实际开发中需要引起注意！
+
+> 说明3：可以在QuerySet上使用`update()`方法一次更新多个对象。
 
 #### 删除
 
 ```Shell
-
+>>>
+>>> Dept.objects.get(pk=40).delete()
+(1, {'hrs.Dept': 1})
 ```
-
-最后，我们通过上面掌握的知识来实现部门展示以及根据部门获取部门对应员工信息的功能，效果如下图所示，对应的代码可以访问<>。
 
 ### Django模型最佳实践
 
 1. 正确的模型命名和关系字段命名。
-2. 设置适当的related_name属性。
-3. 用OneToOneField代替ForeignKeyField(unique=True)。
-4. 通过迁移操作来添加模型。
+2. 设置适当的`related_name`属性。
+3. 用`OneToOneField`代替`ForeignKeyField(unique=True)`。
+4. 通过“迁移操作”（migrate）来添加模型。
 5. 用NoSQL来应对需要降低范式级别的场景。
-6. 如果布尔类型可以为空要使用NullBooleanField。
+6. 如果布尔类型可以为空要使用`NullBooleanField`。
 7. 在模型中放置业务逻辑。
-8. 用ModelName.DoesNotExists取代ObjectDoesNotExists。
+8. 用`<ModelName>.DoesNotExists`取代`ObjectDoesNotExists`。
 9. 在数据库中不要出现无效数据。
-10. 不要对QuerySet调用len函数。
-11. 将QuerySet的exists()方法的返回值用于if条件。
-12. 用DecimalField来存储货币相关数据而不是FloatField。
-13. 定义\_\_str\_\_方法。
+10. 不要对`QuerySet`调用`len()`函数。
+11. 将`QuerySet`的`exists()`方法的返回值用于`if`条件。
+12. 用`DecimalField`来存储货币相关数据而不是`FloatField`。
+13. 定义`__str__`方法。
 14. 不要将数据文件放在同一个目录中。
 
 > 说明：以上内容来自于STEELKIWI网站的[*Best Practice working with Django models in Python*](https://steelkiwi.com/blog/best-practices-working-django-models-python/)，有兴趣的小伙伴可以阅读原文。
@@ -513,22 +526,31 @@ ManyToManyField属性
 | verbose_name          | 为对象设定人类可读的名称                                     |
 | verbose_name_plural   | 设定对象的复数名称                                           |
 
-### 数据库API参考
-
-
+### 查询参考
 
 按字段查找可以用的条件：
 
-1. exact / iexact
-2. contains / icontains
-3. in
-4. gt / gte / lt / lte
-5. startswith / istartswith / endswith / iendswith
-6. range
-7. year / month / day / week_day / hour / minute / second
-8. isnull
-9. search
-10. regex / iregex
+1. exact / iexact：精确匹配/忽略大小写的精确匹配查询
+2. contains / icontains / startswith / istartswith / endswith / iendswith：基于`like`的模糊查询
+3. in：集合运算
+4. gt / gte / lt / lte：大于/大于等于/小于/小于等于关系运算
+5. range：指定范围查询（SQL中的`between…and…`）
+6. year / month / day / week_day / hour / minute / second：查询时间日期
+7. isnull：查询空值（True）或非空值（False）
+8. search：基于全文索引的全文检索
+9. regex / iregex：基于正则表达式的模糊匹配查询
 
-跨关系查找
+Q对象（用于执行复杂查询）的使用：
+
+```Shell
+>>>
+>>> from django.db.models import Q
+>>> Emp.objects.filter(
+...     Q(name__startswith='张'),
+...     Q(sal__gte=5000) | Q(comm__gte=1000)
+... ) # 查询名字以“张”开头 工资大于等于5000或补贴大于等于1000的员工
+<QuerySet [<Emp: 张三丰>]>
+```
+
+
 

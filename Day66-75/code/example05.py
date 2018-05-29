@@ -48,7 +48,7 @@ def get_matched_parts(page_html, pattern_str, pattern_ignore_case=re.I):
     return pattern_regex.findall(page_html) if page_html else []
 
 
-# 开始执行爬虫程序并对指定的数据进行持久化操作
+# 开始执行爬虫程序
 def start_crawl(seed_url, match_pattern, *, max_depth=-1):
     client = redis.Redis(host='120.77.222.217', port=11223, password='1qaz2wsx')
     charsets = ('utf-8', 'gbk', 'gb2312')

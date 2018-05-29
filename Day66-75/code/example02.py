@@ -13,7 +13,7 @@ def main():
         </head>
         <body>
             <h1>Hello, world!</h1>
-            <p>这是一个神奇的网站！</p>
+            <p>这是一个<em>神奇</em>的网站！</p>
             <hr>
             <div>
                 <h2>这是一个例子程序</h2>
@@ -44,13 +44,27 @@ def main():
     print(soup.title)
     # JavaScript - document.body.h1
     print(soup.body.h1)
-    print(soup.find_all(re.compile(r'^h')))
+    print(soup.p)
+    print(soup.body.p.text)
+    print(soup.body.p.contents)
+    for p_child in soup.body.p.children:
+        print(p_child)
+    print(len([elem for elem in soup.body.children]))
+    print(len([elem for elem in soup.body.descendants]))
+    print(soup.findAll(re.compile(r'^h[1-6]')))
+    print(soup.body.find_all(r'^h'))
+    print(soup.body.div.find_all(re.compile(r'^h')))
     print(soup.find_all(re.compile(r'r$')))
     print(soup.find_all('img', {'src': re.compile(r'\./img/\w+.png')}))
     print(soup.find_all(lambda x: len(x.attrs) == 2))
+    print(soup.find_all(foo))
     print(soup.find_all('p', {'class': 'foo'}))
     for elem in soup.select('a[href]'):
         print(elem.attrs['href'])
+
+
+def foo(elem):
+    return len(elem.attrs) == 2
 
 
 if __name__ == '__main__':

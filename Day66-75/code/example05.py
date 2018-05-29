@@ -50,7 +50,7 @@ def get_matched_parts(page_html, pattern_str, pattern_ignore_case=re.I):
 
 # 开始执行爬虫程序
 def start_crawl(seed_url, match_pattern, *, max_depth=-1):
-    client = redis.Redis(host='120.77.222.217', port=11223, password='1qaz2wsx')
+    client = redis.Redis(host='1.2.3.4', port=6379, password='1qaz2wsx')
     charsets = ('utf-8', 'gbk', 'gb2312')
     logging.info('[Redis ping]', client.ping())
     url_list = [seed_url]

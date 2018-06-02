@@ -6,13 +6,15 @@ PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个�
 
 可以在[JetBrains公司的官方网站]()找到PyCharm的[下载链接](https://www.jetbrains.com/pycharm/download/)，有两个可供下载的版本一个是社区版一个是专业版，社区版在[Apache许可证](https://zh.wikipedia.org/wiki/Apache%E8%AE%B8%E5%8F%AF%E8%AF%81)下发布，专业版在专用许可证下发布（需要购买授权下载后可试用30天），其拥有许多额外功能。安装PyCharm需要有JRE（Java运行时环境）的支持，如果没有可以在安装过程中选择在线下载安装。
 
+> 说明：如果你是一名学生，希望购买PyCharm来使用，可以看看[教育优惠官方申请指南](https://sales.jetbrains.com/hc/zh-cn/articles/207154369)。
+
 ### 首次使用的设置
 
 第一次使用PyCharm时，会有一个导入设置的向导，如果之前没有使用PyCharm或者没有保存过设置的就直接选择“Do not import settings”进入下一步即可。
 
 ![](./res/pycharm-import-settings.png)
 
-专业版的PyCharm是需要激活的，强烈建议为优秀的软件支付费用，如果不用做商业用途，我们可以暂时选择试用30天或者使用社区版的PyCharm。
+专业版的PyCharm是需要激活的，**强烈建议为优秀的软件支付费用**，如果不用做商业用途，我们可以暂时选择试用30天或者使用社区版的PyCharm。
 
 ![](./res/pycharm-activate.png)
 

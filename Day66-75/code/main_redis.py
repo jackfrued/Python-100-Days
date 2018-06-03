@@ -124,7 +124,7 @@ def is_any_alive(spider_threads):
                 for spider_thread in spider_threads])
 
 
-redis_client = redis.Redis(host='120.77.222.217',
+redis_client = redis.Redis(host='1.2.3.4',
                            port=6379, password='1qaz2wsx')
 mongo_client = pymongo.MongoClient(host='120.77.222.217', port=27017)
 db = mongo_client.msohu

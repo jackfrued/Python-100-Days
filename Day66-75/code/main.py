@@ -123,7 +123,7 @@ def main():
         spider_thread.start()
 
     while not task_queue.empty() or is_any_alive(spider_threads):
-        pass
+    	sleep(5)
 
     print('Over!')
 

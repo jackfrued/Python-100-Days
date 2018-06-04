@@ -3,7 +3,7 @@ import zlib
 from enum import Enum, unique
 from hashlib import sha1
 from random import random
-from threading import Thread, current_thread
+from threading import Thread, current_thread, local
 from time import sleep
 from urllib.parse import urlparse
 
@@ -79,6 +79,7 @@ class Spider(object):
                 path = parser.path
                 query = '?' + parser.query if parser.query else ''
                 full_url = f'{scheme}://{netloc}{path}{query}'
+                redis_client = thread_local.redis_client
                 if not redis_client.sismember('visited_urls', full_url):
                     redis_client.rpush('m_sohu_task', full_url)
 
@@ -86,6 +87,8 @@ class Spider(object):
         pass
 
     def store(self, data_dict):
+        # redis_client = thread_local.redis_client
+        # mongo_db = thread_local.mongo_db
         pass
 
 
@@ -96,6 +99,10 @@ class SpiderThread(Thread):
         self.spider = spider
 
     def run(self):
+        redis_client = redis.Redis(host='1.2.3.4', port=6379, password='1qaz2wsx')
+        mongo_client = pymongo.MongoClient(host='1.2.3.4', port=27017)
+        thread_local.redis_client = redis_client
+        thread_local.mongo_db = mongo_client.msohu 
         while True:
             current_url = redis_client.lpop('m_sohu_task')
             while not current_url:
@@ -109,6 +116,7 @@ class SpiderThread(Thread):
                     hasher = hasher_proto.copy()
                     hasher.update(current_url.encode('utf-8'))
                     doc_id = hasher.hexdigest()
+                    sohu_data_coll = mongo_client.msohu.webpages
                     if not sohu_data_coll.find_one({'_id': doc_id}):
                         sohu_data_coll.insert_one({
                             '_id': doc_id,
@@ -124,17 +132,15 @@ def is_any_alive(spider_threads):
                 for spider_thread in spider_threads])
 
 
-redis_client = redis.Redis(host='1.2.3.4',
-                           port=6379, password='1qaz2wsx')
-mongo_client = pymongo.MongoClient(host='120.77.222.217', port=27017)
-db = mongo_client.msohu
-sohu_data_coll = db.webpages
+thread_local = local()
 hasher_proto = sha1()
 
 
 def main():
+    redis_client = redis.Redis(host='1.2.3.4', port=6379, password='1qaz2wsx')
     if not redis_client.exists('m_sohu_task'):
         redis_client.rpush('m_sohu_task', 'http://m.sohu.com/')
+
     spider_threads = [SpiderThread('thread-%d' % i, Spider())
                       for i in range(10)]
     for spider_thread in spider_threads:

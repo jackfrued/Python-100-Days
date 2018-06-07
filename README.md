@@ -192,12 +192,11 @@
     - DCL
   - 在Python中操作MySQL
   - MySQL高级知识
-- [非关系型数据库Redis](./Day36-40/非关系型数据库Redis.md)
-  - Redis的安装和基本配置
-  - Redis的常用命令和数据类型
-  - Redis的主从复制和哨兵模式
-  - Redis高级操作和集群
-  - 在Python中操作Redis
+- [NoSQL入门](./Day36-40/NoSQL入门.md)
+  - NoSQL概述
+  - 主流NoSQL数据库
+  - Redis概述
+  - Mongo概述
 
 ### Day41~55 - [Django](./Day41-55)
 

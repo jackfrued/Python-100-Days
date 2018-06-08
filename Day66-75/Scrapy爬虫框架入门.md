@@ -138,6 +138,21 @@ $
            return item
    
    ```
+   > 说明：上面我们通过Scrapy提供的爬虫模板创建了Spider，其中的rules中的LinkExtractor对象会自动完成对新的链接的解析，该对象中有一个名为extract_link的回调方法。Scrapy支持用XPath语法和CSS选择器进行数据解析，对应的方法分别是xpath和css，上面我们使用了XPath语法对页面进行解析，如果不熟悉XPath语法可以看看后面的补充说明。
+
+   到这里，我们已经可以通过下面的命令让爬虫运转起来。
+
+   ```Shell
+   
+   (venv)$ scrapy crawl movie
+   ```
+
+   可以在控制台看到爬取到的数据，如果想将这些数据保存到文件中，可以通过`-o`参数来指定文件名，Scrapy支持我们将爬取到的数据导出成JSON、CSV、XML、pickle、marshal等格式。
+
+   ```Shell
+   
+   (venv)$ scrapy crawl moive -o result.json
+   ```
 
 3. 在pipelines.py中完成对数据进行持久化的操作。
 
@@ -187,6 +202,11 @@ $
            return item
    
    ```
+   利用Pipeline我们可以完成以下操作：
+
+   - 清理HTML数据，验证爬取的数据。
+   - 丢弃重复的不必要的内容。
+   - 将爬取的结果进行持久化操作。
 
 4. 修改settings.py文件对项目进行配置。
 

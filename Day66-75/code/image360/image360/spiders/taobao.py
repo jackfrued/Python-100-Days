@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from io import StringIO
 from urllib.parse import urlencode
+import re
 
 import scrapy
 
@@ -26,6 +28,9 @@ class TaobaoSpider(scrapy.Spider):
             item = GoodsItem()
             item['price'] = goods.xpath('div[5]/div[2]/div[1]/div[1]/strong/text()').extract_first()
             item['deal'] = goods.xpath('div[5]/div[2]/div[1]/div[2]/text()').extract_first()
-            item['title'] = goods.xpath('div[6]/div[2]/div[2]/a/text()').extract_first()
+            segments = goods.xpath('div[6]/div[2]/div[2]/a/text()').extract()
+            title = StringIO()
+            for segment in segments:
+                title.write(re.sub('\s', '', segment))
+            item['title'] = title.getvalue()
             yield item
-

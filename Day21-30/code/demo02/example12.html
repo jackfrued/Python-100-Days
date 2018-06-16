@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#fruits li {
+				width: 150px;
+				height: 30px;
+				background-color: darkolivegreen;
+				color: white;
+				list-style: none;
+				border-bottom: 1px solid lightgray;
+				text-align: center;
+				font: 18px/30px "微软雅黑";
+			}
+			#fruits li a {
+				text-decoration: none;
+				margin-left: 30px;
+			}
+			#fruits li a:link, #fruits li a:visited {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>水果列表</h1>
+		<hr>
+		<ul id="fruits">
+			<li>苹果<a href="javascript:void(0);">x</a></li>
+			<li>香蕉<a href="javascript:void(0);">x</a></li>
+			<li>草莓<a href="javascript:void(0);">x</a></li>
+		</ul>
+		<input id="fruit" type="text">
+		<button id="ok">确定</button>
+		<script src="js/mylib.js"></script>
+		<script>
+			function removeItem(evt) {
+				evt = evt || window.event;
+				var target = evt.target || evt.srcElement;
+				$('fruits').removeChild(target.parentNode);
+			}
+			+function() {
+				var aList = document.querySelectorAll('#fruits li a');
+				for (var i = 0; i < aList.length; i += 1) {
+					bind(aList[i], 'click', removeItem);
+				}
+				bind($('ok'), 'click', function() {
+					var fruit = $('fruit').value;
+					if (fruit.trim().length > 0) {
+						var li = document.createElement('li');
+						li.textContent = fruit;
+						var a = document.createElement('a');
+						a.href = 'javascript:void(0);';
+						a.textContent = 'x';
+						bind(a, 'click', removeItem);
+						li.appendChild(a);
+						li.style.backgroundColor = 'coral';
+						li.style.fontFamily = '楷体';
+						$('fruits').insertBefore(li, $('fruits').firstChild);
+						$('fruit').value = '';
+					}
+				});
+			}();
+		</script>
+	</body>
+</html>

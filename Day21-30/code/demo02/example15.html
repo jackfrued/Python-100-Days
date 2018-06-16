@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>床前明月光</p>
+		<p class="foo">疑似地上霜</p>
+		<p>举头望明月</p>
+		<p class="foo">低头思故乡</p>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				// $('.foo').hide();
+				// console.log($('p:contains("故乡")').text())
+				for (var i = 0; i < 5; i += 1) {
+					$(document.body).prepend($('p:first').clone());
+				}
+			});
+		</script>
+	</body>
+</html>

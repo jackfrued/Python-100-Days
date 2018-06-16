@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				text-align: center;
+				width: 350px;
+				height: 70px;
+				margin: 0 auto;
+				margin-top: 10px;
+				background-color: black;
+				color: white;
+				font: 36px/70px Arial;
+			}
+			#fruits {
+				width: 350px;
+				margin: 0 auto;
+			}
+			#fruits li {
+				width: 350px;
+				height: 75px;
+				background-color: darkolivegreen;
+				color: white;
+				list-style: none;
+				border-bottom: 1px solid lightgray;
+				text-align: center;
+				font: 32px/75px "微软雅黑";
+			}
+			#fruits li img {
+				float: right;
+			}
+			#fruits li a:link, #fruits li a:visited {
+				color: white;
+			}
+			#fruits li button {
+				float: right;
+				width: 75px;
+				height: 75px;
+				border: none;
+				outline: none;
+				background-color: coral;
+				color: white;
+			}
+			#fruits li input {
+				width: 240px;
+				height: 30px;
+				text-align: center;
+				font-size: 22px;
+				line-height: 30px;
+			}
+			#fruits li span {
+				color: lightgoldenrodyellow;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>水果列表</h1>
+		<ul id="fruits">
+			<li id="fruit1">苹果<img src="img/icon-trash.png"></li>
+			<li id="fruit2">香蕉<img src="img/icon-trash.png"></li>
+			<li id="fruit3">草莓<img src="img/icon-trash.png"></li>
+			<li>
+				<input type="text" placeholder="输入水果名称"> 
+				<button id="ok">添加</button>
+			</li>
+		</ul>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			// jQuery的$函数的用法:
+			// 1. 如果$函数的参数是一个函数那么这个函数是文档加载完成之后要执行的回调函数
+			// 2. 如果$函数的参数是选择器字符串那么$函数会返回代表对应的标签的jQuery对象
+			// 3. 如果$函数的参数是一个原生JavaScript对象那么$函数会返回与之对应的jQuery对象
+			// 4. 如果$函数的参数一个标签字符串那么$函数会创建对应的元素而且返回jQuery对象
+			// 原生的JS对象和jQuery对象如何实现转换?
+			// $(原生JS对象) ---> jQuery对象
+			// jQuery对象.get(index) / jQuery对象[index] ---> JS对象
+			// 注: jQuery对象的本质是一个数组
+			$(function() {
+				function removeItem(evt) {
+					$(evt.target).parent()
+						.css('position', 'relative')
+						.animate(
+							{'left': '-350px', 'height': '0'}, 
+							360, 
+							'linear',
+							function() {
+								$(this).remove();
+							}
+						);
+				}
+				
+				$('#fruits li').hide().each(function(index) {
+					$(this).delay(600 * index).fadeIn(600);
+				});
+				$('#fruits li img').on('click', removeItem);
+				$('#fruits li:lt(3)').one('click', function(evt) {
+					var target = $(evt.target);
+					target.append($('<span>').text(target.attr('id')));
+				})
+				var index = 4;
+				$('#ok').on('click', function() {
+					var fruit = $('#fruits li input').val().trim();
+					if (fruit.length > 0) {
+						$('<li>').text(fruit).attr('id', 'fruit' + index)
+							.append(
+								$('<img>').attr('src', 'img/icon-trash.png')
+									.on('click', removeItem)
+							)
+							.one('click', function(evt) {
+								var target = $(evt.target);
+								target.append('<span>' + target.attr('id') + '</span>');
+							})
+							.insertBefore($('#fruits li:last'))
+							.hide().fadeIn(600);
+						$('#fruits li input').val('').focus();
+						index += 1;
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

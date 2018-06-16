@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#timer {
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="timer"></div>
+		<script>
+			var weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+			var div = document.getElementById('timer');
+			setInterval(function() {
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var hour = date.getHours();
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+				var weekday = weekdays[date.getDay()];
+				var fullStr = year + '年' + 
+					(month < 10 ? '0' + month : month) + '月' +
+					(day < 10 ? '0' + day : day) + '日&nbsp;&nbsp;' +
+					(hour < 10 ? '0' + hour : hour) + ':' +
+					(minute < 10 ? '0' + minute : minute) + ':' +
+					(second < 10 ? '0' + second : second) + '&nbsp;&nbsp;' +
+					'星期' + weekday;
+				div.innerHTML = fullStr;
+			}, 1000);
+		</script>
+	</body>
+</html>

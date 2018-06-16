@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			+function(n) {
+				for (var i = 0; i < n; i += 1) {
+					alert('OK');
+				}
+			}(3);
+			
+			
+			// n! = n * (n - 1)!
+			
+			function f(n) {
+				if (n == 0 || n == 1) 
+					return 1;
+				return n * arguments.callee(n - 1);
+			}
+			
+			alert(f(5));
+			
+			function foo() {
+				alert(arguments.callee);
+				alert(arguments.callee.caller);
+				return arguments[0] + arguments[1];
+			}
+			
+			alert(foo(1, 2));
+			
+		</script>
+	</body>
+</html>

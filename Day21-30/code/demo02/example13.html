@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- Ajax (Asynchronous JavaScript and XML) -->
+		<!-- JSON (JavaScript Object Notation) -->
+		<script>
+			var stu = {
+				"name": "骆昊",
+				"age": 15,
+				"study": function(courseName) {
+					alert(this.name + "正在学习" + courseName);
+				},
+				"watchAV": function() {
+					if (this.age < 18) {
+						alert(this.name + '只能观看《熊出没》.');
+					} else {
+						alert(this.name + '可以观看岛国片.');
+					}
+				}
+			};
+			stu.study('Python');
+			stu.watchAV();
+		</script>
+	</body>
+</html>

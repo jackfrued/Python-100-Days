@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="loadBtn">加载</button>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('#loadBtn').on('click', function() {
+					$.ajax({
+						type: 'get',
+						url: 'http://api.tianapi.com/meinv/',
+						data: {
+							key: '772a81a51ae5c780251b1f98ea431b84',
+							num: 10
+						},
+						dataType: 'json',
+						success: function(json) {
+							for (var i = 0; i < json.newslist.length; i += 1) {
+								var mm = json.newslist[i];
+								// $('<img>').attr('src', mm.picUrl).attr('width', 300)
+										// .insertBefore($('#loadBtn'));
+								$('<p>').append($('<a>')
+										.attr('href', mm.picUrl)
+										.attr('target', '_blank')
+										.text(mm.title)
+								).insertBefore($('#loadBtn'));
+							}
+						},
+						error: function() {}
+					});
+//					$.getJSON(url, function(json) {
+//						for (var i = 0; i < json.newslist.length; i += 1) {
+//							var mm = json.newslist[i];
+//							$('<img>').attr('src', mm.picUrl).attr('width', 300)
+//									.insertBefore($('#loadBtn'));
+//						}
+//					});
+				});
+			});
+		</script>
+	</body>
+</html>

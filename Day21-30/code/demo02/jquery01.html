@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#page ul li {
+				list-style: none;
+				width: 240px;
+				height: 40px;
+				text-align: center;
+				border-bottom: 1px solid darkgray;
+				background-color: darkcyan;
+				color: white;
+				font: 18px/40px Arial;
+			}
+			#data {
+				border-collapse: collapse;
+			}
+			#data td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<h1 id="header">List</h1>
+			<h2>Buy groceries</h2>
+			<ul>
+				<li id="one" class="hot"><em>fresh</em>&nbsp;<em>figs</em></li>
+				<li id="two" class="hot">pine nuts</li>
+				<li id="three" class="hot"><span>honey</span></li>
+				<li id="four">balsamic vinegar</li>
+			</ul>
+			<table id="data">
+				<tr>
+					<td>Item 1</td>
+					<td>Item 2</td>
+					<td>Item 3</td>
+					<td>Item 4</td>
+					<td>Item 5</td>
+				</tr>
+				<tr>
+					<td>Item 1</td>
+					<td>Item 2</td>
+					<td>Item 3</td>
+					<td>Item 4</td>
+					<td>Item 5</td>
+				</tr>
+				<tr>
+					<td>Item 1</td>
+					<td>Item 2</td>
+					<td>Item 3</td>
+					<td>Item 4</td>
+					<td>Item 5</td>
+				</tr>
+			</table>
+			<button id="clearBtn">清空表格</button>
+		</div>
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('#page li:gt(0)').on('click', function(evt) {
+					$(evt.target).remove();
+				});
+				$('#page li:even').css({
+					'background-color': 'coral',
+					'font-size': '36px'
+				});
+				$('#page li:odd').css('background-color', 'pink');
+				$('#clearBtn').on('click', function() {
+					$('#data').empty();
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="">
+		<style></style>
+	</head>
+	<body>
+		<!-- BOM(浏览器对象模型) -->
+		<script>
+			var name = window.prompt('请输入你的名字: ');
+			var msg = name != 'null' && name.trim() != '' ?
+				'你好, ' + name + '!' : '大家好!';
+			window.alert(msg);
+			if (window.confirm('确定要退出吗?')) {
+				window.close();
+			} else {
+				// window.open('http://www.baidu.com', '百度一下')
+				// window.moveTo(500, 500);
+				window.print();
+			}
+		</script>
+	</body>
+</html>

@@ -139,7 +139,7 @@ by 骆昊
 - 使用正则表达式 - re模块 \ compile函数 \ group和groups方法 \ match方法 \ search方法 \ findall和finditer方法 \ sub和subn方法 \ split方法
 - 应用案例 - 使用正则表达式验证输入的字符串
 
-#### Day13 - [进程和线程](./Day01-15/Day13/进程和线程入门.md)
+#### Day13 - [进程和线程](./Day01-15/Day13/进程和线程.md)
 
 - 进程和线程的概念 - 什么是进程 / 什么是线程 / 多线程的应用场景
 - 使用进程 - fork函数 / multiprocessing模块 / 进程池 / 进程间通信
@@ -160,9 +160,17 @@ by 骆昊
 
 ### Day16~Day20 - [Python语言进阶 ](./Day16-20)
 
+#### Day16 - 数据结构和算法
 
+#### Day17 - 函数的高级知识
 
-### Day21~30 - [Web前端](./Day21-30)
+#### Day18 - 面向对象高级知识
+
+#### Day19 - 元编程
+
+#### Day20 - 协程和异步I/O
+
+### Day21~30 - [Web前端](./Day21-30/Web前端概述.md)
 
 - 用HTML标签承载页面内容
 - 用CSS渲染页面
@@ -170,7 +178,7 @@ by 骆昊
 - jQuery入门和提高
 - Bootstrap在Web项目中的应用
 
-### Day31~35 - [Linux操作系统](./Day31-35)
+### Day31~35 - [Linux操作系统](./Day31-35/玩转Linux操作系统.md)
 
 - 操作系统发展史和Linux概述
 - Linux基础命令
@@ -262,11 +270,11 @@ by 骆昊
 
 #### Day71 - [表单交互和验证码处理](./Day66-75/06.表单交互和验证码处理.md)
 
-#### Day72 - [Scrapy爬虫框架入门](./Day66-75/Scrapy爬虫框架入门.md)
+#### Day72 - [Scrapy爬虫框架入门](./Day66-75/爬虫框架Scrapy入门.md)
 
-#### Day73 - [Scrapy爬虫框架高级应用](./Day66-75/Scrapy爬虫框架高级应用.md)
+#### Day73 - [Scrapy爬虫框架高级应用](./Day66-75/爬虫框架Scrapy高级应用.md)
 
-#### Day74 - [Scrapy爬虫框架分布式实现](./Day66-75/Scrapy爬虫框架分布式实现.md)
+#### Day74 - [Scrapy爬虫框架分布式实现](./Day66-75/爬虫框架Scrapy分布式实现.md)
 
 ### Day76~90 - [数据处理和机器学习](./Day76-90)
 

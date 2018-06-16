@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				width: 940px;
+				height: 430px;	
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 绑定事件除了用标签属性之外还有哪些更好的做法 -->
+		<div id="container" onmouseover="stopChange()" onmouseout="resumeChange()">
+			<img id="adv" src="img/slide-1.jpg"> 
+		</div>
+		<script>
+			// 除了getElementById还有哪些获取元素的方法
+			// - getElementsByTagName()
+			// - getElementsByClassName()
+			// - querySelector()
+			// - querySelectorAll()
+			var img = document.getElementById('adv');
+			var currentIndex = 0;
+			var timerId = 0;
+			
+			resumeChange();
+			
+			function stopChange() {
+				window.clearInterval(timerId);
+			}
+			
+			function resumeChange() {
+				timerId = setInterval(function() {
+					currentIndex += 1;
+					currentIndex %= 4;
+					img.src = 'img/slide-' + (currentIndex + 1) + '.jpg';
+				}, 3000);
+			}
+		</script>
+	</body>
+</html>

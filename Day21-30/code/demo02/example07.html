@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#one {
+				width: 400px;
+				height: 400px;
+				background-color: red;
+			}
+			#two {
+				width: 300px;
+				height: 300px;
+				background-color: green;
+			}
+			#three {
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+			#two, #three {
+				position: relative;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			<div id="two">
+				<div id="three"></div>
+			</div>
+		</div>
+		<script>
+			(function() {
+				function f1(evt) {
+					alert('I am one');
+				}
+				
+				function f2() {
+					alert('I am two');
+				}
+				
+				function f3(evt) {
+					alert('I am three');
+					evt = evt || window.event;
+					// 阻止事件传播行为(冒泡或捕获)
+					if (evt.stopPropagation) {
+						evt.stopPropagation();
+					} else {
+						evt.cancelBubble = true;
+					}
+				}
+				// 要么是全局作用域 要么是函数级作用域
+				// 事件捕获 - 从外层向内层传递事件的过程
+				// 事件冒泡 - 从内层向外层传递事件的过程(默认)
+				// 内嵌的元素在响应事件之后会继续将事件传递到它的父元素
+				var fs = [f1, f2, f3];
+				var ids = ['one', 'two', 'three'];
+				for (var i = 0; i < ids.length; i += 1) {
+					var div = document.getElementById(ids[i]);
+					if (div.addEventListener) {
+						// 如果需要使用事件捕获可以传入第三个参数并赋值为true
+						div.addEventListener('click', fs[i]);
+					} else {
+						div.attachEvent('onclick', fs[i]);
+					}
+				}
+			})();
+		</script>
+	</body>
+</html>

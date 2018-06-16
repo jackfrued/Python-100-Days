@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="message">Hello, world!</h1>
+		<button id="btn">0</button>
+		<script>
+			var counter = 0;
+			var btn = document.getElementById('btn');
+			var h1 = document.getElementById('message');
+			function f1() {
+				alert('按钮被点击了!');
+				if (btn.removeEventListener) {
+					btn.removeEventListener('click', f1);
+				} else {
+					btn.detachEvent('onclick', f1);
+				}
+			}
+			function f2() {
+				counter += 1;
+				btn.textContent = counter;
+			}
+			function f3() {
+				h1.textContent = 'Goodbye, world!';
+			}
+			if (btn.addEventListener) {
+				btn.addEventListener('click', f1);
+				btn.addEventListener('click', f2);
+				btn.addEventListener('click', f3);
+			} else {
+				// 低版本IE浏览器
+				btn.attachEvent('onclick', f1);
+				btn.attachEvent('onclick', f2);
+				btn.attachEvent('onclick', f3);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="loadBtn">加载</button>
+		<script src="js/mylib.js"></script>
+		<script>
+			+function() {
+				bind($('loadBtn'), 'click', function() {
+					// 创建异步请求对象
+					var xhr = new XMLHttpRequest();
+					if (xhr) {
+						var url = 'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10';
+						// 第一个参数  - 请求的方式get或post
+						// 第二个参数 - 请求的资源对应的URL(统一资源定位符)
+						// 第三个参数 - true表示异步请求(不中断用户体验的非阻塞式请求)
+						xhr.open('get', url, true);
+						// 绑定事件回调函数(服务器响应完成并成功后要对页面进行局部刷新)
+						xhr.onreadystatechange = function() {
+							if (xhr.readyState == 4 && xhr.status == 200) {
+								// 将服务器返回的数据解析成JSON
+								var json = JSON.parse(xhr.responseText);
+								var mmList = json.newslist;
+								for (var i = 0; i < mmList.length; i += 1) {
+									var mm = mmList[i];
+									// 动态创建<img>标签并绑定src属性
+									var img = document.createElement('img');
+									img.src = mm.picUrl;
+									img.width = 300;
+									document.body.insertBefore(img, $('loadBtn'));
+								}
+							}
+						};
+						xhr.send();
+					} else {
+						alert('你的浏览器是一坨屎!');
+					}
+				});
+			}();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#tel {
+				width: 500px;
+				height: 100px;
+				text-align: center;
+				font: bolder 72px/100px Arial;
+				margin: 50px auto;
+				background-color: blue;
+				color: yellow;
+			}
+			#buttons {
+				width: 500px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			#buttons > button {
+				width: 120px;
+				height: 40px;
+				background-color: red;
+				color: white;
+				font: 28px/40px "微软雅黑";
+				border: none;
+				margin: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 高内聚 低耦合 (high cohesion low coupling)-->
+		<div id="tel">13012345678</div>
+		<div id="buttons">
+			<button id="startButton">开始</button>
+			<button id="stopButton">停止</button>
+		</div>
+		<script>
+			// window - BOM
+			//	- setTimeout / clearTimeout
+			//  - setInterval / clearInterval
+			//  - alert / prompt / confirm
+			//  - document / location / history / screen / navigator
+			var tels = [];
+			for (var i = 0; i < 100; i += 1) {
+				tel = '13';
+				for (var j = 0; j < 9; j += 1) {
+					tel += parseInt(Math.random() * 10);
+				}
+				tels[i] = tel;
+			}
+			var startButton = document.getElementById('startButton');
+			var stopButton = document.getElementById('stopButton');
+			// 给标签绑定事件回调(callback)函数
+			// 我们知识事件发生时要做什么但我们不知道事件什么时候发生
+			// 在这种场景我们就需要提供一个回调函数(不是自己调用而是留给他人调用)
+			var timerId = 0;
+			var luckyTel = '';
+			startButton.onclick = function() {
+				duration = parseInt(Math.random() * 950 + 50);
+				timerId = setTimeout(function() {
+					var index = parseInt(Math.random() * tels.length);
+					luckyTel = tels[index];
+					displayTel = luckyTel.substring(0, 3) + '****' +
+						luckyTel.substring(7, 11)
+					document.getElementById('tel').textContent = displayTel;
+					duration = parseInt(Math.random() * 950 + 50);
+					timerId = setTimeout(arguments.callee, duration);
+				}, duration);
+			};
+			stopButton.onclick = function() {
+				clearInterval(timerId);
+				alert('被抽中的幸运号码是: ' + luckyTel);
+			};
+		</script>
+	</body>
+</html>

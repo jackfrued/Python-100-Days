@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a name="foo" href="http://www.baidu.com">百度一下</a>
+		<script>
+			var aList = document.getElementsByName('foo');
+			aList[0].addEventListener('click', function(evt) {
+				evt = evt || window.event;
+				if (!confirm('真的要去百度吗?')) {
+					// 阻止事件的默认行为
+					if (evt.preventDefault) {
+						evt.preventDefault();
+					} else {
+						evt.returnValue = false;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

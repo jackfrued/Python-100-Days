@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id="login" action="" method="post">
+			<p>
+				<input type="text" name="username" placeholder="请输入用户名">
+				<span style="color: red; font-size: 12px"></span>
+			</p>
+			<p>
+				<input type="password" name="password" placeholder="请输入口令">
+			</p>
+			<p>
+				<input type="submit" value="登录">
+			</p>
+		</form>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('input:first').val(localStorage.uid);
+				$('#login').on('submit', function(evt) {
+					evt.preventDefault();
+					var username = $('input:first').val();
+					if (/^[a-zA-Z][a-zA-Z0-9_]{5,19}$/.test(username)) {
+						localStorage.uid = username;
+						evt.target.submit();
+					} else {
+						$('input:first').next().text('请输入有效的用户名');	
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

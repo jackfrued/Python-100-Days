@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#container {
+				width: 450px;
+				margin: 0 auto;
+			}
+			#num {
+				text-align: center;
+				display: inline-block;
+				width: 180px;
+				height: 30px;
+				border: none;
+				border-bottom: 1px solid darkgray;
+				font-size: 18px;
+				outline: none;
+			}
+			#ok, #reset {
+				background-color: red;
+				color: white;
+				width: 120px;
+				height: 30px;
+				font-size: 18px;
+				border: none;
+				cursor: pointer;
+				outline: none;
+			}
+			#hint {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<input id="num" type="text" placeholder="请输入你猜的数字">
+			<button id="ok">确定</button>
+			<button id="reset">重新开始</button>
+			<div id="hint"></div>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script>
+			(function() {
+				function guess() {
+					total += 1;
+					var numStr = $('num').value;
+					var num = parseInt(numStr);
+					if (num == numStr) {
+						var hint = '你猜的是' + num + ', ';
+						if (num < answer) {
+							hint += '大一点!';
+						} else if (num > answer) {
+							hint += '小一点!';
+						} else {
+							hint += '恭喜你猜对了!';
+							$('ok').disabled = true;
+							$('num').disabled = true;
+							if (total > 7) {
+								hint += '<br>智商捉急!!!';
+							}
+						}
+						$('hint').innerHTML += '<p>' + hint + '</p>';
+					} else {
+						alert('输入错误, 请重新输入!');
+					}
+					$('num').value = '';
+					$('num').focus();
+				}
+				
+				var answer = parseInt(Math.random() * 100 + 1);
+				var total = 0;
+				
+				bind($('num'), 'keypress', function(evt) {
+					evt = evt || window.event;
+					if (evt.keyCode == 13) {
+						guess();
+					} else if (evt.keyCode < 48 || evt.keyCode > 57) {
+						preventDefault(evt);
+					}
+				});
+				bind($('ok'), 'click', guess);
+				bind($('reset'), 'click', function() {
+					answer = parseInt(Math.random() * 100 + 1);
+					total = 0;
+					$('hint').innerHTML = '';
+					$('num').disabled = false;
+					$('ok').disabled = false;
+				});
+			})();
+		</script>
+	</body>
+</html>

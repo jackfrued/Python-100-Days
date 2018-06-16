@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#adv {
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+				color: yellow;
+				position: fixed;
+				right: 50px;
+				top: 50px;
+			}
+			#adv button {
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			<button>关闭</button>
+		</div>
+		<script src="js/mylib.js"></script>
+		<script>
+			+function() {
+				var urls = ['https://www.baidu.com', 'https://www.360.cn/'];
+				var btn = document.querySelector('#adv button');
+				var numberOfHits = 0;
+				bind(btn, 'click', function() {
+					if (numberOfHits < 2) {
+						window.open(urls[numberOfHits]);
+						// $('adv').style.backgroundColor = 'rgba(120, 50, 80, 0.5)';
+					} else {
+						$('adv').style.visibility = 'hidden';
+					}
+					numberOfHits += 1;
+				});
+			}();
+		</script>
+	</body>
+</html>

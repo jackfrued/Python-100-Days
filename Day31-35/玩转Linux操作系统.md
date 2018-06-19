@@ -38,21 +38,29 @@
 
 9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的功能并不强，为了方便在学校的主机的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些成为了Linux系统内核的雏形。
 
-   ![](./res/Ken-Thompson.png)
+   ![](./res/Ken-Thompson.png)Ken L. Thompson (ken)
 
-   ![](./res/dennis-ritchie.png)
+   ![](./res/dennis-ritchie.png)Dennis M. Ritchie (DMR)
 
-   ![](./res/andrew-tanenbaum.png)
+   ![](./res/andrew-tanenbaum.png)Andrew S. Tanenbaum (ast)
 
-   ![](./res/linus-torvalds.png)
+   ![](./res/linus-torvalds.png)Linus B. Torvalds
 
-   ![](./res/punch-card.png)
+   IBM公司生产的80栏打孔卡。
 
-   ![](./res/ken-and-dennis.png)
+   ![](./res/ibm-col80-punched-card.png)
 
-想了解更多操作系统的起源和发展，可以看看下面的操作系统家族图谱。
+   传说中的PDP-7。
 
-![](./res/history-of-os.png)
+   ![](./res/pdp-7.png)
+
+   Ken和Dennis正在PDP-11上工作。
+
+   ![](./res/ken-and-dennis-pdp-11.png)
+
+   Unix操作系统家族图谱。
+
+   ![](./res/history-of-unix.png)
 
 ### Linux概述
 
@@ -179,14 +187,14 @@ Linux系统的命令通常都是如下所示的格式：
    calendar.py  code  error.txt  hehe  hello.c  index.html  myconf  result.txt
    ```
 
-   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须在sudoers（/etc/sudoers）名单中。
+   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须被添加到sudoers名单中，该文件在 `/etc`目录下。
 
 8. 登入登出相关 - **logout** / **exit** / **adduser** / **userdel** / **passwd** / **ssh**。
 
    ```Shell
    
-   [root@izwz97tbgo9lkabnat2lo8z ~]# adduser jackfrued
-   [root@izwz97tbgo9lkabnat2lo8z ~]# passwd jackfrued
+   [root@izwz97tbgo9lkabnat2lo8z ~]# adduser hellokitty
+   [root@izwz97tbgo9lkabnat2lo8z ~]# passwd hellokitty
    Changing password for user jackfrued.
    New password:
    Retype new password:
@@ -214,6 +222,13 @@ Linux系统的命令通常都是如下所示的格式：
 10. 重启和关机 - **reboot** / **init 6** / **shutdown** / **init 0**。
 
 11. 查看历史命令 - **history**。
+
+    ```Shell
+    
+    
+    ```
+
+    > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令。
 
 ### 实用程序
 
@@ -288,8 +303,6 @@ Linux系统的命令通常都是如下所示的格式：
    
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
    ```
-
-   
 
 2. 输出重定向和错误重定向 - **\>** / **2\>**。
 

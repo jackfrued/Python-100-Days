@@ -2,13 +2,63 @@
 
 ### 操作系统发展史
 
+只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是“系统软件”，其中最为重要的就是“操作系统”。操作系统是控制和管理整个计算机系统的硬件和软件资源，合理的分配资源和调配任务，为系统用户和其他软件提供接口和环境的程序集合。
+
+#### 手工操作阶段
+
+人们先把程序纸带（或卡片）装上计算机，然后启动输入机把程序和送入计算机，接着通过控制台开关启动程序运行。计算完毕，打印机输出计算结果，用户卸下并取走纸带（或卡片）。第二个用户上机，重复同样的步骤。在整个过程中用户独占机器，CPU等待手工操作，资源利用率极低。
+
+#### 批处理系统
+
+首先启动计算机上的一个监督程序，在监督程序的控制下，计算机能够自动的、成批的处理一个或多个用户的作业。完成一批作业后，监督程度又从输入机读取作业存入磁带机。按照上面的步骤重复处理任务。监督程序不停的处理各个作业，实现了作业的自动转接，减少了作业的建立时间和手工操作时间，提高了计算机资源的利用率。 
+
+#### 分时系统和实时系统
+
+分时系统是把处理器的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。 若某个作业在分配给它的时间片内不能完成其计算，则该作业暂时中断，把处理机让给另一作业使用，等待下一轮时再继续其运行。由于计算机速度很快，作业运行轮转得很快，给每个用户的印象是，好象他独占了一台计算机。而每个用户可以通过自己的终端向系统发出各种操作控制命令，在充分的人机交互情况下，完成作业的运行。
+
+实时系统能够及时响应随机发生的外部事件，并在严格的时间范围内完成对该事件的处理。
+
+#### 通用操作系统
+
+1. 1960s：IBM的System/360系列的机器有了统一的操作系统OS/360。
+
+2. 1965年：AT&T的贝尔实验室加入GE和MIT的合作计划开始开发MULTICS。
+
+3. 1969年：Ken Tompson为了玩“Space Travel”游戏用汇编语言开发了Unics。
+
+4. 1970年~1971年：Ken Tompson和Dennis Ritchie用B语言重写了Unics，并在Brian Kernighan的建议下将其更名为Unix。
+
+5. 1972年~1973年：Dennis Ritchie发明了C语言来取代可移植性较差的B语言，并开启了用C语言重写Unix的工作。
+
+6. 1974年：Unix推出了里程碑意义的第5版。
+
+7. 1979年：从Unix第7版开始，AT&T发布新的使用条款，将Unix私有化。
+
+8. 1987年：Andrew S. Tanenbaum教授为了能在课堂上教授学生操作系统运作的细节，决定在不使用任何AT&T的源代码前提下，自行开发与Unix兼容的操作系统，以避免版权上的争议并将其命名为Minix。
+
+9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的功能并不强，为了方便在学校的主机的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些成为了Linux系统内核的雏形。
+
+   ![](./res/Ken-Thompson.png)
+
+   ![](./res/dennis-ritchie.png)
+
+   ![](./res/andrew-tanenbaum.png)
+
+   ![](./res/linus-torvalds.png)
+
+   ![](./res/punch-card.png)
+
+   ![](./res/ken-and-dennis.png)
+
+想了解更多操作系统的起源和发展，可以看看下面的操作系统家族图谱。
+
 ![](./res/history-of-os.png)
 
 ### Linux概述
 
-Linux是一个通用操作系统。一个操作系统要负责任务调度、内存分配、处理外围设备I/O等操作。操作系统通常由内核和系统程序（设备驱动、底层库、shell、服务程序等）两部分组成。
+Linux是一个通用操作系统。一个操作系统要负责任务调度、内存分配、处理外围设备I/O等操作。操作系统通常由内核（运行其他程序，管理像磁盘、打印机等硬件设备的核心程序）和系统程序（设备驱动、底层库、shell、服务程序等）两部分组成。
 
-Linux内核是芬兰人Linus Torvalds开发的，于1991年9月发布。而Linux操作系统作为Internet时代的产物，它是由全世界许多开发者共同合作开发的，是一个自由的操作系统（注意是自由不是免费）。
+Linux内核是芬兰人Linus Torvalds开发的，于1991年9月发布。而Linux操作系统作为Internet时代的产物，它是由全世界许多开发者共同合作开发的，是一个自由的操作系统（注意自由和免费并不是同一个概念，想了解二者的差别可以[点击这里](https://www.debian.org/intro/free)）。
 
 ### Linux系统优点
 
@@ -18,17 +68,28 @@ Linux内核是芬兰人Linus Torvalds开发的，于1991年9月发布。而Linux
 4. 大量的实用程序，完善的网络功能以及强大的支持文档。
 5. 可靠的安全性和良好的稳定性，对开发者更友好。
 
+### Linux系统发行版本
+
+1. [Redhat](https://www.redhat.com/en)
+2. [Ubuntu](https://www.ubuntu.com/)
+3. [CentOS](https://www.centos.org/)
+4. [Fedora](https://getfedora.org/)
+5. [Debian](https://www.debian.org/)
+6. [openSUSE](https://www.opensuse.org/)
+
 ### 基础命令
 
 Linux系统的命令通常都是如下所示的格式：
 
 ```Shell
+
 命令名称 [命名参数] [命令对象]
 ```
 
 1. 获取登录信息 - **w** / **who** / **last**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# w
     23:31:16 up 12:16,  2 users,  load average: 0.00, 0.01, 0.05
    USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
@@ -46,6 +107,7 @@ Linux系统的命令通常都是如下所示的格式：
    Shell也被称为“壳”，它是用户与内核交流的翻译官，简单的说就是人与计算机交互的接口。目前很多Linux系统默认的Shell都是bash（<u>B</u>ourne <u>A</u>gain <u>SH</u>ell），因为它可以使用Tab键进行命令补全、可以保存历史命令、可以方便的配置环境变量以及执行批处理操作等。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps
      PID TTY          TIME CMD
     3531 pts/0    00:00:00 bash
@@ -55,6 +117,7 @@ Linux系统的命令通常都是如下所示的格式：
 3. 查看命令的说明 - **whatis**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis ps
    ps (1)        - report a snapshot of the current processes.
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis python
@@ -64,6 +127,7 @@ Linux系统的命令通常都是如下所示的格式：
 4. 查看命令的位置 - **which** / **whereis**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis ps
    ps: /usr/bin/ps /usr/share/man/man1/ps.1.gz
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis python
@@ -76,6 +140,7 @@ Linux系统的命令通常都是如下所示的格式：
 
 5. 查看帮助文档 - **man** / **info** / **apropos**。
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps --help
    Usage:
     ps [options]
@@ -98,6 +163,7 @@ Linux系统的命令通常都是如下所示的格式：
 6. 切换用户 - **su**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# su hellokitty
    [hellokitty@izwz97tbgo9lkabnat2lo8z root]$
    ```
@@ -105,6 +171,7 @@ Linux系统的命令通常都是如下所示的格式：
 7. 以管理员身份执行命令 - **sudo**。
 
    ```Shell
+   
    [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
    ls: cannot open directory /root: Permission denied
    [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
@@ -117,6 +184,7 @@ Linux系统的命令通常都是如下所示的格式：
 8. 登入登出相关 - **logout** / **exit** / **adduser** / **userdel** / **passwd** / **ssh**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# adduser jackfrued
    [root@izwz97tbgo9lkabnat2lo8z ~]# passwd jackfrued
    Changing password for user jackfrued.
@@ -134,6 +202,7 @@ Linux系统的命令通常都是如下所示的格式：
 9. 查看系统和主机名 - **uname** / **hostname**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# uname
    Linux
    [root@izwz97tbgo9lkabnat2lo8z ~]# hostname
@@ -170,9 +239,13 @@ Linux系统的命令通常都是如下所示的格式：
 7. 查看文件及内容 - **find** / **grep**。
 
    ```Shell
+   
    [root@izwz97tbgo9lkabnat2lo8z ~]# find -name *.html
    ./index.html
    ./code/index.html
+   [root@izwz97tbgo9lkabnat2lo8z ~]# find . -atime 7 -type f -print
+   [root@izwz97tbgo9lkabnat2lo8z ~]# find . -type f -size +2k
+   [root@izwz97tbgo9lkabnat2lo8z ~]# find . -type f -name "*.swp" -delete
    [root@izwz97tbgo9lkabnat2lo8z ~]# grep "<script>" . -R -n
    ./index.html:15:                <script>
    ./code/index.html:2884: <script>
@@ -183,12 +256,43 @@ Linux系统的命令通常都是如下所示的格式：
 
 9. 压缩和归档 - **gzip** / **gunzip** / **xz** / **tar**。
 
-10. 其他工具 - **sort** / **uniq** / **diff** / **file** / **wc**。
+10. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **paste** / **file** / **wc**。
 
 #### 管道和重定向
 
 1. 管道的使用 - **\|**。
+
+   例子：查找当前目录下文件个数。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# find ./ | wc -l
+   6152
+   ```
+
+   例子：列出当前路径下的文件和文件夹，给每一项加一个编号。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls | cat -n
+        1  dump.rdb
+        2  mongodb-3.6.5
+        3  Python-3.6.5
+        4  redis-3.2.11
+        5  redis.conf
+   ```
+
+   例子：查找record.log中包含AAA，但不包含BBB的记录的总数
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
+   ```
+
+   
+
 2. 输出重定向和错误重定向 - **\>** / **2\>**。
+
 3. 输入重定向 - **\<**。
 
 #### 别名
@@ -322,6 +426,14 @@ Linux系统的命令通常都是如下所示的格式：
 1. 安装MySQL。
 2. 安装Redis。
 3. 安装NginX。
+
+### 进程和性能
+
+1. pmap
+2. sar
+3. free
+4. iostat
+5. gprof
 
 ### 配置服务
 

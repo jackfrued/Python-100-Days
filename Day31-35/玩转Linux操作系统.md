@@ -321,7 +321,7 @@ Linux系统的命令通常都是如下所示的格式：
    sohu_index.html
    ```
 
-7. 查看文件及内容 - **find** / **grep**。
+7. 查找文件和查找内容 - **find** / **grep**。
 
    ```Shell
    
@@ -343,6 +343,7 @@ Linux系统的命令通常都是如下所示的格式：
    52:</script>
    ...
    ```
+   > 说明：`grep`在搜索字符串时可以使用正则表达式，如果需要使用正则表达式可以用`grep -E`或者直接使用`egrep`。
 
 8. 链接 - **ln**。
 
@@ -367,7 +368,7 @@ Linux系统的命令通常都是如下所示的格式：
 
    > 说明：链接可以分为硬链接和软链接（符号链接）。硬链接可以认为是一个指向文件数据的指针，就像Python中对象的引用计数，每添加一个硬链接，文件的对应链接数就增加1，只有当文件的链接数为0时，文件所对应的存储空间才有可能被其他文件覆盖。我们平常删除文件时其实并没有删除硬盘上的数据，我们删除的只是一个指针，或者说是数据的一条使用记录，所以类似于“文件粉碎机”之类的软件在“粉碎”文件时除了删除文件指针，还会在文件对应的存储区域填入数据来保证文件无法再恢复。软链接类似于Windows系统下的快捷方式，当软链接链接的文件被删除时，软链接也就失效了。
 
-9. 压缩和归档 - **gzip** / **gunzip** / **xz** / **tar**。
+9. 压缩/解压缩和归档/解归档 - **gzip** / **gunzip** / **xz** / **tar**。
 
    ```Shell
    
@@ -410,48 +411,48 @@ Linux系统的命令通常都是如下所示的格式：
 
 10. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **paste** / **file** / **wc**。
 
-   ```Shell
-   
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 1.txt
-   grape
-   apple
-   pitaya
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 2.txt
-   100
-   200
-   300
-   400
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt
-   grape   100
-   apple   200
-   pitaya  300
-           400
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt > 3.txt
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 3.txt
-   pe      10
-   le      20
-   aya     3
-   0
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 3.txt | tr '\t' ','
-   grape,100
-   apple,200
-   pitaya,300
-   ,400
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.baidu.com/img/bd_logo1.png
-   --2018-06-20 18:46:53--  https://www.baidu.com/img/bd_logo1.png
-   Resolving www.baidu.com (www.baidu.com)... 220.181.111.188, 220.181.112.244
-   Connecting to www.baidu.com (www.baidu.com)|220.181.111.188|:443... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: 7877 (7.7K) [image/png]
-   Saving to: ‘bd_logo1.png’
-   100%[==================================================>] 7,877       --.-K/s   in 0s
-   2018-06-20 18:46:53 (118 MB/s) - ‘bd_logo1.png’ saved [7877/7877][root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
-   bd_logo1.png: PNG image data, 540 x 258, 8-bit colormap, non-interlaced
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc sohu.html
-     2979   6355 212527 sohu.html
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc -l sohu.html
-   2979 sohu.html
-   ```
+  ```Shell
+  
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 1.txt
+  grape
+  apple
+  pitaya
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 2.txt
+  100
+  200
+  300
+  400
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt
+  grape   100
+  apple   200
+  pitaya  300
+          400
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt > 3.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 3.txt
+  pe      10
+  le      20
+  aya     3
+  0
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 3.txt | tr '\t' ','
+  grape,100
+  apple,200
+  pitaya,300
+  ,400
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.baidu.com/img/bd_logo1.png
+  --2018-06-20 18:46:53--  https://www.baidu.com/img/bd_logo1.png
+  Resolving www.baidu.com (www.baidu.com)... 220.181.111.188, 220.181.112.244
+  Connecting to www.baidu.com (www.baidu.com)|220.181.111.188|:443... connected.
+  HTTP request sent, awaiting response... 200 OK
+  Length: 7877 (7.7K) [image/png]
+  Saving to: ‘bd_logo1.png’
+  100%[==================================================>] 7,877       --.-K/s   in 0s
+  2018-06-20 18:46:53 (118 MB/s) - ‘bd_logo1.png’ saved [7877/7877][root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
+  bd_logo1.png: PNG image data, 540 x 258, 8-bit colormap, non-interlaced
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc sohu.html
+    2979   6355 212527 sohu.html
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc -l sohu.html
+  2979 sohu.html
+  ```
 
 #### 管道和重定向
 
@@ -676,16 +677,16 @@ Linux系统的命令通常都是如下所示的格式：
    - 在命令模式下可以通过`Ctrl+y`和`Ctrl+e`来实现向上、向下滚动一行文本的操作，可以通过`Ctrl+f`和`Ctrl+b`来实现向前和向后翻页的操作。
    - 在命令模式下可以通过输入英文字母`G`将光标移到文件的末尾，可以通过`gg`将光标移到文件的开始，也可以通过在`G`前输入数字来将光标移动到指定的行。
 
-4. 文本操作
+4. 文本操作。
 
-   - 删除
-   - 复制和粘贴
-   - 撤销和恢复
+   - 删除：在命令模式下可以用`dd`来删除整行；可以在`dd`前加数字来指定删除的行数；可以用`d$`来实现删除从光标处删到行尾的操作，也可以通过`d0`来实现从光标处删到行首的操作；如果想删除一个单词，可以使用`dw`。
+   - 复制和粘贴：在命令模式下可以用`yy`来复制整行；可以在`yy`前加数字来指定复制的行数；可以通过`p`将复制的内容粘贴到光标所在的地方。
+   - 撤销和恢复：在命令模式下输入`u`可以撤销之前的操作；通过`Ctrl+r`可以恢复被撤销的操作。
 
-5. 查找和替换
+5. 查找和替换。
 
-   - `/正则表达式`
-   - `:n1,n2s/正则表达式/替换后的内容/gice`
+   - 查找操作需要输入`/`进入末行模式并提供正则表达式来匹配与之对应的内容，例如：`/doc.*\.`，输入`n`来向前搜索，也可以输入`N`来向后搜索。
+   - 替换操作需要输入`:`进入末行模式并指定搜索的范围、正则表达式以及替换后的内容和匹配选项，例如：`:1,$s/doc.*/hello/gice`，其中：
      - `g` - global：全局匹配。
      - `i` - ignore case：忽略大小写匹配。
      - `c` - confirm：替换时需要确认。

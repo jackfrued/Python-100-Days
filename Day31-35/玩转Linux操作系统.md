@@ -2,21 +2,21 @@
 
 ### 操作系统发展史
 
-只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是“系统软件”，其中最为重要的就是“操作系统”。操作系统是控制和管理整个计算机系统的硬件和软件资源，合理的分配资源和调配任务，为系统用户和其他软件提供接口和环境的程序集合。
+只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是系统软件，其中最为重要的就是“操作系统”。“操作系统”是控制和管理整个计算机系统的硬件和软件资源，合理的分配资源和调配任务，为系统用户和其他软件提供接口和环境的程序的集合。
 
-#### 手工操作阶段
+#### 没有操作系统（手工操作）
 
-人们先把程序纸带（或卡片）装上计算机，然后启动输入机把程序和送入计算机，接着通过控制台开关启动程序运行。计算完毕，打印机输出计算结果，用户卸下并取走纸带（或卡片）。第二个用户上机，重复同样的步骤。在整个过程中用户独占机器，CPU等待手工操作，资源利用率极低。
+在计算机诞生之初没有操作系统的年代，人们先把程序纸带（或卡片）装上计算机，然后启动输入机把程序和送入计算机，接着通过控制台开关启动程序运行。当程序执行完毕，打印机输出计算的结果，用户卸下并取走纸带（或卡片）。第二个用户上机，重复同样的步骤。在整个过程中用户独占机器，CPU等待手工操作，资源利用率极低。下图是IBM生产的书写Fortran程序的80栏打孔卡，当然这个已经是比较先进的打孔卡了。
+
+![](./res/ibm-col80-punched-card.png)
 
 #### 批处理系统
 
-首先启动计算机上的一个监督程序，在监督程序的控制下，计算机能够自动的、成批的处理一个或多个用户的作业。完成一批作业后，监督程度又从输入机读取作业存入磁带机。按照上面的步骤重复处理任务。监督程序不停的处理各个作业，实现了作业的自动转接，减少了作业的建立时间和手工操作时间，提高了计算机资源的利用率。 
+首先启动计算机上的一个监督程序，在监督程序的控制下，计算机能够自动的、成批的处理一个或多个用户的作业。完成一批作业后，监督程度又从输入机读取作业存入磁带机。按照上面的步骤重复处理任务。监督程序不停的处理各个作业，实现了作业的自动转接，减少了作业的建立时间和手工操作时间，提高了计算机资源的利用率。 批处理系统又可以分为单道批处理系统、多道批处理系统、联机批处理系统、脱机批处理系统。
 
 #### 分时系统和实时系统
 
-分时系统是把处理器的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。 若某个作业在分配给它的时间片内不能完成其计算，则该作业暂时中断，把处理机让给另一作业使用，等待下一轮时再继续其运行。由于计算机速度很快，作业运行轮转得很快，给每个用户的印象是，好象他独占了一台计算机。而每个用户可以通过自己的终端向系统发出各种操作控制命令，在充分的人机交互情况下，完成作业的运行。
-
-实时系统能够及时响应随机发生的外部事件，并在严格的时间范围内完成对该事件的处理。
+分时系统是把处理器的运行时间分成很短的时间片，按时间片轮流把处理机分配给各联机作业使用。 若某个作业在分配给它的时间片内不能完成其计算，则该作业暂时中断，把处理机让给另一作业使用，等待下一轮调度时再继续其运行。由于计算机速度很快，作业运行轮转得很快，给每个用户的感觉是他独占了一台计算机。而每个用户可以通过自己的终端向系统发出各种操作控制命令，在充分的人机交互情况下，完成作业的运行。为了解决分时系统不能及时响应用户指令的情况，又出现了能够在在严格的时间范围内完成事件处理，及时响应随机外部事件的实时系统。
 
 #### 通用操作系统
 
@@ -24,9 +24,13 @@
 
 2. 1965年：AT&T的贝尔实验室加入GE和MIT的合作计划开始开发MULTICS。
 
-3. 1969年：Ken Tompson为了玩“Space Travel”游戏用汇编语言开发了Unics。
+3. 1969年：Ken Tompson为了玩“Space Travel”游戏用汇编语言在PDP-7上开发了Unics。
+
+   ![](./res/pdp-7.png)
 
 4. 1970年~1971年：Ken Tompson和Dennis Ritchie用B语言重写了Unics，并在Brian Kernighan的建议下将其更名为Unix。
+
+   ![](./res/ken-and-dennis-pdp-11.png)
 
 5. 1972年~1973年：Dennis Ritchie发明了C语言来取代可移植性较差的B语言，并开启了用C语言重写Unix的工作。
 
@@ -46,21 +50,9 @@
 
    ![](./res/linus-torvalds.png)Linus B. Torvalds
 
-   IBM公司生产的80栏打孔卡。
+下图是Unix操作系统家族的图谱。
 
-   ![](./res/ibm-col80-punched-card.png)
-
-   传说中的PDP-7。
-
-   ![](./res/pdp-7.png)
-
-   Ken和Dennis正在PDP-11上工作。
-
-   ![](./res/ken-and-dennis-pdp-11.png)
-
-   Unix操作系统家族图谱。
-
-   ![](./res/history-of-unix.png)
+![](./res/history-of-unix.png)
 
 ### Linux概述
 
@@ -225,7 +217,13 @@ Linux系统的命令通常都是如下所示的格式：
 
     ```Shell
     
-    
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
+    ...
+    452  ls
+    453  cd Python-3.6.5/
+    454  clear
+    455  history
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# !454
     ```
 
     > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令。
@@ -304,20 +302,91 @@ Linux系统的命令通常都是如下所示的格式：
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
    ```
 
-2. 输出重定向和错误重定向 - **\>** / **2\>**。
+2. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat ReadMe.txt
+   banana
+   apple
+   grape
+   apple
+   grape
+   watermelon
+   pear
+   pitaya
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat ReadMe.txt | sort | uniq > Result.txt
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat Result.txt
+   apple
+   banana
+   grape
+   pear
+   pitaya
+   watermelon
+   ```
 
 3. 输入重定向 - **\<**。
 
 #### 别名
 
 1. **alias**
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# alias ll='ls -l'
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# alias frm='rm -rf'
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ll
+   ...
+   drwxr-xr-x  2 root       root   4096 Jun 20 12:52 abc
+   ...
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# frm abc
+   ```
+
 2. **unalias**
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# unalias frm
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# frm sohu.html
+   -bash: frm: command not found
+   ```
 
 #### 其他程序
 
 1. 时间和日期 - **date** / **cal**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# date
+   Wed Jun 20 12:53:19 CST 2018
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal
+         June 2018
+   Su Mo Tu We Th Fr Sa
+                   1  2
+    3  4  5  6  7  8  9
+   10 11 12 13 14 15 16
+   17 18 19 20 21 22 23
+   24 25 26 27 28 29 30
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal 5 2017
+         May 2017
+   Su Mo Tu We Th Fr Sa
+       1  2  3  4  5  6
+    7  8  9 10 11 12 13
+   14 15 16 17 18 19 20
+   21 22 23 24 25 26 27
+   28 29 30 31
+   ```
+
 2. 录制操作脚本 - **script**。
+
 3. 给用户发送消息 - **mesg** / **write** / **wall** / **mail**。
+
+   ```Shell
+   
+   
+   ```
+
+   
 
 ### 文件系统
 
@@ -331,30 +400,71 @@ Linux系统的命令通常都是如下所示的格式：
 
 #### 目录结构
 
-1. /bin - 基本命令的二进制文件
-2. /boot - 引导加载程序的静态文件
-3. /dev - 设备文件
-4. /etc - 配置文件
-5. /home - 用户主目录的父目录
-6. /lib - 共享库文件
-7. /lib64 - 共享64位库文件
-8. /lost+found - 存放未链接文件
-9. /media - 自动识别设备的挂载目录
-10. /mnt - 临时挂载文件系统的挂载点
-11. /opt - 可选插件软件包安装位置
-12. /proc -  内核和进程信息
-13. /root - root账户主目录
-14. /run - 存放系统运行时需要的东西
-15. /sbin - 超级用户的二进制文件
-16. /sys - 设备的伪文件系统
-17. /tmp - 临时文件夹
-18. /usr - 用户应用目录
-19. /var - 变量数据目录
+1. /bin - 基本命令的二进制文件。
+2. /boot - 引导加载程序的静态文件。
+3. /dev - 设备文件。
+4. **/etc** - 配置文件。
+5. /home - 普通用户主目录的父目录。
+6. /lib - 共享库文件。
+7. /lib64 - 共享64位库文件。
+8. /lost+found - 存放未链接文件。
+9. /media - 自动识别设备的挂载目录。
+10. /mnt - 临时挂载文件系统的挂载点。
+11. /opt - 可选插件软件包安装位置。
+12. /proc -  内核和进程信息。
+13. **/root** - 超级管理员用户主目录。
+14. /run - 存放系统运行时需要的东西。
+15. /sbin - 超级用户的二进制文件。
+16. /sys - 设备的伪文件系统。
+17. /tmp - 临时文件夹。
+18. **/usr** - 用户应用目录。
+19. /var - 变量数据目录。
 
 #### 访问权限
 
-1. **chmod**。
-2. **chown**。
+1. **chmod** - 改变文件模式比特。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
+   ...
+   -rw-r--r--  1 root       root 211878 Jun 19 16:06 sohu.html
+   ...
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# chmod g+w,o+w sohu.html
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
+   ...
+   -rw-rw-rw-  1 root       root 211878 Jun 19 16:06 sohu.html
+   ...
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# chmod 644 sohu.html
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
+   ...
+   -rw-r--r--  1 root       root 211878 Jun 19 16:06 sohu.html
+   ...
+   ```
+   > 说明：通过上面的例子可以看出，用`chmod`改变文件模式比特有两种方式：一种是字符设定法，另一种是数字设定法。除了`chmod`之外，可以通过`umask`来设定哪些权限将在新文件的默认权限中被删除。
+
+   > 附：长格式查看目录或文件时显示结果及其对应权限的数值如下表所示。
+   > | 文件类型  | 所有者权限                     | 同组用户权限                    | 其他用户权限                    |
+   > | --------- | ------------------------------ | ------------------------------- | ------------------------------- |
+   > | d（目录） | r    w   x<br>读 写  执行<br>7 | r    -   x<br>读      执行<br>5 | r    -   x<br>读      执行<br>5 |
+   > | -（文件） | r    w  -<br>读 写<br>6        | r    -   -<br>读<br>4           | r    -   -<br>读<br>4           |
+   > | l（链接） | r    w   x<br>读 写  执行<br>7 | r    w   x<br>读 写  执行<br>7  | r    -   x<br>读      执行<br>5 |
+
+
+2. **chown** - 改变文件所有者。
+
+    ```Shell
+       
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
+    ...
+    -rw-r--r--  1 root root     54 Jun 20 10:06 ReadMe.txt
+    ...
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# chown hellokitty ReadMe.txt
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
+    ...
+    -rw-r--r--  1 hellokitty root     54 Jun 20 10:06 ReadMe.txt
+    ...
+    ```
 
 #### 磁盘管理
 
@@ -376,35 +486,28 @@ Linux系统的命令通常都是如下所示的格式：
 
 5. 查找和替换
 
-   /正则表达式
-
-   :1,$s/正则表达式/替换后的内容/gice
-
-   g - global
-
-   i - ignore case
-
-   c - confirm
-
-   e - error
+   - /正则表达式
+   - :n1,n2s/正则表达式/替换后的内容/gice
+     - g - global
+     - i - ignore case
+     - c - confirm
+     - e - error
 
 6. 参数设定
 
-   .vimrc
-
-   set ts=4
-
-   set nu
+   - :set ts=4
+   - :set nu
+   - :syntax on
 
 7. 高级技巧
 
    - 映射快捷键
      - inoremap key:...
    - 录制宏
-     - 在命令模式下输入qa开始录制宏（qa/qb/qc/qd）
+     - 在命令模式下输入`qa`开始录制宏（也可以是`qb`、`qc`、`qd`）
      - 执行你的操作，这些操作都会被录制下来
-     - 如果要录制的操作完成了，按q结束录制
-     - @a播放宏（1000@a - 将宏播放1000次）
+     - 如果要录制的操作完成了，按`q`结束录制
+     - 通过`@a`播放宏（`1000@a` - 将宏播放1000次）
 
 ### 环境变量
 
@@ -419,9 +522,10 @@ Linux系统的命令通常都是如下所示的格式：
 #### yum
 
 - yum update
-- yum install / yum remove
-- yum list / yum search
-- yum makecache
+- yum install
+- yum remove
+- yum list
+- yum search
 
 #### rpm
 
@@ -431,7 +535,7 @@ Linux系统的命令通常都是如下所示的格式：
 
 #### 源代码构建安装
 
-- ...
+- Makefile
 - make && make install
 
 #### 实例

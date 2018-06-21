@@ -752,40 +752,133 @@ Linux系统的命令通常都是如下所示的格式：
 
 ### 软件安装和配置
 
-#### yum
+#### 使用包管理工具
 
-- yum update
-- yum install
-- yum remove
-- yum list
-- yum search
+1. yum - Yellowdog Updater Modified。
+   - `yum search`：搜索软件包，例如`yum search nginx`。
+   - `yum list installed`：列出已经安装的软件包，例如`yum list installed | grep zlib`。
+   - `yum install`：安装软件包，例如`yum install nginx`。
+   - `yum remove`：删除软件包，例如`yum remove nginx`。
+   - `yum update`：更新软件包，例如`yum update`可以更新所有软件包，而`yum update tar只会更新tar。
+   - `yum check-update`：检查有哪些可以更新的软件包。
+   - `yum info`：显示软件包的相关信息，例如`yum info nginx`。
+2. rpm - Redhat Package Manager。
+   - 安装软件包：`rpm -ivh <packagename>.rpm`。
+   - 移除软件包：`rpm -e <packagename>`。
+   - 查询软件包：`rpm -qa`，例如可以用`rpm -qa | grep mysql`来检查是否安装了MySQL相关的软件包。
 
-#### rpm
+下面以Nginx为例，演示如何使用yum安装软件。
 
-- rpm -ivh \-\-force \-\-nodeps
-- rpm -e 
-- rpm -qa | grep
+```Shell
 
-#### 二进制安装程序（JDK）
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install nginx
+...
+Installed:
+  nginx.x86_64 1:1.12.2-2.el7
+Dependency Installed:
+  nginx-all-modules.noarch 1:1.12.2-2.el7
+  nginx-mod-http-geoip.x86_64 1:1.12.2-2.el7
+  nginx-mod-http-image-filter.x86_64 1:1.12.2-2.el7
+  nginx-mod-http-perl.x86_64 1:1.12.2-2.el7
+  nginx-mod-http-xslt-filter.x86_64 1:1.12.2-2.el7
+  nginx-mod-mail.x86_64 1:1.12.2-2.el7
+  nginx-mod-stream.x86_64 1:1.12.2-2.el7
+Complete!
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -v
+nginx version: nginx/1.12.2
+```
 
-- \<filename\>.bin
+#### 下载解压配置环境变量
 
-#### 配置环境变量（MongoDB）
+下面以安装MongoDB为例，演示这类软件应该如何安装。
 
-- 下载软件
-- 解压缩 / 解归档
-- 配置环境变量 / 注册软链接
+```Shell
 
-#### 源代码构建安装（Python 3.6.5 / Redis）
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.6.5.tgz
+--2018-06-21 18:32:53--  https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.6.5.tgz
+Resolving fastdl.mongodb.org (fastdl.mongodb.org)... 52.85.83.16, 52.85.83.228, 52.85.83.186, ...
+Connecting to fastdl.mongodb.org (fastdl.mongodb.org)|52.85.83.16|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 100564462 (96M) [application/x-gzip]
+Saving to: ‘mongodb-linux-x86_64-rhel70-3.6.5.tgz’
+100%[==================================================>] 100,564,462  630KB/s   in 2m 9s
+2018-06-21 18:35:04 (760 KB/s) - ‘mongodb-linux-x86_64-rhel70-3.6.5.tgz’ saved [100564462/100564462]
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip mongodb-linux-x86_64-rhel70-3.6.5.tgz
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# tar -xvf mongodb-linux-x86_64-rhel70-3.6.5.tar
+mongodb-linux-x86_64-rhel70-3.6.5/README
+mongodb-linux-x86_64-rhel70-3.6.5/THIRD-PARTY-NOTICES
+mongodb-linux-x86_64-rhel70-3.6.5/MPL-2
+mongodb-linux-x86_64-rhel70-3.6.5/GNU-AGPL-3.0
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongodump
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongorestore
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongoexport
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongoimport
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongostat
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongotop
+mongodb-linux-x86_64-rhel70-3.6.5/bin/bsondump
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongofiles
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongoreplay
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongoperf
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongod
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongos
+mongodb-linux-x86_64-rhel70-3.6.5/bin/mongo
+mongodb-linux-x86_64-rhel70-3.6.5/bin/install_compass
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# vim .bash_profile
+...
+PATH=$PATH:$HOME/bin:$HOME/mongodb-linux-x86_64-rhel70-3.6.5/bin
+export PATH
+...
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# source .bash_profile
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# mongod --version
+db version v3.6.5
+git version: a20ecd3e3a174162052ff99913bc2ca9a839d618
+OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: rhel70
+    distarch: x86_64
+    target_arch: x86_64
+```
 
-- Makefile
-- make && make install
+> 说明：当然也可以通过yum来安装MongoDB，具体可以参照[官方网站](https://docs.mongodb.com/master/administration/install-on-linux/)上给出的说明。
 
-#### 实例
+#### 源代码构建安装
 
-1. 安装MySQL。
-2. 安装Redis。
-3. 安装NginX。
+1. 安装Python 3.6。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum install gcc
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip Python-3.6.5.tgz
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ar -xvf Python-3.6.5.tar
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd Python-3.6.5
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ./configure --prefix=/usr/local/python36 --enable-optimizations
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# make && make install
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/python3.6 /usr/bin/python3
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/pip3 /usr/bin/pip3
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/2to3-3.6 /usr/bin/2to3
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 --version
+   Python 3.6.5
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 -m pip install -U pip
+   ```
+
+2. 安装Redis-3.2.12。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://download.redis.io/releases/redis-3.2.12.tar.gz
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip redis-3.2.12.tar.gz
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# tar -xvf redis-3.2.12.tar
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd redis-3.2.12
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# make && make install
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# redis-server --version
+   Redis server v=3.2.12 sha=00000000:0 malloc=jemalloc-4.0.3 bits=64 build=5bc5cd3c03d6ceb6
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# redis-cli --version
+   redis-cli 3.2.12
+   ```
 
 ### 进程和性能
 

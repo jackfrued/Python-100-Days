@@ -968,10 +968,44 @@ build environment:
 ### 配置服务
 
 1. 启动服务。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl start firewalld
+   ```
+
 2. 终止服务。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl stop firewalld
+   ```
+
 3. 重启服务。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl restart firewalld
+   ```
+
 4. 查看服务。
+
+    ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl status firewalld
+    ```
+
 5. 设置是否开机自启。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl enable firewalld
+   Created symlink from /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service to /usr/lib/systemd/system/firewalld.service.
+   Created symlink from /etc/systemd/system/multi-user.target.wants/firewalld.service to /usr/lib/systemd/system/firewalld.service.
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl disable firewalld
+   Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
+   Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+   ```
 
 ### 计划任务
 
@@ -989,43 +1023,88 @@ build environment:
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ifconfig eth0
+   eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+           inet 172.18.61.250  netmask 255.255.240.0  broadcast 172.18.63.255
+           ether 00:16:3e:02:b6:46  txqueuelen 1000  (Ethernet)
+           RX packets 1067841  bytes 1296732947 (1.2 GiB)
+           RX errors 0  dropped 0  overruns 0  frame 0
+           TX packets 409912  bytes 43569163 (41.5 MiB)
+           TX errors 0  dropped 0 overruns 0  carrier 0  collisions 
    ```
 
 3. 显示/操作网络配置（新） - **ip**。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ip address
+   1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
+       link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+       inet 127.0.0.1/8 scope host lo
+          valid_lft forever preferred_lft forever
+   2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+       link/ether 00:16:3e:02:b6:46 brd ff:ff:ff:ff:ff:ff
+       inet 172.18.61.250/20 brd 172.18.63.255 scope global eth0
+          valid_lft forever preferred_lft forever
    ```
 
 4. 网络可达性检查 - **ping**。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ping www.baidu.com -c 3
+   PING www.a.shifen.com (220.181.111.188) 56(84) bytes of data.
+   64 bytes from 220.181.111.188 (220.181.111.188): icmp_seq=1 ttl=51 time=36.3 ms
+   64 bytes from 220.181.111.188 (220.181.111.188): icmp_seq=2 ttl=51 time=36.4 ms
+   64 bytes from 220.181.111.188 (220.181.111.188): icmp_seq=3 ttl=51 time=36.4 ms
+   --- www.a.shifen.com ping statistics ---
+   3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+   rtt min/avg/max/mdev = 36.392/36.406/36.427/0.156 ms
    ```
 
 5. 查看网络服务和端口 - **netstat**。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# netstat -nap | grep nginx
    ```
 
 6. 安全文件拷贝 - **scp**。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
    ```
 
 7. 安全文件传输 - **sftp**。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# sftp root@120.77.222.217
+   root@120.77.222.217's password:
+   Connected to 120.77.222.217.
+   sftp>
    ```
+
+   - `help`：显示帮助信息。
+
+   - `ls`/`lls`：显示远端/本地目录列表。
+
+   - `cd`/`lcd`：切换远端/本地路径。
+
+   - `mkdir`/`lmkdir`：创建远端/本地目录。
+
+   - `pwd`/`lpwd`：显示远端/本地当前工作目录。
+
+   - `get`：下载文件。
+
+   - `put`：上传文件。
+
+   - `rm`：删除远端文件。
+
+   - `bye`/`exit`/`quit`：退出sftp。
+
+     
 
 ### Shell和Shell编程
 

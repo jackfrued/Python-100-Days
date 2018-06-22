@@ -671,20 +671,22 @@ Linux系统的命令通常都是如下所示的格式：
 
 2. 命令模式、编辑模式和末行模式：启动vim进入的是命令模式，在命令模式下输入英文字母`i`会进入编辑模式，屏幕下方出现`-- INSERT --`提示；在编辑模式下按下`Esc`会回到命令模式，此时如果输入英文`:`会进入末行模式，在末行模式下输入`q!`可以在不保存当前工作的情况下强行退出vim，如果希望执行保存退出，则应该在末行模式下输入`wq`。
 
-3. 光标操作。
+3. 退出vim：在命令模式下输入`:` 进入末行模式，输入wq可以实现保存退出；如果想放弃编辑的内容输入`q!`强行退出，这一点刚才已经提到过了；在命令模式下也可以直接输入`ZZ`实现保存退出。
+
+4. 光标操作。
 
    - 在命令模式下可以通过`h`、`j`、`k`、`l`来控制光标向左、下、上、右的方向移动，可以在字母前输入数字来表示移动的距离，例如：`10h`表示向左移动10个字符。
    - 在命令模式下可以通过`Ctrl+y`和`Ctrl+e`来实现向上、向下滚动一行文本的操作，可以通过`Ctrl+f`和`Ctrl+b`来实现向前和向后翻页的操作。
    - 在命令模式下可以通过输入英文字母`G`将光标移到文件的末尾，可以通过`gg`将光标移到文件的开始，也可以通过在`G`前输入数字来将光标移动到指定的行。
 
-4. 文本操作。
+5. 文本操作。
 
    - 删除：在命令模式下可以用`dd`来删除整行；可以在`dd`前加数字来指定删除的行数；可以用`d$`来实现删除从光标处删到行尾的操作，也可以通过`d0`来实现从光标处删到行首的操作；如果想删除一个单词，可以使用`dw`；如果要删除全文，可以在输入`:%d`（其中`:`用来从命令模式进入末行模式）。
    - 复制和粘贴：在命令模式下可以用`yy`来复制整行；可以在`yy`前加数字来指定复制的行数；可以通过`p`将复制的内容粘贴到光标所在的地方。
    - 撤销和恢复：在命令模式下输入`u`可以撤销之前的操作；通过`Ctrl+r`可以恢复被撤销的操作。
    - 对内容进行排序：在命令模式下输入`%!sort`。
 
-5. 查找和替换。
+6. 查找和替换。
 
    - 查找操作需要输入`/`进入末行模式并提供正则表达式来匹配与之对应的内容，例如：`/doc.*\.`，输入`n`来向前搜索，也可以输入`N`来向后搜索。
    - 替换操作需要输入`:`进入末行模式并指定搜索的范围、正则表达式以及替换后的内容和匹配选项，例如：`:1,$s/doc.*/hello/gice`，其中：
@@ -693,15 +695,21 @@ Linux系统的命令通常都是如下所示的格式：
      - `c` - confirm：替换时需要确认。
      - `e` - error：忽略错误。
 
-6. 参数设定：在输入`:`进入末行模式后可以对vim进行设定。
+7. 参数设定：在输入`:`进入末行模式后可以对vim进行设定。
 
    - 设置Tab键的空格数：`set ts=4`
+
    - 设置显示/不显示行号：`set nu` / `set nonu`
+
    - 设置启用/关闭高亮语法：`syntax on` / `syntax off`
+
    - 设置显示标尺（光标所在的行和列）： `set ruler`
+
    - 设置启用/关闭搜索结果高亮：`set hls` / `set nohls`
 
-7. 高级技巧
+     > 说明：如果希望上面的这些设定在每次启动vim时都能生效，需要将这些设定写到用户主目录下的.vimrc文件中。
+
+8. 高级技巧
 
    - 比较多个文件。
 
@@ -725,11 +733,19 @@ Linux系统的命令通常都是如下所示的格式：
 
      ![](./res/vim-multi-window.png)
 
-   - 映射快捷键。
-     - `:inoremap key code`
-     - `:map key code`
+   - 映射快捷键：在vim下可以将一些常用操作映射为快捷键来提升工作效率。
+     - 例子1：在命令模式下输入`F4`执行从第一行开始删除10000行代码的操作。
+
+       `:map <F4> gg10000dd`。
+
+       例子2：在编辑模式下输入`__main`直接补全为`if __name__ == '__main__':`。
+
+       `:inoremap __main if __name__ == '__main__':`
+
+     > 说明：如果希望映射的快捷键每次启动vim时都能生效，需要将映射写到用户主目录下的.vimrc文件中。
 
    - 录制宏。
+
      - 在命令模式下输入`qa`开始录制宏（其中`a`是寄存器的名字，也可以是其他英文字母或0-9的数字）。
 
      - 执行你的操作（光标操作、编辑操作等），这些操作都会被录制下来。
@@ -786,6 +802,13 @@ Dependency Installed:
 Complete!
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -v
 nginx version: nginx/1.12.2
+```
+
+下面以MySQL为例，演示如何使用rpm安装软件。
+
+```Shell
+
+
 ```
 
 #### 下载解压配置环境变量
@@ -858,11 +881,10 @@ build environment:
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# make && make install
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/python3.6 /usr/bin/python3
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/pip3 /usr/bin/pip3
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/2to3-3.6 /usr/bin/2to3
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 --version
    Python 3.6.5
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 -m pip install -U pip
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# pip3 --version
    ```
 
 2. 安装Redis-3.2.12。
@@ -890,10 +912,16 @@ build environment:
 
 ### 配置服务
 
-1. systemctl start / stop / restart / status
-2. systemctl enable / disable
-3. 计划任务 - **crontab**。
-4. 开机自启。
+1. 启动服务。
+2. 终止服务。
+3. 重启服务。
+4. 查看服务。
+5. 设置是否开机自启。
+
+### 计划任务
+
+1. **crontab**命令。
+2. crontab相关文件。
 
 ### 网络访问和管理
 
@@ -901,12 +929,48 @@ build environment:
    - -b 后台下载模式
    - -O 下载到指定的目录
    - -r 递归下载
-2. 显示/操作网络配置（旧） - **ipconfig**。
+
+2. 显示/操作网络配置（旧） - **ifconfig**。
+
+   ```Shell
+   
+   
+   ```
+
 3. 显示/操作网络配置（新） - **ip**。
+
+   ```Shell
+   
+   
+   ```
+
 4. 网络可达性检查 - **ping**。
+
+   ```Shell
+   
+   
+   ```
+
 5. 查看网络服务和端口 - **netstat**。
+
+   ```Shell
+   
+   
+   ```
+
 6. 安全文件拷贝 - **scp**。
+
+   ```Shell
+   
+   
+   ```
+
 7. 安全文件传输 - **sftp**。
+
+   ```Shell
+   
+   
+   ```
 
 ### Shell和Shell编程
 

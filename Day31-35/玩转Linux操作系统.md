@@ -413,27 +413,27 @@ Linux系统的命令通常都是如下所示的格式：
 
   ```Shell
   
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 1.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat foo.txt
   grape
   apple
   pitaya
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 2.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat bar.txt
   100
   200
   300
   400
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt
   grape   100
   apple   200
   pitaya  300
           400
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste 1.txt 2.txt > 3.txt
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 3.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt > hello.txt
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 hello.txt
   pe      10
   le      20
   aya     3
   0
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat 3.txt | tr '\t' ','
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat hello.txt | tr '\t' ','
   grape,100
   apple,200
   pitaya,300
@@ -662,16 +662,16 @@ Linux系统的命令通常都是如下所示的格式：
 
 ### 编辑器vim
 
-1. 启动vim。
+1. 启动vim。可以通过`vi`或`vim`命令来启动vim，启动时可以指定文件名来打开一个文件，如果没有指定文件名，也可以在保存的时候指定文件名。
 
    ```Shell
    
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim guess.py
    ```
 
-2. 命令模式、编辑模式和末行模式：启动vim进入的是命令模式，在命令模式下输入英文字母`i`会进入编辑模式，屏幕下方出现`-- INSERT --`提示；在编辑模式下按下`Esc`会回到命令模式，此时如果输入英文`:`会进入末行模式，在末行模式下输入`q!`可以在不保存当前工作的情况下强行退出vim，如果希望执行保存退出，则应该在末行模式下输入`wq`。
+2. 命令模式、编辑模式和末行模式：启动vim进入的是命令模式（也称为Normal模式），在命令模式下输入英文字母`i`会进入编辑模式（Insert模式），屏幕下方出现`-- INSERT --`提示；在编辑模式下按下`Esc`会回到命令模式，此时如果输入英文`:`会进入末行模式，在末行模式下输入`q!`可以在不保存当前工作的情况下强行退出vim；在命令模式下输入`v`会进入可视模式（Visual模式），可以用光标选择一个区域再完成对应的操作。
 
-3. 退出vim：在命令模式下输入`:` 进入末行模式，输入wq可以实现保存退出；如果想放弃编辑的内容输入`q!`强行退出，这一点刚才已经提到过了；在命令模式下也可以直接输入`ZZ`实现保存退出。
+3. 保存和退出vim：在命令模式下输入`:` 进入末行模式，输入`wq`可以实现保存退出；如果想放弃编辑的内容输入`q!`强行退出，这一点刚才已经提到过了；在命令模式下也可以直接输入`ZZ`实现保存退出。如果只想保存文件不退出，那么可以在末行模式下输入`w`；可以在`w`后面输入空格再指定要保存的文件名。
 
 4. 光标操作。
 
@@ -715,17 +715,18 @@ Linux系统的命令通常都是如下所示的格式：
 
      ```Shell
      
-     [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim -d 1.txt 2.txt 3.txt
+     [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim -d foo.txt bar.txt
      ```
+     ![](./res/vim-diff.png)
 
    - 打开多个文件。
 
      ```Shell
      
-     [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim 1.txt 2.txt 3.txt
+     [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim foo.txt bar.txt hello.txt
      ```
 
-     启动vim后只有一个窗口显示的是1.txt，可以在末行模式中输入`ls`查看到打开的三个文件，也可以在末行模式中输入`b <num>`来显示另一个文件，例如可以用`:b 2`来显示2.txt。
+     启动vim后只有一个窗口显示的是foo.txt，可以在末行模式中输入`ls`查看到打开的三个文件，也可以在末行模式中输入`b <num>`来显示另一个文件，例如可以用`:b 2`将bar.txt显示出来，可以用`:b 3`将hello.txt显示出来。
 
    - 拆分和切换窗口。
 
@@ -742,7 +743,7 @@ Linux系统的命令通常都是如下所示的格式：
 
        `:inoremap __main if __name__ == '__main__':`
 
-     > 说明：如果希望映射的快捷键每次启动vim时都能生效，需要将映射写到用户主目录下的.vimrc文件中。
+     > 说明：上面例子2的`inoremap`中的`i`表示映射的键在编辑模式使用， `nore`表示不要递归，这一点非常重要，否则如果键对应的内容中又出现键本身，就会引发递归（相当于进入了死循环）。如果希望映射的快捷键每次启动vim时都能生效，需要将映射写到用户主目录下的.vimrc文件中。
 
    - 录制宏。
 
@@ -800,15 +801,59 @@ Dependency Installed:
   nginx-mod-mail.x86_64 1:1.12.2-2.el7
   nginx-mod-stream.x86_64 1:1.12.2-2.el7
 Complete!
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# yum info nginx
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Installed Packages
+Name        : nginx
+Arch        : x86_64
+Epoch       : 1
+Version     : 1.12.2
+Release     : 2.el7
+Size        : 1.5 M
+Repo        : installed
+From repo   : epel
+Summary     : A high performance web server and reverse proxy server
+URL         : http://nginx.org/
+License     : BSD
+Description : Nginx is a web server and a reverse proxy server for HTTP, SMTP, POP3 and
+            : IMAP protocols, with a strong focus on high concurrency, performance and low
+            : memory usage.
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -v
 nginx version: nginx/1.12.2
 ```
 
-下面以MySQL为例，演示如何使用rpm安装软件。
+下面以MySQL为例，演示如何使用rpm安装软件。要安装MySQL需要先到[MySQL官方网站](https://www.mysql.com/)下载对应的[RPM文件](https://dev.mysql.com/downloads/mysql/)，当然要选择和你使用的Linux系统对应的版本。MySQL现在是Oracle公司旗下的产品，在MySQL被收购后，MySQL的作者重新制作了一个MySQL的分支MariaDB，可以通过yum进行安装。如果要安装MySQL需要先通过yum删除`mariadb-libs`这个可能会跟MySQL底层库冲突的库，然后还需要安装一个名为`libaio`的依赖库。
 
 ```Shell
 
-
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# ls
+mysql-community-client-5.7.22-1.el7.x86_64.rpm
+mysql-community-common-5.7.22-1.el7.x86_64.rpm
+mysql-community-libs-5.7.22-1.el7.x86_64.rpm
+mysql-community-server-5.7.22-1.el7.x86_64.rpm
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y remove mariadb-libs
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y install libaio
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-common-5.7.22-1.el7.x86_64.rpm
+warning: mysql-community-common-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
+Preparing...                          ################################# [100%]
+        package mysql-community-common-5.7.22-1.el7.x86_64 is already installed
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-libs-5.7.22-1.el7.x86_64.rpm
+warning: mysql-community-libs-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
+Preparing...                          ################################# [100%]
+        package mysql-community-libs-5.7.22-1.el7.x86_64 is already installed
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-client-5.7.22-1.el7.x86_64.rpm
+warning: mysql-community-client-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
+Preparing...                          ################################# [100%]
+        package mysql-community-client-5.7.22-1.el7.x86_64 is already installed
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-server-5.7.22-1.el7.x86_64.rpm
+warning: mysql-community-server-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
+Preparing...                          ################################# [100%]
+        package mysql-community-server-5.7.22-1.el7.x86_64 is already installed
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# mysqld --version
+mysqld  Ver 5.7.22 for Linux on x86_64 (MySQL Community Server (GPL))
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# mysql --version
+mysql  Ver 14.14 Distrib 5.7.22, for Linux (x86_64) using  EditLine wrapper
 ```
 
 #### 下载解压配置环境变量
@@ -854,6 +899,16 @@ export PATH
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# source .bash_profile
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# mongod --version
 db version v3.6.5
+git version: a20ecd3e3a174162052ff99913bc2ca9a839d618
+OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: rhel70
+    distarch: x86_64
+    target_arch: x86_64
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# mongo --version
+MongoDB shell version v3.6.5
 git version: a20ecd3e3a174162052ff99913bc2ca9a839d618
 OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
 allocator: tcmalloc

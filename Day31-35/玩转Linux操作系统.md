@@ -959,11 +959,12 @@ build environment:
 
 ### 进程和性能
 
-1. pmap
-2. sar
-3. free
-4. iostat
-5. gprof
+1. top
+2. pmap
+3. sar
+4. free
+5. iostat
+6. gprof
 
 ### 配置服务
 
@@ -991,8 +992,8 @@ build environment:
 4. 查看服务。
 
     ```Shell
-   
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl status firewalld
+    
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl status firewalld
     ```
 
 5. 设置是否开机自启。
@@ -1010,6 +1011,12 @@ build environment:
 ### 计划任务
 
 1. **crontab**命令。
+
+   ```Shell
+   
+   
+   ```
+
 2. crontab相关文件。
 
 ### 网络访问和管理
@@ -1104,7 +1111,6 @@ build environment:
 
    - `bye`/`exit`/`quit`：退出sftp。
 
-     
 
 ### Shell和Shell编程
 

@@ -158,17 +158,7 @@ by 骆昊
 - 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
 - 短信服务 - twilio模块 / 国内的短信服务
 
-### Day16~Day20 - [Python语言进阶 ](./Day16-20)
-
-#### Day16 - 数据结构和算法
-
-#### Day17 - 函数的高级知识
-
-#### Day18 - 面向对象高级知识
-
-#### Day19 - 元编程
-
-#### Day20 - 协程和异步I/O
+### Day16~Day20 - [Python语言进阶 ](./Day16-20/Python语言进阶.md)
 
 ### Day21~30 - [Web前端](./Day21-30/Web前端概述.md)
 

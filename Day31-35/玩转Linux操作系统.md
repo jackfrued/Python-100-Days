@@ -1019,6 +1019,11 @@ build environment:
 
 2. crontab相关文件。
 
+   ```Shell
+   
+   
+   ```
+
 ### 网络访问和管理
 
 1. 通过网络获取资源 - **wget**。
@@ -1114,8 +1119,7 @@ build environment:
 
 ### Shell和Shell编程
 
-1. 通配符。
-2. 后台运行。
+
 
 ### 其他内容
 

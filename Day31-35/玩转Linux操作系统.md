@@ -655,12 +655,45 @@ Linux系统的命令通常都是如下所示的格式：
 #### 磁盘管理
 
 1. 列出文件系统的磁盘使用状况 - **df**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# df -h
+   Filesystem      Size  Used Avail Use% Mounted on
+   /dev/vda1        40G  5.0G   33G  14% /
+   devtmpfs        486M     0  486M   0% /dev
+   tmpfs           497M     0  497M   0% /dev/shm
+   tmpfs           497M  356K  496M   1% /run
+   tmpfs           497M     0  497M   0% /sys/fs/cgroup
+   tmpfs           100M     0  100M   0% /run/user/0
+   ```
+
 2. 磁盘分区表操作 - **fdisk**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# fdisk -l
+   Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors
+   Units = sectors of 1 * 512 = 512 bytes
+   Sector size (logical/physical): 512 bytes / 512 bytes
+   I/O size (minimum/optimal): 512 bytes / 512 bytes
+   Disk label type: dos
+   Disk identifier: 0x000a42f4
+      Device Boot      Start         End      Blocks   Id  System
+   /dev/vda1   *        2048    83884031    41940992   83  Linux
+   Disk /dev/vdb: 21.5 GB, 21474836480 bytes, 41943040 sectors
+   Units = sectors of 1 * 512 = 512 bytes
+   Sector size (logical/physical): 512 bytes / 512 bytes
+   I/O size (minimum/optimal): 512 bytes / 512 bytes
+   ```
+
 3. 格式化文件系统 - **mkfs**。
+
 4. 文件系统检查 - **fsck**。
+
 5. 挂载/卸载 - **mount** / **umount**。
 
-### 编辑器vim
+### 编辑器 - vim
 
 1. 启动vim。可以通过`vi`或`vim`命令来启动vim，启动时可以指定文件名来打开一个文件，如果没有指定文件名，也可以在保存的时候指定文件名。
 
@@ -759,19 +792,11 @@ Linux系统的命令通常都是如下所示的格式：
 
        ![](./res/vim-macro.png)
 
-### 环境变量
-
-1. HOME
-2. SHELL
-3. HISTSIZE
-4. RANDOM
-5. PATH
-
 ### 软件安装和配置
 
 #### 使用包管理工具
 
-1. yum - Yellowdog Updater Modified。
+1. **yum** - Yellowdog Updater Modified。
    - `yum search`：搜索软件包，例如`yum search nginx`。
    - `yum list installed`：列出已经安装的软件包，例如`yum list installed | grep zlib`。
    - `yum install`：安装软件包，例如`yum install nginx`。
@@ -779,7 +804,7 @@ Linux系统的命令通常都是如下所示的格式：
    - `yum update`：更新软件包，例如`yum update`可以更新所有软件包，而`yum update tar只会更新tar。
    - `yum check-update`：检查有哪些可以更新的软件包。
    - `yum info`：显示软件包的相关信息，例如`yum info nginx`。
-2. rpm - Redhat Package Manager。
+2. **rpm** - Redhat Package Manager。
    - 安装软件包：`rpm -ivh <packagename>.rpm`。
    - 移除软件包：`rpm -e <packagename>`。
    - 查询软件包：`rpm -qa`，例如可以用`rpm -qa | grep mysql`来检查是否安装了MySQL相关的软件包。
@@ -823,6 +848,14 @@ Description : Nginx is a web server and a reverse proxy server for HTTP, SMTP, P
 nginx version: nginx/1.12.2
 ```
 
+移除Nginx。
+
+```Shell
+
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -s stop
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y remove nginx
+```
+
 下面以MySQL为例，演示如何使用rpm安装软件。要安装MySQL需要先到[MySQL官方网站](https://www.mysql.com/)下载对应的[RPM文件](https://dev.mysql.com/downloads/mysql/)，当然要选择和你使用的Linux系统对应的版本。MySQL现在是Oracle公司旗下的产品，在MySQL被收购后，MySQL的作者重新制作了一个MySQL的分支MariaDB，可以通过yum进行安装。如果要安装MySQL需要先通过yum删除`mariadb-libs`这个可能会跟MySQL底层库冲突的库，然后还需要安装一个名为`libaio`的依赖库。
 
 ```Shell
@@ -834,26 +867,19 @@ mysql-community-libs-5.7.22-1.el7.x86_64.rpm
 mysql-community-server-5.7.22-1.el7.x86_64.rpm
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y remove mariadb-libs
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y install libaio
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-common-5.7.22-1.el7.x86_64.rpm
-warning: mysql-community-common-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
-Preparing...                          ################################# [100%]
-        package mysql-community-common-5.7.22-1.el7.x86_64 is already installed
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-libs-5.7.22-1.el7.x86_64.rpm
-warning: mysql-community-libs-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
-Preparing...                          ################################# [100%]
-        package mysql-community-libs-5.7.22-1.el7.x86_64 is already installed
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-client-5.7.22-1.el7.x86_64.rpm
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]# ls | xargs rpm -ivh
 warning: mysql-community-client-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
 Preparing...                          ################################# [100%]
-        package mysql-community-client-5.7.22-1.el7.x86_64 is already installed
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# rpm -ivh mysql-community-server-5.7.22-1.el7.x86_64.rpm
-warning: mysql-community-server-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
-Preparing...                          ################################# [100%]
-        package mysql-community-server-5.7.22-1.el7.x86_64 is already installed
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# mysqld --version
-mysqld  Ver 5.7.22 for Linux on x86_64 (MySQL Community Server (GPL))
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# mysql --version
-mysql  Ver 14.14 Distrib 5.7.22, for Linux (x86_64) using  EditLine wrapper
+...
+```
+
+> 说明：由于MySQL和[MariaDB](https://mariadb.org/)的底层依赖库是有冲突的，所以上面我们首先用`yum`移除了名为mariadb-libs的依赖库并安装了名为libaio的依赖库。由于我们将安装MySQL所需的rpm文件放在一个独立的目录中，所以可以通过`ls`命令查看到安装文件并用`xargs`将`ls`的输出作为参数交给`rpm -ivh`来进行安装。关于MySQL和MariaDB之间的关系，可以阅读[维基百科](https://zh.wikipedia.org/wiki/MariaDB)上关于MariaDB的介绍。
+
+移除安装的MySQL。
+
+```Shell
+
+[root@iZwz97tbgo9lkabnat2lo8Z ~]# rpm -qa | grep mysql | xargs rpm -e
 ```
 
 #### 下载解压配置环境变量
@@ -957,15 +983,6 @@ build environment:
    redis-cli 3.2.12
    ```
 
-### 进程和性能
-
-1. top
-2. pmap
-3. sar
-4. free
-5. iostat
-6. gprof
-
 ### 配置服务
 
 1. 启动服务。
@@ -1014,15 +1031,44 @@ build environment:
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# crontab -e
+   * * * * * echo "hello, world!" >> /root/hello.txt
+   59 23 * * * rm -f /root/*.log
    ```
+   > 说明：输入`crontab -e`命令会打开vim来编辑Cron表达式并指定触发的任务，上面我们定制了两个计划任务，一个是每分钟向/root目录下的hello.txt中追加输出`hello, world!`；另一个是每天23时59分执行删除/root目录下以log为后缀名的文件。如果不知道Cron表达式如何书写，可以参照/etc/crontab文件中的提示（下面会讲到）或者用谷歌或百度搜索一下，也可以使用Cron表达式在线生成器来生成Cron表达式。
 
 2. crontab相关文件。
 
    ```Shell
    
-   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd /etc
+   [root@iZwz97tbgo9lkabnat2lo8Z etc]# ls -l | grep cron
+   -rw-------.  1 root root      541 Aug  3  2017 anacrontab
+   drwxr-xr-x.  2 root root     4096 Mar 27 11:56 cron.d
+   drwxr-xr-x.  2 root root     4096 Mar 27 11:51 cron.daily
+   -rw-------.  1 root root        0 Aug  3  2017 cron.deny
+   drwxr-xr-x.  2 root root     4096 Mar 27 11:50 cron.hourly
+   drwxr-xr-x.  2 root root     4096 Jun 10  2014 cron.monthly
+   -rw-r--r--   1 root root      493 Jun 23 15:09 crontab
+   drwxr-xr-x.  2 root root     4096 Jun 10  2014 cron.weekly
+   [root@iZwz97tbgo9lkabnat2lo8Z etc]# vim crontab
+     1 SHELL=/bin/bash
+     2 PATH=/sbin:/bin:/usr/sbin:/usr/bin
+     3 MAILTO=root
+     4
+     5 # For details see man 4 crontabs
+     6
+     7 # Example of job definition:
+     8 # .---------------- minute (0 - 59)
+     9 # |  .------------- hour (0 - 23)
+    10 # |  |  .---------- day of month (1 - 31)
+    11 # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+    12 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+    13 # |  |  |  |  |
+    14 # *  *  *  *  * user-name  command to be executed
    ```
+
+   通过修改`/etc`目录下的crontab文件也能够定制计划任务。
 
 ### 网络访问和管理
 
@@ -1116,13 +1162,158 @@ build environment:
 
    - `bye`/`exit`/`quit`：退出sftp。
 
+### 进程管理
+
+1. **ps** - 查询进程。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps -ef
+   UID        PID  PPID  C STIME TTY          TIME CMD
+   root         1     0  0 Jun23 ?        00:00:05 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+   root         2     0  0 Jun23 ?        00:00:00 [kthreadd]
+   ...
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps -ef | grep mysqld
+   root      4943  4581  0 22:45 pts/0    00:00:00 grep --color=auto mysqld
+   mysql    25257     1  0 Jun25 ?        00:00:39 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid
+   ```
+
+2. **kill** - 终止进程。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill 1234
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill -9 1234
+   ```
+
+   例子：用一条命令强制终止正在运行的Redis进程。
+
+    ```Shell
+   
+   ps -ef | grep redis | grep -v grep | awk '{print $2}' | xargs kill
+    ```
+
+3. 将进程置于后台运行。
+
+   - `Ctrl+Z`
+   - `&`
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# mongod &
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# redis-server
+   ...
+   ^Z
+   [4]+  Stopped                 redis-server
+   ```
+
+4. **jobs** - 查询后台进程。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
+   [2]   Running                 mongod &
+   [3]-  Stopped                 cat
+   [4]+  Stopped                 redis-server
+   ```
+
+5. **bg** - 让进程在后台继续运行。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# bg %4
+   [4]+ redis-server &
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
+   [2]   Running                 mongod &
+   [3]+  Stopped                 cat
+   [4]-  Running                 redis-server &
+   ```
+
+6. **fg** - 将后台进程置于前台。
+
+    ```Shell
+      
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
+   redis-server
+   ^C5554:signal-handler (1530025281) Received SIGINT scheduling shutdown...
+   5554:M 26 Jun 23:01:21.413 # User requested shutdown...
+   5554:M 26 Jun 23:01:21.413 * Saving the final RDB snapshot before exiting.
+   5554:M 26 Jun 23:01:21.415 * DB saved on disk
+   5554:M 26 Jun 23:01:21.415 # Redis is now ready to exit, bye bye...
+    ```
+
+      > 说明：置于前台的进程可以使用`Ctrl+C`来终止它。
+
+7. **top** - 进程监控。
+
+    ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
+   top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
+   Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
+   %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+   KiB Mem :  1016168 total,   191060 free,   324700 used,   500408 buff/cache
+   KiB Swap:        0 total,        0 free,        0 used.   530944 avail Mem
+   ...
+    ```
+
+### 系统性能
+
+1. 查看系统活动信息 - **sar**。
+
+2. 查看内存使用情况 - **free**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# free
+                 total        used        free      shared  buff/cache   available
+   Mem:        1016168      323924      190452         356      501792      531800
+   Swap:             0           0           0
+   ```
+
+3. 查看进程使用内存状况 - **pmap**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps
+     PID TTY          TIME CMD
+    4581 pts/0    00:00:00 bash
+    5664 pts/0    00:00:00 ps
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# pmap 4581
+   4581:   -bash
+   0000000000400000    884K r-x-- bash
+   00000000006dc000      4K r---- bash
+   00000000006dd000     36K rw--- bash
+   00000000006e6000     24K rw---   [ anon ]
+   0000000001de0000    400K rw---   [ anon ]
+   00007f82fe805000     48K r-x-- libnss_files-2.17.so
+   00007f82fe811000   2044K ----- libnss_files-2.17.so
+   ...
+   ```
+
+4. 报告设备CPU和I/O统计信息 - **iostat**。
+
+   ```Shell
+   
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# iostat
+   Linux 3.10.0-693.11.1.el7.x86_64 (iZwz97tbgo9lkabnat2lo8Z)      06/26/2018      _x86_64_       (1 CPU)
+   avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+              0.79    0.00    0.20    0.04    0.00   98.97
+   Device:            tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+   vda               0.85         6.78        21.32    2106565    6623024
+   vdb               0.00         0.01         0.00       2088          0
+   ```
 
 ### Shell和Shell编程
 
+#### 环境变量
+
+1. HOME
+2. SHELL
+3. HISTSIZE
+4. RANDOM
+5. PATH
 
 
-### 其他内容
 
-1. awk
-2. sed
-3. xargs
+

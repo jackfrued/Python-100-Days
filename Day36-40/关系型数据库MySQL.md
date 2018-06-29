@@ -223,7 +223,7 @@
    -- 查询名字中有“天”字的学生的姓名(模糊)
    select stuname from tb_student where stuname like '%天%';
    
-   -- 查询学生的籍贯
+   -- 查询学生的籍贯(去重)
    select distinct stuaddr from tb_student 
    where stuaddr<>'' and stuaddr is not null;
    
@@ -253,23 +253,19 @@
    select sum(score) as 总成绩 from tb_score where sid=1001;
    
    -- 查询每个学生的学号和平均成绩(分组和聚合函数)
-   select sid as 学号, avg(score) as 平均分 
-   from tb_score 
+   select sid as 学号, avg(score) as 平均分 from tb_score 
    where score is not null 
    group by sid 
    order by 平均分 desc;
    
    -- 查询平均成绩大于等于80分的学生的学号和平均成绩(分组后的筛选)
-   select sid as 学号, avg(score) as 平均分 
-   from tb_score 
+   select sid as 学号, avg(score) as 平均分 from tb_score 
    group by sid having 平均分>=80 
    order by 平均分 desc;
    
    -- 查询年龄最大的学生的姓名(子查询)
    select stuname from tb_student 
    where stubirth=(select min(stubirth) from tb_student);
-   select stuname from tb_student 
-   where stubirth=(select max(stubirth) from tb_student);
    
    -- 查询选了三门及以上的课程的学生姓名(子查询/分组条件/集合运算)
    select stuname from tb_student where stuid in 
@@ -280,9 +276,8 @@
    from tb_course, tb_teacher 
    where tid=teacherid;
    
-   select cname, ccredit, tname, ttitle 
-   from tb_course inner join tb_teacher 
-   on tid=teacherid;
+   select cname, ccredit, tname, ttitle from tb_course 
+   inner join tb_teacher on tid=teacherid;
    
    -- 查询学生姓名和所在学院名称
    select stuname, collname 
@@ -293,16 +288,29 @@
    inner join tb_college t2 on t1.collid=t2.collid;
    
    -- 查询学生姓名、课程名称以及考试成绩
+   select stuname, cname, score 
+   from tb_student, tb_course, tb_score 
+   where stuid=sid and courseid=cid 
+   and score is not null;
    
+   select stuname, cname, score from tb_student 
+   inner join tb_score on stuid=sid
+   inner join tb_course on courseid=cid 
+   where score is not null;
    
    -- 查询选课学生的姓名和平均成绩(子查询和连接查询)
+   select stuname, avgscore from tb_student,
+   (select sid, avg(score) as avgscore from tb_score 
+   group by sid) temp where sid=stuid;
    
-   
-   -- 查询学生姓名、所选课程名称和成绩(连接查询)
-   
+   select stuname, avgscore from tb_student 
+   inner join (select sid, avg(score) as avgscore 
+   from tb_score group by sid) temp on sid=stuid;
    
    -- 查询每个学生的姓名和选课数量(左外连接和子查询)
-   
+   select stuname as 姓名, ifnull(total, 0) as 选课数量 
+   from tb_student left outer join (select sid, count(sid) as total 
+   from tb_score group by sid) temp on stuid=sid;
    ```
 
 4. DCL

@@ -1232,29 +1232,29 @@ build environment:
 6. **fg** - 将后台进程置于前台。
 
     ```Shell
-      
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
-   redis-server
-   ^C5554:signal-handler (1530025281) Received SIGINT scheduling shutdown...
-   5554:M 26 Jun 23:01:21.413 # User requested shutdown...
-   5554:M 26 Jun 23:01:21.413 * Saving the final RDB snapshot before exiting.
-   5554:M 26 Jun 23:01:21.415 * DB saved on disk
-   5554:M 26 Jun 23:01:21.415 # Redis is now ready to exit, bye bye...
+    
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
+    redis-server
+    ^C5554:signal-handler (1530025281) Received SIGINT scheduling shutdown...
+    5554:M 26 Jun 23:01:21.413 # User requested shutdown...
+    5554:M 26 Jun 23:01:21.413 * Saving the final RDB snapshot before exiting.
+    5554:M 26 Jun 23:01:21.415 * DB saved on disk
+    5554:M 26 Jun 23:01:21.415 # Redis is now ready to exit, bye bye...
     ```
 
-      > 说明：置于前台的进程可以使用`Ctrl+C`来终止它。
+    > 说明：置于前台的进程可以使用`Ctrl+C`来终止它。
 
 7. **top** - 进程监控。
 
     ```Shell
-   
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
-   top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
-   Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
-   %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-   KiB Mem :  1016168 total,   191060 free,   324700 used,   500408 buff/cache
-   KiB Swap:        0 total,        0 free,        0 used.   530944 avail Mem
-   ...
+    
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
+    top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
+    Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
+    %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+    KiB Mem :  1016168 total,   191060 free,   324700 used,   500408 buff/cache
+    KiB Swap:        0 total,        0 free,        0 used.   530944 avail Mem
+    ...
     ```
 
 ### 系统性能

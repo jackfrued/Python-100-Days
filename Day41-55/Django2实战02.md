@@ -1,17 +1,19 @@
 ## Django 2.x实战(02) - 深入模型
 
-在上一个章节中，我们提到了Django是一个基于MVC架构的Web框架，MVC架构要追求的是模型和视图的解耦合，而其中的模型说得更直白一些就是数据，所以通常也被称作数据模型。在实际的项目中，数据模型通常通过数据库实现持久化操作，而关系型数据库在很长一段时间都是持久化的首选方案，在我们的OA项目中，我们选择使用MySQL来实现数据持久化。
+在上一个章节中，我们提到了Django是基于MVC架构的Web框架，MVC架构追求的是“模型”和“视图的解耦合。所谓“模型”说得更直白一些就是数据，所以通常也被称作“数据模型”。在实际的项目中，数据模型通常通过数据库实现持久化操作，而关系型数据库在很长一段时间都是持久化的首选方案（当然NoSQL的方案在今天普遍被认为是关系型数据库的一个很好的补充），在下面演示的项目中，我们选择使用MySQL来实现数据持久化。
 
 ### 配置关系型数据库MySQL 
 
 1. 进入oa文件夹，修改项目的settings.py文件，首先将我们之前创建的应用hrs添加已安装的项目中，然后配置MySQL作为持久化方案。
 
    ```Shell
+   
    (venv)$ cd oa
    (venv)$ vim settings.py
    ```
 
    ```Python
+   
    # 此处省略上面的代码
    
    INSTALLED_APPS = [
@@ -40,10 +42,10 @@
 
    在配置ENGINE属性时，常用的可选值包括：
 
-   - `'django.db.backends.sqlite3'`：SQLite嵌入式数据库
-   - `'django.db.backends.postgresql'`：BSD许可证下发行的开源关系型数据库产品
-   - `'django.db.backends.mysql'`：转手多次目前属于甲骨文公司的经济高效的数据库产品
-   - `'django.db.backends.oracle'`：甲骨文公司的旗舰关系型数据库产品
+   - `'django.db.backends.sqlite3'`：SQLite嵌入式数据库。
+   - `'django.db.backends.postgresql'`：BSD许可证下发行的开源关系型数据库产品。
+   - `'django.db.backends.mysql'`：转手多次目前属于甲骨文公司的经济高效的数据库产品。
+   - `'django.db.backends.oracle'`：甲骨文公司的关系型数据库旗舰产品。
 
    其他的配置可以参考官方文档中[数据库配置](https://docs.djangoproject.com/zh-hans/2.0/ref/databases/#third-party-notes)的部分。
 
@@ -52,12 +54,14 @@
 2. 安装MySQL客户端工具，Python 3中使用PyMySQL，Python 2中用MySQLdb。
 
    ```Shell
+   
    (venv)$ pip install pymysql
    ```
 
    如果使用Python 3需要修改**项目**的`__init__.py`文件并加入如下所示的代码，这段代码的作用是将PyMySQL视为MySQLdb来使用，从而避免Django找不到连接MySQL的客户端工具而询问你：“Did you install mysqlclient? ”（你安装了mysqlclient吗？）。
 
    ```Python
+   
    import pymysql
    
    pymysql.install_as_MySQLdb()
@@ -66,11 +70,13 @@
 3. 运行manage.py并指定migrate参数实现数据库迁移，为应用程序创建对应的数据表，当然在此之前需要**先启动MySQL数据库服务器并创建名为oa的数据库**，在MySQL中创建数据库的语句如下所示。
 
    ```SQL
+   
    drop database if exists oa;
    create database oa default charset utf8;
    ```
 
    ```Shell
+   
    (venv)$ cd ..
    (venv)$ python manage.py migrate
    Operations to perform:
@@ -95,11 +101,13 @@
 4. 可以看到，Django帮助我们创建了10张表，这些都是使用Django框架需要的东西，稍后我们就会用到这些表。除此之外，我们还应该为我们自己的应用创建数据模型。如果要在hrs应用中实现对部门和员工的管理，我们可以创建如下所示的数据模型。
 
    ```Shell
+   
    (venv)$ cd hrs
    (venv)$ vim models.py
    ```
 
    ```Python
+   
    from django.db import models
    
    
@@ -129,13 +137,13 @@
        class Meta:
            db_table = 'tb_emp'
    
-   
    ```
    > 说明：上面定义模型时使用了字段类及其属性，其中IntegerField对应数据库中的integer类型，CharField对应数据库的varchar类型，DecimalField对应数据库的decimal类型，ForeignKey用来建立多对一外键关联。字段属性primary_key用于设置主键，max_length用来设置字段的最大长度，db_column用来设置数据库中与字段对应的列，verbose_name则设置了Django后台管理系统中该字段显示的名称。如果对这些东西感到很困惑也不要紧，文末提供了字段类、字段属性、元数据选项等设置的相关说明，不清楚的读者可以稍后查看对应的参考指南。
 
 5. 通过模型创建数据表。
 
    ```Shell
+   
    (venv)$ cd ..
    (venv)$ python manage.py makemigrations hrs
    Migrations for 'hrs':
@@ -158,6 +166,7 @@
 1. 创建超级管理员账号。
 
    ```Shell
+   
    (venv)$ python manage.py createsuperuser
    Username (leave blank to use 'hao'): jackfrued
    Email address: jackfrued@126.com
@@ -169,6 +178,7 @@
 2. 启动Web服务器，登录后台管理系统。
 
    ```Shell
+   
    (venv)$ python manage.py runserver
    ```
 
@@ -185,18 +195,19 @@
 3. 注册模型类。
 
    ```Shell
+   
    (venv)$ cd hrs
    (venv)$ vim admin.py
    ```
 
    ```Python
+   
    from django.contrib import admin
    
    from hrs.models import Emp, Dept
    
    admin.site.register(Dept)
    admin.site.register(Emp)
-   
    ```
 
    注册模型类后，就可以在后台管理系统中看到它们。
@@ -224,6 +235,7 @@
    再次修改admin.py文件，通过注册模型管理类，可以在后台管理系统中更好的管理模型。
 
    ```Python
+   
    from django.contrib import admin
    
    from hrs.models import Emp, Dept
@@ -243,7 +255,6 @@
    
    admin.site.register(Dept, DeptAdmin)
    admin.site.register(Emp, EmpAdmin)
-   
    ```
 
    ![](./res/admin-model-depts.png)
@@ -253,6 +264,7 @@
    为了更好的查看模型数据，可以为Dept和Emp两个模型类添加`__str__`魔法方法。
 
    ```Python
+   
    from django.db import models
    
    
@@ -294,6 +306,7 @@
 在了解了Django提供的模型管理平台之后，我们来看看如何从代码层面完成对模型的CRUD（Create / Read / Update / Delete）操作。我们可以通过manage.py开启Shell交互式环境，然后使用Django内置的ORM框架对模型进行CRUD操作。
 
 ```Shell
+
 (venv)$ cd ..
 (venv)$ python manage.py shell
 Python 3.6.4 (v3.6.4:d48ecebad5, Dec 18 2017, 21:07:28) 
@@ -306,6 +319,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 #### 新增
 
 ```Shell
+
 >>>
 >>> from hrs.models import Dept, Emp
 >>> dept = Dept(40, '研发2部', '深圳')
@@ -315,6 +329,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 #### 更新
 
 ```Shell
+
 >>>
 >>> dept.name = '研发3部'
 >>> dept.save()
@@ -325,6 +340,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 查询所有对象。
 
 ```Shell
+
 >>>
 >>> Dept.objects.all()
 <QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>, <Dept: 研发3部>]>
@@ -333,6 +349,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 过滤数据。
 
 ```Shell
+
 >>> 
 >>> Dept.objects.filter(name='研发3部') # 查询部门名称为“研发3部”的部门
 <QuerySet [<Dept: 研发3部>]>
@@ -350,6 +367,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 查询单个对象。
 
 ```Shell
+
 >>> 
 >>> Dept.objects.get(pk=10)
 <Dept: 研发1部>
@@ -364,6 +382,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 排序数据。
 
 ```Shell
+
 >>>
 >>> Dept.objects.order_by('no') # 查询所有部门按部门编号升序排列
 <QuerySet [<Dept: 研发1部>, <Dept: 销售1部>, <Dept: 运维1部>, <Dept: 研发3部>]>
@@ -375,6 +394,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 切片数据。
 
 ```Shell
+
 >>>
 >>> Dept.objects.order_by('no')[0:2] # 按部门编号排序查询1~2部门
 <QuerySet [<Dept: 研发1部>, <Dept: 销售1部>]>
@@ -386,6 +406,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 高级查询。
 
 ```Shell
+
 >>>
 >>> Emp.objects.filter(dept__no=10) # 根据部门编号查询该部门的员工
 <QuerySet [<Emp: 乔峰>, <Emp: 张无忌>, <Emp: 张三丰>]>
@@ -406,6 +427,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 #### 删除
 
 ```Shell
+
 >>>
 >>> Dept.objects.get(pk=40).delete()
 (1, {'hrs.Dept': 1})
@@ -543,6 +565,7 @@ ManyToManyField属性
 Q对象（用于执行复杂查询）的使用：
 
 ```Shell
+
 >>>
 >>> from django.db.models import Q
 >>> Emp.objects.filter(

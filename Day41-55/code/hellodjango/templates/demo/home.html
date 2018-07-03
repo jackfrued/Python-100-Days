@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师信息</title>
+</head>
+<body>
+    {% for x in teachers_list %}
+        <h1>{{ x.name }}老师 - {{ x.job }}</h1>
+        <p><strong>讲师简介</strong></p>
+        <p>{{ x.intro }}</p>
+        <p><strong>教学理念</strong></p>
+        <p>{{ x.motto }}</p>
+        <p>
+            {% if x.photo %}
+            <img src="{% static x.photo %}">
+            {% endif %}
+        </p>
+        <hr>
+    {% endfor %}
+</body>
+</html>

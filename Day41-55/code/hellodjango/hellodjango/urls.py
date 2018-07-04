@@ -19,6 +19,9 @@ from django.urls import path
 from demo import views
 
 urlpatterns = [
-    path('', views.home),
+    path('', views.index, name='index'),
+    path('subjects/<int:no>', views.show_teachers),
+    path('good/<int:no>', views.make_good_comment),
+    path('bad/<int:no>', views.make_bad_comment),
     path('admin/', admin.site.urls),
 ]

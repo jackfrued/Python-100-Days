@@ -58,8 +58,8 @@
         $(function() {
             $('.basic .button').on('click', function(evt) {
                 evt.preventDefault();
-                var a = $(evt.target)
-                var url = a.attr('href')
+                var a = $(evt.target);
+                var url = a.attr('href');
                 $.getJSON(url, function(json) {
                    if (json.code == 200) {
                        a.text(json.result);

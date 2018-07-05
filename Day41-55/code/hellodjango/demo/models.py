@@ -1,5 +1,32 @@
+from hashlib import sha1
+
 from django.db import models
 from django.db.models import PROTECT
+
+# 高内聚 低耦合
+# 面向对象七个设计原则
+# 单一职责原则 / 开闭原则 / 依赖倒转原则 / 里氏替换原则 / 接口隔离原则 / 合成聚合复用原则 / 迪米特法则
+# 1995年 - GoF - 23个设计模式
+# 创建型模式中的原型模式
+proto = sha1()
+
+
+class User(models.Model):
+    no = models.AutoField(primary_key=True, db_column='uno', verbose_name='编号')
+    username = models.CharField(max_length=20, unique=True, verbose_name='用户名')
+    password = models.CharField(max_length=40, verbose_name='口令')
+    email = models.CharField(max_length=255, verbose_name='邮箱')
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        hasher = proto.copy()
+        hasher.update(self.password.encode('utf-8'))
+        self.password = hasher.hexdigest()
+        super().save(force_insert, force_update, using, update_fields)
+
+    class Meta(object):
+        db_table = 'tb_user'
+        verbose_name = '用户'
+        verbose_name_plural = '用户'
 
 
 class Subject(models.Model):
@@ -26,6 +53,16 @@ class Teacher(models.Model):
     manager = models.BooleanField(default=False, db_column='tmanager', verbose_name='是否主管')
     good_count = models.IntegerField(default=0, db_column='tgcount', verbose_name='好评数')
     bad_count = models.IntegerField(default=0, db_column='tbcount', verbose_name='差评数')
+
+    @property
+    def gcount(self):
+        return f'{self.good_count}' \
+            if self.good_count <= 999 else '999+'
+
+    @property
+    def bcount(self):
+        return f'{self.bad_count}' \
+            if self.bad_count <= 999 else '999+'
 
     class Meta(object):
         db_table = 'tb_teacher'

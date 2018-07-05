@@ -42,8 +42,8 @@
                 <p>{{ x.intro }}</p>
                 <p><strong>教学理念</strong></p>
                 <p>{{ x.motto }}</p>
-                <a href="/good/{{ x.no }}" class="button">好评({{ x.good_count }})</a>
-                <a href="/bad/{{ x.no }}" class="button">差评({{ x.bad_count }})</a>
+                <a href="/good/{{ x.no }}" class="button">好评({{ x.gcount }})</a>
+                <a href="/bad/{{ x.no }}" class="button">差评({{ x.bcount }})</a>
             </div>
             <div class="potrait">
                 {% if x.photo %}
@@ -55,18 +55,25 @@
     {% endfor %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script>
-        $(function() {
-            $('.basic .button').on('click', function(evt) {
-                evt.preventDefault();
-                var a = $(evt.target);
-                var url = a.attr('href');
-                $.getJSON(url, function(json) {
-                   if (json.code == 200) {
-                       a.text(json.result);
-                   }
-                });
-            });
-        });
+       $(function() {
+           $('.basic .button').on('click', function(evt) {
+               evt.preventDefault();
+               var $a = $(evt.target);
+               var url = $a.attr('href');
+               $.ajax({
+                   'url': url,
+                   'type': 'get',
+                   'data': {},
+                   'dataType': 'json',
+                   'success': function(json) {
+                       if (json.code == 200) {
+                           $a.text(json.result);
+                       }
+                   },
+                   'error': function() {}
+               });
+           });
+       });
     </script>
 </body>
 </html>

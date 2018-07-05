@@ -1,14 +1,53 @@
 import json
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from demo.models import Subject, Teacher
+from demo.forms import UserForm
+from demo.models import Subject, Teacher, User, proto
 
 
-def index(request):
+def login(request):
+    if request.method.lower() == 'get':
+        return render(request, 'demo/login.html', {})
+    else:
+        username = request.POST['username']
+        try:
+            user = User.objects.get(username__exact=username)
+            password = request.POST['password']
+            hasher = proto.copy()
+            hasher.update(password.encode('utf-8'))
+            if hasher.hexdigest() == user.password:
+                return redirect('sub')
+        except User.DoesNotExist:
+            pass
+        return render(request, 'demo/login.html',
+                      {'hint': '用户名或密码错误'})
+
+
+
+def register(request):
+    if request.method.lower() == 'get':
+        return render(request, 'demo/register.html',
+                      {'f': UserForm()})
+    else:
+        try:
+            form = UserForm(request.POST)
+            if form.is_valid():
+                form.save(commit=True)
+                return render(request, 'demo/login.html',
+                              {'hint': '注册成功请登录!'})
+            else:
+                return render(request, 'demo/register.html',
+                              {'hint': '请输入有效的注册信息', 'f': form})
+        except:
+            return render(request, 'demo/register.html',
+                          {'hint': '注册失败, 请尝试其他的用户名!'})
+
+
+def show_subjects(request):
     ctx = {'subjects_list': Subject.objects.all()}
-    return render(request, 'demo/index.html', ctx)
+    return render(request, 'demo/subject.html', ctx)
 
 
 def show_teachers(request, no):
@@ -17,19 +56,18 @@ def show_teachers(request, no):
     return render(request, 'demo/teacher.html', ctx)
 
 
-def make_good_comment(request, no):
-    teacher = Teacher.objects.get(pk=no)
-    teacher.good_count += 1
-    teacher.save()
-    ctx = {'code': 200, 'result': f'好评({teacher.good_count})'}
-    return HttpResponse(json.dumps(ctx),
-                        content_type='application/json; charset=utf-8')
-
-
-def make_bad_comment(request, no):
-    teacher = Teacher.objects.get(pk=no)
-    teacher.bad_count += 1
-    teacher.save()
-    ctx = {'code': 200, 'result': f'差评({teacher.bad_count})'}
+def make_comment(request, no):
+    ctx = {'code': 200}
+    try:
+        teacher = Teacher.objects.get(pk=no)
+        if request.path.startswith('/good'):
+            teacher.good_count += 1
+            ctx['result'] = f'好评({teacher.gcount})'
+        else:
+            teacher.bad_count += 1
+            ctx['result'] = f'差评({teacher.bcount})'
+        teacher.save()
+    except Teacher.DoesNotExist:
+        ctx['code'] = 404
     return HttpResponse(json.dumps(ctx),
                         content_type='application/json; charset=utf-8')

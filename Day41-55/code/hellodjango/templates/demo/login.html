@@ -11,13 +11,17 @@
         #login form div {
             margin: 10px 0;
         }
+        .hint {
+            color: red;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
     <h1>用户登录</h1>
     <hr>
     <div id="login">
-        <p style="color: red; font-size: 12px;">{{ hint }}</p>
+        <p class="hint">{{ hint }}</p>
         <form action="/login/" method="post">
             {% csrf_token %}
             <div>用户名: </div>

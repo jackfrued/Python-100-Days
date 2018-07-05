@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <title>用户注册</title>
     <style>
-        #login {
-            width: 250px;
+        #reg {
+            width: 320px;
             margin: 20px auto;
         }
-        #login form div {
+        #reg form div {
             margin: 10px 0;
+        }
+        .hint {
+            color: red;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <h1>用户注册</h1>
     <hr>
-    <div id="login">
-        <p style="color: red; font-size: 12px;">{{ hint }}</p>
+    <div id="reg">
+        <p class="hint">{{ hint }}</p>
         <form action="/register/" method="post">
             {% csrf_token %}
             <div>用户名: </div>
             <div>
                 {{ f.username }}
+                {% if f.errors.username %}
+                    <span class="hint">用户已被注册</span>
+                {% endif %}
             </div>
             <div>密码: </div>
             <div>
                 {{ f.password }}
+                {% if f.errors.password %}
+                    <span class="hint">无效的密码</span>
+                {% endif %}
             </div>
             <div>邮箱: </div>
             <div>
                 {{ f.email }}
+                {% if f.errors.email %}
+                    <span class="hint">无效的邮箱</span>
+                {% endif %}
             </div>
             <div>
                 <input type="submit" value="注册">

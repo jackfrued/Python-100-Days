@@ -27,22 +27,21 @@ def login(request):
 
 
 def register(request):
+    form = UserForm()
     if request.method.lower() == 'get':
-        return render(request, 'demo/register.html',
-                      {'f': UserForm()})
+        return render(request, 'demo/register.html', {'f': form})
     else:
+        ctx = {}
         try:
             form = UserForm(request.POST)
+            ctx['f'] = form
             if form.is_valid():
                 form.save(commit=True)
-                return render(request, 'demo/login.html',
-                              {'hint': '注册成功请登录!'})
-            else:
-                return render(request, 'demo/register.html',
-                              {'hint': '请输入有效的注册信息', 'f': form})
+                ctx['hint'] = '注册成功请登录!'
+                return render(request, 'demo/login.html', ctx)
         except:
-            return render(request, 'demo/register.html',
-                          {'hint': '注册失败, 请尝试其他的用户名!'})
+            ctx['hint'] = '注册失败, 请重新尝试!'
+    return render(request, 'demo/register.html', ctx)
 
 
 def show_subjects(request):

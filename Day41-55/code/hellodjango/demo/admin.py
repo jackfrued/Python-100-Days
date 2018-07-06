@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from demo.models import Teacher, Subject
+from demo.models import Teacher, Subject, User
+
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('no', 'username', 'email', 'counter')
+    ordering = ('no', )
 
 
 class SubjectAdmin(admin.ModelAdmin):
@@ -16,4 +21,5 @@ class TeacherAdmin(admin.ModelAdmin):
 
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Teacher, TeacherAdmin)
+admin.site.register(User, UserAdmin)
 

@@ -3,11 +3,6 @@ from hashlib import sha1
 from django.db import models
 from django.db.models import PROTECT
 
-# 高内聚 低耦合
-# 面向对象七个设计原则
-# 单一职责原则 / 开闭原则 / 依赖倒转原则 / 里氏替换原则 / 接口隔离原则 / 合成聚合复用原则 / 迪米特法则
-# 1995年 - GoF - 23个设计模式
-# 创建型模式中的原型模式
 proto = sha1()
 
 
@@ -16,6 +11,7 @@ class User(models.Model):
     username = models.CharField(max_length=20, unique=True, verbose_name='用户名')
     password = models.CharField(max_length=40, verbose_name='口令')
     email = models.CharField(max_length=255, verbose_name='邮箱')
+    counter = models.IntegerField(default=3, verbose_name='票数')
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         hasher = proto.copy()
@@ -68,4 +64,4 @@ class Teacher(models.Model):
         db_table = 'tb_teacher'
         verbose_name = '讲师'
         verbose_name_plural = '讲师'
-        ordering = ('name', )
+        ordering = ('no', )

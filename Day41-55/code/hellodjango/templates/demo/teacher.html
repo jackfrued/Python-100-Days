@@ -16,6 +16,7 @@
         .potrait {
             width: 40%;
             float: left;
+            text-align: right;
         }
         hr {
             clear: both;
@@ -37,7 +38,7 @@
     {% for x in teachers_list %}
         <div class="container">
             <div class="basic">
-                <h1>{{ x.name }}老师</h1>
+                <h1>{{ x.name }}老师 - {{ x.subject.name }}</h1>
                 <p><strong>讲师简介</strong></p>
                 <p>{{ x.intro }}</p>
                 <p><strong>教学理念</strong></p>
@@ -68,6 +69,8 @@
                    'success': function(json) {
                        if (json.code == 200) {
                            $a.text(json.result);
+                       } else if (json.code == 403) {
+                           alert(json.result);
                        }
                    },
                    'error': function() {}

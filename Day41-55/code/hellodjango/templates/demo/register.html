@@ -1,11 +1,12 @@
 <!doctype html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>用户注册</title>
     <style>
         #reg {
-            width: 320px;
+            width: 350px;
             margin: 20px auto;
         }
         #reg form div {
@@ -24,11 +25,12 @@
         <p class="hint">{{ hint }}</p>
         <form action="/register/" method="post">
             {% csrf_token %}
-            <div>用户名: </div>
+            <div>用户名:</div>
             <div>
                 {{ f.username }}
+                <span id="uhint"></span>
                 {% if f.errors.username %}
-                    <span class="hint">用户已被注册</span>
+                    <span class="hint">用户名无效或者已经被注册</span>
                 {% endif %}
             </div>
             <div>密码: </div>
@@ -45,11 +47,32 @@
                     <span class="hint">无效的邮箱</span>
                 {% endif %}
             </div>
-            <div>
-                <input type="submit" value="注册">
-            </div>
+            <input type="submit" value="注册">
         </form>
         <a href="/">返回登录</a>
     </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script>
+        $(function() {
+            $('#id_username').on('blur', function (evt) {
+                var $input = $(evt.target);
+                $.ajax({
+                    'url': '/check/',
+                    'type': 'get',
+                    'data': {'username': $input.val()},
+                    'dataType': 'json',
+                    'success': function(json) {
+                        var $img = $('<img>');
+                        if (json.valid) {
+                            $img.attr('src', '/static/images/icon-yes.svg');
+                        } else {
+                            $img.attr('src', '/static/images/icon-no.svg');
+                        }
+                        $('#uhint').empty().append($img);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

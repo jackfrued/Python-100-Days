@@ -69,159 +69,158 @@ As a Python developer, the main areas of employment include:
 - if statement - simple if / if-else structure / if-elif-else structure / nested if
 - Application case - User authentication / Interchange between imperial units and metric units / What to do with dice throwing / Percentage grade conversion system / Fractional function evaluation / Enter the length of three sides If you can form a triangle, calculate the circumference and area
 
-#### Day04 - [循环结构](./Day01-15/Day04/循环结构.md)
+#### Day04 - [Repetition/Iteration Structure] (./Day01-15/Day04/循环结构.md)
 
-- 循环结构的应用场景 - 条件 / 缩进 / 代码块 / 流程图
-- while循环 - 基本结构 / break语句 / continue语句
-- for循环 - 基本结构 / range类型 / 循环中的分支结构 / 嵌套的循环 / 提前结束程序 
-- 应用案例 - 1~100求和 / 判断素数 / 猜数字游戏 / 打印九九表 / 打印三角形图案 / 猴子吃桃 / 百钱百鸡
+- How Iteration is done  - Condition / Indent / Code Block / Flow Chart
+- while loop - basic structure / break statement / continue statement
+- for loop - basic structure / range / branch structure in loop / nested loop / end loop early
+- Application case - 1~100 summation / Getting prime number / Guessing number game / Printing ninety nine table / Print triangle pattern / Monkey eating peach / Hundred money chicken
 
-#### Day05 - [总结和练习](./Day01-15/Day05/总结和练习.md)
+#### Day05 - [Summary and Practice] (./Day01-15/Day05/总结和练习.md)
 
-- 基础练习 - 水仙花数 / 完美数 / 五人分鱼 / Fibonacci数列 / 回文素数 
-- 综合练习 - Craps赌博游戏
+- Basic exercises - Daffodil number / Perfect number / Five people fish / Fibonacci series / Huiyuan prime number
+- Comprehensive exercises - Craps gambling games
 
-#### Day06 - [函数和模块的使用](./Day01-15/Day06/函数和模块的使用.md)
+#### Day06 - [Use of functions and modules] (./Day01-15/Day06/函数和模块的使用.md)
 
-- 函数的作用 - 代码的坏味道 / 用函数封装功能模块
-- 定义函数 - def语句 / 函数名 / 参数列表 / return语句 / 调用自定义函数
-- 调用函数 - Python内置函数 /  导入模块和函数
-- 函数的参数 - 默认参数 / 可变参数 / 关键字参数(\*) / 命名关键字参数(\*)
-- 函数的返回值 - 没有返回值  / 返回单个值 / 返回多个值(\*)
-- 作用域问题 - 局部作用域 / 嵌套作用域 / 全局作用域 / 内置作用域 / 和作用域相关的关键字
-- 用模块管理函数 - 模块的概念 / 用自定义模块管理函数 / 命名冲突的时候会怎样（同一个模块和不同的模块）
+- The role of the function - The bad taste of the code / Encapsulate the code with a function
+- Define function - def statement / function name / parameter list / return statement / call custom function
+- Calling functions - Python built-in functions / Importing modules and functions
+- Parameters of the function - Default parameters / Variable parameters / Keyword parameters (\*) / Named keyword parameters (\*)
+- Return value of function - No return value / Return single value / Return multiple values ​​(\*)
+- Scope issues - Local Scope / Nested Scope / Global Scope / Built-in Scope / Scope-related keywords
+- Using module management functions - Concept of modules / Managing functions with custom modules / What happens when naming conflicts (same module and different modules)
 
-#### Day07 - [字符串和常用数据结构](./Day01-15/Day07/字符串和常用数据结构.md)
+#### Day07 - [String and common data structure] (./Day01-15/Day07/字符串和常用数据结构.md)
 
-- 字符串的使用 - 计算长度 / 下标运算 / 切片 / 常用方法
-- 列表基本用法 - 定义列表 / 用下表访问元素 / 下标越界 / 添加元素 / 删除元素 / 修改元素 / 切片 / 循环遍历
-- 列表常用操作 - 连接 / 复制(复制元素和复制数组) / 长度 / 排序 / 倒转 / 查找
-- 生成列表 - 使用range创建数字列表 / 生成表达式 / 生成器
-- 元组的使用 - 定义元组 / 使用元组中的值 / 修改元组变量 / 元组和列表转换
-- 集合基本用法 - 集合和列表的区别 /  创建集合 / 添加元素 / 删除元素 /  清空
-- 集合常用操作 - 交集 / 并集 / 差集 / 对称差 / 子集 / 超集
-- 字典的基本用法 - 字典的特点 / 创建字典 / 添加元素 / 删除元素 / 取值 / 清空
-- 字典常用操作 - keys()方法 / values()方法 / items()方法 / setdefault()方法
-- 基础练习 - 跑马灯效果 / 列表找最大元素 / 统计考试成绩的平均分 / Fibonacci数列 / 杨辉三角
-- 综合案例 - 双色球选号 / 井字棋
+- Use of strings - Calculate length / Subscript operation / Slice / Common method
+- List basic usage - Define list / Access elements with table given / Subscript out of bounds / Add element / Delete element / Modify element / Slice / Loop traverse
+- List common operations - connect / copy (copy elements and copy arrays) / length / sort / reverse / find
+- Generate list - Create a list of numbers using range / Generate expression / Generator
+- Use of tuples - Define tuples / Use values ​​in tuples / Modify tuple variables / Tuples and list conversions
+- Collection basic usage - Differences between collections and lists / Creating collections / Adding elements / Deleting elements / Emptying
+- Collection common operations - intersection / union / difference set / symmetric difference / subset / superset
+- Basic usage of the dictionary - Features of the dictionary / Creating a dictionary / Adding elements / Deleting elements / Value / Clearing
+- Common operations of the dictionary - keys() method / values() method / items() method / setdefault() method
+- Basic exercises - Marquee effects / List to find the largest element / Average score of statistical test scores / Fibonacci series / Yang Hui triangle
+- Comprehensive case - Two-color ball selection / Tic Tac Toe
 
-#### Day08 - [面向对象编程基础](./Day01-15/Day08/面向对象编程基础.md)
+#### Day08 - [Object-Oriented Programming Fundamentals] (./Day01-15/Day08/Object-Oriented Programming Fundamentals.md)
 
-- 类和对象 - 什么是类 / 什么是对象 / 面向对象其他相关概念
-- 定义类 - 基本结构 / 属性和方法 / 构造器 / 析构器 / \_\_str\_\_方法
-- 使用对象 - 创建对象 / 给对象发消息
-- 面向对象的四大支柱 - 抽象 / 封装 / 继承 / 多态
-- 基础练习 - 定义学生类 / 定义时钟类 / 定义图形类 / 定义汽车类
+- Classes and objects - What are classes / What are objects / Object-oriented other related concepts
+- Define classes - Basic structure / Properties and methods / Constructors / Destructors / \_\_str\_\_Method
+- Use objects - Create objects / Send messages to objects
+- Four pillars of object orientation - abstraction / encapsulation / inheritance / polymorphism
+- Basic exercises - Defining student classes / Defining clock classes / Defining graphics classes / Defining car classes
 
-#### Day09 - [面向对象进阶](./Day01-15/Day09/面向对象进阶.md)
+#### Day09 - [Object-Oriented Advanced] (./Day01-15/Day09/Object-Oriented Advanced.md)
 
-- 属性 - 类属性 / 实例属性 / 属性访问器 / 属性修改器 / 属性删除器 / 使用\_\_slots\_\_
-- 类中的方法 - 实例方法 / 类方法 / 静态方法
-- 运算符重载 - \_\_add\_\_ / \_\_sub\_\_ / \_\_or\_\_ /\_\_getitem\_\_ / \_\_setitem\_\_ / \_\_len\_\_ / \_\_repr\_\_ / \_\_gt\_\_ / \_\_lt\_\_ / \_\_le\_\_ / \_\_ge\_\_ / \_\_eq\_\_ / \_\_ne\_\_ / \_\_contains\_\_ 
-- 类(的对象)之间的关系 - 关联 / 继承 / 依赖
-- 继承和多态 - 什么是继承 / 继承的语法 / 调用父类方法 / 方法重写 / 类型判定 / 多重继承 / 菱形继承(钻石继承)和C3算法
-- 综合案例 - 工资结算系统 / 图书自动折扣系统 / 自定义分数类
+- Properties - Class Properties / Instance Properties / Property Accessors / Property Modifiers / Property Removers / Using \_\_slots\_\_
+- methods in class - instance methods / class methods / static methods
+- Operator overloading - \_\_add\_\_ / \_\_sub\_\_ / \_\_or\_\_ /\_\_getitem\_\_ / \_\_setitem\_\_ / \ _\_len\_\_ / \_\_repr\_\_ / \_\_gt\_\_ / \_\_lt\_\_ / \_\_le\_\_ / \_\_ge\_ \_ / \_\_eq\_\_ / \_\_ne\_\_ / \_\_contains\_\_
+- the relationship between the classes (objects) - association / inheritance / dependencies
+- Inheritance and polymorphism - What is inheritance / Inheritance syntax / Call parent class method / Method override / Type decision / Multiple inheritance / Diamond inheritance (diamond inheritance) and C3 algorithm
+- Comprehensive case - Payroll settlement system / Book automatic discount system / Custom score class
 
-#### Day10 - [图形用户界面和游戏开发](./Day01-15/Day10/图形用户界面和游戏开发.md)
+#### Day10 - [Graphical User Interface and Game Development] (./Day01-15/Day10/Graphical User Interface and Game Development.md)
 
-#### Day11 - [文件和异常](./Day01-15/Day11/文件和异常.md)
+#### Day11 - [Files and Exceptions] (./Day01-15/Day11/Files and Exceptions.md)
 
-- 读文件 - 读取整个文件 / 逐行读取 / 文件路径
-- 写文件 - 覆盖写入 / 追加写入 / 文本文件 / 二进制文件
-- 异常处理 - 异常机制的重要性 / try-except代码块 / else代码块 / finally代码块 / 内置异常类型 / 异常栈 / raise语句
-- 数据持久化 - CSV文件概述 / csv模块的应用 / JSON数据格式 / json模块的应用
-- 综合案例 - 歌词解析
+- Read file - Read entire file / Line by line read / File path
+- Write file - Overwrite write / Append write / Text file / Binary file
+- Exception handling - Importance of exception mechanism / try-except code block / else code block / finally code block / built-in exception type / exception stack / raise statement
+- Data persistence - CSV file overview / csv module application / JSON data format / json module application
+- Comprehensive case - Lyrics analysis
 
-#### Day12 - [字符串和正则表达式](./Day01-15/Day12/字符串和正则表达式.md)
+#### Day12 - [String and regular expression] (./Day01-15/Day12/string and regular expression.md)
 
-- 字符串高级操作 - 转义字符 \ 原始字符串 \ 多行字符串 \ in和 not in运算符 \ is开头的方法 \ join和split方法 \ strip相关方法 \ pyperclip模块 \ 不变字符串和可变字符串 \ StringIO的使用
-- 正则表达式入门 - 正则表达式的作用 \ 元字符 \ 转义 \ 量词 \ 分组 \ 零宽断言 \贪婪匹配与惰性匹配懒惰 \ 使用re模块实现正则表达式操作（匹配、搜索、替换、捕获）
-- 使用正则表达式 - re模块 \ compile函数 \ group和groups方法 \ match方法 \ search方法 \ findall和finditer方法 \ sub和subn方法 \ split方法
-- 应用案例 - 使用正则表达式验证输入的字符串
+- String advanced operations - escape characters \ original strings \ multi-line strings \ in and not in operators \ is the beginning of the method \ join and split methods \ strip related methods \ pyperclip module \ invariant string and variable String \ use of StringIO
+- Getting Started with Regular Expressions - The Role of Regular Expressions \ Metacharacters \ Escapes \ Quantifiers \ Grouping \ Zero Width Assertions \ Greedy Matches and Lazy Matches Lazy \ Use re modules to implement regular expression operations (match, search, replace, capture)
+- Use regular expressions - re module \ compile function \ group and groups method \ match method \ search method \ findall and finditer methods \ sub and subn methods \ split method
+- Application case - Validate the input string using a regular expression
 
-#### Day13 - [进程和线程](./Day01-15/Day13/进程和线程.md)
+#### Day13 - [Process and Thread] (./Day01-15/Day13/Process and Thread.md)
 
-- 进程和线程的概念 - 什么是进程 / 什么是线程 / 多线程的应用场景
-- 使用进程 - fork函数 / multiprocessing模块 / 进程池 / 进程间通信
-- 使用线程 - thread模块 / threading模块 / Thread类 / Lock类
+- The concept of processes and threads - What is a process / What is a thread / Multi-threaded application scenario
+- Use process - fork function / multiprocessing module / process pool / interprocess communication
+- Use thread - thread module / threading module / Thread class / Lock class
 
-#### Day14 - [网络编程入门](./Day01-15/Day14/网络编程入门.md)
+#### Day14 - [Getting Started with Network Programming] (./Day01-15/Day14/ Getting Started with Network Programming.md)
 
-- 计算机网络基础 - 计算机网络发展史 / “TCP-IP”模型 / IP地址 / 端口 / 协议 / 其他相关概念
-- 网络应用架构 - “客户端-服务器”架构 / “浏览器-服务器”架构
-- Python网络编程 - 套接字的概念 / socket模块 /  socket函数 / 创建TCP服务器 / 创建TCP客户端 / 创建UDP服务器 / 创建UDP客户端 / SocketServer模块
+- Computer Network Fundamentals - History of Computer Networks / "TCP-IP" Model / IP Address / Port / Protocol / Other Related Concepts
+- Web Application Architecture - "Client-Server" Architecture / "Browser-Server" Architecture
+- Python Network Programming - Socket Concept / Socket Module / Socket Function / Create TCP Server / Create TCP Client / Create UDP Server / Create UDP Client / SocketServer Module
 
-#### Day15 - [网络应用开发](./Day01-15/Day15/网络应用开发.md)
+#### Day15 - [Network Application Development] (./Day01-15/Day15/Web Application Development.md)
 
-- 访问网络API - 网络API概述 / 访问URL / requests模块 / 解析JSON格式数据
-- 文件传输 - FTP协议 / ftplib模块 / 交互式FTP应用
-- 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
-- 短信服务 - twilio模块 / 国内的短信服务
+- Access to the web API - Network API Overview / Access URL / requests module / Parse JSON format data
+- File Transfer - FTP Protocol / ftplib Module / Interactive FTP Application
+- Email - SMTP protocol / POP3 protocol / IMAP protocol / smtplib module / poplib module / imaplib module
+- SMS service - twilio module / domestic SMS service
 
-### Day16~Day20 - [Python语言进阶 ](./Day16-20/Python语言进阶.md)
+### Day16~Day20 - [Python Advanced] (./Day16-20/Python Advanced.md)
 
-### Day21~30 - [Web前端](./Day21-30/Web前端概述.md)
+### Day21~30 - [Web Front End] (./Day21-30/Web Front End Overview.md)
 
-- 用HTML标签承载页面内容
-- 用CSS渲染页面
-- 用JavaScript处理交互式行为
-- jQuery入门和提高
-- Bootstrap在Web项目中的应用
+- Host page content with HTML tags
+- Render pages with CSS
+- Handling interactive behavior with JavaScript
+- jQuery getting started and improving
+- Bootstrap application in web projects
 
-### Day31~35 - [Linux操作系统](./Day31-35/玩转Linux操作系统.md)
+### Day31~35 - [Linux operating system] (./Day31-35/playing Linux operating system.md)
 
-- 操作系统发展史和Linux概述
-- Linux基础命令
-- Linux中的实用程序
-- Linux的文件系统
-- Vim编辑器的应用
-- 环境变量和Shell编程
-- 软件的安装和服务的配置
-- 网络访问和管理
-- 其他相关内容
+- Operating system history and Linux overview
+- Linux basic commands
+- Utilities in Linux
+- Linux file system
+- Vim editor application
+- Environment variables and shell programming
+- Software installation and service configuration
+- Network access and management
+- Other related content
 
-### Day36~40 - [数据库基础和进阶](./Day36-40)
+### Day36~40 - [Database Basics and Advanced] (./Day36-40)
 
-- [关系型数据库MySQL](./Day36-40/关系型数据库MySQL.md)
-  - 关系型数据库概述
-  - MySQL的安装和使用
-  - SQL的使用
-    - DDL
-    - DML
-    - DQL
-    - DCL
-  - 在Python中操作MySQL
-  - MySQL高级知识
-- [NoSQL入门](./Day36-40/NoSQL入门.md)
-  - NoSQL概述
-  - 主流NoSQL数据库
-  - Redis概述
-  - Mongo概述
+- [Relational database MySQL] (./Day36-40/relational database MySQL.md)
+  - Relational database overview
+  - MySQL installation and use
+  - Use of SQL
+    - DDL
+    - DML
+    - DQL
+    - DCL
+  - Operate MySQL in Python
+  - MySQL advanced knowledge
+- [NoSQL Getting Started] (./Day36-40/NoSQL Getting Started.md)
+  - NoSQL overview
+  Mainstream NoSQL database
+  - Redis overview
+  - Mongo overview
 
 ### Day41~55 - [Django](./Day41-55)
 
-#### Day41 - [Django2实战(01) - 快速上手](./Day41-55/Django2实战01.md)
+#### Day41 - [Django2 combat (01) - Quick start] (./Day41-55/Django2 combat 01.md)
 
-#### Day42 - [Django2实战(02) - 深入模型](./Day41-55/Django2实战02.md)
+#### Day42 - [Django2 combat (02) - In-depth model] (./Day41-55/Django2 combat 02.md)
 
-#### Day43 - [Django2实战(03) - 视图和模板](./Day41-55/Django2实战03.md)
+#### Day43 - [Django2 combat (03) - view and template] (./Day41-55/Django2 combat 03.md)
 
-#### Day44 - [Django2实战(04) - 表单的应用](./Day41-55/Django2实战04.md)
+#### Day44 - [Django2 combat (04) - form application] (./Day41-55/Django2 combat 04.md)
 
-#### Day45 - [Django2实战(05) - Cookie和会话](./Day41-55/Django2实战05.md)
+#### Day45 - [Django2 combat (05) - Cookie and session] (./Day41-55/Django2 combat 05.md)
 
-#### Day46 - [Django2实战(06) - 日志和缓存](./Day41-55/Django2实战06.md)
+#### Day46 - [Django2 combat (06) - log and cache] (./Day41-55/Django2 combat 06.md)
 
-#### Day47 - [Django2实战(07) - 文件上传和通用视图](./Day41-55/Django2实战07.md)
+#### Day47 - [Django2 combat (07) - file upload and generic view] (./Day41-55/Django2 combat 07.md)
 
-#### Day48 - [Django2实战(08) - 用户/角色/权限和中间件](./Day41-55/Django2实战08.md)
+#### Day48 - [Django2 combat (08) - user / character / permissions and middleware] (./Day41-55/Django2 combat 08.md)
 
-#### Day49 - [Django2实战(09) - RESTful架构和应用(上)](./Day41-55/Django2实战09.md)
+#### Day49 - [Django2 combat (09) - RESTful architecture and applications (on)] (./Day41-55/Django2 combat 09.md)
 
-#### Day50 - [Django2实战(10) - RESTful架构和应用(下)](./Day41-55/Django2实战10.md)
+#### Day50 - [Django2 combat (10) - RESTful architecture and applications (below)] (./Day41-55/Django2 combat 10.md)
 
-#### Day51-55 - [Django2项目实战](./Day41-55/Django2项目实战.md)
-
+#### Day51-55 - [Django2 project combat] (./Day41-55/Django2 project combat.md)
 - 项目开发流程和相关工具
 - 生成非HTML内容
 - 项目部署和测试

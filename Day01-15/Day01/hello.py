@@ -8,6 +8,7 @@ Author: 骆昊
 Date: 2018-02-26
 
 请将该文件命名为hello.py并在终端中通过下面的命令运行它
+Please name the file 'hello.py' then run the command in terminal
 python hello.py
 
 """

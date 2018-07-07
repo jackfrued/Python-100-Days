@@ -1,4 +1,4 @@
-## Python - 100From Zero To Hero
+## Python - 100 From Zero To Hero
 
 by 骆昊
 
@@ -47,7 +47,7 @@ As a Python developer, the main areas of employment include:
 
 ### Day01~15 - [Python Language Basics](./Day01-15)
 
-#### Day01 - [FirstPython](./Day01-15/Day01/初识Python.md)
+#### Day01 - [FirstPython](./Day01-15/Day01/FirstPython.md)
 
 - Introduction to Python - History of Python / Advantages and Disadvantages of Python / Python Applications
 - Setting up a programming environment - Windows / Linux / MacOS

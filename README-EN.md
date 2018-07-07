@@ -1,0 +1,306 @@
+## Python - 100From Zero To Hero
+
+by 骆昊
+
+### Python Applications and Employment Situation
+
+Simply put, Python is an "elegant", "clear", "simple" programming language.
+
+ - Low learning curve for beginners
+ - Open source system with a strong ecosystem
+ - Interpreted Language, Extreme Portability
+ - Support for object-oriented and functional programming
+ - Extensibility, can call C / C + + code
+ - High code specification and readability
+
+Python is most popular in several various areas of computer science
+
+ - Cloud infrastructure - Python / Java / Go
+ - DevOps - Python / Shell / Ruby / Go
+ - Web Crawling - Python / PHP / C++
+ - Data Mining - Python / R / Scala / Matlab
+ - Machine Learning - Python / R / Java / Lisp
+
+As a Python developer, the main areas of employment include:
+
+- Python backend-server development / game server development / data interface development engineer
+- Python automated operation and maintenance engineer
+- Python Data Analysis / Data Visualization / Scientific Computing / Big Data Engineer
+- Python crawler engineer
+- Python Chat Bot Development / Image Recognition and Vision Algorithm / Deep Learning Engineer
+
+下图显示了主要城市Python招聘需求量及薪资待遇排行榜（截止到2018年5月）。
+
+![Python招聘需求及薪资待遇Top 10](./res/python-top-10.png)
+
+![](./res/python-bj-salary.png)
+
+![](./res/python-cd-salary.png)
+
+给初学者的几个建议（老司机的忠告）：
+
+- Make English as your working language.
+- Practice makes perfect.
+- All experience comes from mistakes.
+- Don't be one of the leeches.
+- Either stand out or kicked out.
+
+### Day01~15 - [Python Language Basics](./Day01-15)
+
+#### Day01 - [FirstPython](./Day01-15/Day01/初识Python.md)
+
+- Introduction to Python - History of Python / Advantages and Disadvantages of Python / Python Applications
+- Setting up a programming environment - Windows / Linux / MacOS
+- Run Python programs from the terminal - DOS commands / Hello, world / print functions / Run programs
+- Using IDLE - Interactive Environment (REPL) / Writing multiple lines of code / Running programs / Exiting IDLE
+- Comments - The role of comments / Single line comments / Multi-line comments
+
+#### Day02 - [Language Elements](./Day01-15/Day02/语言元素.md)
+
+- Programs and hexadecimals - Instructions and programs / Von Neumann machines / Binary and decimal / Octal and hexadecimal
+- Variables and types - Naming of variables / Use of variables / Input functions / Checking variable types / Type conversion
+- Numbers and strings - Integer / Float / Plural / String / String basic operations / Character encoding
+- Operator - Mathematical Operator / Assignment Operator / Comparison Operator / Logical Operator / Identity Operator / Operator Priority
+- Application case - Fahrenheit temperature converted to Celsius temperature / Enter the radius of the circle to calculate the circumference and area / Enter the year to determine whether it is a leap year
+
+#### Day03 - [Conditional Programming](./Day01-15/Day03/分支结构.md)
+
+- Application scenario of branch structure - Condition / Indent / Code block / Flow chart
+- if statement - simple if / if-else structure / if-elif-else structure / nested if
+- Application case - User authentication / Interchange between imperial units and metric units / What to do with dice throwing / Percentage grade conversion system / Fractional function evaluation / Enter the length of three sides If you can form a triangle, calculate the circumference and area
+
+#### Day04 - [循环结构](./Day01-15/Day04/循环结构.md)
+
+- 循环结构的应用场景 - 条件 / 缩进 / 代码块 / 流程图
+- while循环 - 基本结构 / break语句 / continue语句
+- for循环 - 基本结构 / range类型 / 循环中的分支结构 / 嵌套的循环 / 提前结束程序 
+- 应用案例 - 1~100求和 / 判断素数 / 猜数字游戏 / 打印九九表 / 打印三角形图案 / 猴子吃桃 / 百钱百鸡
+
+#### Day05 - [总结和练习](./Day01-15/Day05/总结和练习.md)
+
+- 基础练习 - 水仙花数 / 完美数 / 五人分鱼 / Fibonacci数列 / 回文素数 
+- 综合练习 - Craps赌博游戏
+
+#### Day06 - [函数和模块的使用](./Day01-15/Day06/函数和模块的使用.md)
+
+- 函数的作用 - 代码的坏味道 / 用函数封装功能模块
+- 定义函数 - def语句 / 函数名 / 参数列表 / return语句 / 调用自定义函数
+- 调用函数 - Python内置函数 /  导入模块和函数
+- 函数的参数 - 默认参数 / 可变参数 / 关键字参数(\*) / 命名关键字参数(\*)
+- 函数的返回值 - 没有返回值  / 返回单个值 / 返回多个值(\*)
+- 作用域问题 - 局部作用域 / 嵌套作用域 / 全局作用域 / 内置作用域 / 和作用域相关的关键字
+- 用模块管理函数 - 模块的概念 / 用自定义模块管理函数 / 命名冲突的时候会怎样（同一个模块和不同的模块）
+
+#### Day07 - [字符串和常用数据结构](./Day01-15/Day07/字符串和常用数据结构.md)
+
+- 字符串的使用 - 计算长度 / 下标运算 / 切片 / 常用方法
+- 列表基本用法 - 定义列表 / 用下表访问元素 / 下标越界 / 添加元素 / 删除元素 / 修改元素 / 切片 / 循环遍历
+- 列表常用操作 - 连接 / 复制(复制元素和复制数组) / 长度 / 排序 / 倒转 / 查找
+- 生成列表 - 使用range创建数字列表 / 生成表达式 / 生成器
+- 元组的使用 - 定义元组 / 使用元组中的值 / 修改元组变量 / 元组和列表转换
+- 集合基本用法 - 集合和列表的区别 /  创建集合 / 添加元素 / 删除元素 /  清空
+- 集合常用操作 - 交集 / 并集 / 差集 / 对称差 / 子集 / 超集
+- 字典的基本用法 - 字典的特点 / 创建字典 / 添加元素 / 删除元素 / 取值 / 清空
+- 字典常用操作 - keys()方法 / values()方法 / items()方法 / setdefault()方法
+- 基础练习 - 跑马灯效果 / 列表找最大元素 / 统计考试成绩的平均分 / Fibonacci数列 / 杨辉三角
+- 综合案例 - 双色球选号 / 井字棋
+
+#### Day08 - [面向对象编程基础](./Day01-15/Day08/面向对象编程基础.md)
+
+- 类和对象 - 什么是类 / 什么是对象 / 面向对象其他相关概念
+- 定义类 - 基本结构 / 属性和方法 / 构造器 / 析构器 / \_\_str\_\_方法
+- 使用对象 - 创建对象 / 给对象发消息
+- 面向对象的四大支柱 - 抽象 / 封装 / 继承 / 多态
+- 基础练习 - 定义学生类 / 定义时钟类 / 定义图形类 / 定义汽车类
+
+#### Day09 - [面向对象进阶](./Day01-15/Day09/面向对象进阶.md)
+
+- 属性 - 类属性 / 实例属性 / 属性访问器 / 属性修改器 / 属性删除器 / 使用\_\_slots\_\_
+- 类中的方法 - 实例方法 / 类方法 / 静态方法
+- 运算符重载 - \_\_add\_\_ / \_\_sub\_\_ / \_\_or\_\_ /\_\_getitem\_\_ / \_\_setitem\_\_ / \_\_len\_\_ / \_\_repr\_\_ / \_\_gt\_\_ / \_\_lt\_\_ / \_\_le\_\_ / \_\_ge\_\_ / \_\_eq\_\_ / \_\_ne\_\_ / \_\_contains\_\_ 
+- 类(的对象)之间的关系 - 关联 / 继承 / 依赖
+- 继承和多态 - 什么是继承 / 继承的语法 / 调用父类方法 / 方法重写 / 类型判定 / 多重继承 / 菱形继承(钻石继承)和C3算法
+- 综合案例 - 工资结算系统 / 图书自动折扣系统 / 自定义分数类
+
+#### Day10 - [图形用户界面和游戏开发](./Day01-15/Day10/图形用户界面和游戏开发.md)
+
+#### Day11 - [文件和异常](./Day01-15/Day11/文件和异常.md)
+
+- 读文件 - 读取整个文件 / 逐行读取 / 文件路径
+- 写文件 - 覆盖写入 / 追加写入 / 文本文件 / 二进制文件
+- 异常处理 - 异常机制的重要性 / try-except代码块 / else代码块 / finally代码块 / 内置异常类型 / 异常栈 / raise语句
+- 数据持久化 - CSV文件概述 / csv模块的应用 / JSON数据格式 / json模块的应用
+- 综合案例 - 歌词解析
+
+#### Day12 - [字符串和正则表达式](./Day01-15/Day12/字符串和正则表达式.md)
+
+- 字符串高级操作 - 转义字符 \ 原始字符串 \ 多行字符串 \ in和 not in运算符 \ is开头的方法 \ join和split方法 \ strip相关方法 \ pyperclip模块 \ 不变字符串和可变字符串 \ StringIO的使用
+- 正则表达式入门 - 正则表达式的作用 \ 元字符 \ 转义 \ 量词 \ 分组 \ 零宽断言 \贪婪匹配与惰性匹配懒惰 \ 使用re模块实现正则表达式操作（匹配、搜索、替换、捕获）
+- 使用正则表达式 - re模块 \ compile函数 \ group和groups方法 \ match方法 \ search方法 \ findall和finditer方法 \ sub和subn方法 \ split方法
+- 应用案例 - 使用正则表达式验证输入的字符串
+
+#### Day13 - [进程和线程](./Day01-15/Day13/进程和线程.md)
+
+- 进程和线程的概念 - 什么是进程 / 什么是线程 / 多线程的应用场景
+- 使用进程 - fork函数 / multiprocessing模块 / 进程池 / 进程间通信
+- 使用线程 - thread模块 / threading模块 / Thread类 / Lock类
+
+#### Day14 - [网络编程入门](./Day01-15/Day14/网络编程入门.md)
+
+- 计算机网络基础 - 计算机网络发展史 / “TCP-IP”模型 / IP地址 / 端口 / 协议 / 其他相关概念
+- 网络应用架构 - “客户端-服务器”架构 / “浏览器-服务器”架构
+- Python网络编程 - 套接字的概念 / socket模块 /  socket函数 / 创建TCP服务器 / 创建TCP客户端 / 创建UDP服务器 / 创建UDP客户端 / SocketServer模块
+
+#### Day15 - [网络应用开发](./Day01-15/Day15/网络应用开发.md)
+
+- 访问网络API - 网络API概述 / 访问URL / requests模块 / 解析JSON格式数据
+- 文件传输 - FTP协议 / ftplib模块 / 交互式FTP应用
+- 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
+- 短信服务 - twilio模块 / 国内的短信服务
+
+### Day16~Day20 - [Python语言进阶 ](./Day16-20/Python语言进阶.md)
+
+### Day21~30 - [Web前端](./Day21-30/Web前端概述.md)
+
+- 用HTML标签承载页面内容
+- 用CSS渲染页面
+- 用JavaScript处理交互式行为
+- jQuery入门和提高
+- Bootstrap在Web项目中的应用
+
+### Day31~35 - [Linux操作系统](./Day31-35/玩转Linux操作系统.md)
+
+- 操作系统发展史和Linux概述
+- Linux基础命令
+- Linux中的实用程序
+- Linux的文件系统
+- Vim编辑器的应用
+- 环境变量和Shell编程
+- 软件的安装和服务的配置
+- 网络访问和管理
+- 其他相关内容
+
+### Day36~40 - [数据库基础和进阶](./Day36-40)
+
+- [关系型数据库MySQL](./Day36-40/关系型数据库MySQL.md)
+  - 关系型数据库概述
+  - MySQL的安装和使用
+  - SQL的使用
+    - DDL
+    - DML
+    - DQL
+    - DCL
+  - 在Python中操作MySQL
+  - MySQL高级知识
+- [NoSQL入门](./Day36-40/NoSQL入门.md)
+  - NoSQL概述
+  - 主流NoSQL数据库
+  - Redis概述
+  - Mongo概述
+
+### Day41~55 - [Django](./Day41-55)
+
+#### Day41 - [Django2实战(01) - 快速上手](./Day41-55/Django2实战01.md)
+
+#### Day42 - [Django2实战(02) - 深入模型](./Day41-55/Django2实战02.md)
+
+#### Day43 - [Django2实战(03) - 视图和模板](./Day41-55/Django2实战03.md)
+
+#### Day44 - [Django2实战(04) - 表单的应用](./Day41-55/Django2实战04.md)
+
+#### Day45 - [Django2实战(05) - Cookie和会话](./Day41-55/Django2实战05.md)
+
+#### Day46 - [Django2实战(06) - 日志和缓存](./Day41-55/Django2实战06.md)
+
+#### Day47 - [Django2实战(07) - 文件上传和通用视图](./Day41-55/Django2实战07.md)
+
+#### Day48 - [Django2实战(08) - 用户/角色/权限和中间件](./Day41-55/Django2实战08.md)
+
+#### Day49 - [Django2实战(09) - RESTful架构和应用(上)](./Day41-55/Django2实战09.md)
+
+#### Day50 - [Django2实战(10) - RESTful架构和应用(下)](./Day41-55/Django2实战10.md)
+
+#### Day51-55 - [Django2项目实战](./Day41-55/Django2项目实战.md)
+
+- 项目开发流程和相关工具
+- 生成非HTML内容
+- 项目部署和测试
+- 项目性能调优
+- Web应用安全保护
+
+
+### Day56~65 - [Flask](./Day56-65)
+
+#### Day56 - [Flask安装和入门](./Day56-65/Flash安装和入门.md) 
+
+#### Day57 - [模板的使用](./Day56-65/模板的使用.md) 
+
+#### Day58 - [表单的处理](./Day56-65/表单的处理.md) 
+
+#### Day59 - [数据库操作](./Day56-65/数据库操作.md)
+
+#### Day60 - [使用Flask进行项目开发](./Day56-65/使用Flask进行项目开发.md)  
+
+#### Day61-65 - [Flask项目实战](./Day56-65/Flask项目实战.md)
+
+- 性能和测试
+- 项目部署
+
+### Day66~75 - [爬虫](./Day66-75)
+
+#### Day66 - [网络爬虫和相关工具](./Day66-75/01.网络爬虫和相关工具.md)
+
+#### Day67 - [数据采集和解析](./Day66-75/02.数据采集和解析.md)
+
+#### Day68 - [存储数据](./Day66-75/03.存储数据.md)
+
+#### Day69 - [并发下载](./Day66-75/04.并发下载.md)
+
+#### Day70 - [解析动态内容](./Day66-75/05.解析动态内容.md)
+
+#### Day71 - [表单交互和验证码处理](./Day66-75/06.表单交互和验证码处理.md)
+
+#### Day72 - [Scrapy爬虫框架入门](./Day66-75/爬虫框架Scrapy入门.md)
+
+#### Day73 - [Scrapy爬虫框架高级应用](./Day66-75/爬虫框架Scrapy高级应用.md)
+
+#### Day74 - [Scrapy爬虫框架分布式实现](./Day66-75/爬虫框架Scrapy分布式实现.md)
+
+### Day76~90 - [数据处理和机器学习](./Day76-90)
+
+#### Pandas的应用
+
+#### NumPy和SciPy的应用
+
+#### Matplotlib和数据可视化
+
+#### K最邻近分类算法(KNN)
+
+#### 线性回归和Logistic回归
+
+#### 支持向量机(SVM)和Kmeans聚类
+
+#### 决策树和贝叶斯分类
+
+#### Tensorflow实战01
+
+#### Tensorflow实战02
+
+#### Tensorflow实战03
+
+### Day91~100 - [团队项目开发](./Day91-100)
+
+#### 软件项目的过程模型
+
+#### 团队开发工具
+
+#### 模块分割设计与单元测试
+
+#### 用Jenkins实现持续集成
+
+#### 部署和自动化部署
+
+#### 性能测试和改善
+
+
+

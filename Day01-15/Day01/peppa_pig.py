@@ -2,22 +2,23 @@ from turtle import*
 
 
 def nose(x,y):#鼻子
-    penup()#提起笔
-    goto(x,y)#定位
-    pendown()#落笔，开始画
+    penup()#提起笔 | Lift the pen - don't draw
+    goto(x,y)#定位 | Set Position
+    pendown()#落笔，开始画 | Drop the pen and start painting
+    #Set the direction of the turtle to -30 as a number (0-east, 90-north, 180-west, 270-south)
     setheading(-30)#将乌龟的方向设置为to_angle/为数字（0-东、90-北、180-西、270-南）
-    begin_fill()#准备开始填充图形
+    begin_fill()#准备开始填充图形 | Start filling the graph
     a=0.4
     for i in range(120):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            left(3) #向左转3度
-            forward(a) #向前走a的步长
+            left(3) #向左转3度 Turn Left 3 degrees
+            forward(a) #向前走a的步长 | Step Forward a pixels
         else:
             a=a-0.08
             left(3)
             forward(a)
-    end_fill()#填充完成
+    end_fill()#填充完成 | Filling Done
 
     penup()
     setheading(90)
@@ -25,11 +26,11 @@ def nose(x,y):#鼻子
     setheading(0)
     forward(10)
     pendown()
-    pencolor(255,155,192)#画笔颜色
+    pencolor(255,155,192)#画笔颜色 | Set Pen color to R,G,B value
     setheading(10)
     begin_fill()
     circle(5)
-    color(160,82,45)#返回或设置pencolor和fillcolor
+    color(160,82,45)#返回或设置pencolor和fillcolor | Set pen color and fill color
     end_fill()
 
     penup()
@@ -67,8 +68,8 @@ def head(x,y):#头
     for i in range(60):
         if 0<=i<30 or 60<=i<90:
             a=a+0.08
-            lt(3) #向左转3度
-            fd(a) #向前走a的步长
+            lt(3) #向左转3度 | Turn Left 3 degrees
+            fd(a) #向前走a的步长 | Move forward a pixels
         else:
             a=a-0.08
             lt(3)
@@ -169,9 +170,9 @@ def mouth(x,y): #嘴
     circle(40,80)
 
 
-def setting():          #参数设置
+def setting():          #参数设置  | Parameter Settings
     pensize(4)
-    hideturtle()        #使乌龟无形（隐藏）
+    hideturtle()        #使乌龟无形（隐藏）| Make the turtle invisible
     colormode(255)      #将其设置为1.0或255.随后 颜色三元组的r，g，b值必须在0 .. cmode范围内
     color((255,155,192),"pink")
     setup(840,500)
@@ -179,13 +180,13 @@ def setting():          #参数设置
 
 
 def main():
-    setting()           #画布、画笔设置
-    nose(-100,100)      #鼻子
-    head(-69,167)       #头
-    ears(0,160)         #耳朵
-    eyes(0,140)         #眼睛
-    cheek(80,10)        #腮
-    mouth(-20,30)       #嘴
+    setting()           #画布、画笔设置 | Canvas Brush Settings
+    nose(-100,100)      #鼻子 | Draw Nose
+    head(-69,167)       #头 | Draw Head
+    ears(0,160)         #耳朵 | Draw Ears
+    eyes(0,140)         #眼睛 | Draw Eyes
+    cheek(80,10)        #腮 | Draw Cheek
+    mouth(-20,30)       #嘴 | Draw Mouth
     done()
 
 

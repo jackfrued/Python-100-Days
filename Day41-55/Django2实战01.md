@@ -214,6 +214,7 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
    - `models.py`：存放应用的数据模型，即实体类及其之间的关系（MVC/MVT中的M）。
    - `tests.py`：包含测试应用各项功能的测试类和测试函数。
    - `views.py`：处理请求并返回响应的函数（MVC中的C，MVT中的V）。
+
 2. 进入应用目录修改视图文件views.py。
 
    ```Shell
@@ -294,12 +295,15 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
 
    ```Python
    
+   from io import StringIO
+   
    from django.http import HttpResponse
    
-   from io import StringIO
-   from random import randrange
-   
-   fruits = ['苹果', '草莓', '榴莲', '香蕉', '葡萄', '山竹', '蓝莓', '西瓜']
+   depts_list = [
+       {'no': 10, 'name': '财务部', 'location': '北京'},
+       {'no': 20, 'name': '研发部', 'location': '成都'},
+       {'no': 30, 'name': '销售部', 'location': '上海'},
+   ]
    
    
    def index(request):
@@ -310,18 +314,34 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
        output.write('\t<title>首页</title>')
        output.write('</head>\n')
        output.write('<body>\n')
-       output.write('\t<h1>Hello, world!</h1>\n')
+       output.write('\t<h1>部门信息</h1>\n')
        output.write('\t<hr>\n')
-       output.write('\t<ol>\n')
-       for _ in range(3):
-           rindex = randrange(0, len(fruits))
-           output.write('\t\t<li>' + fruits[rindex]  + '</li>\n')
-       output.write('\t</ol>\n')
+       output.write('\t<table>\n')
+       output.write('\t\t<tr>\n')
+       output.write('\t\t\t<th>部门编号</th>\n')
+       output.write('\t\t\t<th>部门名称</th>\n')
+       output.write('\t\t\t<th>所在地</th>\n')
+       output.write('\t\t</tr>\n')
+       for dept in depts_list:
+           output.write('\t\t<tr>\n')
+           output.write(f'\t\t\t<td>{dept["no"]}</td>\n')
+           output.write(f'\t\t\t<td>{dept["name"]}</td>\n')
+           output.write(f'\t\t\t<td>{dept["location"]}</td>\n')
+           output.write('\t\t</tr>\n')
+       output.write('\t</table>\n')
        output.write('</body>\n')
        output.write('</html>\n')
        return HttpResponse(output.getvalue())
-   
    ```
+
+7. 再次使用下面的命令来启动服务器并查看程序的运行结果。
+
+    ```Shell
+    
+    (venv)$ cd ..
+    (venv)$ python manage.py runserver
+    ```
+    ![](./res/runserver.png)
 
 #### 使用视图模板
 
@@ -354,14 +374,22 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
    	<title>首页</title>
    </head>
    <body>
-   	<h1>{{ greeting }}</h1>
+   	<h1>部门信息</h1>
    	<hr>
-   	<h3>今天推荐{{ num }}种水果是:</h3>
-   	<ul>
-   		{% for fruit in fruits %}
-   		<li>{{ fruit }}</li>
-   		{% endfor %}
-   	</ul>
+   	<table>
+   	    <tr>
+               <th>部门编号</th>
+               <th>部门名称</th>
+               <th>所在地</th>
+           </tr>
+           {% for dept in depts_list %}
+           <tr>
+               <td>{{ dept.no }}</td>
+               <td>{{ dept.name }}</td>
+               <td>{{ dept.location }}</td>
+           <tr>
+           {% endfor %}
+       </table>
    </body>
    </html>
    ```
@@ -379,19 +407,16 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
    ```Python
    
    from django.shortcuts import render
-   from random import randrange
+   
+   depts_list = [
+       {'no': 10, 'name': '财务部', 'location': '北京'},
+       {'no': 20, 'name': '研发部', 'location': '成都'},
+       {'no': 30, 'name': '销售部', 'location': '上海'},
+   ]
    
    
    def index(request):
-       fruits = ['苹果', '香蕉', '草莓', '葡萄', '山竹', '杨梅', '西瓜', '榴莲']
-       start, end = 0, randrange(len(fruits))
-       ctx = {
-           'greeting': 'Hello, Django!',
-           'num': end + 1,
-           'fruits': fruits[start:end + 1]
-       }
-       return render(request, 'index.html', ctx)
-   
+       return render(request, 'index.html', {'depts_list': depts_list})
    ```
 
    到此为止，我们还没有办法让views.py中的render函数找到模板文件index.html，为此我们需要修改settings.py文件，配置模板文件所在的路径。
@@ -436,7 +461,6 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
    (venv)$ python manage.py runserver
    ```
 
-   ![](./res/runserver.png)
 
 ### 总结
 

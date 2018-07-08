@@ -1,8 +1,10 @@
 ## Django 2.x实战(02) - 深入模型
 
-在上一个章节中，我们提到了Django是基于MVC架构的Web框架，MVC架构追求的是“模型”和“视图的解耦合。所谓“模型”说得更直白一些就是数据，所以通常也被称作“数据模型”。在实际的项目中，数据模型通常通过数据库实现持久化操作，而关系型数据库在很长一段时间都是持久化的首选方案（当然NoSQL的方案在今天普遍被认为是关系型数据库的一个很好的补充），在下面演示的项目中，我们选择使用MySQL来实现数据持久化。
+在上一个章节中，我们提到了Django是基于MVC架构的Web框架，MVC架构追求的是“模型”和“视图的解耦合。所谓“模型”说得更直白一些就是数据，所以通常也被称作“数据模型”。在实际的项目中，数据模型通常通过数据库实现持久化操作，而关系型数据库在很长一段时间都是持久化的首选方案，下面我们以MySQL为例来说明如何使用关系型数据库来实现持久化操作。
 
 ### 配置关系型数据库MySQL 
+
+我们继续来完善上一个章节中的OA项目，首先从配置项目使用的数据库开始。
 
 1. 进入oa文件夹，修改项目的settings.py文件，首先将我们之前创建的应用hrs添加已安装的项目中，然后配置MySQL作为持久化方案。
 
@@ -49,7 +51,7 @@
 
    其他的配置可以参考官方文档中[数据库配置](https://docs.djangoproject.com/zh-hans/2.0/ref/databases/#third-party-notes)的部分。
 
-   NAME属性代表数据库的名称，如果使用SQLite它对应着一个文件，在这种情况下NAME的属性值应该是一个绝对路径。如果使用其他关系型数据库，还要配置对应的HOST（主机）、PORT（端口）、USER（用户名）、PASSWORD（口令）等属性。
+   NAME属性代表数据库的名称，如果使用SQLite它对应着一个文件，在这种情况下NAME的属性值应该是一个绝对路径；使用其他关系型数据库，则要配置对应的HOST（主机）、PORT（端口）、USER（用户名）、PASSWORD（口令）等属性。
 
 2. 安装MySQL客户端工具，Python 3中使用PyMySQL，Python 2中用MySQLdb。
 
@@ -132,11 +134,11 @@
        mgr = models.ForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='主管编号')
        sal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='月薪')
        comm = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True, verbose_name='补贴')
+       # 多对一外键关联
        dept = models.ForeignKey(Dept, db_column='dno', on_delete=models.PROTECT, verbose_name='所在部门')
    
        class Meta:
            db_table = 'tb_emp'
-   
    ```
    > 说明：上面定义模型时使用了字段类及其属性，其中IntegerField对应数据库中的integer类型，CharField对应数据库的varchar类型，DecimalField对应数据库的decimal类型，ForeignKey用来建立多对一外键关联。字段属性primary_key用于设置主键，max_length用来设置字段的最大长度，db_column用来设置数据库中与字段对应的列，verbose_name则设置了Django后台管理系统中该字段显示的名称。如果对这些东西感到很困惑也不要紧，文末提供了字段类、字段属性、元数据选项等设置的相关说明，不清楚的读者可以稍后查看对应的参考指南。
 
@@ -157,7 +159,7 @@
      Applying hrs.0001_initial... OK
    ```
 
-   执行完数据迁移操作之后，可以在通过图形化的MySQL客户端工具查看到E-R图（实体关系图）。
+   执行完数据模型迁移操作之后，可以在通过图形化的MySQL客户端工具查看到E-R图（实体关系图）。
 
    ![](./res/er-graph.png)
 
@@ -435,7 +437,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ### Django模型最佳实践
 
-1. 正确的模型命名和关系字段命名。
+1. 正确的为模型和关系字段命名。
 2. 设置适当的`related_name`属性。
 3. 用`OneToOneField`代替`ForeignKeyField(unique=True)`。
 4. 通过“迁移操作”（migrate）来添加模型。
@@ -571,7 +573,7 @@ Q对象（用于执行复杂查询）的使用：
 >>> Emp.objects.filter(
 ...     Q(name__startswith='张'),
 ...     Q(sal__gte=5000) | Q(comm__gte=1000)
-... ) # 查询名字以“张”开头 工资大于等于5000或补贴大于等于1000的员工
+... ) # 查询名字以“张”开头且工资大于等于5000或补贴大于等于1000的员工
 <QuerySet [<Emp: 张三丰>]>
 ```
 

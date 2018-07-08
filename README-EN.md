@@ -55,7 +55,7 @@ As a Python developer, the main areas of employment include:
 - Using IDLE - Interactive Environment (REPL) / Writing multiple lines of code / Running programs / Exiting IDLE
 - Comments - The role of comments / Single line comments / Multi-line comments
 
-#### Day02 - [Language Elements](./Day01-15/Day02/语言元素.md)
+#### Day02 - [Language Elements](./Day01-15/Day02/Day2.md)
 
 - Programs and hexadecimals - Instructions and programs / Von Neumann machines / Binary and decimal / Octal and hexadecimal
 - Variables and types - Naming of variables / Use of variables / Input functions / Checking variable types / Type conversion

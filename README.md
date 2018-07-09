@@ -1,6 +1,8 @@
 ## Python - 100天从新手到大师
 
-> 作者：骆昊
+by 骆昊
+For English Translation [Click Here](./README-EN.md)z
+作者：骆昊
 
 ### Python应用领域和就业形势分析
 

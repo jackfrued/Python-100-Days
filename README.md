@@ -1,6 +1,6 @@
 ## Python - 100天从新手到大师
 
-by 骆昊
+> 作者：骆昊
 
 ### Python应用领域和就业形势分析
 
@@ -204,17 +204,17 @@ by 骆昊
 
 #### Day42 - [Django2实战(02) - 深入模型](./Day41-55/Django2实战02.md)
 
-#### Day43 - [Django2实战(03) - 视图和模板](./Day41-55/Django2实战03.md)
+#### Day43 - [Django2实战(03) - 静态资源和Ajax请求](./Day41-55/Django2实战03.md)
 
 #### Day44 - [Django2实战(04) - 表单的应用](./Day41-55/Django2实战04.md)
 
 #### Day45 - [Django2实战(05) - Cookie和会话](./Day41-55/Django2实战05.md)
 
-#### Day46 - [Django2实战(06) - 日志和缓存](./Day41-55/Django2实战06.md)
+#### Day46 - [Django2实战(06) - 中间件的应用](./Day41-55/Django2实战06.md)
 
-#### Day47 - [Django2实战(07) - 文件上传和通用视图](./Day41-55/Django2实战07.md)
+#### Day47 - [Django2实战(07) - 日志和缓存](./Day41-55/Django2实战07.md)
 
-#### Day48 - [Django2实战(08) - 用户/角色/权限和中间件](./Day41-55/Django2实战08.md)
+#### Day48 - [Django2实战(08) - 文件上传和通用视图](./Day41-55/Django2实战08.md)
 
 #### Day49 - [Django2实战(09) - RESTful架构和应用(上)](./Day41-55/Django2实战09.md)
 
@@ -225,7 +225,7 @@ by 骆昊
 - 项目开发流程和相关工具
 - 生成非HTML内容
 - 项目部署和测试
-- 项目性能调优
+- 项目性能初步调优
 - Web应用安全保护
 
 

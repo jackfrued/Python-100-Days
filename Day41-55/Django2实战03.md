@@ -1,8 +1,10 @@
-## Django 2.x实战(03) - 请求和响应详解
+## Django 2.x实战(03) - 静态资源和Ajax请求
 
 基于前面两个章节讲解的知识，我们已经可以使用Django框架来实现Web应用的开发了。接下来我们就尝试实现一个投票应用，具体的需求是用户进入系统首先来到“登录页”；登录成功后可以查看到“学科介绍”页面，该页面显示了一个学校所开设的所有学科；通过点击某个学科，可以进入“讲师详情”页面，该页面展示了该学科所有讲师的详细情况，可以在该页面上给讲师点击“好评”或“差评”；对于未注册的用户，可以在登录页点击“新用户注册”进入“注册页”完成用户注册，注册成功或失败都会获得相应的提示信息，注册成功后会返回“登录页”。
 
-由于之前已经详细的讲解了如何创建Django项目以及项目的相关配置，因此我们略过这部分内容，唯一需要说明的是，我们将项目命名为`hellodjango`，在项目下创建了一个名为`demo`的应用。从“学科介绍”和“讲师详情”页面的需求，我们可以首先分析出两个业务实体，一个是学科，一个是讲师，二者之前是一对多关联。因此，我们首先修改应用`demo`下的models.py文件来定义数据模型。
+### 准备工作
+
+由于之前已经详细的讲解了如何创建Django项目以及项目的相关配置，因此我们略过这部分内容，唯一需要说明的是，我们将项目命名为hellodjango，在项目下创建了一个名为demo的应用。从“学科介绍”和“讲师详情”页面的需求，我们可以首先分析出两个业务实体，一个是学科，一个是讲师，二者之前是一对多关联。因此，我们首先修改应用demo下的models.py文件来定义数据模型。
 
 ```Python
 
@@ -124,3 +126,255 @@ def show_subjects(request):
 </html>
 ```
 
+启动服务器，运行效果如下图所示。
+
+![](./res/runserver02.png)
+
+### 加载静态资源
+
+在上面的模板中，我们为每个学科添加了一个超链接，点击超链接可以查看该学科的讲师信息，为此我们得修改项目的urls.py文件配置一个新的URL。
+
+```Python
+
+from django.contrib import admin
+from django.urls import path
+
+from demo import views
+
+urlpatterns = [
+    path('', views.show_subjects),
+    path('subjects/<int:no>', views.show_teachers),
+    path('admin/', admin.site.urls),
+]
+```
+
+Django 2.x在配置URL时可以使用如上面所示的占位符语法，而且可以指定占位符的类型，因为在查询学科讲师信息时，需要传入该学科的编号作为条件，而学科编号在定义模型时设定为`AutoField`，其本质就是`int`类型。相较于Django 1.x中使用正则表达式的命名捕获组来从URL中获取数据（如果对Django 1.x并没有什么概念，这句话可以暂时忽略不计），这种更加优雅的写法可以让我们在视图函数中直接获得学科编号，代码如下所示。
+
+```Python
+
+def show_teachers(request, no):
+    teachers = Teacher.objects.filter(subject__no=no)
+    ctx = {'teachers_list': teachers}
+    return render(request, 'demo/teacher.html', ctx)
+```
+
+接下来我们可以定制“讲师详情”的模板页。
+
+```HTML
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师信息</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+        .basic {
+            width: 60%;
+            float: left;
+        }
+        .potrait {
+            width: 40%;
+            float: left;
+            text-align: right;
+        }
+        hr {
+            clear: both;
+        }
+        .button {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            font: 16px/30px Arial;
+            text-decoration: none;
+            text-align: center;
+        	margin-bottom: 10px;
+		}
+    </style>
+</head>
+<body>
+    {% for x in teachers_list %}
+    <div class="container">
+        <div class="basic">
+            <h1>{{ x.name }}老师</h1>
+            <p><strong>讲师简介</strong></p>
+            <p>{{ x.intro }}</p>
+            <p><strong>教学理念</strong></p>
+            <p>{{ x.motto }}</p>
+            <a href="/good/{{ x.no }}" class="button">好评({{ x.gcount }})</a>
+            <a href="/bad/{{ x.no }}" class="button">差评({{ x.bcount }})</a>
+        </div>
+        <div class="potrait">
+            {% if x.photo %}
+            <img src="{% static x.photo %}">
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+</html>
+```
+
+请注意上面的模板页面，我们在第2行和`<img>`标签中使用了加载静态资源的模板指令，通过加载静态资源的指令我们可以显示讲师的头像。当然，我们还得创建放置静态资源的文件夹并在项目的配置文件中指明静态资源文件夹的所在以及静态资源的URL。
+
+```Shell
+
+(venv)$ mkdir static
+(venv)$ cd static
+(venv)$ mkdir css js images
+```
+
+首先在项目根目录下创建static文件，再进入static目录，创建css、js和images三个文件夹，分别用来放置层叠样式表、JavaScript文件和图片资源。
+
+```Python
+
+# 此处省略上面的代码
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_URL = '/static/'
+
+# 此处省略下面的代码
+```
+
+接下来运行项目查看结果。
+
+![](./res/runserver03.png)
+
+### Ajax请求
+
+接下来就可以实现“好评”和“差评”的功能了，很明显如果能够在不刷新页面的情况下实现这两个功能会带来更好的用户体验，因此我们考虑使用[Ajax](https://zh.wikipedia.org/wiki/AJAX)来实现“好评”和“差评”。
+
+首先修改项目的urls.py文件，为“好评”和“差评”功能映射对应的URL，跟上面一样我们在URL中使用了占位符语法来绑定讲师的编号。
+
+```Python
+
+from django.contrib import admin
+from django.urls import path
+
+from demo import views
+
+urlpatterns = [
+    path('', views.login),
+    path('subjects/', views.show_subjects),
+    path('subjects/<int:no>/', views.show_teachers),
+    path('good/<int:no>/', views.make_comment),
+    path('bad/<int:no>/', views.make_comment),
+    path('admin/', admin.site.urls),
+]
+```
+
+设计视图函数`make_comment`来支持“好评”和“差评”功能，可以通过`json`模块的`dumps`函数实现将字典转成JSON字符串并作为`HttpResponse`返回给浏览器的内容。在创建`HttpResponse`对象时，可以通过`content_type`参数来指定响应的[MIME类型](http://www.w3school.com.cn/media/media_mimeref.asp)为JSON且使用UTF-8编码（避免JSON字符串中的中文出现乱码）。
+
+```Python
+
+def make_comment(request, no):
+    ctx = {'code': 200}
+    try:
+        teacher = Teacher.objects.get(pk=no)
+        if request.path.startswith('/good'):
+            teacher.good_count += 1
+            ctx['result'] = f'好评({teacher.gcount})'
+        else:
+            teacher.bad_count += 1
+            ctx['result'] = f'差评({teacher.bcount})'
+        teacher.save()
+    except Teacher.DoesNotExist:
+        ctx['code'] = 404
+    return HttpResponse(json.dumps(ctx),
+                        content_type='application/json; charset=utf-8')
+```
+
+修改模板页引入jQuery库来实现事件处理、Ajax请求和DOM操作。
+
+```HTML
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>讲师信息</title>
+    <style>
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+        .basic {
+            width: 60%;
+            float: left;
+        }
+        .potrait {
+            width: 40%;
+            float: left;
+            text-align: right;
+        }
+        hr {
+            clear: both;
+        }
+        .button {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            font: 16px/30px Arial;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% for x in teachers_list %}
+    <div class="container">
+        <div class="basic">
+            <h1>{{ x.name }}老师</h1>
+            <p><strong>讲师简介</strong></p>
+            <p>{{ x.intro }}</p>
+            <p><strong>教学理念</strong></p>
+            <p>{{ x.motto }}</p>
+            <a href="/good/{{ x.no }}" class="button">好评({{ x.gcount }})</a>
+            <a href="/bad/{{ x.no }}" class="button">差评({{ x.bcount }})</a>
+        </div>
+        <div class="potrait">
+            {% if x.photo %}
+            <img src="{% static x.photo %}">
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script>
+       $(function() {
+           $('.basic .button').on('click', function(evt) {
+               evt.preventDefault();
+               var $a = $(evt.target);
+               var url = $a.attr('href');
+               $.ajax({
+                   'url': url,
+                   'type': 'get',
+                   'dataType': 'json',
+                   'success': function(json) {
+                       if (json.code == 200) {
+                           $a.text(json.result);
+                       }
+                   }
+               });
+           });
+       });
+    </script>
+</body>
+</html>
+```
+
+### 小结
+
+到此，这个小项目的核心功能已然完成，在下一个章节中我们会增加用户登录和注册的功能，稍后我们还会限定登录后的用户才能进行投票操作，而且每个用户只能投出3票。

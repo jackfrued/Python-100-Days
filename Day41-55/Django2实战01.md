@@ -341,7 +341,7 @@ Django诞生于2003年，它是一个在真正的应用中成长起来的项目�
     (venv)$ cd ..
     (venv)$ python manage.py runserver
     ```
-    ![](./res/runserver.png)
+    ![](./res/runserver01.png)
 
 #### 使用视图模板
 

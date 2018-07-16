@@ -274,13 +274,13 @@
 
 ### Day76~90 - [数据处理和机器学习](./Day76-90)
 
-#### Day76 - [Pandas的应用](./Day76-90/01.Pandas的应用.md)
+#### Day76 - [机器学习基础](./Day76-90/01.机器学习基础.md)
 
-#### Day77 - [NumPy和SciPy的应用](./Day76-90/02.NumPy和SciPy的应用)
+#### Day77 - [Pandas的应用](./Day76-90/02.Pandas的应用.md)
 
-#### Day78 - [Matplotlib和数据可视化](./Day76-90/03.Matplotlib和数据可视化)
+#### Day78 - [NumPy和SciPy的应用](./Day76-90/03.NumPy和SciPy的应用)
 
-#### Day79 - [机器学习基础](./Day76-90/04.机器学习基础.md)
+#### Day79 - [Matplotlib和数据可视化](./Day76-90/04.Matplotlib和数据可视化)
 
 #### Day80 - [k最近邻(KNN)分类](./Day76-90/05.k最近邻分类.md)
 

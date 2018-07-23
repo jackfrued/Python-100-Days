@@ -8,11 +8,8 @@
 import scrapy
 
 
-class DoubanItem(scrapy.Item):
+class MovieItem(scrapy.Item):
 
-    name = scrapy.Field()
-    year = scrapy.Field()
+    title = scrapy.Field()
     score = scrapy.Field()
-    director = scrapy.Field()
-    classification = scrapy.Field()
-    actor = scrapy.Field()
+    motto = scrapy.Field()

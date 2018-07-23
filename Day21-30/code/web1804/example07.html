@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				margin: 10px 20px;
+			}
+			#container li {
+				float: left;
+				list-style: none;
+				width: 60px;
+				height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img src="img/hello.jpg" alt="">
+			<ul>
+				<li><img src="img/thumb-1.jpg" alt=""></li>
+				<li><img src="img/thumb-2.jpg" alt=""></li>
+				<li><img src="img/thumb-3.jpg" alt=""></li>
+			</ul>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+		+function() {
+			// 通过querySelector用父子选择器获取img标签
+			var img = document.querySelector('#container>img');
+			
+			function showPhoto(evt) {
+				evt = evt || window.event;
+				// 获取事件源(谁引发了事件)
+				var target = evt.target || evt.srcElement;
+				img.src = "img/" + target.parentNode.photoName;
+			}
+			
+			var imgNames = ["hello.jpg", "goodbye.jpg", "oneshit.jpg"];
+			// 通过querySelectorAll用后代选择器获取指定的li标签
+			// var ul = document.querySelector("#container>ul");
+			// 通过元素获取相关节点的属性:
+			// parentNode - 获取父节点
+			// children - 获取所有子节点
+			// nextSibling - 获取相邻下一个兄弟节点
+			// previousSibling - 获取相邻上一个兄弟节点
+			var ul = img.nextSibling.nextSibling;
+			console.log(ul);
+			for (var i = 0; i < ul.children.length; i += 1) {
+				ul.children[i].photoName = imgNames[i];
+				bind(ul.children[i], "mouseover", showPhoto);
+			}
+		}();
+		</script>
+	</body>
+</html>

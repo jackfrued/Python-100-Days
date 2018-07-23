@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.right {
+				float: right;
+				width: 250px;
+				height: 30px;
+				font-size: 16px;
+				line-height: 30px;
+				background-color: blue;
+				color: yellow;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="time" class="right"></div>
+		<script>
+			function showDateTime() {
+				var array = ["日", "一", "二", "三", "四", "五", "六"];
+				var date = new Date();
+				var str = "";
+				str += date.getFullYear() + "年"; // 年
+				str += (date.getMonth() + 1) + "月"; // 月(0-11)
+				str += date.getDate() + "日&nbsp;&nbsp;"; // 日
+				str += "星期" + array[date.getDay()] + "&nbsp;&nbsp;"; // 星期(0-6)
+				var hour = date.getHours();
+				str += hour < 10 ? "0" + hour : hour; // 时
+				str += ":";
+				var min = date.getMinutes();
+				str += min < 10 ? "0" + min : min; // 分
+				str += ":";
+				var sec = date.getSeconds();
+				str += sec < 10 ? "0" + sec : sec; // 秒
+				// JavaScript = ECMAScript + BOM(window) + DOM(document)
+				// document对象(DOM)代表整个HTML页面
+				// 通过该对象的getElementById方法可以用ID来获取指定的元素(标签)
+				// 通过获得的元素的textContent属性就可以修改标签体的文本内容
+				var div = document.getElementById("time");
+				// 如果放入元素中的内容又包含了标签或实体替换符(字符实体)
+				// 那么就要将textContent属性换成innerHTML才能渲染标签和字符实体
+				div.innerHTML = str;
+			}
+			showDateTime();
+			// window对象(BOM)代表浏览器窗口
+			// 通过该对象的setInterval方法可以设置计时器控制函数周期性执行
+			setInterval(showDateTime, 1000);
+		</script>
+	</body>
+</html>

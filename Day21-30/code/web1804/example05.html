@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#adv {
+				width: 940px;
+				margin: 0 auto;
+			}
+			#adv ul {
+				width: 120px;
+				height: 30px;
+				margin: 0 auto;
+				position: relative;
+				top: -30px;
+			}
+			#adv li {
+				width: 30px;
+				height: 30px;
+				list-style: none;
+				float: left;
+				color: #ccc;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			<img id="image" src="img/slide-1.jpg" alt="">
+			<ul>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+				<li class="dot">●</li>
+			</ul>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+		(function() {
+			var index = 1;
+			var img = document.getElementById("image");
+			var timerId = 0;
+			
+			function startTimer() {
+				if (timerId == 0) {
+					timerId = setInterval(function() {
+						index += 1;
+						if (index > 4) {
+							index = 1;
+						}
+						img.src = "img/slide-" + index + ".jpg";
+					}, 2000);
+				}
+			}
+			
+			startTimer();
+			// 通过document对象获取页面上的元素(标签)有以下方法:
+			// 1. document.getElementById("...")
+			// 2. document.getElementsByTagName("...")
+			// 3. document.getElementsByClassName("...")
+			// 4. document.getElementsByName("...")
+			// 5. document.querySelector("...")
+			// 6. document.querySelectorAll("...")
+			var liList = document.querySelectorAll("#adv .dot");
+			for (var i = 0; i < liList.length; i += 1) {
+				liList[i].index = i + 1;
+				bind(liList[i], "click", function(evt) {
+					evt = evt || event;
+					var target = evt.target || evt.srcElement;
+					index = target.index;
+					img.src = "img/slide-" + index + ".jpg";
+					clearInterval(timerId);
+					timerId = 0;
+				});
+				bind(liList[i], "mouseout", function(evt) {
+					startTimer();
+				});
+			}
+		})();
+		</script>
+	</body>
+</html>

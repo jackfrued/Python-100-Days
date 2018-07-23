@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#adv {
+				position: fixed;
+				right: 10px;
+				top: 10px;
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+				color: yellow;
+			}
+			#close {
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="adv">
+			<span>此广告位招租</span>
+			<button id="close">关闭</button>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+		(function() {
+			var div = document.getElementById("adv");
+			var closeButton = document.getElementById("close");
+			bind(closeButton, "click", function() {
+				var divStyle = div.currentStyle || 
+						document.defaultView.getComputedStyle(div);
+				var top = parseInt(divStyle.top);
+				if (top < 300) {
+					div.style.top = (top + 30) + "px";
+				} else {
+					div.style.display = "none";
+					// div.style.visibility = "hidden";
+				}
+			});
+		})();
+		</script>
+	</body>
+</html>

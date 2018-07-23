@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				width: 960px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="load">加载</button>
+		<div id="container"></div>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+		$(function() {
+			$("#load").on("click", function() {
+				console.log(encodeURIComponent("手机", "utf-8"));
+				console.log(decodeURIComponent("%E7%8B%97%E5%B1%8E", "utf-8"));
+				// 通过Ajax请求获得数据并对页面进行局部刷新
+				// jQuery封装了多个Ajax请求方法:
+				// 	- $.ajax(): 灵活强大(强烈推荐使用)
+				//  - $.getJSON(): 简单好用
+				// 统一资源定位符
+				// 协议://IP地址或域名:端口号/路径/资源?查询字符串
+				// HTTP(s)协议的请求有多种请求命令
+				// 浏览器在正常情况下只能发出get或post请求
+				// 将来我们在项目中可能用到的HTTP请求命令包括以下5个:
+				//  - GET: 从服务器获取资源
+				//  - POST: 向服务器提交资源
+				//  - DELETE: 从服务器删除资源
+				//  - PUT / PATCH: 更新服务器上的资源
+				var url = "http://api.tianapi.com/meinv/";
+				$.ajax({
+					"url": url,
+					"type": "get",
+					"data": {
+						"key": "772a81a51ae5c780251b1f98ea431b84",
+						"num": 15
+					},
+					"dataType": "json",
+					"success": function(json) {
+						for (var i = 0; i < json.newslist.length; i += 1) {
+							var mm = json.newslist[i];
+							$img = $("<img>").attr('src', mm.picUrl);
+							$("#container").append($img.width(300));
+						}
+					}
+				});
+			});
+		});
+		</script>
+	</body>
+</html>

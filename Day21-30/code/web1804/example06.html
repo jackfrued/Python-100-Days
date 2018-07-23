@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="ok">确定</button>
+		<!--如果希望点击按钮时会执行对应的操作-->
+		<!--那么需要通过JavaScript为按钮绑定事件回调函数-->
+		<!--绑定事件回调函数大致有3种方式: -->
+		<!--1. 通过标签的onXXX属性来指定需要执行的事件回调函数-->
+		<!--2. 通过元素的onXXX属性来绑定需要执行的事件回调函数-->
+		<!--3. 通过元素的addEventListener方法来绑定事件回调函数-->
+		<script>
+			var btn = document.getElementById("ok");
+			function sayHello() {
+				alert("大家好!");
+			}
+			function sayGoodbye() {
+				alert("再见!");
+			}
+			// Netscape Navigator --> Firefox
+			// Internet Explorer
+			// Chrome
+			// Safari
+			// Opera
+			if (btn.addEventListener) {
+				btn.addEventListener("click", sayHello);
+				btn.addEventListener("click", sayGoodbye);
+				btn.addEventListener("click", function() {
+					btn.removeEventListener("click", sayGoodbye);
+				});
+			} else {
+				btn.attachEvent("onclick", sayHello);
+				btn.attachEvent("onclick", sayGoodbye);
+				btn.attachEvent("onclick", function() {
+					btn.detachEvent("onclick", sayGoodbye);
+				});
+			}
+		</script>
+	</body>
+</html>

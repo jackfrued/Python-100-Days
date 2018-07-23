@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3><span id="counter">5</span>秒钟以后跳转到百度</h3>
+		<script>
+		+function() {	
+			var counter = 5;
+			var span = document.getElementById("counter");
+			setTimeout(function() {
+				counter -= 1;
+				if (counter > 0) {
+					span.textContent = counter;
+					setTimeout(arguments.callee, 1000);
+				} else {
+					location.href = "http://www.baidu.com";
+				}
+			}, 1000);
+		}();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#one {
+				width: 400px;
+				height: 400px;
+				background-color: red;
+			}
+			#two {
+				width: 300px;
+				height: 300px;
+				background-color: green;
+			}
+			#three {
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+			#two, #three {
+				position: relative;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="one">
+				<div id="two">
+					<div id="three"></div>
+				</div>
+			</div>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+		(function() {
+			var one = document.getElementById("one");
+			var two = document.getElementById("two");
+			var three = document.getElementById("three");
+			bind(one, "click", function() {
+				alert("one");
+			});
+			bind(two, "click", function() {
+				alert("two");
+			});
+			bind(three, "click", function(evt) {
+				if (evt.stopPropagation) {
+					evt.stopPropagation();
+				} else {
+					evt.cancelBubble = true;
+				}
+				alert("three");
+			});
+		})();
+		</script>
+	</body>
+</html>

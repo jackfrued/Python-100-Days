@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			do {
+				var answer = parseInt(Math.random() * 100 + 1);
+				var total = 0;
+				do {
+					total += 1;
+					var thyAnswer = parseInt(prompt("请输入:"));
+					if (thyAnswer > answer) {
+						alert("小一点");
+					} else if (thyAnswer < answer) {
+						alert("大一点");
+					} else if (thyAnswer == answer) {
+						alert("恭喜你猜对了");
+					} else {
+						alert("你是猴子派来的逗比吗?");
+					}
+				} while (thyAnswer != answer);
+				if (total > 7) {
+					alert("智商捉急!!!");
+				}
+			} while (confirm('再来一局?'));
+		</script>
+	</body>
+</html>

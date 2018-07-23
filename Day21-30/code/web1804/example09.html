@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#container {
+				width: 800px;
+				height: 400px;
+				margin: 10px auto;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+			#buttons {
+				width: 800px;
+				margin: 10px auto;
+				text-align: center;
+			}
+			#add, #fla {
+				border: none;
+				outline: none;
+				width: 80px;
+				height: 30px;
+				background-color: red;
+				color: white;
+			}
+			.small {
+				width: 80px;
+				height: 80px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+		
+		</div>
+		<div id="buttons">
+			<button id="add">添加</button>
+			<button id="fla">闪烁</button>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+		(function() {
+			var container = document.getElementById("container");
+			var addButton = document.getElementById("add");
+			var flaButton = document.getElementById("fla");
+			bind(addButton, "click", function() {
+				var div = document.createElement("div");
+				div.className = "small";
+				div.style.backgroundColor = randomColor();
+				container.insertBefore(div, container.children[0]);
+			});
+			var timerId = 0;
+			bind(flaButton, "click", function(evt) {
+				evt = prepare(evt);
+				if (timerId == 0) {
+					evt.target.textContent = "停止";
+					timerId = setInterval(function() {
+						var divs = document.querySelectorAll("#container>div");
+						for (var i = 0; i < divs.length; i += 1) {
+							divs[i].style.backgroundColor = randomColor();
+						}
+					}, 200);
+				} else {
+					evt.target.textContent = "闪烁";
+					clearInterval(timerId);
+					timerId = 0;
+				}
+			});
+		})();
+		</script>
+	</body>
+</html>

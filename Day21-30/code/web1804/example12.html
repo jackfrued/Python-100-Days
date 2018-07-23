@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				margin: 20px 50px;
+			}
+			#fruits li {
+				list-style: none;
+				width: 200px;
+				height: 50px;
+				font-size: 20px;
+				line-height: 50px;
+				background-color: cadetblue;
+				color: white;
+				text-align: center;
+				margin: 2px 0;
+			}
+			#fruits>li>a {
+				float: right;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				right: 5px;
+			}
+			#fruits~input {
+				border: none;
+				outline: none;
+				font-size: 18px;
+			}
+			#fruits~input[type=text] {
+				border-bottom: 1px solid darkgray;
+				width: 200px;
+				height: 50px;
+				text-align: center;
+			}
+			#fruits~input[type=button] {
+				width: 80px;
+				height: 30px;
+				background-color: coral;
+				color: white;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>苹果<a href="">×</a></li>
+				<li>香蕉<a href="">×</a></li>
+				<li>火龙果<a href="">×</a></li>
+				<li>西瓜<a href="">×</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+		// 写JavaScript代码时为什么推荐使用jQuery而不写原生JavaScript
+		// 因为jQuery对象有更多的属性和方法, 能够用更少的代码做更多的事情
+		// 而且jQuery对象的方法使用灵活且没有浏览器兼容性问题
+			
+		// 当加载jQuery成功时会在window对象上绑定名为jQuery的属性
+		// 该属性还有一个名字叫$, $既是一个对象也是一个函数
+		// 当$作为函数时有以下四种最常用的用法:
+		// 1. 如果$函数的参数是一个函数, 传入的函数是页面加载完成时要执行的回调函数
+		// 2. 如果$函数的参数是选择器字符串, 那么$函数会返回代表元素的jQuery对象(其本质是一个数组)
+		// 3. 如果$函数的参数是标签字符串, 那么$函数会创建该标签并返回对应的jQuery对象
+		// 4. 如果$函数的参数是原生JavaScript对象(DOM), 那么$函数将该对象处理成jQuery对象
+		
+		// 用法1
+		$(function() {
+			function removeItem(evt) {
+				evt.preventDefault();
+				// 用法4
+				$(evt.target).parent().remove();
+			}
+			
+			function addItem(evt) {
+				// 用法2
+				var fruitName = $("#fruits+input").val().trim();
+				if (fruitName.length > 0) {
+					// 用法3
+					var $li = $("<li>").text(fruitName);
+					// 用法3
+					var $a = $("<a href=''>").text("×").on("click", removeItem);
+					$("#fruits").append($li.append($a));				
+				}
+				$("#fruits+input").val("");
+				$("#fruits+input").focus();
+			}
+			
+			// 用法2
+			$("#fruits a").on("click", removeItem);
+			$("#ok").on("click", addItem);
+		});
+		</script>
+	</body>
+</html>

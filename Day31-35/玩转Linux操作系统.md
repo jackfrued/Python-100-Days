@@ -801,7 +801,7 @@ Linux系统的命令通常都是如下所示的格式：
    - `yum list installed`：列出已经安装的软件包，例如`yum list installed | grep zlib`。
    - `yum install`：安装软件包，例如`yum install nginx`。
    - `yum remove`：删除软件包，例如`yum remove nginx`。
-   - `yum update`：更新软件包，例如`yum update`可以更新所有软件包，而`yum update tar只会更新tar。
+   - `yum update`：更新软件包，例如`yum update`可以更新所有软件包，而`yum update tar`只会更新tar。
    - `yum check-update`：检查有哪些可以更新的软件包。
    - `yum info`：显示软件包的相关信息，例如`yum info nginx`。
 2. **rpm** - Redhat Package Manager。
@@ -956,11 +956,12 @@ build environment:
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum install gcc
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip Python-3.6.5.tgz
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ar -xvf Python-3.6.5.tar
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# tar -xvf Python-3.6.5.tar
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd Python-3.6.5
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ./configure --prefix=/usr/local/python36 --enable-optimizations
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# make && make install
+   ... 配置环境变量 ...
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/python3.6 /usr/bin/python3
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 --version
    Python 3.6.5

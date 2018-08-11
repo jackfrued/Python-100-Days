@@ -5,6 +5,7 @@
 1. 让代码既可以被导入又可以被执行。
 
    ```Python
+   
    if __name__ == '__main__':
    ```
 
@@ -12,6 +13,7 @@
 2. 用下面的方式判断逻辑“真”或“假”。
 
    ```Python
+   
    if x:
    if not x:
    ```
@@ -19,6 +21,7 @@
    **好**的代码：
 
    ```Python
+   
    name = 'jackfrued'
    fruits = ['apple', 'orange', 'grape']
    owners = {'1001': '骆昊', '1002': '王大锤'}
@@ -29,6 +32,7 @@
    **不好**的代码：
 
    ```Python
+   
    name = 'jackfrued'
    fruits = ['apple', 'orange', 'grape']
    owners = {'1001': '骆昊', '1002': '王大锤'}
@@ -39,6 +43,7 @@
 3. 善于使用in运算符。
 
    ```Python
+   
    if x in items: # 包含
    for x in items: # 迭代
    ```
@@ -46,6 +51,7 @@
    **好**的代码：
 
    ```Python
+   
    name = 'Hao LUO'
    if 'L' in name:
        print('The name has an L in it.')
@@ -54,6 +60,7 @@
    **不好**的代码：
 
    ```Python
+   
    name = 'Hao LUO'
    if name.find('L') != -1:
        print('This name has an L in it!')
@@ -62,6 +69,7 @@
 4. 不使用临时变量交换两个值。
 
    ```Python
+   
    a, b = b, a
    ```
 
@@ -70,6 +78,7 @@
    **好**的代码：
 
    ```Python
+   
    chars = ['j', 'a', 'c', 'k', 'f', 'r', 'u', 'e', 'd']
    name = ''.join(chars)
    print(name)  # jackfrued
@@ -78,6 +87,7 @@
    **不好**的代码：
 
    ```Python
+   
    chars = ['j', 'a', 'c', 'k', 'f', 'r', 'u', 'e', 'd']
    name = ''
    for char in chars:
@@ -94,6 +104,7 @@
    **好**的代码：
 
    ```Python
+   
    d = {'x': '5'}
    try:
        value = int(d['x'])
@@ -105,6 +116,7 @@
    **不好**的代码：
 
    ```Python
+   
    d = {'x': '5'}
    if 'x' in d and isinstance(d['x'], str) \
    		and d['x'].isdigit():
@@ -119,6 +131,7 @@
    **好**的代码：
 
    ```Python
+   
    fruits = ['orange', 'grape', 'pitaya', 'blueberry']
    for index, fruit in enumerate(fruits):
    	print(index, ':', fruit)
@@ -127,6 +140,7 @@
    **不好**的代码：
 
    ```Python
+   
    fruits = ['orange', 'grape', 'pitaya', 'blueberry']
    index = 0
    for fruit in fruits:
@@ -139,6 +153,7 @@
    **好**的代码：
 
    ```Python
+   
    data = [7, 20, 3, 15, 11]
    result = [num * 3 for num in data if num > 10]
    print(result)  # [60, 45, 33]
@@ -147,6 +162,7 @@
    **不好**的代码：
 
    ```Python
+   
    data = [7, 20, 3, 15, 11]
    result = []
    for i in data:
@@ -160,6 +176,7 @@
    **好**的代码：
 
    ```Python
+   
    keys = ['1001', '1002', '1003']
    values = ['骆昊', '王大锤', '白元芳']
    d = dict(zip(keys, values))
@@ -169,6 +186,7 @@
    **不好**的代码：
 
    ```Python
+   
    keys = ['1001', '1002', '1003']
    values = ['骆昊', '王大锤', '白元芳']
    d = {}

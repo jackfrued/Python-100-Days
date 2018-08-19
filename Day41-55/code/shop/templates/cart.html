@@ -32,7 +32,7 @@
 				<th>商品总价</th>
 				<th>操作</th>
 			</tr>
-			{% for item in cart.cart_items %}
+			{% for item in cart %}
 			<tr>
 				<td class="name">{{ item.goods.name }}</td>
 				<td class="price">&yen;{{ item.goods.price }}</td>

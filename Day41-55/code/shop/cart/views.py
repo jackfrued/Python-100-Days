@@ -1,3 +1,4 @@
+from django.core import serializers
 from django.shortcuts import render, redirect
 
 from cart.models import Goods
@@ -25,6 +26,7 @@ class ShoppingCart(object):
 
     def __init__(self):
         self.items = {}
+        self.index = 0
 
     def add_item(self, item):
         if item.goods.id in self.items:
@@ -71,5 +73,5 @@ def add_to_cart(request, id):
 
 
 def show_cart(request):
-    cart = request.session.get('cart', None)
+    cart = serializers.deserialize(request.session.get('cart'))
     return render(request, 'cart.html', {'cart': cart})

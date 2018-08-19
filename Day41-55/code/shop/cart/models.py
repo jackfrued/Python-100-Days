@@ -8,7 +8,7 @@ class Goods(models.Model):
     name = models.CharField(max_length=50, db_column='gname')
     price = models.DecimalField(max_digits=10, decimal_places=2, db_column='gprice')
     image = models.CharField(max_length=255, db_column='gimage')
-
+    
     class Meta:
 
         db_table = 'tb_goods'

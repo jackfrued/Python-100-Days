@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'oa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oa',
+        'NAME': 'HRS',
         'HOST': 'localhost',
         'PORT': 3306,
         'USER': 'root',

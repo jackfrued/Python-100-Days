@@ -30,7 +30,6 @@
 1. DDL
 
    ```SQL
-   
    -- 创建数据库SRS
    drop database if exists SRS;
    create database SRS default charset utf8;
@@ -117,7 +116,6 @@
 2. DML
 
    ```SQL
-   
    -- 插入学院数据
    insert into tb_college 
    (collname, collmaster, collweb) values 
@@ -194,7 +192,6 @@
 3. DQL
 
    ```SQL
-   
    -- 查询所有学生信息
    select * from tb_student;
    select stuid, stuname, stusex, stubirth, stuaddr, collid 
@@ -316,7 +313,6 @@
 4. DCL
 
    ```SQL
-   
    -- 创建名为hellokitty的用户
    create user 'hellokitty'@'localhost' identified by '123123';
    

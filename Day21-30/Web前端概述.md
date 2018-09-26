@@ -17,8 +17,8 @@
 1. 引入原生多媒体支持（audio和video标签）
 2. 引入可编程内容（canvas标签）
 3. 引入语义Web（article、aside、details、figure、footer、header、nav、section、summary等标签）
-4. 引入新的表单控件（日历、邮箱、搜索等）
-5. 引入对离线存储更好的支持
+4. 引入新的表单控件（日历、邮箱、搜索、滑条等）
+5. 引入对离线存储更好的支持（localStorage和sessionStorage）
 6. 引入对定位、拖放、WebSocket、后台任务等的支持
 
 ### 使用标签承载内容

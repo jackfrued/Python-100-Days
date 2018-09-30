@@ -233,10 +233,10 @@
  - 访问元素
     - getElementById() / querySelector()
     - getElementsByClassName() / getElementsByTagName() / querySelectorAll()
-    - parentNode / previousSibling / nextSibling / firstChild / lastChild
+    - parentNode / previousSibling / nextSibling / children / firstChild / lastChild
 - 操作元素
   - nodeValue
-  - innerHTML / textContent / createElement() / createTextNode() / appendChild() / removeChild()
+  - innerHTML / textContent / createElement() / createTextNode() / appendChild() / insertBefore() / removeChild()
   - className / id / hasAttribute() / getAttribute() / setAttribute() / removeAttribute()
 - 事件处理
   - 事件类型
@@ -286,7 +286,6 @@
 - 从CDN加载jQuery
 
 ```HTML
-
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
     window.jQuery || 
@@ -335,7 +334,6 @@
 #### 检测页面是否可用
 
 ```HTML
-
 <script>
     $(document).ready(function() {
         
@@ -344,7 +342,6 @@
 ```
 
 ```HTML
-
 <script>
     $(function() {
         
@@ -364,7 +361,6 @@
 先引入其他库再引入jQuery的情况。
 
 ```HTML
-
 <script src="other.js"></script>
 <script src="jquery.js"></script>
 <script>

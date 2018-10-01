@@ -47,57 +47,43 @@ Linux环境自带了Python 2.x版本，但是如果要更新到3.x的版本，�
 安装依赖库（因为没有这些依赖库可能在源代码构件安装时因为缺失底层依赖库而失败）。
 
 ```Shell
-
-yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+yum -y install wget gcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
 ```
 
 下载Python源代码并解压缩到指定目录。
 
 ```Shell
-
-wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz
-xz -d Python-3.6.1.tar.xz
-tar -xvf Python-3.6.1.tar
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+xz -d Python-3.7.0.tar.xz
+tar -xvf Python-3.7.0.tar
 ```
 
 切换至Python源代码目录并执行下面的命令进行配置和安装。
 
 ```Shell
-
-cd Python-3.6.1
-./configure --prefix=/usr/local/python3.6 --enable-optimizations
+cd Python-3.7.0
+./configure --prefix=/usr/local/python37 --enable-optimizations
 make && make install
 ```
 
-配置PATH环境变量并使其生效，这需要修改用户主目录下名为.bash_profile的文件。
+修改用户主目录下名为.bash_profile的文件，配置PATH环境变量并使其生效。
 
 ```Shell
-
 cd ~
 vim .bash_profile
 ```
 
 ```Shell
+# ... 此处省略上面的代码 ...
 
-# 此处省略上面的代码
+export PATH=$PATH:/usr/local/python37/bin
 
-PATH=$PATH:/usr/local/python3.6/bin
-
-# 此处省略下面的代码
+# ... 此处省略下面的代码 ...
 ```
 
 ```Shell
-
 source .bash_profile
 ```
-
-最后还可以创建一个符号链接（如果不知道为什么也可以暂时不管这个问题啦）。
-
-```Shell
-
-ln -s /usr/local/python3.6/bin/python3 /usr/bin/python3
-```
-
 
 #### MacOS环境
 
@@ -110,13 +96,11 @@ MacOS也是自带了Python 2.x版本的，可以通过[Python的官方网站](ht
 在终端或命令行提示符中键入下面的命令。
 
 ```Shell
-
 python --version
 ```
 当然也可以先输入python进入交互式环境，再执行以下的代码检查Python的版本。
 
 ```Python
-
 import sys
 
 print(sys.version_info)
@@ -128,7 +112,6 @@ print(sys.version)
 可以用文本编辑工具（推荐使用Sublime、Atom、TextMate、VSCode等高级文本编辑工具）编写Python源代码并将其命名为hello.py保存起来，代码内容如下所示。
 
 ```Python
-
 print('hello, world!')
 ```
 
@@ -137,7 +120,6 @@ print('hello, world!')
 切换到源代码所在的目录并执行下面的命令，看看屏幕上是否输出了"hello, world!"。
 
 ```Shell
-
 python hello.py
 ```
 
@@ -149,16 +131,13 @@ python hello.py
 2. 多行注释 - 三个引号开头，三个引号结尾
 
 ```Python
-
 """
-
 第一个Python程序 - hello, world!
 向伟大的Dennis M. Ritchie先生致敬
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-02-26
-
 """
 
 print('hello, world!')
@@ -243,7 +222,6 @@ PyCharm的安装、配置和使用我们在后面会进行介绍。
 1. 在Python交互环境中下面的代码查看结果并将内容翻译成中文。
 
     ```Python
-    
     import this
     
     Beautiful is better than ugly.
@@ -270,7 +248,6 @@ PyCharm的安装、配置和使用我们在后面会进行介绍。
 2. 学习使用turtle在屏幕上绘制图形。
 
     ```Python
-    
     import turtle
     
     turtle.pensize(4)

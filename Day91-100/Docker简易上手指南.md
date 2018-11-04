@@ -1,10 +1,10 @@
-## Docker入门
+## Docker简易上手指南
 
 ### Docker简介
 
 软件开发中最为麻烦的事情可能就是配置环境了。由于用户使用的操作系统具有多样性，即便使用跨平台的开发语言（如Java和Python）都不能保证代码能够在各种平台下都可以正常的运转，而且可能在不同的环境下我们的软件需要依赖的其他软件包也是不一样的。
 
-那么问题来了，我们再安装软件的时候可不可以把软件运行的环境一并安装课？也就是说在安装软件的时候，我们是不是可以把原始环境一模一样地复制过来呢？
+那么问题来了，我们再安装软件的时候可不可以把软件运行的环境一并安装？也就是说在安装软件的时候，我们是不是可以把原始环境一模一样地复制过来呢？
 
 虚拟机（virtual machine）就是带环境安装的一种解决方案，它可以在一种操作系统里面运行另一种操作系统，比如在Windows系统里面运行Linux系统，在macOS上运行Windows，而应用程序对此毫无感知。使用过虚拟机的人都知道，虚拟机用起来跟真实系统一模一样，而对于虚拟机的宿主系统来说，虚拟机就是一个普通文件，不需要了就删掉，对宿主系统或者其他的程序并没有影响。但是虚拟机通常会占用较多的系统资源，启动和关闭也非常的缓慢，总之用户体验没有想象中的那么好。
 
@@ -87,7 +87,7 @@ docker stop <container-id>
 docker stop <name>
 ```
 
-	对于那些不会自动终止的容器，就可以用下面的方式来停止。
+对于那些不会自动终止的容器，就可以用下面的方式来停止。
 
 ```Shell
 docker container kill <container-id>
@@ -107,10 +107,10 @@ service docker start
 
 ```JavaScript
 {
-        "registry-mirrors": [
-                "http://hub-mirror.c.163.com",
-                "https://registry.docker-cn.com"
-        ]
+	"registry-mirrors": [
+        "http://hub-mirror.c.163.com",
+        "https://registry.docker-cn.com"
+    ]
 }
 ```
 
@@ -195,3 +195,4 @@ select user, host, plugin, authentication_string from user where user='root';
 2 rows in set (0.00 sec)
 ```
 
+接下来就已经可以访问你的MySQL服务器啦，当然远程连接的时候不要忘了在防火墙上开启对应的端口。

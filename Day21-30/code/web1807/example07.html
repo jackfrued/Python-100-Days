@@ -51,8 +51,10 @@
 		</style>
 	</head>
 	<body>
+		<!-- <a href="mailto:957658@qq.com">联系站长</a> -->
 		<div id="container">
 			<ul id="fruits">
+				<!-- a标签有默认的跳转页面的行为有两种方法可以阻止它的默认行为-->
 				<li>苹果<a href="">×</a></li>
 				<li>香蕉<a href="">×</a></li>
 				<li>火龙果<a href="">×</a></li>
@@ -61,51 +63,47 @@
 			<input type="text" name="fruit">
 			<input id="ok" type="button" value="确定">
 		</div>
-		<script src="js/common.js"></script>
+		<script src="js/mylib.js"></script>
 		<script>
-		function removeItem(evt) {
-			evt = evt || window.event;
-			prevent(evt); // 用自定义函数阻止事件的默认行为
-			var target = evt.target || evt.srcElement;
-			var li = target.parentNode;
-			li.parentNode.removeChild(li);
-		}
+			function removeItem(evt) {
+				evt.preventDefault();
+				var a = evt.target || evt.srcElement;
+				var li = a.parentNode;
+				li.parentNode.removeChild(li);
+			}
 			
-		(function() {
-			function addItem(evt) {
-				var fruitName = textInput.value.trim();
+			function addItem() {
+				var fruitName = input.value.trim();
 				if (fruitName.length > 0) {
-					var li = document.createElement("li");
+					var li = document.createElement('li');
 					li.textContent = fruitName;
-					li.style.backgroundColor = "rgba(20, 150, 180, 0.5)";
-					var a = document.createElement("a");
-					a.href = "";
-					a.textContent = "×";
-					bind(a, "click", removeItem);
+					li.style.backgroundColor = randomColor();
+					var a = document.createElement('a');
+					a.href = '';
+					a.textContent = '×';
+					a.addEventListener('click', removeItem);
 					li.appendChild(a);
-					var ul = document.getElementById("fruits");
-					ul.insertBefore(li, ul.children[0]);
+					ul.insertBefore(li, ul.firstChild);
 				}
-				textInput.value = "";
-				textInput.focus();
+				input.value = '';
+				input.focus();
 			}
 			
-			var anchors = document.querySelectorAll("#fruits>li>a");
+			var anchors = document.querySelectorAll('#fruits a');
 			for (var i = 0; i < anchors.length; i += 1) {
-				bind(anchors[i], "click", removeItem);
+				anchors[i].addEventListener('click', removeItem);
 			}
-			var btn = document.getElementById("ok");
-			var textInput = document.getElementsByName("fruit")[0];
-			bind(textInput, "keyup", function(evt) {
-				evt = evt || window.event;
-				var code = evt.keyCode || evt.which;
-				// console.log(code);
-				if (code == 13) {
+			
+			var ul = document.getElementById('fruits');
+			var input = document.querySelector('#container input[type=text]');
+			input.addEventListener('keypress', function(evt) {
+				var key = evt.keyCode || evt.which;
+				if (key == 13) {
 					addItem();
 				}
 			});
-			bind(btn, "click", addItem);
-		})();
+			var okButton = document.querySelector('#ok');
+			okButton.addEventListener('click', addItem);
 		</script>
 	</body>
 </html>

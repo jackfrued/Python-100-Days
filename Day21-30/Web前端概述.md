@@ -251,7 +251,7 @@
     - 事件监听器（旧的浏览器中不被支持）
   - 事件流：事件捕获 / 事件冒泡
   - 事件对象（低版本IE中的window.event）
-    - target（低版本IE中的srcElement）
+    - target（有些浏览器使用srcElement）
     - type
     - cancelable
     - preventDefault()

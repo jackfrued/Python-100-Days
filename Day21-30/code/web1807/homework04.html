@@ -21,6 +21,7 @@
 	<body>
 		<table id="data">
 			<caption>数据统计表</caption>
+			<tbody>
 			<tr>
 				<th>姓名</th>
 				<th>年龄</th>
@@ -59,7 +60,7 @@
 			<tr>
 				<td>Item1</td>
 				<td>Item2</td>
-				<td><a>Item3</a></td>
+				<td>Item3</td>
 				<td>Item4</td>
 				<td>Item5</td>
 			</tr>
@@ -68,39 +69,55 @@
 				<td>Item2</td>
 				<td>Item3</td>
 				<td>Item4</td>
-				<td><a>Item5</a></td>
+				<td>Item5</td>
 			</tr>
+			</tbody>
 		</table>
 		<div id="buttons">
-			<button id="pretty">美化表格</button>
+			<button id="pretty">隔行换色</button>
 			<button id="clear">清除数据</button>
 			<button id="remove">删单元格</button>
 			<button id="hide">隐藏表格</button>
 		</div>
-		<script src="js/jquery.min.js"></script>
+		<script src="js/mylib.js"></script>
 		<script>
-		$(function() {
-			$("#pretty").on("click", function() {
-				$("#data tr:gt(0)").css("color", "white");
-				$("#data tr:odd").css("background-color", "darkgreen");
-				$("#data tr:even").css("background-color", "darkmagenta");
-				$("#data tr:eq(0)").css("background-color", "white");
-			});
-			$("#clear").on("click", function() {
-				$("#data tr:gt(0) td").html("");
-			});
-			$("#remove").on("click", function() {
-				$("#data tr:gt(0):last").remove();
-			});
-			$("#hide").on("click", function() {
-				$("#data").fadeOut(2000, function() {
-					$("#data").css({
-						"display": "block",
-						"visibility": "hidden"
-					});
-				});
-			});
-		});
+			function prettify() {
+				var trs = document.querySelectorAll('#data tr');
+				for (var i = 1; i < trs.length; i += 1) {
+					trs[i].style.backgroundColor = 
+						i % 2 == 0 ? 'lightgray' : 'lightsteelblue';
+				}
+			}
+			
+			function clear() {
+				var tds = document.querySelectorAll('#data td');
+				for (var i = 0; i < tds.length; i += 1) {
+					tds[i].textContent = '';
+				}
+			}
+			
+			function removeLastRow() {
+				var table = document.getElementById('data');
+				if (table.rows.length > 1) {
+					table.deleteRow(table.rows.length - 1);
+				}
+			}
+			
+			function hideTable() {
+				var table = document.getElementById('data');
+				table.style.visibility = 'hidden';
+			}
+			
+			+function() {
+				var prettyBtn = document.querySelector('#pretty');
+				prettyBtn.addEventListener('click', prettify)
+				var clearBtn = document.querySelector('#clear');
+				clearBtn.addEventListener('click', clear);
+				var removeBtn = document.querySelector('#remove');
+				removeBtn.addEventListener('click', removeLastRow);
+				var hideBtn = document.querySelector('#hide');
+				hideBtn.addEventListener('click', hideTable);
+			}();
 		</script>
 	</body>
 </html>

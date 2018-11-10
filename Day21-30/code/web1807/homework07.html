@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#container {
+				width: 400px;
+				margin: 0 auto;
+				padding-top: 120px;
+				text-align: center;
+			}
+			#container input {
+				font-size: 22px;
+				line-height: 30px;
+				height: 30px;
+				outline: none;
+			}
+			#keyword {
+				width: 300px;
+				border: none;
+				text-align: center;
+				border-bottom: 1px solid gray;
+			}
+			#search {
+				width: 80px;
+				color: white;
+				border: none;
+				background-color: red;
+			}
+			#result {
+				width: 400px;
+				margin: 10px auto;
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<input id="keyword" type="text" placeholder="请输入关键词">
+			<input id="search" type="button" value="查询">
+		</div>
+		<hr>
+		<p id="result"></p>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$("#search").on("click", function() {
+					var keyword = $("#keyword").val().trim();
+					if (keyword.length > 0) {
+						var url = "http://api.tianapi.com/txapi/dream/"; 
+						$.ajax({
+							"url": url,
+							"type": "get",
+							"data": {
+								"key": "772a81a51ae5c780251b1f98ea431b84",
+								"word": keyword,
+							},
+							"dataType": "json",
+							"success": function(jsonObj) {
+								if (jsonObj.code == 250) {
+									$("#result").text(jsonObj.msg);
+								} else {
+									$("#result").text(jsonObj.newslist[0].result);
+								}
+							}
+						});
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

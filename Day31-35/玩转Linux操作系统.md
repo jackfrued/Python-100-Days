@@ -82,14 +82,12 @@ Linux内核是芬兰人Linus Torvalds开发的，于1991年9月发布。而Linux
 Linux系统的命令通常都是如下所示的格式：
 
 ```Shell
-
 命令名称 [命名参数] [命令对象]
 ```
 
 1. 获取登录信息 - **w** / **who** / **last**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# w
     23:31:16 up 12:16,  2 users,  load average: 0.00, 0.01, 0.05
    USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
@@ -107,7 +105,6 @@ Linux系统的命令通常都是如下所示的格式：
    Shell也被称为“壳”，它是用户与内核交流的翻译官，简单的说就是人与计算机交互的接口。目前很多Linux系统默认的Shell都是bash（<u>B</u>ourne <u>A</u>gain <u>SH</u>ell），因为它可以使用Tab键进行命令补全、可以保存历史命令、可以方便的配置环境变量以及执行批处理操作等。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps
      PID TTY          TIME CMD
     3531 pts/0    00:00:00 bash
@@ -117,7 +114,6 @@ Linux系统的命令通常都是如下所示的格式：
 3. 查看命令的说明 - **whatis**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis ps
    ps (1)        - report a snapshot of the current processes.
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis python
@@ -127,7 +123,6 @@ Linux系统的命令通常都是如下所示的格式：
 4. 查看命令的位置 - **which** / **whereis**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis ps
    ps: /usr/bin/ps /usr/share/man/man1/ps.1.gz
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis python
@@ -140,7 +135,6 @@ Linux系统的命令通常都是如下所示的格式：
 
 5. 查看帮助文档 - **man** / **info** / **apropos**。
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps --help
    Usage:
     ps [options]
@@ -163,7 +157,6 @@ Linux系统的命令通常都是如下所示的格式：
 6. 切换用户 - **su**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# su hellokitty
    [hellokitty@izwz97tbgo9lkabnat2lo8z root]$
    ```
@@ -171,7 +164,6 @@ Linux系统的命令通常都是如下所示的格式：
 7. 以管理员身份执行命令 - **sudo**。
 
    ```Shell
-   
    [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
    ls: cannot open directory /root: Permission denied
    [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
@@ -184,7 +176,6 @@ Linux系统的命令通常都是如下所示的格式：
 8. 登入登出相关 - **logout** / **exit** / **adduser** / **userdel** / **passwd** / **ssh**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# adduser hellokitty
    [root@izwz97tbgo9lkabnat2lo8z ~]# passwd hellokitty
    Changing password for user jackfrued.
@@ -202,7 +193,6 @@ Linux系统的命令通常都是如下所示的格式：
 9. 查看系统和主机名 - **uname** / **hostname**。
 
    ```Shell
-   
    [root@izwz97tbgo9lkabnat2lo8z ~]# uname
    Linux
    [root@izwz97tbgo9lkabnat2lo8z ~]# hostname
@@ -216,7 +206,6 @@ Linux系统的命令通常都是如下所示的格式：
 11. 查看历史命令 - **history**。
 
     ```Shell
-    
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
     ...
     452  ls
@@ -235,7 +224,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. 创建/删除目录 - **mkdir** / **rmdir**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mkdir abc
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mkdir -p xyz/abc
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# rmdir abc
@@ -244,7 +232,6 @@ Linux系统的命令通常都是如下所示的格式：
 2. 创建/删除文件 - **touch** / **rm**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# touch readme.txt
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# touch error.txt
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# rm error.txt
@@ -276,7 +263,6 @@ Linux系统的命令通常都是如下所示的格式：
 5. 查看文件内容 - **cat** / **head** / **tail** / **more** / **less**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://www.sohu.com/ -O sohu.html
    --2018-06-20 18:42:34--  http://www.sohu.com/
    Resolving www.sohu.com (www.sohu.com)... 14.18.240.6
@@ -310,7 +296,6 @@ Linux系统的命令通常都是如下所示的格式：
 6. 拷贝/移动文件 - **cp** / **mv**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mkdir backup
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cp sohu.html backup/
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd backup
@@ -324,7 +309,6 @@ Linux系统的命令通常都是如下所示的格式：
 7. 查找文件和查找内容 - **find** / **grep**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# find / -name "*.html"
    /root/sohu.html
    /root/backup/sohu_index.html
@@ -348,7 +332,6 @@ Linux系统的命令通常都是如下所示的格式：
 8. 链接 - **ln**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l sohu.html
    -rw-r--r-- 1 root root 212131 Jun 20 19:15 sohu.html
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln /root/sohu.html /root/backup/sohu_backup
@@ -371,7 +354,6 @@ Linux系统的命令通常都是如下所示的格式：
 9. 压缩/解压缩和归档/解归档 - **gzip** / **gunzip** / **xz** / **tar**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://download.redis.io/releases/redis-4.0.10.tar.gz
    --2018-06-20 19:29:59--  http://download.redis.io/releases/redis-4.0.10.tar.gz
    Resolving download.redis.io (download.redis.io)... 109.74.203.151
@@ -412,7 +394,6 @@ Linux系统的命令通常都是如下所示的格式：
 10. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **paste** / **file** / **wc**。
 
   ```Shell
-  
   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat foo.txt
   grape
   apple
@@ -461,7 +442,6 @@ Linux系统的命令通常都是如下所示的格式：
    例子：查找当前目录下文件个数。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# find ./ | wc -l
    6152
    ```
@@ -469,7 +449,6 @@ Linux系统的命令通常都是如下所示的格式：
    例子：列出当前路径下的文件和文件夹，给每一项加一个编号。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls | cat -n
         1  dump.rdb
         2  mongodb-3.6.5
@@ -481,14 +460,12 @@ Linux系统的命令通常都是如下所示的格式：
    例子：查找record.log中包含AAA，但不包含BBB的记录的总数
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
    ```
 
 2. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat readme.txt
    banana
    apple
@@ -511,7 +488,6 @@ Linux系统的命令通常都是如下所示的格式：
 3. 输入重定向 - **\<**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# echo 'hello, world!' > hello.txt
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wall < hello.txt
    [root@iZwz97tbgo9lkabnat2lo8Z ~]#
@@ -530,7 +506,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. **alias**
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# alias ll='ls -l'
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# alias frm='rm -rf'
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ll
@@ -543,7 +518,6 @@ Linux系统的命令通常都是如下所示的格式：
 2. **unalias**
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# unalias frm
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# frm sohu.html
    -bash: frm: command not found
@@ -554,7 +528,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. 时间和日期 - **date** / **cal**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# date
    Wed Jun 20 12:53:19 CST 2018
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal
@@ -615,7 +588,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. **chmod** - 改变文件模式比特。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
    ...
    -rw-r--r--  1 root       root 211878 Jun 19 16:06 sohu.html
@@ -640,7 +612,6 @@ Linux系统的命令通常都是如下所示的格式：
 2. **chown** - 改变文件所有者。
 
     ```Shell
-       
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l
     ...
     -rw-r--r--  1 root root     54 Jun 20 10:06 readme.txt
@@ -657,7 +628,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. 列出文件系统的磁盘使用状况 - **df**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# df -h
    Filesystem      Size  Used Avail Use% Mounted on
    /dev/vda1        40G  5.0G   33G  14% /
@@ -671,7 +641,6 @@ Linux系统的命令通常都是如下所示的格式：
 2. 磁盘分区表操作 - **fdisk**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# fdisk -l
    Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors
    Units = sectors of 1 * 512 = 512 bytes
@@ -698,7 +667,6 @@ Linux系统的命令通常都是如下所示的格式：
 1. 启动vim。可以通过`vi`或`vim`命令来启动vim，启动时可以指定文件名来打开一个文件，如果没有指定文件名，也可以在保存的时候指定文件名。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim guess.py
    ```
 
@@ -747,7 +715,6 @@ Linux系统的命令通常都是如下所示的格式：
    - 比较多个文件。
 
      ```Shell
-     
      [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim -d foo.txt bar.txt
      ```
      ![](./res/vim-diff.png)
@@ -755,7 +722,6 @@ Linux系统的命令通常都是如下所示的格式：
    - 打开多个文件。
 
      ```Shell
-     
      [root@iZwz97tbgo9lkabnat2lo8Z ~]# vim foo.txt bar.txt hello.txt
      ```
 
@@ -812,7 +778,6 @@ Linux系统的命令通常都是如下所示的格式：
 下面以Nginx为例，演示如何使用yum安装软件。
 
 ```Shell
-
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install nginx
 ...
 Installed:
@@ -851,7 +816,6 @@ nginx version: nginx/1.12.2
 移除Nginx。
 
 ```Shell
-
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -s stop
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y remove nginx
 ```
@@ -859,7 +823,6 @@ nginx version: nginx/1.12.2
 下面以MySQL为例，演示如何使用rpm安装软件。要安装MySQL需要先到[MySQL官方网站](https://www.mysql.com/)下载对应的[RPM文件](https://dev.mysql.com/downloads/mysql/)，当然要选择和你使用的Linux系统对应的版本。MySQL现在是Oracle公司旗下的产品，在MySQL被收购后，MySQL的作者重新制作了一个MySQL的分支MariaDB，可以通过yum进行安装。如果要安装MySQL需要先通过yum删除`mariadb-libs`这个可能会跟MySQL底层库冲突的库，然后还需要安装一个名为`libaio`的依赖库。
 
 ```Shell
-
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# ls
 mysql-community-client-5.7.22-1.el7.x86_64.rpm
 mysql-community-common-5.7.22-1.el7.x86_64.rpm
@@ -878,7 +841,6 @@ Preparing...                          ################################# [100%]
 移除安装的MySQL。
 
 ```Shell
-
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# rpm -qa | grep mysql | xargs rpm -e
 ```
 
@@ -887,7 +849,6 @@ Preparing...                          ################################# [100%]
 下面以安装MongoDB为例，演示这类软件应该如何安装。
 
 ```Shell
-
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.6.5.tgz
 --2018-06-21 18:32:53--  https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel70-3.6.5.tgz
 Resolving fastdl.mongodb.org (fastdl.mongodb.org)... 52.85.83.16, 52.85.83.228, 52.85.83.186, ...
@@ -952,7 +913,6 @@ build environment:
 1. 安装Python 3.6。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum install gcc
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tgz
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip Python-3.6.5.tgz
@@ -972,7 +932,6 @@ build environment:
 2. 安装Redis-3.2.12。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://download.redis.io/releases/redis-3.2.12.tar.gz
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip redis-3.2.12.tar.gz
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# tar -xvf redis-3.2.12.tar
@@ -989,35 +948,30 @@ build environment:
 1. 启动服务。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl start firewalld
    ```
 
 2. 终止服务。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl stop firewalld
    ```
 
 3. 重启服务。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl restart firewalld
    ```
 
 4. 查看服务。
 
     ```Shell
-    
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl status firewalld
     ```
 
 5. 设置是否开机自启。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl enable firewalld
    Created symlink from /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service to /usr/lib/systemd/system/firewalld.service.
    Created symlink from /etc/systemd/system/multi-user.target.wants/firewalld.service to /usr/lib/systemd/system/firewalld.service.
@@ -1031,7 +985,6 @@ build environment:
 1. **crontab**命令。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# crontab -e
    * * * * * echo "hello, world!" >> /root/hello.txt
    59 23 * * * rm -f /root/*.log
@@ -1041,7 +994,6 @@ build environment:
 2. crontab相关文件。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd /etc
    [root@iZwz97tbgo9lkabnat2lo8Z etc]# ls -l | grep cron
    -rw-------.  1 root root      541 Aug  3  2017 anacrontab
@@ -1081,7 +1033,6 @@ build environment:
 2. 显示/操作网络配置（旧） - **ifconfig**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ifconfig eth0
    eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
            inet 172.18.61.250  netmask 255.255.240.0  broadcast 172.18.63.255
@@ -1095,7 +1046,6 @@ build environment:
 3. 显示/操作网络配置（新） - **ip**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ip address
    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -1110,7 +1060,6 @@ build environment:
 4. 网络可达性检查 - **ping**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ping www.baidu.com -c 3
    PING www.a.shifen.com (220.181.111.188) 56(84) bytes of data.
    64 bytes from 220.181.111.188 (220.181.111.188): icmp_seq=1 ttl=51 time=36.3 ms
@@ -1124,21 +1073,18 @@ build environment:
 5. 查看网络服务和端口 - **netstat**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# netstat -nap | grep nginx
    ```
 
 6. 安全文件拷贝 - **scp**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
    ```
 
 7. 安全文件传输 - **sftp**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# sftp root@120.77.222.217
    root@120.77.222.217's password:
    Connected to 120.77.222.217.
@@ -1168,7 +1114,6 @@ build environment:
 1. **ps** - 查询进程。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps -ef
    UID        PID  PPID  C STIME TTY          TIME CMD
    root         1     0  0 Jun23 ?        00:00:05 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
@@ -1182,7 +1127,6 @@ build environment:
 2. **kill** - 终止进程。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill 1234
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill -9 1234
    ```
@@ -1190,7 +1134,6 @@ build environment:
    例子：用一条命令强制终止正在运行的Redis进程。
 
     ```Shell
-   
    ps -ef | grep redis | grep -v grep | awk '{print $2}' | xargs kill
     ```
 
@@ -1200,7 +1143,6 @@ build environment:
    - `&`
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mongod &
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# redis-server
    ...
@@ -1211,7 +1153,6 @@ build environment:
 4. **jobs** - 查询后台进程。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
    [2]   Running                 mongod &
    [3]-  Stopped                 cat
@@ -1221,7 +1162,6 @@ build environment:
 5. **bg** - 让进程在后台继续运行。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# bg %4
    [4]+ redis-server &
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
@@ -1233,7 +1173,6 @@ build environment:
 6. **fg** - 将后台进程置于前台。
 
     ```Shell
-    
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
     redis-server
     ^C5554:signal-handler (1530025281) Received SIGINT scheduling shutdown...
@@ -1248,7 +1187,6 @@ build environment:
 7. **top** - 进程监控。
 
     ```Shell
-    
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
     top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
     Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
@@ -1265,7 +1203,6 @@ build environment:
 2. 查看内存使用情况 - **free**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# free
                  total        used        free      shared  buff/cache   available
    Mem:        1016168      323924      190452         356      501792      531800
@@ -1275,7 +1212,6 @@ build environment:
 3. 查看进程使用内存状况 - **pmap**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps
      PID TTY          TIME CMD
     4581 pts/0    00:00:00 bash
@@ -1295,7 +1231,6 @@ build environment:
 4. 报告设备CPU和I/O统计信息 - **iostat**。
 
    ```Shell
-   
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# iostat
    Linux 3.10.0-693.11.1.el7.x86_64 (iZwz97tbgo9lkabnat2lo8Z)      06/26/2018      _x86_64_       (1 CPU)
    avg-cpu:  %user   %nice %system %iowait  %steal   %idle

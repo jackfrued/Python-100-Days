@@ -343,5 +343,3 @@
 
 1. MySQLdb
 2. PyMySQL
-
-

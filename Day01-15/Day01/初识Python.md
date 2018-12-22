@@ -7,38 +7,38 @@
 1. 1989年圣诞节：Guido von Rossum开始写Python语言的编译器。
 2. 1991年2月：第一个Python编译器（同时也是解释器）诞生，它是用C语言实现的（后面又出现了Java和C#实现的版本Jython和IronPython，以及PyPy、Brython、Pyston等其他实现），可以调用C语言的库函数。在最早的版本中，Python已经提供了对“类”，“函数”，“异常处理”等构造块的支持，同时提供了“列表”和“字典”等核心数据类型，同时支持以模块为基础的拓展系统。
 3. 1994年1月：Python 1.0正式发布。
-4. 2000年10月16日：Python 2.0发布，增加了实现完整的[垃圾回收](https://zh.wikipedia.org/wiki/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8))，并且支持[Unicode](https://zh.wikipedia.org/wiki/Unicode)。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。
-5. 2008年12月3日：Python 3.0发布，此版不完全兼容之前的Python代码，不过很多新特性后来也被移植到旧的Python 2.6/2.7版本，因为目前还有公司在项目和运维中使用Python 2.x版本的代码。
+4. 2000年10月16日：Python 2.0发布，增加了实现完整的[垃圾回收](https://zh.wikipedia.org/wiki/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8))，提供了对[Unicode](https://zh.wikipedia.org/wiki/Unicode)的支持。与此同时，Python的整个开发过程更加透明，社区对开发进度的影响逐渐扩大，生态圈开始慢慢形成。
+5. 2008年12月3日：Python 3.0发布，它并不完全兼容之前的Python代码，不过因为目前还有不少公司在项目和运维中使用Python 2.x版本，所以Python 3.x的很多新特性后来也被移植到Python 2.6/2.7版本中。
 
-目前我们使用的Python 3.6.x的版本是在2016年的12月23日发布的，Python的版本号分为三段，形如A.B.C。其中A表示大版本号，一般当整体重写，或出现不向后兼容的改变时，增加A；B表示功能更新，出现新功能时增加B；C表示小的改动（如修复了某个Bug），只要有修改就增加C。如果对Python的历史感兴趣，可以查看一篇名为[《Python简史》](http://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html)的博文。
+目前我们使用的Python 3.7.x的版本是在2018年发布的，Python的版本号分为三段，形如A.B.C。其中A表示大版本号，一般当整体重写，或出现不向后兼容的改变时，增加A；B表示功能更新，出现新功能时增加B；C表示小的改动（如修复了某个Bug），只要有修改就增加C。如果对Python的历史感兴趣，可以查看一篇名为[《Python简史》](http://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html)的博文。
 
 #### Python的优缺点
 
 Python的优点很多，简单的可以总结为以下几点。
 
 1. 简单和明确，做一件事只有一种方法。
-2. 学习曲线低，与其他很多语言比上手更容易。
+2. 学习曲线低，跟其他很多语言相比，Python更容易上手。
 3. 开放源代码，拥有强大的社区和生态圈。
-4. 解释型语言，完美的平台可移植性。
-5. 支持两种主流的编程范式，可以使用面向对象和函数式编程。
-6. 可扩展性和可嵌入性，可以调用C/C++代码也可以在C/C++中调用。
+4. 解释型语言，天生具有平台可移植性。
+5. 支持两种主流的编程范式（面向对象编程和函数式编程）都提供了支持。
+6. 可扩展性和可嵌入性，可以调用C/C++代码，也可以在C/C++中调用Python。
 7. 代码规范程度高，可读性强，适合有代码洁癖和强迫症的人群。
 
 Python的缺点主要集中在以下几点。
 
-1. 执行效率低下，因此计算密集型任务可以由C/C++编写。
-2. 代码无法加密，但是现在的公司很多都不是卖软件而是卖服务，这个问题慢慢会淡化。
-3. 在开发时可以选择的框架太多，有选择的地方就有错误。
+1. 执行效率稍低，因此计算密集型任务可以由C/C++编写。
+2. 代码无法加密，但是现在的公司很多都不是卖软件而是卖服务，这个问题会被淡化。
+3. 在开发时可以选择的框架太多（如Web框架就有100多个），有选择的地方就有错误。
 
 #### Python的应用领域
 
-目前Python在云基础设施、DevOps、网络爬虫开发、数据分析挖掘、机器学习等领域都有着广泛的应用，因此也产生了服务器开发、数据接口开发、自动化运维、科学计算和数据可视化、聊天机器人开发、图像识别和处理等一系列的职位。
+目前Python在云基础设施、DevOps、网络爬虫开发、数据分析挖掘、机器学习等领域都有着广泛的应用，因此也产生了Web后端开发、数据接口开发、自动化运维、自动化测试、科学计算和可视化、数据分析、量化交易、机器人开发、图像识别和处理等一系列的职位。
 
 ### 搭建编程环境
 
 #### Windows环境
 
-可以在[Python的官方网站](https://www.python.org)下载到Python的Windows安装程序（exe文件），需要注意的是如果在Windows 7环境下安装需要先安装Service Pack 1补丁包（可以通过一些工具软件自动安装系统补丁的功能来安装），安装过程建议勾选“Add Python 3.6 to PATH”（将Python 3.6添加到PATH环境变量）并选择自定义安装，在设置“Optional Features”界面最好将“pip”、“tcl/tk”、“Python test suite”等项全部勾选上。强烈建议使用自定义的安装路径并保证路径中没有中文。安装完成会看到“Setup was successful”的提示，但是在启动Python环境时可能会因为缺失一些动态链接库文件而导致Python解释器无法运行，常见的问题主要是api-ms-win-crt\*.dll缺失以及更新DirectX之后导致某些动态链接库文件缺失，前者可以参照[《api-ms-win-crt\*.dll缺失原因分析和解决方法》]()一文讲解的方法进行处理或者直接在[微软官网](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)下载Visual C++ Redistributable for Visual Studio 2015文件进行修复，后者可以下载一个DirectX修复工具进行修复。
+可以在[Python官方网站](https://www.python.org)下载到Python的Windows安装程序（exe文件），需要注意的是如果在Windows 7环境下安装需要先安装Service Pack 1补丁包（可以通过一些工具软件自动安装系统补丁的功能来安装），安装过程建议勾选“Add Python 3.6 to PATH”（将Python 3.6添加到PATH环境变量）并选择自定义安装，在设置“Optional Features”界面最好将“pip”、“tcl/tk”、“Python test suite”等项全部勾选上。强烈建议使用自定义的安装路径并保证路径中没有中文。安装完成会看到“Setup was successful”的提示，但是在启动Python环境时可能会因为缺失一些动态链接库文件而导致Python解释器无法运行，常见的问题主要是api-ms-win-crt\*.dll缺失以及更新DirectX之后导致某些动态链接库文件缺失，前者可以参照[《api-ms-win-crt\*.dll缺失原因分析和解决方法》]()一文讲解的方法进行处理或者直接在[微软官网](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)下载Visual C++ Redistributable for Visual Studio 2015文件进行修复，后者可以下载一个DirectX修复工具进行修复。
 
 #### Linux环境
 
@@ -53,15 +53,15 @@ yum -y install wget gcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlit
 下载Python源代码并解压缩到指定目录。
 
 ```Shell
-wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
-xz -d Python-3.7.0.tar.xz
-tar -xvf Python-3.7.0.tar
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.1.tar.xz
+xz -d Python-3.7.1.tar.xz
+tar -xvf Python-3.7.1.tar
 ```
 
 切换至Python源代码目录并执行下面的命令进行配置和安装。
 
 ```Shell
-cd Python-3.7.0
+cd Python-3.7.1
 ./configure --prefix=/usr/local/python37 --enable-optimizations
 make && make install
 ```
@@ -87,7 +87,7 @@ source .bash_profile
 
 #### MacOS环境
 
-MacOS也是自带了Python 2.x版本的，可以通过[Python的官方网站](https://www.python.org)提供的安装文件（pkg文件）安装3.x的版本。默认安装完成后，可以通过在终端执行python命令来启动2.x版本的Python解释器，可以通过执行python3命令来启动3.x版本的Python解释器，当然也可以通过重新设置软链接来修改启动Python解释器的命令。
+MacOS也是自带了Python 2.x版本的，可以通过[Python的官方网站](https://www.python.org)提供的安装文件（pkg文件）安装3.x的版本。默认安装完成后，可以通过在终端执行python命令来启动2.x版本的Python解释器，可以通过执行python3命令来启动3.x版本的Python解释器。
 
 ### 从终端运行Python程序
 
@@ -137,7 +137,6 @@ python hello.py
 
 Version: 0.1
 Author: 骆昊
-Date: 2018-02-26
 """
 
 print('hello, world!')
@@ -179,8 +178,6 @@ python -m pip install ipython jupyter
 jupyter notebook
 ```
 
-![](./res/python-jupyter-1.png)
-
 ![](./res/python-jupyter-2.png)
 
 #### Sublime - 文本编辑神器
@@ -203,13 +200,13 @@ jupyter notebook
   import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read());print('Please restart Sublime Text to finish installation')
   ```
 
-- 安装插件。通过Preference菜单的Package Control或快捷键Ctrl+Shift+P打开命令面板，在面板中输入Install Package就可以找到安装插件的工具，然后再查找需要的插件。我们推荐大家安装以下几个插件。
+- 安装插件。通过Preference菜单的Package Control或快捷键Ctrl+Shift+P打开命令面板，在面板中输入Install Package就可以找到安装插件的工具，然后再查找需要的插件。我们推荐大家安装以下几个插件：
 
-  - SublimeCodeIntel - 代码自动补全工具插件
-  - Emmet - 前端开发代码模板插件
-  - Git - 版本控制工具插件
-  - Python PEP8 Autoformat - PEP8规范自动格式化插件
-  - ConvertToUTF8 - 将本地编码转换为UTF-8
+  - SublimeCodeIntel - 代码自动补全工具插件。
+  - Emmet - 前端开发代码模板插件。
+  - Git - 版本控制工具插件。
+  - Python PEP8 Autoformat - PEP8规范自动格式化插件。
+  - ConvertToUTF8 - 将本地编码转换为UTF-8。
 
 #### PyCharm - Python开发神器
 

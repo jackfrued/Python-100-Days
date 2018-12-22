@@ -145,18 +145,25 @@
 - 使用进程 - fork函数 / multiprocessing模块 / 进程池 / 进程间通信
 - 使用线程 - thread模块 / threading模块 / Thread类 / Lock类
 
-#### Day14 - [网络编程入门](./Day01-15/Day14/网络编程入门.md)
+#### Day14-A - [网络编程入门](./Day01-15/Day14/网络编程入门.md)
 
 - 计算机网络基础 - 计算机网络发展史 / “TCP-IP”模型 / IP地址 / 端口 / 协议 / 其他相关概念
 - 网络应用架构 - “客户端-服务器”架构 / “浏览器-服务器”架构
 - Python网络编程 - 套接字的概念 / socket模块 /  socket函数 / 创建TCP服务器 / 创建TCP客户端 / 创建UDP服务器 / 创建UDP客户端 / SocketServer模块
 
-#### Day15 - [网络应用开发](./Day01-15/Day15/网络应用开发.md)
+#### Day14-B - [网络应用开发](./Day01-15/Day15/网络应用开发.md)
 
 - 访问网络API - 网络API概述 / 访问URL / requests模块 / 解析JSON格式数据
 - 文件传输 - FTP协议 / ftplib模块 / 交互式FTP应用
 - 电子邮件 - SMTP协议 / POP3协议 / IMAP协议 / smtplib模块 / poplib模块 / imaplib模块
 - 短信服务 - twilio模块 / 国内的短信服务
+
+#### Day15 - 图像和文档处理
+
+- 用Pillow处理图片
+- 读写Word文档
+- 读写Excel文件
+- 生成PDF文件
 
 ### Day16~Day20 - [Python语言进阶 ](./Day16-20/Python语言进阶.md)
 

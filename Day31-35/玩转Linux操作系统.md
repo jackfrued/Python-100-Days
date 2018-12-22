@@ -1249,7 +1249,3 @@ build environment:
 3. HISTSIZE
 4. RANDOM
 5. PATH
-
-
-
-

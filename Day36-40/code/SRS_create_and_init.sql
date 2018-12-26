@@ -1,3 +1,9 @@
+-- 关系型数据库可以保证数据的完整性
+-- 实体完整性：每条记录都是独一无二的没有冗余 - 主键/唯一索引
+-- 参照完整性（引用完整性）：外键
+-- 域完整性：数据类型、非空约束、默认值约束、检查约束
+
+
 -- 创建SRS数据库
 drop database if exists SRS;
 create database SRS default charset utf8 collate utf8_bin;
@@ -29,6 +35,10 @@ addr varchar(255) default '' comment '籍贯',
 collid int not null comment '所属学院编号',
 primary key (stuid)
 );
+
+-- 检查约束（MySQL不支持它）
+alter table tb_student add constraint ck_student_birth 
+check (birth between '1990-1-1' and '1999-12-31');
 
 -- 添加外键约束
 alter table tb_student add constraint fk_student_collid foreign key (collid) references tb_college (collid);
@@ -134,7 +144,7 @@ insert into tb_score (sid, cid, seldate, mark) values
 (1378, 1111, '2017-09-05', 82),
 (1378, 7777, '2017-09-02', 65.5),
 (2035, 7777, '2018-09-03', 88),
-(2035, 9999, date(now()), null),
+(2035, 9999, curdate(), null),
 (3755, 1111, date(now()), null),
 (3755, 8888, date(now()), null),
 (3755, 9999, '2017-09-01', 92);

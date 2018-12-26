@@ -1,24 +1,33 @@
-## 关系型数据入门
+## 关系数据库入门
 
-### 关系型数据概述
+### 关系数据库概述
 
-1. 数据持久化。
-2. 数据库发展史。
-3. 关系型数据库特点。
+1. 数据持久化 - 将数据保存到（在掉电情况下）能够长久保存数据的存储介质中。
+
+2. 数据库发展史 - 网状数据库、层次数据库、关系数据库。
+
+   > 1970年，IBM的研究员E.F.Codd在*Communication of the ACM*上发表了名为*A Relational Model of Data for Large Shared Data Banks*的论文，提出了关系模型的概念，奠定了关系模型的理论基础。后来Codd又陆续发表多篇文章，论述了范式理论和衡量关系系统的12条标准，用数学理论奠定了关系数据库的基础。
+
+3. 关系数据库特点。
+
    - 理论基础：集合论和关系代数。
+
    - 具体表象：用二维表（有行和列）组织数据。
+
    - 编程语言：结构化查询语言（SQL）。
+
 4. E-R图。
    - 实体 - 矩形框
    - 属性 - 椭圆框
    - 关系 - 菱形框
    - 重数 - 1:1 / 1:N / M:N
-5. 关系型数据库产品。
-   - [Oracle](https://www.oracle.com/index.html)
-   - [DB2](https://www.ibm.com/analytics/us/en/db2/)
-   - [SQL Server](https://www.microsoft.com/en-us/sql-server/)
-   - [MySQL](https://www.mysql.com/)
-   - [SQLite](https://www.sqlite.org/index.html)
+
+5. 关系数据库产品。
+   - [Oracle](https://www.oracle.com/index.html) - 目前世界上使用最为广泛的数据库管理系统，作为一个通用的数据库系统，它具有完整的数据管理功能；作为一个关系数据库，它是一个完备关系的产品；作为分布式数据库，它实现了分布式处理的功能。在Oracle最新的12c版本中，还引入了多承租方架构，使用该架构可轻松部署和管理数据库云。
+   - [DB2](https://www.ibm.com/analytics/us/en/db2/) - IBM公司开发的、主要运行于Unix（包括IBM自家的[AIX](https://zh.wikipedia.org/wiki/AIX)）、Linux、以及Windows服务器版等系统的关系数据库产品。DB2历史悠久且被认为是最早使用SQL的数据库产品，它拥有较为强大的商业智能功能。
+   - [SQL Server](https://www.microsoft.com/en-us/sql-server/) - 由Microsoft开发和推广的关系型数据库产品，最初适用于中小企业的数据管理，但是近年来它的应用范围有所扩展，部分大企业甚至是跨国公司也开始基于它来构建自己的数据管理系统。
+   - [MySQL](https://www.mysql.com/) - MySQL是开放源代码的，任何人都可以在GPL（General Public License）的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。
+   - [PostgreSQL]() - 在BSD许可证下发行的开发源代码的关系数据库产品。
 
 ### MySQL简介
 
@@ -341,5 +350,5 @@
 
 ### Python数据库编程
 
-1. MySQLdb
-2. PyMySQL
+#### 使用三方库PyMySQL
+

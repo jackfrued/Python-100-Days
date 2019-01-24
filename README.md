@@ -306,7 +306,7 @@
 
 ### Day91~100 - [团队项目开发](./Day91-100)
 
-#### 过程模型
+#### 第91天：团队开发和项目选题
 
 1. 软件过程模型
    - 经典过程模型（瀑布模型）
@@ -322,7 +322,18 @@
      - 修复bug（问题描述、重现步骤、测试人员、被指派人）。
      - 评审会议（Showcase）。
      - 回顾会议（当前周期做得好和不好的地方）。
+
+     > 补充：敏捷软件开发宣言
+     >
+     > - **个体和互动** 高于 流程和工具
+     > - **工作的软件** 高于 详尽的文档
+     > - **客户合作** 高于 合同谈判
+     > - **响应变化** 高于 遵循计划
+
+    ![](./res/the-daily-scrum-in-the-sprint-cycle.png)
+
 2. 项目团队组建
+
    - 团队的构成和角色
 
      ![company_architecture](./res/company_architecture.png)
@@ -332,21 +343,29 @@
      ![](./res/pylint.png)
 
    - Python中的一些“惯例”（请参考[《Python惯例-如何编写Pythonic的代码》](Python惯例-如何编写Pythonic的代码.md)）
+
+   - 影响代码可读性的原因：
+
+     - 代码注释太少或者没有注释
+     - 代码破坏了语言的最佳实践
+     - 反模式编程（意大利面代码、复制-黏贴编程、自负编程、……）
+
 3. 团队开发工具介绍
    - 版本控制：Git、Mercury
-   - 缺陷管理：Github/Gitee、Redmine、禅道
-   - 持续集成：Jenkins、Travis-CI
+   - 缺陷管理：[Gitlab](https://about.gitlab.com/)、[Redmine](http://www.redmine.org.cn/)
+   - 敏捷闭环工具：[禅道](https://www.zentao.net/)、[JIRA](https://www.atlassian.com/software/jira/features)
+   - 持续集成：[Jenkins](https://jenkins.io/)、[Travis-CI](https://travis-ci.org/)
 
    请参考[《团队项目开发》](团队项目开发.md)。
 
-#### 项目选题和理解业务
+##### 项目选题和理解业务
 
 1. 选题范围设定
 
    - CMS（用户端）：新闻聚合网站、问答/分享社区、影评/书评网站等。
-   - MIS（用户端+管理端）：KMS、KPI考核系统、HRS、仓储管理系统等。
+   - MIS（用户端+管理端）：KMS、KPI考核系统、HRS、CRM系统、供应链系统、仓储管理系统等。
 
-   - App后台（管理端+数据接口）：二手交易类App、报刊杂志类App、健康健美类App、旅游类App、社交类App、阅读类App等。
+   - App后台（管理端+数据接口）：二手交易类、报刊杂志类、小众电商类、新闻资讯类、旅游类、社交类、阅读类等。
    - 其他类型：自身行业背景和工作经验、业务容易理解和把控。
 
 2. 需求理解、模块划分和任务分配
@@ -366,11 +385,13 @@
    |      | 查看评论 | 白元芳 | 正在进行 | 20%  | 4    | 2018/8/7 |          | 2018/8/7 |          | 需要进行代码审查 |
    |      | 评论投票 | 白元芳 | 等待     | 0%   | 4    | 2018/8/8 |          | 2018/8/8 |          |                  |
 
-#### 概念模型和正向工程
+#### 第92天：数据库设计和OOAD
 
-1. UML和E-R图
+##### 概念模型和正向工程
 
-   ![uml](./res/uml-graph.png)
+1. UML（统一建模语言）的类图
+
+   ![uml](./res/uml-class-diagram.png)
 
 2. 通过模型创建表（正向工程）
 
@@ -379,44 +400,53 @@
    python manage.py migrate
    ```
 
-#### 物理模型和反向工程
+##### 物理模型和反向工程
 
 1. PowerDesigner
 
    ![](./res/power-designer-pdm.png)
 
-2. 通过数据表创建模型
+2. 通过数据表创建模型（反向工程）
 
    ```Shell
    python manage.py inspectdb > app/models.py
    ```
 
-#### 项目开发中的公共问题
+#### 第93-98天：使用Django开发项目
 
-1. 数据的配置
-2. 缓存的配置
+##### 项目开发中的公共问题
+
+1. 数据库的配置（多库、主从、路由）
+2. 缓存的配置（分区缓存、键设置、超时设置、主从复制、故障恢复）
 3. 日志的配置
-4. Django的使用技巧
-5. 好用的Python模块（图像处理、数据加密、三方API）
+4. Django的使用技巧（Django-Debug-ToolBar）
+5. 好用的Python模块（日期计算、图像处理、数据加密、三方API）
 
-### REST API设计
+##### REST API设计
 
 1. RESTful架构
+   - [理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful.html)
+   - [RESTful API设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
+   - [RESTful API最佳实践](http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html)
 2. API接口文档的撰写（[《网络API接口设计》](网络API接口设计.md)）
-3. Django-REST-Framework的应用
+   - [RAP2](http://rap2.taobao.org/)
+   - [Apizza](https://apizza.net/)
+3. [django-REST-framework](https://www.django-rest-framework.org/)的应用（具体请参考[《Django知识点概述》](Django知识点概述.md)）
 
-#### 项目中的重点难点剖析
+##### 项目中的重点难点剖析
 
-1. 使用缓存缓解数据库压力（Redis）
-2. 使用消息队列缓解服务器压力（Celery + RabbitMQ）
+1. 使用缓存缓解数据库压力 - Redis（具体请参考[《Django知识点概述》](Django知识点概述.md)）
+2. 使用消息队列缓解服务器压力 - Celery + RabbitMQ（具体请参考[《Django知识点概述》](Django知识点概述.md)）
 
-#### 单元测试
+#### 第99-100天：测试和部署
+
+##### 单元测试
 
 1. 测试的种类
-2. 编写单元测试（unitest、TestCase）
-3. 测试覆盖率（Coverage）
+2. 编写单元测试（unittest、pytest、nose2、tox、ddt、……）
+3. 测试覆盖率（coverage）
 
-#### 项目部署
+##### 项目部署
 
 1. 部署前的准备工作
    - 关键设置（SECRET_KEY / DEBUG / ALLOWED_HOSTS / 缓存 / 数据库）
@@ -424,25 +454,34 @@
    - 日志相关配置
 2. Linux常用命令回顾
 3. Linux常用服务的安装和配置
-4. uWSGI和Nginx的使用
-5. 虚拟化容器（Docker）
+4. uWSGI/Gunicorn和Nginx的使用
+   - Gunicorn和uWSGI的比较
+     - 对于不需要大量定制化的简单应用程序，Gunicorn是一个不错的选择，uWSGI的学习曲线比Gunicorn要陡峭得多，Gunicorn的默认参数就已经能够适应大多数应用程序。
+     - uWSGI支持异构部署。
+     - 由于Nginx本身支持uWSGI，在线上一般都将Nginx和uWSGI捆绑在一起部署，而且uWSGI属于功能齐全且高度定制的WSGI中间件。
+     - 在性能上，Gunicorn和uWSGI其实表现相当。
+5. 虚拟化技术（Docker）
 
-#### 性能测试
+##### 性能测试
 
 1. AB的使用
 2. SQLslap的使用
 3. sysbench的使用
 
-#### 自动化测试
+##### 自动化测试
 
 1. 使用Shell和Python进行自动化测试
 2. 使用Selenium实现自动化测试
+   - Selenium IDE
+   - Selenium WebDriver
+   - Selenium Remote Control
 3. 测试工具Robot Framework介绍
 
-#### 项目性能调优
+##### 项目性能调优
 
 1. 数据库性能调优
+   - 软硬件优化
+   - SQL优化
+   - 架构优化
 2. 代码性能调优
-3. 静态文件服务器和CDN加速
-
-
+3. 云存储和CDN加速

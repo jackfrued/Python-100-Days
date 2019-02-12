@@ -1,5 +1,3 @@
-use hrs;
-
 create table `tb_district`
 (
 `distid` int not null,

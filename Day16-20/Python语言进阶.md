@@ -1,7 +1,39 @@
-## Python语言进程
+## Python语言进阶
 
 1. 数据结构和算法
-   - 排序算法（冒泡和归并）和查找算法（顺序和折半）
+
+   - 算法：解决问题的方法和步骤
+
+   - 评价算法的好坏：渐近时间复杂度和渐近空间复杂度。
+
+   - 渐近时间复杂度的大O标记：
+     - $O(c)$ - 常量时间复杂度 - 布隆过滤器 / 哈希存储
+     - $O(log_2n)$ - 对数时间复杂度 - 折半查找（二分查找）
+     - $O(n)$ - 线性时间复杂度 - 顺序查找 / 桶排序
+     - $O(n*log_2n)$ - 对数线性时间复杂度 - 高级排序算法（归并排序、快速排序）
+     - $O(n^2)$ - 平方时间复杂度 - 简单排序算法（选择排序、插入排序、冒泡排序）
+     - $O(n^3)$ - 立方时间复杂度 - Floyd算法 / 矩阵乘法运算
+     - $O(2^n)$ - 几何级数时间复杂度 - 汉诺塔
+     - $O(n!)$ - 阶乘时间复杂度 - 旅行经销商问题 - NP
+
+     ![](./res/algorithm_complexity_1.png)
+
+     ![](./res/algorithm_complexity_2.png)
+
+   - 排序算法（选择、冒泡和归并）和查找算法（顺序和折半）
+
+     ```Python
+     def select_sort(origin_items, comp=lambda x, y: x < y):
+         """简单选择排序"""
+         items = origin_items[:]
+         for i in range(len(items) - 1):
+             min_index = i
+             for j in range(i + 1, len(items)):
+                 if comp(items[j], items[min_index]):
+                     min_index = j
+             items[i], items[min_index] = items[min_index], items[i]
+         return items
+     ```
 
      ```Python
      def bubble_sort(origin_items, comp=lambda x, y: x > y):
@@ -9,7 +41,7 @@
          items = origin_items[:]
          for i in range(len(items) - 1):
              swapped = False
-             for j in range(len(items) - 1 - i):
+             for j in range(i, len(items) - 1 - i):
                  if comp(items[j], items[j + 1]):
                      items[j], items[j + 1] = items[j + 1], items[j]
                      swapped = True
@@ -38,16 +70,16 @@
      def merge(items1, items2, comp):
          """合并(将两个有序的列表合并成一个有序的列表)"""
          items = []
-         idx1, idx2 = 0, 0
-         while idx1 < len(items1) and idx2 < len(items2):
-             if comp(items1[idx1], items2[idx2]):
-                 items.append(items1[idx1])
-                 idx1 += 1
+         index, index2 = 0, 0
+         while index1 < len(items1) and index2 < len(items2):
+             if comp(items1[index1], items2[index2]):
+                 items.append(items1[index1])
+                 index1 += 1
              else:
-                 items.append(items2[idx2])
-                 idx2 += 1
-         items += items1[idx1:]
-         items += items2[idx2:]
+                 items.append(items2[index2])
+                 index2 += 1
+         items += items1[index1:]
+         items += items2[index2:]
          return items
      ```
 
@@ -92,6 +124,8 @@
      print(prices2)
      ```
 
+     > 说明：生成式（推导式）可以用来生成列表、集合和字典。
+
    - 嵌套的列表
 
      ```Python
@@ -113,6 +147,7 @@
      ```Python
      """
      从列表中找出最大的或最小的N个元素
+     堆结构(大根堆/小根堆)
      """
      import heapq
      
@@ -133,18 +168,13 @@
 
      ```Python
      """
-     排列 / 组合 / 笛卡尔积
+     迭代工具 - 排列 / 组合 / 笛卡尔积
      """
      import itertools
      
-     for val in itertools.permutations('ABCD'):
-         print(val)
-     
-     for val in itertools.combinations('ABCDE', 3):
-         print(val)
-     
-     for val in itertools.product('ABCD', '123'):
-         print(val)
+     itertools.permutations('ABCD')
+     itertools.combinations('ABCDE', 3)
+     itertools.product('ABCD', '123')
      ```
 
    - collections模块下的工具类
@@ -165,15 +195,17 @@
      print(counter.most_common(3))
      ```
 
-   - 穷举法、贪婪法、分治法、回溯法、动态规划
+   - 常用算法：
 
-     例子：百钱百鸡和五人分鱼。
+     - 穷举法 - 又称为暴力破解法，对所有的可能性进行验证，直到找到正确答案。
+     - 贪婪法 - 在对问题求解时，总是做出在当前看来是最好的选择，不追求最优解，快速找到满意解。
+     - 分治法 - 把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题，直到可以直接求解的程度，最后将子问题的解进行合并得到原问题的解。
+     - 回溯法 - 回溯法又称为试探法，按选优条件向前搜索，当搜索到某一步发现原先选择并不优或达不到目标时，就退回一步重新选择。
+     - 动态规划 - 基本思想也是将待求解问题分解成若干个子问题，先求解并保存这些子问题的解，避免产生大量的重复运算。
+
+     穷举法例子：百钱百鸡和五人分鱼。
 
      ```Python
-     """
-     穷举法 - 穷尽所有可能直到找到正确答案
-     """
-     
      # 公鸡5元一只 母鸡3元一只 小鸡1元三只
      # 用100元买100只鸡 问公鸡/母鸡/小鸡各多少只
      for x in range(20):
@@ -202,15 +234,157 @@
          fish += 1
      ```
 
-     例子：斐波拉切数列。
+     贪婪法例子：假设小偷有一个背包，最多能装20公斤赃物，他闯入一户人家，发现如下表所示的物品。很显然，他不能把所有物品都装进背包，所以必须确定拿走哪些物品，留下哪些物品。
+
+     |  名称  | 价格（美元） | 重量（kg） |
+     | :----: | :----------: | :--------: |
+     |  电脑  |     200      |     20     |
+     | 收音机 |      20      |     4      |
+     |   钟   |     175      |     10     |
+     |  花瓶  |      50      |     2      |
+     |   书   |      10      |     1      |
+     |  油画  |      90      |     9      |
+
+     ```Python
+     """
+     贪婪法：在对问题求解时，总是做出在当前看来是最好的选择，不追求最优解，快速找到满意解。
+     输入：
+     20 6
+     电脑 200 20
+     收音机 20 4
+     钟 175 10
+     花瓶 50 2
+     书 10 1
+     油画 90 9
+     """
+     class Thing(object):
+         """物品"""
+     
+         def __init__(self, name, price, weight):
+             self.name = name
+             self.price = price
+             self.weight = weight
+     
+         @property
+         def value(self):
+             """价格重量比"""
+             return self.price / self.weight
+     
+     
+     def input_thing():
+         """输入物品信息"""
+         name_str, price_str, weight_str = input().split()
+         return name_str, int(price_str), int(weight_str)
+     
+     
+     def main():
+         """主函数"""
+         max_weight, num_of_things = map(int, input().split())
+         all_things = []
+         for _ in range(num_of_things):
+             all_things.append(Thing(*input_thing()))
+         all_things.sort(key=lambda x: x.value, reverse=True)
+         total_weight = 0
+         total_price = 0
+         for thing in all_things:
+             if total_weight + thing.weight <= max_weight:
+                 print(f'小偷拿走了{thing.name}')
+                 total_weight += thing.weight
+                 total_price += thing.price
+         print(f'总价值: {total_price}美元')
+     
+     
+     if __name__ == '__main__':
+         main()
+     ```
+
+     分治法例子：[快速排序](https://zh.wikipedia.org/zh/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)。
+
+     ```Python
+     """
+     快速排序 - 选择枢轴对元素进行划分，左边都比枢轴小右边都比枢轴大
+     """
+     def quick_sort(origin_items, comp=lambda x, y: x <= y):
+         items = origin_items[:]
+         _quick_sort(items, 0, len(items) - 1, comp)
+         return items
+     
+     
+     def _quick_sort(items, start, end, comp):
+         if start < end:
+             pos = _partition(items, start, end, comp)
+             _quick_sort(items, start, pos - 1, comp)
+             _quick_sort(items, pos + 1, end, comp)
+     
+     
+     def _partition(items, start, end, comp):
+         pivot = items[end]
+         i = start - 1
+         for j in range(start, end):
+             if comp(items[j], pivot):
+                 i += 1
+                 items[i], items[j] = items[j], items[i]
+         items[i + 1], items[end] = items[end], items[i + 1]
+         return i + 1
+     ```
+
+     回溯法例子：[骑士巡逻](https://zh.wikipedia.org/zh/%E9%AA%91%E5%A3%AB%E5%B7%A1%E9%80%BB)。
+
+     ```Python
+     """
+     递归回溯法：叫称为试探法，按选优条件向前搜索，当搜索到某一步，发现原先选择并不优或达不到目标时，就退回一步重新选择，比较经典的问题包括骑士巡逻、八皇后和迷宫寻路等。
+     """
+     import sys
+     import time
+     
+     SIZE = 5
+     total = 0
+     
+     
+     def print_board(board):
+         for row in board:
+             for col in row:
+                 print(str(col).center(4), end='')
+             print()
+     
+     
+     def patrol(board, row, col, step=1):
+         if row >= 0 and row < SIZE and \
+             col >= 0 and col < SIZE and \
+             board[row][col] == 0:
+             board[row][col] = step
+             if step == SIZE * SIZE:
+                 global total
+                 total += 1
+                 print(f'第{total}种走法: ')
+                 print_board(board)
+             patrol(board, row - 2, col - 1, step + 1)
+             patrol(board, row - 1, col - 2, step + 1)
+             patrol(board, row + 1, col - 2, step + 1)
+             patrol(board, row + 2, col - 1, step + 1)
+             patrol(board, row + 2, col + 1, step + 1)
+             patrol(board, row + 1, col + 2, step + 1)
+             patrol(board, row - 1, col + 2, step + 1)
+             patrol(board, row - 2, col + 1, step + 1)
+             board[row][col] = 0
+     
+     
+     def main():
+         board = [[0] * SIZE for _ in range(SIZE)]
+         patrol(board, SIZE - 1, SIZE - 1)
+     
+     
+     if __name__ == '__main__':
+         main()
+     ```
+
+     动态规划例子1：[斐波拉切数列]()。（不使用动态规划将会是几何级数复杂度）
 
      ```Python
      """
      动态规划 - 适用于有重叠子问题和最优子结构性质的问题
      使用动态规划方法所耗时间往往远少于朴素解法(用空间换取时间)
      """
-     
-     
      def fib(num, temp={}):
          """用递归计算Fibonacci数"""
          if num in (1, 2):
@@ -220,6 +394,38 @@
          except KeyError:
              temp[num] = fib(num - 1) + fib(num - 2)
              return temp[num]
+     ```
+
+     动态规划例子2：子列表元素之和的最大值。（使用动态规划可以避免二重循环）
+
+     > 说明：子列表指的是列表中索引（下标）连续的元素构成的列表；列表中的元素是int类型，可能包含正整数、0、负整数；程序输入列表中的元素，输出子列表元素求和的最大值，例如：
+     >
+     > 输入：1 -2 3 5 -3 2
+     >
+     > 输出：8
+     >
+     > 输入：0 -2 3 5 -1 2
+     >
+     > 输出：9
+     >
+     > 输入：-9 -2 -3 -5 -3
+     >
+     > 输出：-2
+
+     ```Python
+     def main():
+         items = list(map(int, input().split()))
+         size = len(items)
+         overall, partial = {}, {}
+         overall[size - 1] = partial[size - 1] = items[size - 1]
+         for i in range(size - 2, -1, -1):
+             partial[i] = max(items[i], partial[i + 1] + items[i])
+             overall[i] = max(partial[i], overall[i + 1])
+         print(overall[0])
+     
+     
+     if __name__ == '__main__':
+         main()
      ```
 
 2. 函数的使用方式
@@ -233,7 +439,7 @@
    - 高阶函数的用法（`filter`、`map`以及它们的替代品）
 
      ```Python
-     items1 = list(map(lambda x: x ** 2, filter(lambda x: x % 2, [1, 2, 3, 4, 5, 6, 7, 8, 9])))
+     items1 = list(map(lambda x: x ** 2, filter(lambda x: x % 2, range(1, 10))))
      items2 = [x ** 2 for x in range(1, 10) if x % 2]
      ```
 
@@ -249,9 +455,9 @@
 
      - `global`和`nonlocal`关键字的作用
 
-       `global`：声明使用全局变量，如果不存在就把局部变量放到全局作用域。
+       `global`：声明或定义全局变量（要么直接使用现有的全局作用域的变量，要么定义一个变量放到全局作用域）。
 
-       `nonlocal`：声明使用嵌套作用域的变量（嵌套作用域必须存在该变量）。
+       `nonlocal`：声明使用嵌套作用域的变量（嵌套作用域必须存在该变量，否则报错）。
 
    - 装饰器函数（使用装饰器和取消装饰器）
 
@@ -300,7 +506,7 @@
      from time import time
      
      
-     class Record(object):
+     class Record():
          """自定义装饰器类(通过__call__魔术方法使得对象可以当成函数调用)"""
      
          def __init__(self, output):
@@ -340,7 +546,7 @@
      
      
      @singleton
-     class President(object):
+     class President():
          """总统(单例类)"""
          pass
      ```
@@ -384,12 +590,7 @@
          """员工(抽象类)"""
      
          def __init__(self, name):
-             self._name = name
-     
-         @property
-         def name(self):
-             """姓名"""
-             return self._name
+             self.name = name
      
          @abstractmethod
          def get_salary(self):
@@ -407,18 +608,9 @@
      class Programmer(Employee):
          """程序员"""
      
-         def __init__(self, name):
-             self._working_hour = 0
+         def __init__(self, name, working_hour=0):
+             self.working_hour = working_hour
              super().__init__(name)
-     
-         @property
-         def working_hour(self):
-             """工作时间"""
-             return self._working_hour
-     
-         @working_hour.setter
-         def working_hour(self, hour):
-             self._working_hour = hour if hour > 0 else 0
      
          def get_salary(self):
              return 200.0 * self.working_hour
@@ -427,17 +619,9 @@
      class Salesman(Employee):
          """销售员"""
      
-         def __init__(self, name):
-             self._sales = 0.0
+         def __init__(self, name, sales=0.0):
+             self.sales = sales
              super().__init__(name)
-     
-         @property
-         def sales(self):
-             return self._sales
-     
-         @sales.setter
-         def sales(self, sales):
-             self._sales = sales if sales > 0 else 0
      
          def get_salary(self):
              return 1800.0 + self.sales * 0.05
@@ -447,31 +631,28 @@
          """创建员工的工厂（工厂模式 - 通过工厂实现对象使用者和对象之间的解耦合）"""
      
          @staticmethod
-         def create(emp_type, *args):
+         def create(emp_type, *args, **kwargs):
              """创建员工"""
              emp_type = emp_type.upper()
              emp = None
              if emp_type == 'M':
-                 emp = Manager(*args)
+                 emp = Manager(*args, **kwargs)
              elif emp_type == 'P':
-                 emp = Programmer(*args)
+                 emp = Programmer(*args, **kwargs)
              elif emp_type == 'S':
-                 emp = Salesman(*args)
+                 emp = Salesman(*args, **kwargs)
              return emp
      
      
      def main():
          """主函数"""
          emps = [
-             EmployeeFactory.create('M', '曹操'), EmployeeFactory.create('P', '荀彧'),
-             EmployeeFactory.create('P', '郭嘉'), EmployeeFactory.create('S', '典韦')
+             EmployeeFactory.create('M', '曹操'), 
+             EmployeeFactory.create('P', '荀彧', 120),
+             EmployeeFactory.create('P', '郭嘉', 85), 
+             EmployeeFactory.create('S', '典韦', 123000),
          ]
          for emp in emps:
-             # 用isinstance函数识别对象引用所引用对象的类型
-             if isinstance(emp, Programmer):
-                 emp.working_hour = int(input('本月工作时间: '))
-             elif isinstance(emp, Salesman):
-                 emp.sales = float(input('本月销售额: '))
              print('%s: %.2f元' % (emp.name, emp.get_salary()))
      
      
@@ -506,7 +687,7 @@
              return self.value < other.value
      
      
-     class Card(object):
+     class Card():
          """牌"""
      
          def __init__(self, suite, face):
@@ -527,7 +708,7 @@
              return self.show()
      
      
-     class Poker(object):
+     class Poker():
          """扑克"""
      
          def __init__(self):
@@ -552,7 +733,7 @@
              return self.index < len(self.cards)
      
      
-     class Player(object):
+     class Player():
          """玩家"""
      
          def __init__(self, name):
@@ -662,7 +843,7 @@
      例子：自定义字典限制只有在指定的key不存在时才能在字典中设置键值对。
 
      ```Python
-     class SetOnceMappingMixin:
+     class SetOnceMappingMixin():
          """自定义混入类"""
          __slots__ = ()
      
@@ -691,16 +872,22 @@
      例子：用元类实现单例模式。
 
      ```Python
+     import threading
+     
+     
      class SingletonMeta(type):
          """自定义元类"""
      
          def __init__(cls, *args, **kwargs):
              cls.__instance = None
+             cls.__lock = threading.Lock()
              super().__init__(*args, **kwargs)
      
          def __call__(cls, *args, **kwargs):
              if cls.__instance is None:
-                 cls.__instance = super().__call__(*args, **kwargs)
+                 with cls.__lock:
+                     if cls.__instance is None:
+                         cls.__instance = super().__call__(*args, **kwargs)
              return cls.__instance
      
      
@@ -735,6 +922,7 @@
      
          def __init__(self, alg='md5', size=4096):
              self.size = size
+             alg = alg.lower()
              self.hasher = getattr(__import__('hashlib'), alg.lower())()
      
          def __call__(self, stream):
@@ -767,11 +955,6 @@
    - 两种创建生成器的方式（生成器表达式和`yield`关键字）
 
      ```Python
-     """
-     生成器和迭代器
-     """
-        
-        
      def fib(num):
          """生成器"""
          a, b = 0, 1
@@ -879,11 +1062,6 @@
                  self.balance = new_balance
      
      
-     def add_money(account, money):
-         """向指定账户打钱"""
-         account.deposit(money)
-     
-     
      class AddMoneyThread(threading.Thread):
          """自定义线程类"""
      
@@ -906,13 +1084,13 @@
          for _ in range(100):
              # 创建线程的第1种方式
              # threading.Thread(
-             #     target=add_money, args=(account, 1)
+             #     target=account.deposit, args=(1, )
              # ).start()
              # 创建线程的第2种方式
              # AddMoneyThread(account, 1).start()
              # 创建线程的第3种方式
              # 调用线程池中的线程来执行特定的任务
-             future = pool.submit(add_money, account, 1)
+             future = pool.submit(account.deposit, 1)
              futures.append(future)
          # 关闭线程池
          pool.shutdown()
@@ -925,23 +1103,109 @@
          main()
      ```
 
+     修改上面的程序，启动5个线程向账户中存钱，5个线程从账户中取钱，取钱时如果余额不足就暂停线程进行等待。为了达到上述目标，需要对存钱和取钱的线程进行调度，在余额不足时取钱的线程暂停并释放锁，而存钱的线程将钱存入后要通知取钱的线程，使其从暂停状态被唤醒。可以使用`threading`模块的Condition来实现线程调度，该对象也是基于锁来创建的，代码如下所示：
+
+     ```Python
+     """
+     多个线程竞争一个资源 - 保护临界资源 - 锁（Lock/RLock）
+     多个线程竞争多个资源（线程数>资源数） - 信号量（Semaphore）
+     多个线程的调度 - 暂停线程执行/唤醒等待中的线程 - Condition
+     """
+     from concurrent.futures import ThreadPoolExecutor
+     from random import randint
+     from time import sleep
+     
+     import threading
+     
+     
+     class Account():
+         """银行账户"""
+     
+         def __init__(self, balance=0):
+             self.balance = balance
+             lock = threading.Lock()
+             self.condition = threading.Condition(lock)
+     
+         def withdraw(self, money):
+             """取钱"""
+             with self.condition:
+                 while money > self.balance:
+                     self.condition.wait()
+                 new_balance = self.balance - money
+                 sleep(0.001)
+                 self.balance = new_balance
+     
+         def deposit(self, money):
+             """存钱"""
+             with self.condition:
+                 new_balance = self.balance + money
+                 sleep(0.001)
+                 self.balance = new_balance
+                 self.condition.notify_all()
+     
+     
+     def add_money(account):
+         while True:
+             money = randint(5, 10)
+             account.deposit(money)
+             print(threading.current_thread().name, 
+                   ':', money, '====>', account.balance)
+             sleep(0.5)
+     
+     
+     def sub_money(account):
+         while True:
+             money = randint(10, 30)
+             account.withdraw(money)
+             print(threading.current_thread().name, 
+                   ':', money, '<====', account.balance)
+             sleep(1)
+     
+     
+     def main():
+         account = Account()
+         with ThreadPoolExecutor(max_workers=10) as pool:
+             for _ in range(5):
+                 pool.submit(add_money, account)
+                 pool.submit(sub_money, account)
+     
+     
+     if __name__ == '__main__':
+         main()
+     ```
+
    - 多进程：多进程可以有效的解决GIL的问题，实现多进程主要的类是Process，其他辅助的类跟threading模块中的类似，进程间共享数据可以使用管道、套接字等，在multiprocessing模块中有一个Queue类，它基于管道和锁机制提供了多个进程共享的队列。下面是官方文档上关于多进程和进程池的一个示例。
 
      ```Python
      """
      多进程和进程池的使用
+     多线程因为GIL的存在不能够发挥CPU的多核特性
+     对于计算密集型任务应该考虑使用多进程
+     time python3 example22.py
+     real    0m11.512s
+     user    0m39.319s
+     sys     0m0.169s
+     使用多进程后实际执行时间为11.512秒，而用户时间39.319秒约为实际执行时间的4倍
+     这就证明我们的程序通过多进程使用了CPU的多核特性，而且这台计算机配置了4核的CPU
      """
      import concurrent.futures
      import math
      
      PRIMES = [
+         1116281,
+         1297337,
+         104395303,
+         472882027,
+         533000389,
+         817504243,
+         982451653,
          112272535095293,
          112582705942171,
          112272535095293,
          115280095190773,
          115797848077099,
          1099726899285419
-     ]
+     ] * 5
      
      
      def is_prime(n):
@@ -957,7 +1221,7 @@
      
      
      def main():
-     	"""主函数"""
+         """主函数"""
          with concurrent.futures.ProcessPoolExecutor() as executor:
              for number, prime in zip(PRIMES, executor.map(is_prime, PRIMES)):
                  print('%d is prime: %s' % (number, prime))
@@ -972,7 +1236,7 @@
      > 以下情况需要使用多线程：
      >
      > 1. 程序需要维护许多共享的状态（尤其是可变状态），Python中的列表、字典、集合都是线程安全的，所以使用线程而不是进程维护共享状态的代价相对较小。
-     > 2. 程序会花费大量的时间执行I/O操作，没有太多并集计算的需求且不需要太多的内存占用。
+     > 2. 程序会花费大量时间在I/O操作上，没有太多并行计算的需求且不需占用太多的内存。
      >
      > 以下情况需要使用多进程：
      >
@@ -1036,3 +1300,49 @@
      ```
 
      > 说明：上面的代码使用`get_event_loop`函数获得系统默认的事件循环，通过`gather`函数可以获得一个`future`对象，`future`对象的`add_done_callback`可以添加执行完成时的回调函数，`loop`对象的`run_until_complete`方法可以等待通过`future`对象获得协程执行结果。
+
+     Python中有一个名为`aiohttp`的三方库，它提供了异步的HTTP客户端和服务器，这个三方库可以跟`asyncio`模块一起工作，并提供了对`Future`对象的支持。Python 3.6中引入了async和await来定义异步执行的函数以及创建异步上下文，在Python 3.7中它们正式成为了关键字。下面的代码异步的从5个URL中获取页面并通过正则表达式的命名捕获组提取了网站的标题。
+
+     ```Python
+     import asyncio
+     import re
+     
+     import aiohttp
+     
+     PATTERN = re.compile(r'\<title\>(?P<title>.*)\<\/title\>')
+     
+     
+     async def fetch_page(session, url):
+         async with session.get(url, ssl=False) as resp:
+             return await resp.text()
+     
+     
+     async def show_title(url):
+         async with aiohttp.ClientSession() as session:
+             html = await fetch_page(session, url)
+             print(PATTERN.search(html).group('title'))
+     
+     
+     def main():
+         urls = ('https://www.python.org/',
+                 'https://git-scm.com/',
+                 'https://www.jd.com/',
+                 'https://www.taobao.com/',
+                 'https://www.douban.com/')
+         loop = asyncio.get_event_loop()
+         tasks = [show_title(url) for url in urls]
+         loop.run_until_complete(asyncio.wait(tasks))
+         loop.close()
+     
+     
+     if __name__ == '__main__':
+         main()
+     ```
+
+     > 说明：**异步I/O与多进程的比较**。
+     >
+     > 当程序不需要真正的并发性或并行性，而是更多的依赖于异步处理和回调时，asyncio就是一种很好的选择。如果程序中有大量的等待与休眠时，也应该考虑asyncio，它很适合编写没有实时数据处理需求的Web应用服务器。
+
+     Python还有很多用于处理并行任务的三方库，例如：joblib、PyMP等。实际开发中，要提升系统的可扩展性和并发性通常有垂直扩展（增加单个节点的处理能力）和水平扩展（将单个节点变成多个节点）两种做法。可以通过消息队列来实现应用程序的解耦合，消息队列相当于是多线程同步队列的扩展版本，不同机器上的应用程序相当于就是线程，而共享的分布式消息队列就是原来程序中的Queue。消息队列（面向消息的中间件）的最流行和最标准化的实现是AMQP（高级消息队列协议），AMQP源于金融行业，提供了排队、路由、可靠传输、安全等功能，最著名的实现包括：Apache的ActiveMQ、RabbitMQ等。
+
+     Celery是Python编写的分布式任务队列，它使用分布式消息进行工作，可以基于RabbitMQ或Redis来作为后端的消息代理，这个内容我们会在项目中讲到。

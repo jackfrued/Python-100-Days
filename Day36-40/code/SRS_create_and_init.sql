@@ -5,11 +5,11 @@
 
 
 -- 创建SRS数据库
-drop database if exists SRS;
-create database SRS default charset utf8 collate utf8_bin;
+drop database if exists srs;
+create database srs default charset utf8 collate utf8_bin;
 
--- 切换到SRS数据库
-use SRS;
+-- 切换到srs数据库
+use srs;
 
 -- 创建学院表
 create table tb_college

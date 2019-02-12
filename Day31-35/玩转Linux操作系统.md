@@ -1240,12 +1240,3 @@ build environment:
    vdb               0.00         0.01         0.00       2088          0
    ```
 
-### Shell和Shell编程
-
-#### 环境变量
-
-1. HOME
-2. SHELL
-3. HISTSIZE
-4. RANDOM
-5. PATH

@@ -1830,7 +1830,7 @@ CSRF令牌和小工具
    >>> str1 = '我爱你们！'
    >>> str2 = AES.new(key, AES.MODE_CFB, iv).encrypt(str1)
    b'p\x96o\x85\x0bq\xc4-Y\xc4\xbcp\n)&'
-   >>> str3 = AES.new(key, AES.MODE_CFB, iv).decrypt(str2).decode
+   >>> str3 = AES.new(key, AES.MODE_CFB, iv).decrypt(str2).decode()
    '我爱你们！'
    ```
 
@@ -2014,8 +2014,7 @@ TOTAL                        427    367    14%
 
    - stub：测试期间为提供响应的函数生成的替代品
    - mock：代替实际对象（以及该对象的API）的对象
-
-     - fake：没有达到生产级别的轻量级对象
+   - fake：没有达到生产级别的轻量级对象
 
 #### 集成测试
 

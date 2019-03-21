@@ -6,7 +6,7 @@
 
 ![s](./res/web-application.png)
 
-问题2：描述项目的物理架构。（上图中补充负载均衡（反向代理）服务器、数据库服务器、文件服务器、邮件服务器、缓存服务器、防火墙等，而且每个节点都有可能是多节点构成的集群，如下图所示）
+问题2：描述项目的物理架构。（上图中补充负载均衡（反向代理）服务器、数据库服务器、文件服务器、邮件服务器、缓存服务器、防火墙等，而且每个节点都有可能是多节点构成的集群，如下图所示，架构并不是一开始就是这样，而是逐步演进的）
 
 ![](./res/05.django_massive_cluster.png)
 
@@ -850,7 +850,7 @@ CACHES = {
         'LOCATION': [
             'redis://1.2.3.4:6379/0',
         ],
-        'KEY_PREFIX': 'fangtx',
+        'KEY_PREFIX': 'teamproject',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             'CONNECTION_POOL_KWARGS': {
@@ -865,7 +865,7 @@ CACHES = {
         'LOCATION': [
             'redis://1.2.3.4:6379/1',
         ],
-        'KEY_PREFIX': 'fangtx:page',
+        'KEY_PREFIX': 'teamproject:page',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             'CONNECTION_POOL_KWARGS': {
@@ -880,7 +880,7 @@ CACHES = {
         'LOCATION': [
             'redis://1.2.3.4:6379/2',
         ],
-        'KEY_PREFIX': 'fangtx:session',
+        'KEY_PREFIX': 'teamproject:session',
         'TIMEOUT': 1209600,
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
@@ -896,7 +896,7 @@ CACHES = {
         'LOCATION': [
             'redis://1.2.3.4:6379/3',
         ],
-        'KEY_PREFIX': 'fangtx:api',
+        'KEY_PREFIX': 'teamproject:api',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
             'CONNECTION_POOL_KWARGS': {
@@ -1357,17 +1357,55 @@ REST_FRAMEWORK = {
 ```
 
 ```Python
-class EstateViewSet(CacheResponseMixin, ModelViewSet):
-    # 通过queryset指定如何获取数据（资源）
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter
+from rest_framework.generics import RetrieveAPIView, ListCreateAPIView
+
+from api.serializers import EstateSerializer
+from common.models import Estate
+
+
+@method_decorator(decorator=cache_page(timeout=120, cache='api', key_prefix='estates'), name='get')
+class EstateView(RetrieveAPIView, ListCreateAPIView):
     queryset = Estate.objects.all().select_related('district').prefetch_related('agents')
-    # 通过serializer_class指定如何序列化数据
     serializer_class = EstateSerializer
-    # 通过filter_backends指定如何提供筛选（覆盖默认的设置）
-    # filter_backends = (DjangoFilterBackend, OrderingFilter)
-    # 指定根据哪些字段进行数据筛选
-    filter_fields = ('district', )
-    # 指定根据哪些字段对数据进行排序
-    ordering_fields = ('hot', )
+    filter_backends = (DjangoFilterBackend, OrderingFilter)
+    filter_fields = ('name', 'district')
+    ordering = ('-hot', )
+    ordering_fields = ('hot', 'estateid')
+```
+
+```Python
+from django_filters import rest_framework as drf
+from common.models import HouseInfo
+
+
+class HouseInfoFilter(drf.FilterSet):
+    """自定义房源数据过滤器"""
+
+    title = drf.CharFilter(lookup_expr='starts')
+    dist = drf.NumberFilter(field_name='district')
+    min_price = drf.NumberFilter(field_name='price', lookup_expr='gte')
+    max_price = drf.NumberFilter(field_name='price', lookup_expr='lte')
+    type = drf.NumberFilter()
+
+    class Meta:
+        model = HouseInfo
+        fields = ('title', 'district', 'min_price', 'max_price', 'type')
+```
+
+```Python
+class HouseInfoViewSet(CacheResponseMixin, ReadOnlyModelViewSet):
+    queryset = HouseInfo.objects.all() \
+        .select_related('type', 'district', 'estate', 'agent') \
+        .prefetch_related('tags').order_by('-pubdate')
+    serializer_class = HouseInfoSerializer
+    filter_backends = (DjangoFilterBackend, OrderingFilter)
+    filterset_class = HouseInfoFilter
+    ordering = ('price',)
+    ordering_fields = ('price', 'area')
 ```
 
 #### 身份认证

@@ -346,6 +346,14 @@
 
     ![](./res/the-daily-scrum-in-the-sprint-cycle.png)
 
+      > 角色：产品所有者（决定做什么，能对需求拍板的人）、团队负责人（解决各种问题，专注如何更好的工作，屏蔽外部对开发团队的影响）、开发团队（项目执行人员，具体指开发人员和测试人员）
+      >
+      > 准备工作：商业案例和资金、合同、憧憬、初始产品需求、初始发布计划、入股、组建团队
+      >
+      > 敏捷团队通常人数为8-10人。
+      >
+      > 工作量估算：将开发任务量化，包括原型、Logo设计、UI设计、前端开发等，尽量把每个工作分解到最小任务量，最小任务量标准为工作时间不能超过两天，然后估算总体项目时间。把每个任务都贴在白板上面，白板上分三部分：to do（待完成）、in progress（进行中）和done（已完成）。
+
 2. 项目团队组建
 
    - 团队的构成和角色
@@ -370,7 +378,7 @@
    - 敏捷闭环工具：[禅道](https://www.zentao.net/)、[JIRA](https://www.atlassian.com/software/jira/features)
    - 持续集成：[Jenkins](https://jenkins.io/)、[Travis-CI](https://travis-ci.org/)
 
-   请参考[《团队项目开发》](团队项目开发.md)。
+   请参考[《团队项目开发》](Day91-100/团队项目开发.md)。
 
 ##### 项目选题和理解业务
 
@@ -428,12 +436,14 @@
 
 #### 第93-98天：使用Django开发项目
 
+> 说明：具体内容请参考[《Django知识点概述》](Day91-100/Django知识点概述.md)
+
 ##### 项目开发中的公共问题
 
-1. 数据库的配置（多库、主从、路由）
-2. 缓存的配置（分区缓存、键设置、超时设置、主从复制、故障恢复）
+1. 数据库的配置（多数据库、主从复制、数据库路由）
+2. 缓存的配置（分区缓存、键设置、超时设置、主从复制、故障恢复（哨兵））
 3. 日志的配置
-4. Django的使用技巧（Django-Debug-ToolBar）
+4. 分析和调试（Django-Debug-ToolBar）
 5. 好用的Python模块（日期计算、图像处理、数据加密、三方API）
 
 ##### REST API设计
@@ -442,15 +452,15 @@
    - [理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful.html)
    - [RESTful API设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
    - [RESTful API最佳实践](http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html)
-2. API接口文档的撰写（[《网络API接口设计》](网络API接口设计.md)）
+2. API接口文档的撰写（[《网络API接口设计》](Day91-100/网络API接口设计.md)）
    - [RAP2](http://rap2.taobao.org/)
-   - [Apizza](https://apizza.net/)
-3. [django-REST-framework](https://www.django-rest-framework.org/)的应用（具体请参考[《Django知识点概述》](Django知识点概述.md)）
+   - [YAPI](http://yapi.demo.qunar.com/)
+3. [django-REST-framework](https://www.django-rest-framework.org/)的应用
 
 ##### 项目中的重点难点剖析
 
-1. 使用缓存缓解数据库压力 - Redis（具体请参考[《Django知识点概述》](Django知识点概述.md)）
-2. 使用消息队列缓解服务器压力 - Celery + RabbitMQ（具体请参考[《Django知识点概述》](Django知识点概述.md)）
+1. 使用缓存缓解数据库压力 - Redis
+2. 使用消息队列做解耦合和削峰 - Celery + RabbitMQ
 
 #### 第99-100天：测试和部署
 
@@ -461,6 +471,8 @@
 3. 测试覆盖率（coverage）
 
 ##### 项目部署
+
+> 说明：请参考[《项目部署上线指南》](Day91-100/项目部署上线指南.md)。
 
 1. 部署前的准备工作
    - 关键设置（SECRET_KEY / DEBUG / ALLOWED_HOSTS / 缓存 / 数据库）
@@ -478,6 +490,8 @@
 
 ##### 性能测试
 
+> 说明：具体内容请参考[《Django知识点概述》](Day91-100/Django知识点概述.md)。
+
 1. AB的使用
 2. SQLslap的使用
 3. sysbench的使用
@@ -493,22 +507,29 @@
 
 ##### 项目性能调优
 
-1. 数据库性能调优
+1. 数据库性能调优 - 请参考[《MySQL相关知识》](Day91-100/MySQL相关知识.md)
    - 软硬件优化
+
    - SQL优化
-   	- 通过show status了解SQL的执行频率。
-   	- 通过慢查询日志或show processlist定位低效率SQL。
-   	- 通过EXPLAIN分析低效率SQL的执行计划。
-   	- 通过show profile分析SQL。
-   	- 合理的使用索引。
-   	- 定期检查和优化表。
-   	- 优化insert操作。
-   	- 优化排序操作。
-   	- 优化分组操作。
-   	- 优化OR条件操作。
-   	- 优化分页操作。
+
    - 架构优化
-   	- 主从复制，读写分离
-   	- 集群架构
-2. 代码性能调优
-3. 云存储和CDN加速
+
+     - 分表分库
+
+     - 主从复制，读写分离
+     - 集群架构
+
+2. Web服务器性能优化
+
+   - Nginx负载均衡配置
+
+   - Keepalived实现高可用
+
+3. 代码性能调优
+
+   - 多线程
+   - 异步化
+
+4. 静态资源访问优化
+      - 云存储
+      - CDN

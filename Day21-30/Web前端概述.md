@@ -391,7 +391,239 @@
   - 加载内容
   - 提交表单
 
-### 使用Bootstrap
+### 前端框架
+
+#### 渐进式框架 - [Vue.js](<https://cn.vuejs.org/>)
+
+##### 快速上手
+
+1. 引入Vue的JavaScript文件，我们仍然推荐从CDN服务器加载它。
+
+   ```HTML
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   ```
+
+2. 数据绑定（声明式渲染 ）。
+
+   ```HTML
+   <div id="app">
+   	<h1>{{ product }}库存信息</h1>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			product: 'iPhone X'
+   		}
+   	});
+   </script>
+   ```
+
+3. 条件与循环。
+
+   ```HTML
+   <div id="app">
+   	<h1>库存信息</h1>
+       <hr>
+   	<ul>
+   		<li v-for="product in products">
+   			{{ product.name }} - {{ product.quantity }}
+   			<span v-if="product.quantity === 0">
+   				已经售罄
+   			</span>
+   		</li>
+   	</ul>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			products: [
+   				{"id": 1, "name": "iPhone X", "quantity": 20},
+   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
+   			]
+   		}
+   	});
+   </script>
+   ```
+
+4. 计算属性。
+
+   ```HTML
+   <div id="app">
+   	<h1>库存信息</h1>
+   	<hr>
+   	<ul>
+   		<li v-for="product in products">
+   			{{ product.name }} - {{ product.quantity }}
+   			<span v-if="product.quantity === 0">
+   				已经售罄
+   			</span>
+   		</li>
+   	</ul>
+   	<h2>库存总量：{{ totalQuantity }}台</h2>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			products: [
+   				{"id": 1, "name": "iPhone X", "quantity": 20},
+   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
+   			]
+   		},
+   		computed: {
+   			totalQuantity() {
+   				return this.products.reduce((sum, product) => {
+   					return sum + product.quantity
+   				}, 0);
+   			}
+   		}
+   	});
+   </script>
+   ```
+
+5. 处理事件。
+
+   ```HTML
+   <div id="app">
+   	<h1>库存信息</h1>
+   	<hr>
+   	<ul>
+   		<li v-for="product in products">
+   			{{ product.name }} - {{ product.quantity }}
+   			<span v-if="product.quantity === 0">
+   				已经售罄
+   			</span>
+   			<button @click="product.quantity += 1">
+   				增加库存
+   			</button>
+   		</li>
+   	</ul>
+   	<h2>库存总量：{{ totalQuantity }}台</h2>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			products: [
+   				{"id": 1, "name": "iPhone X", "quantity": 20},
+   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
+   			]
+   		},
+   		computed: {
+   			totalQuantity() {
+   				return this.products.reduce((sum, product) => {
+   					return sum + product.quantity
+   				}, 0);
+   			}
+   		}
+   	});
+   </script>
+   ```
+
+6. 用户输入。
+
+   ```HTML
+   <div id="app">
+   	<h1>库存信息</h1>
+   	<hr>
+   	<ul>
+   		<li v-for="product in products">
+   			{{ product.name }} - 
+   			<input type="number" v-model.number="product.quantity" min="0">
+   			<span v-if="product.quantity === 0">
+   				已经售罄
+   			</span>
+   			<button @click="product.quantity += 1">
+   				增加库存
+   			</button>
+   		</li>
+   	</ul>
+   	<h2>库存总量：{{ totalQuantity }}台</h2>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			products: [
+   				{"id": 1, "name": "iPhone X", "quantity": 20},
+   				{"id": 2, "name": "华为 Mate20", "quantity": 0},
+   				{"id": 3, "name": "小米 Mix3", "quantity": 50}
+   			]
+   		},
+   		computed: {
+   			totalQuantity() {
+   				return this.products.reduce((sum, product) => {
+   					return sum + product.quantity
+   				}, 0);
+   			}
+   		}
+   	});
+   </script>
+   ```
+
+7. 通过网络加载JSON数据。
+
+   ```HTML
+   <div id="app">
+   	<h2>库存信息</h2>
+   	<ul>
+   		<li v-for="product in products">
+   			{{ product.name }} - {{ product.quantity }}
+   			<span v-if="product.quantity === 0">
+   				已经售罄
+   			</span>
+   		</li>
+   	</ul>
+   </div>
+   
+   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   <script>
+   	const app = new Vue({
+   		el: '#app',
+   		data: {
+   			products: []
+   		}，
+   		created() {
+   			fetch('https://jackfrued.top/api/products')
+   				.then(response => response.json())
+   				.then(json => {
+   					this.products = json
+   				});
+   		}
+   	});
+   </script>
+   ```
+
+##### 使用脚手架 - vue-cli
+
+Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过工具可以省去手工配置开发环境、测试环境和运行环境的步骤，让开发者只需要关注要解决的问题。
+
+1. 安装脚手架。
+2. 创建项目。
+3. 安装依赖包。
+4. 运行项目。
+
+
+#### UI框架 - [Element](<http://element-cn.eleme.io/#/zh-CN>)
+
+
+
+#### 响应式布局框架 - [Bootstrap](<http://www.bootcss.com/>)
 
 #### 特点
 

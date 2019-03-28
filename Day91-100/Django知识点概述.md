@@ -1748,6 +1748,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
 # 配置跨域白名单
 # CORS_ORIGIN_WHITELIST = ('www.abc.com', 'www.baidu.com')
 # CORS_ORIGIN_REGEX_WHITELIST = ('...', )

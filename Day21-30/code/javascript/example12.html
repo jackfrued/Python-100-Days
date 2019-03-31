@@ -10,13 +10,16 @@
 		<script src="js/jquery.min.js"></script>
 		<script>
 			$(function() {
+				var page = 0;
 				$('#ok').on('click', function() {
+					page += 1;
 					$.ajax({
 						'url': 'http://api.tianapi.com/meinv/',
 						'type': 'get',
 						'data': {
 							'key': '772a81a51ae5c780251b1f98ea431b84',
-							'num': 12
+							'num': 12,
+							'page': page
 						},
 						'dataType': 'json',
 						'success': function(jsonObj) {

@@ -17,13 +17,16 @@
 		<!-- 获得数据后可以通过DOM操作对页面进行局部刷新加载服务器返回的数据 -->
 		<script>
 			(function() {
+				var page = 0;
+
 				var div = document.getElementById('container');
 				var button = document.getElementById('ok');
 				button.addEventListener('click', function() {
 					// 1. 创建异步请求对象
 					var xhr = new XMLHttpRequest();
 					if (xhr) {
-						var url = 'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10';
+						page += 1
+						var url = 'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10&page=' + page;
 						// 2. 配置异步请求
 						xhr.open('get', url, true);
 						// 3. 绑定事件回调函数（服务器成功响应后要干什么）

@@ -85,28 +85,9 @@
 		<!-- 下面的方式适合商业项目通过CDN服务器来加速获取jQuery的JS文件 -->
 		<!-- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script> -->
 		<script>
-			// JavaScript Object Notation == JSON
-			var stu = {
-				'id': 1001,
-				'name': '骆昊',
-				'age': 15,
-				'study': function(course) {
-					alert(this.name + '正在学习' + course);
-				},
-				'watchAv': function() {
-					if (this.age >= 18) {
-						alert(this.name + '正在观看岛国动作片');
-					} else {
-						alert(this.name + '只能观看《熊出没》');
-					}
-				}
-			};
-			stu.study('Python');
-			stu.watchAv();
-			
 			$(function() {
 				$('#hide').on('click', function() {
-					// 根据样式表选择器获取元素 获取到的不是原生的JS对象
+					// 根据样式表选择器获取元素获取到的不是原生的JS对象
 					// 而是经过jQuery封装过后的对象（有更多的方法方便操作）
 					$('#data').fadeOut(2000);
 				});

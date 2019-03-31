@@ -270,7 +270,8 @@
 
 #### JavaScript API
 
-- HTML5中的API：geolocation / localStorage / sessionStorage / history
+- localStorage和sessionStorage
+- geolocation和定位问题
 
 ### 使用jQuery
 
@@ -620,6 +621,10 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
 
 
 #### UI框架 - [Element](<http://element-cn.eleme.io/#/zh-CN>)
+
+
+
+#### 报表框架 - [ECharts](<https://echarts.baidu.com>)
 
 
 

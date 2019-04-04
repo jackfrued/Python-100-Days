@@ -396,6 +396,8 @@
 
 #### 渐进式框架 - [Vue.js](<https://cn.vuejs.org/>)
 
+前后端分离开发（前端渲染）必选框架。
+
 ##### 快速上手
 
 1. 引入Vue的JavaScript文件，我们仍然推荐从CDN服务器加载它。
@@ -622,23 +624,121 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
 
 #### UI框架 - [Element](<http://element-cn.eleme.io/#/zh-CN>)
 
+基于Vue 2.0的桌面端组件库，用于构造用户界面，支持响应式布局。
 
+1. 引入Element的CSS和JavaScript文件。
+
+   ```HTML
+   <!-- 引入样式 -->
+   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+   <!-- 引入组件库 -->
+   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+   ```
+
+2. 一个简单的例子。
+
+   ```HTML
+   <!DOCTYPE html>
+   <html>
+   	<head>
+   		<meta charset="UTF-8">
+   		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+   	</head>
+   	<body>
+   		<div id="app">
+   			<el-button @click="visible = true">点我</el-button>
+   			<el-dialog :visible.sync="visible" title="Hello world">
+   				<p>开始使用Element吧</p>
+   			</el-dialog>
+               </div>
+   	</body>
+   	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+   	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+   	<script>
+   		new Vue({
+   			el: '#app',
+   			data: {
+   				visible: false,
+   			}
+   		})
+   	</script>
+   </html>
+   ```
+
+3. 使用组件。
+
+   ```HTML
+   <!DOCTYPE html>
+   <html>
+   	<head>
+   		<meta charset="UTF-8">
+   		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+   	</head>
+   	<body>
+   		<div id="app">
+   			<el-table :data="tableData" stripe style="width: 100%">
+   				<el-table-column prop="date" label="日期" width="180">
+   				</el-table-column>
+   				<el-table-column prop="name" label="姓名" width="180">
+   				</el-table-column>
+   				<el-table-column prop="address" label="地址">
+   				</el-table-column>
+   			</el-table>
+   		</div>
+   	</body>
+   	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+   	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+   	<script>
+   		new Vue({
+   			el: '#app',
+   			data: {
+   				tableData:  [
+   					{
+   						date: '2016-05-02',
+   						name: '王一霸',
+   						address: '上海市普陀区金沙江路 1518 弄'
+   					}, 
+   					{
+   						date: '2016-05-04',
+   						name: '王二狗',
+   						address: '上海市普陀区金沙江路 1517 弄'
+   					}, 
+   					{
+   						date: '2016-05-01',
+   						name: '王三萌',
+   						address: '上海市普陀区金沙江路 1519 弄'
+   					}, 
+   					{
+   						date: '2016-05-03',
+   						name: '王四吹',
+   						address: '上海市普陀区金沙江路 1516 弄'
+   					}
+   				]
+   			}
+   		})
+   	</script>
+   </html>
+   ```
+
+4. 其他内容。
 
 #### 报表框架 - [ECharts](<https://echarts.baidu.com>)
+
+百度出品的开源可视化库，常用于生成各种类型的报表。
 
 
 
 #### 响应式布局框架 - [Bootstrap](<http://www.bootcss.com/>)
 
-#### 特点
+用于快速开发Web应用程序的前端框架，支持响应式布局。
 
-1. 支持主流的浏览器和移动设备
-2. 容易上手
-3. 响应式设计
+1. 特点
+   - 支持主流的浏览器和移动设备
+   - 容易上手
+   - 响应式设计
 
-#### 内容
-
-1. 网格系统
-2. 封装的CSS
-3. 现成的组件
-4. JavaScript插件
+2. 内容
+   - 网格系统
+   - 封装的CSS
+   - 现成的组件
+   - JavaScript插件

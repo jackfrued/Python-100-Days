@@ -1,5 +1,7 @@
 ## Web前端概述
 
+> 说明：本文使用的部分插图来自*Jon Duckett*先生的*[HTML and CSS: Design and Build Websites](https://www.amazon.cn/dp/1118008189/ref=sr_1_5?__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&keywords=html+%26+css&qid=1554609325&s=gateway&sr=8-5)*一书，这是一本非常棒的前端入门书，有兴趣的读者可以在亚马逊或者其他网站上找到该书的购买链接。
+
 ### HTML简史
 
 1. 1991年10月：一个非正式CERN（[欧洲核子研究中心](https://zh.wikipedia.org/wiki/%E6%AD%90%E6%B4%B2%E6%A0%B8%E5%AD%90%E7%A0%94%E7%A9%B6%E7%B5%84%E7%B9%94)）文件首次公开18个HTML标签，这个文件的作者是物理学家[蒂姆·伯纳斯-李](https://zh.wikipedia.org/wiki/%E8%92%82%E5%A7%86%C2%B7%E4%BC%AF%E7%BA%B3%E6%96%AF-%E6%9D%8E)，因此他是[万维网](https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91)的发明者，也是[万维网联盟](https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91%E8%81%94%E7%9B%9F)的主席。
@@ -33,23 +35,28 @@
 #### 文本
 
 - 标题和段落
-- 粗体和斜体
+  - h1 ~ h6
+  - p
 - 上标和下标
+  - sup
+  - sub
 - 空白（白色空间折叠）
 - 折行和水平标尺
-- 语义化标记
-  - 加粗和强调
-  - 引用
-  - 缩写词和首字母缩写词
-  - 引文
-  - 所有者联系信息
-  - 内容的修改
+  - br
+  - hr
+- 语义化标签
+  - 加粗和强调 - strong
+  - 引用 - blockquote
+  - 缩写词和首字母缩写词 - abbr / acronym
+  - 引文 - cite
+  - 所有者联系信息 - address
+  - 内容的修改 - ins / del
 
 #### 列表（list）
 
- - 有序列表（ordered list）
- - 无序列表（unordered list）
- - 定义列表（definition list）
+ - 有序列表（ordered list）- ol / li
+ - 无序列表（unordered list）- ul / li
+ - 定义列表（definition list）- dl / dt / dd
 
 #### 链接（anchor）
 
@@ -60,62 +67,81 @@
 #### 图像（image）
 
 - 图像存储位置
+
+  ![](./res/相对路径.png)
+
 - 图像及其宽高
+
 - 选择正确的图像格式
   - JPEG
   - GIF
   - PNG
+
 - 矢量图
-- figure标签
+
+- 语义化标签 - figure / figcaption
 
 #### 表格（table）
 
-- 基本的表格结构
-- 表格的标题
-- 跨行和跨列
-- 长表格
+- 基本的表格结构 - table / tr / td
+- 表格的标题 - caption
+- 跨行和跨列 - rowspan属性 / colspan属性
+- 长表格 - thead / tbody / tfoot
 
 #### 表单（form）
 
-- 如何收集信息
-- 表单控件（input）
-  - 文本框 / 密码框 / 文本域
-  - 单选按钮 / 复选按钮 / 下拉列表
-  - 提交按钮 / 图像按钮 / 文件上传
-- 组合表单元素
-  - fieldset / legend
-- HTML5的表单控件
-  - 日期
-  - 电子邮件 / URL
-  - 搜索
+- 重要属性 - action / method
+- 表单控件（input）- type属性
+  - 文本框 - text / 密码框 - password / 数字框 - number
+  - 邮箱 - email / 电话 - tel / 日期 - date / 滑条 - range / URL - url / 搜索 - search
+  - 单选按钮 - radio / 复选按钮 - checkbox
+  - 文件上传 - file / 隐藏域（埋点）- hidden
+  - 提交按钮 - submit / 图像按钮 - image  / 重置按钮 - reset
+- 下拉列表 - select / option
+- 文本域（多行文本）- textarea
+- 组合表单元素 - fieldset / legend
 
 #### 音视频（audio / video）
 
 - 视频格式和播放器
 - 视频托管服务
 - 添加视频的准备工作
-- video标签和属性
-- audio标签和属性
+- video标签和属性 - autoplay / controls / loop / muted / preload / src
+- audio标签和属性 - autoplay / controls / loop / muted / preload / src / width / height / poster
 
 #### 其他
 
 - 文档类型
+
 - 注释
+
 - 属性
   - id
   - class
+
 - 块级元素 / 行级元素
+
 - 内联框架（internal frame）
-- 页面信息（meta）
-- 转义字符（实体替换符）
+
+- 字符实体（实体替换符）
+
+  ![](./res/字符实体.png)
 
 ### 使用CSS渲染页面
 
 #### 简介
 
 - CSS的作用
+
 - CSS的工作原理
+
 - 规则、属性和值
+
+  ![](./res/选择器语法.png)
+
+- 常用选择器
+
+  ![](./res/常用选择器.png)
 
 #### 颜色（color）
 
@@ -126,20 +152,38 @@
 #### 文本（text / font）
 
 - 文本的大小和字型(font-size / font-family)
-- 斜体、粗体、大写和下划线(font-weight / font-style / text-decoration)
+
+  ![](./res/尺寸单位.png)
+
+  ![](./res/衬线字体+非衬线字体+等宽字体.png)
+
+- 粗细、样式、拉伸和装饰(font-weight / font-style / font-stretch / text-decoration)
+
+  ![](./res/字体样式.png)
+
 - 行间距(line-height)、字母间距(letter-spacing)和单词间距(word-spacing)
+
 - 对齐(text-align)方式和缩进(text-ident)
+
 - 链接样式（:link / :visited / :active / :hover）
+
 - CSS3新属性
-  - 投影
-  - 首字母和首行文本(p:first-letter / p:first-line)
+  - 阴影效果 - text-shadow
+  - 首字母和首行文本(:first-letter / :first-line)
   - 响应用户
 
 #### 盒子（box model）
 
 - 盒子大小的控制（width / height）
+
+  ![](./res/尺寸单位.png)
+
 - 盒子的边框、外边距和内边距（border /  margin / padding）
+
+  ![](./res/盒子模型.png)
+
 - 盒子的显示和隐藏（display / visibility）
+
 - CSS3新属性
   - 边框图像（border-image）
   - 投影（border-shadow）
@@ -168,7 +212,10 @@
   - 固定定位
   - 浮动元素（float / clear）
 - 网站布局
+
   - HTML5布局
+
+    ![](./res/经典布局-2.png)
 - 适配屏幕尺寸
   - 固定宽度布局
   - 流体布局
@@ -189,12 +236,12 @@
   - 比较运算符
   - 逻辑运算符
 - 分支结构
-  - if…else...
-  - switch…case…default...
+  - `if...else...`
+  - `switch...cas...default...`
 - 循环结构
-  - for循环
-  - while循环
-  - do…while循环
+  - `for`循环
+  - `while`循环
+  - `do...while`循环
 - 数组
   - 创建数组
   - 操作数组中的元素
@@ -211,67 +258,86 @@
  - 创建对象的字面量语法
  - 访问成员运算符
  - 创建对象的构造函数语法
-    - this关键字
+    - `this`关键字
  - 添加和删除属性
-    - delete关键字
- - 全局对象
-    - Number / String / Boolean
-    - Date / Math / RegEx / Array
+    - `delete`关键字
+ - 标准对象
+    - `Number` / `String` / `Boolean` / `Symbol` / `Array` / `Function` 
+    - `Date` / `Error` / `Math` / `RegEx` / `Object` / `Map` / `Set`
+    - `JSON` / `Promise` / `Generator` / `Reflect` / `Proxy`
 
 #### BOM
 
- - window对象的属性和方法
- - history对象
-    - forward() / back() / go()
- - location对象
- - navigator对象
- - screen对象
+ - `window`对象的属性和方法
+ - `history`对象
+    - `forward()` / `back()` / `go()`
+ - `location`对象
+ - `navigator`对象
+ - `screen`对象
 
 #### DOM
 
  - DOM树
  - 访问元素
-    - getElementById() / querySelector()
-    - getElementsByClassName() / getElementsByTagName() / querySelectorAll()
-    - parentNode / previousSibling / nextSibling / children / firstChild / lastChild
+    - `getElementById()` / `querySelector()`
+    - `getElementsByClassName()` / `getElementsByTagName()` / `querySelectorAll()`
+    - `parentNode` / `previousSibling` / `nextSibling` / `children` / `firstChild` / `lastChild`
 - 操作元素
-  - nodeValue
-  - innerHTML / textContent / createElement() / createTextNode() / appendChild() / insertBefore() / removeChild()
-  - className / id / hasAttribute() / getAttribute() / setAttribute() / removeAttribute()
+  - `nodeValue`
+  - `innerHTML` / `textContent` / `createElement()` / `createTextNode()` / `appendChild()` / `insertBefore()` / `removeChild()`
+  - `className` / `id` / `hasAttribute()` / `getAttribute()` / `setAttribute()` / `removeAttribute()`
 - 事件处理
   - 事件类型
-    - UI事件：load / unload / error / resize / scroll
-    - 键盘事件：keydown / keyup / keypress
-    - 鼠标事件：click / dbclick / mousedown / mouseup / mousemove / mouseover / mouseout
-    - 焦点事件：focus / blur
-    - 表单事件：input / change / submit / reset / cut / copy / paste / select
+    - UI事件：`load` / `unload` / `error` / `resize` / `scroll`
+    - 键盘事件：`keydown` / `keyup` / `keypress`
+    - 鼠标事件：`click` / `dbclick` / `mousedown` / `mouseup` / `mousemove` / `mouseover` / `mouseout`
+    - 焦点事件：`focus` / `blur`
+    - 表单事件：`input` / `change` / `submit` / `reset` / `cut` / `copy` / `paste` / `select`
   - 事件绑定
     - HTML事件处理程序（不推荐使用，因为要做到标签与代码分离）
     - 传统的DOM事件处理程序（只能附加一个回调函数）
     - 事件监听器（旧的浏览器中不被支持）
   - 事件流：事件捕获 / 事件冒泡
   - 事件对象（低版本IE中的window.event）
-    - target（有些浏览器使用srcElement）
-    - type
-    - cancelable
-    - preventDefault()
-    - stopPropagation()（低版本IE中的cancelBubble）
+    - `target`（有些浏览器使用srcElement）
+    - `type`
+    - `cancelable`
+    - `preventDefault()`
+    - `stopPropagation()`（低版本IE中的cancelBubble）
   - 鼠标事件 - 事件发生的位置
-    - 屏幕位置：screenX和screenY
-    - 页面位置：pageX和pageY
-    - 客户端位置：clientX和clientY
+    - 屏幕位置：`screenX`和`screenY`
+    - 页面位置：`pageX`和`pageY`
+    - 客户端位置：`clientX`和`clientY`
   - 键盘事件 - 哪个键被按下了
-    - keyCode属性
-    - String.fromCharCode(event.keyCode)
+    - `keyCode`属性（有些浏览器使用`which`）
+    - `String.fromCharCode(event.keyCode)`
   - HTML5事件
-    - DOMContentLoaded
-    - hashchange
-    - beforeunload
+    - `DOMContentLoaded`
+    - `hashchange`
+    - `beforeunload`
 
 #### JavaScript API
 
-- localStorage和sessionStorage
-- geolocation和定位问题
+- 客户端存储 - `localStorage`和`sessionStorage`
+
+  ```JavaScript
+  localStorage.colorSetting = '#a4509b';
+  localStorage['colorSetting'] = '#a4509b';
+  localStorage.setItem('colorSetting', '#a4509b');
+  ```
+
+- 获取位置信息 - `geolocation`
+
+  ```JavaScript
+  navigator.geolocation.getCurrentPosition(function(pos) { 		  
+      console.log(pos.coords.latitude)
+      console.log(pos.coords.longitude)
+  })
+  ```
+
+- 从服务器获取数据 - Fetch API
+- 绘制图形 - `<canvas>`的API
+- 音视频 - `<audio>`和`<video>`的API
 
 ### 使用jQuery
 
@@ -310,25 +376,25 @@
 #### 执行操作
 
 - 内容操作
-  - 获取/修改内容：html() / text() / replaceWith() / remove()
-  - 获取/设置元素：before() / after() / prepend() / append() / remove() / clone() / unwrap() / detach() / empty() / add()
-  - 获取/修改属性：attr() / removeAttr() / addClass() / removeClass() / css()
-  - 获取/设置表单值：val()
+  - 获取/修改内容：`html()` / `text()` / `replaceWith()` / `remove()`
+  - 获取/设置元素：`before()` / `after()` / `prepend()` / `append()` / `remove()` / `clone()` / `unwrap()` / `detach()` / `empty()` / `add()`
+  - 获取/修改属性：`attr()` / `removeAttr()` / `addClass()` / `removeClass()` / `css()`
+  - 获取/设置表单值：`val()`
 - 查找操作
-  - 查找方法：find() /  parent() / children() / siblings() / next() / nextAll() / prev() / prevAll()
-  - 筛选器：filter() / not() / has() / is() / contains()
-  - 索引编号：eq()
+  - 查找方法：`find()` /  `parent()` / `children()` / `siblings()` / `next()` / `nextAll()` / `prev()` / `prevAll()`
+  - 筛选器：`filter()` / `not()` / `has()` / `is()` / `contains()`
+  - 索引编号：`eq()`
 - 尺寸和位置
-  - 尺寸相关：height() / width() / innerHeight() / innerWidth() / outerWidth() / outerHeight()
-  - 位置相关：offset() / position() / scrollLeft() / scrollTop()
+  - 尺寸相关：`height()` / `width()` / `innerHeight()` / `innerWidth()` / `outerWidth()` / `outerHeight()`
+  - 位置相关：`offset()` / `position()` / `scrollLeft()` / `scrollTop()`
 - 特效和动画
-  - 基本动画：show() / hide() / toggle()
-  - 消失出现：fadeIn() / fadeOut() / fadeTo() / fadeToggle()
-  - 滑动效果：slideDown() / slideUp() / slideToggle()
-  - 自定义：delay() / stop() / animate()
+  - 基本动画：`show()` / `hide()` / `toggle()`
+  - 消失出现：`fadeIn()` / `fadeOut()` / `fadeTo()` / `fadeToggle()`
+  - 滑动效果：`slideDown()` / `slideUp()` / `slideToggle()`
+  - 自定义：`delay()` / `stop()` / `animate()`
 - 事件
-  - 文档加载：ready() / load()
-  - 用户交互：on() / off()
+  - 文档加载：`ready()` / `load()`
+  - 用户交互：`on()` / `off()`
 
 #### 链式操作
 
@@ -386,6 +452,8 @@
 ```
 
 #### 使用Ajax
+
+Ajax是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
 
 - 原生的Ajax
 - 基于jQuery的Ajax
@@ -700,17 +768,17 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
    					}, 
    					{
    						date: '2016-05-04',
-   						name: '王二狗',
+   						name: '刘二狗',
    						address: '上海市普陀区金沙江路 1517 弄'
    					}, 
    					{
    						date: '2016-05-01',
-   						name: '王三萌',
+   						name: '杨三萌',
    						address: '上海市普陀区金沙江路 1519 弄'
    					}, 
    					{
    						date: '2016-05-03',
-   						name: '王四吹',
+   						name: '陈四吹',
    						address: '上海市普陀区金沙江路 1516 弄'
    					}
    				]
@@ -720,13 +788,78 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
    </html>
    ```
 
-4. 其他内容。
 
 #### 报表框架 - [ECharts](<https://echarts.baidu.com>)
 
 百度出品的开源可视化库，常用于生成各种类型的报表。
 
+![](./res/baidu_echarts.png)
 
+#### 基于弹性盒子的CSS框架 - [Bulma](<https://bulma.io/>)
+
+Bulma是一个基于Flexbox的现代化的CSS框架，其初衷就是移动优先（Mobile First），模块化设计，可以轻松用来实现各种简单或者复杂的内容布局，即使不懂CSS的开发者也能够使用它定制出漂亮的页面。
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bulma</title>
+	<link href="https://cdn.bootcss.com/bulma/0.7.4/css/bulma.min.css" rel="stylesheet">
+	<style type="text/css">
+		div { margin-top: 10px; }
+		.column { color: #fff; background-color: #063; margin: 10px 10px; text-align: center; }
+	</style>
+</head>
+<body>
+	<div class="columns">
+		<div class="column">1</div>
+		<div class="column">2</div>
+		<div class="column">3</div>
+		<div class="column">4</div>
+	</div>
+	<div>
+		<a class="button is-primary">Primary</a>
+		<a class="button is-link">Link</a>
+		<a class="button is-info">Info</a>
+		<a class="button is-success">Success</a>
+		<a class="button is-warning">Warning</a>
+		<a class="button is-danger">Danger</a>
+	</div>
+	<div>
+		<progress class="progress is-danger is-medium" max="100">60%</progress>
+	</div>
+	<div>
+		<table class="table is-hoverable">
+			<tr>
+				<th>One</th>
+				<th>Two</th>
+			</tr>
+			<tr>
+				<td>Three</td>
+				<td>Four</td>
+			</tr>
+			<tr>
+				<td>Five</td>
+				<td>Six</td>
+			</tr>
+			<tr>
+				<td>Seven</td>
+				<td>Eight</td>
+			</tr>
+			<tr>
+				<td>Nine</td>
+				<td>Ten</td>
+			</tr>
+			<tr>
+				<td>Eleven</td>
+				<td>Twelve</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
+```
 
 #### 响应式布局框架 - [Bootstrap](<http://www.bootcss.com/>)
 
@@ -742,3 +875,7 @@ Vue为商业项目开发提供了非常便捷的脚手架工具vue-cli，通过�
    - 封装的CSS
    - 现成的组件
    - JavaScript插件
+
+3. 可视化
+
+   ![](./res/bootstrap-layoutit.png)

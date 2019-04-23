@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格</title>
+		<style>
+			table {
+				border-spacing: 0;
+			}
+			td, th {
+				width: 150px;
+				height: 30px;
+				border-bottom: 1px solid black;
+				border-right: 1px solid black;
+				text-align: center;
+				empty-cells: hide;
+			}
+			.bottom>td {
+				border-bottom: none;
+			}
+			.right {
+				border-right: none;
+			}
+			thead>tr {
+				background-color: lightgoldenrodyellow;
+			}
+			.even {
+				background-color: lightgrey;
+			}
+			.odd {
+				background-color: lightblue;
+			}
+			th:first-child {
+				border-top-left-radius: 10px;
+			}
+			th:last-child {
+				border-top-right-radius: 10px;
+			}
+			tr:last-child>td:first-child {
+				border-bottom-left-radius: 10px;
+			}
+			tr:last-child>td:last-child {
+				border-bottom-right-radius: 10px;
+			}
+			.number li {
+				/* list-style-type: none; */
+				list-style-position: inside;
+				list-style-image: url(images/add.gif);
+				width: 120px;
+				height: 30px;
+				background-color: #006633;
+				color: white;
+				text-align: center;
+				margin: 5px 5px;
+				float: left;
+			}
+			.number li:hover {
+				color: orange;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- table>tr*4>td*5 -->
+		<table>
+			<caption>学生考试成绩表</caption>
+			<thead>
+				<tr>
+					<th class="lt" width="120">姓名</th>
+					<th width="100">语文</th>
+					<th width="100">数学</th>
+					<th width="100">英语</th>
+					<th width="100" class="right">体育</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="odd">
+					<td>王大锤</td>
+					<td>90</td>
+					<td>80</td>
+					<td></td>
+					<td class="right">60</td>
+				</tr>
+				<tr class="even">
+					<td>王大锤</td>
+					<td>90</td>
+					<td></td>
+					<td>70</td>
+					<td class="right">60</td>
+				</tr>
+				<tr class="bottom odd">
+					<td>王大锤</td>
+					<td>90</td>
+					<td>80</td>
+					<td>70</td>
+					<td class="right">60</td>
+				</tr>
+			</tbody>
+			<tfoot>
+			</tfoot>
+		</table>
+		<ul class="number">
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+			<li>Five</li>
+		</ul>
+	</body>
+</html>

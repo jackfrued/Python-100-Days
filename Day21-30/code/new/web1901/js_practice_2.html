@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			h1 {
+				width: 600px;
+				height: 40px;
+				font-size: 36px;
+				line-height: 40px;
+				margin: 0 auto;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="welcome">欢迎来到千锋教育成都校区学习&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+		<script>
+			let content = '马化腾，fuck you, 操你大爷，日你二爷'
+			// let pattern = new RegExp('马化腾|[日操]', 'g')
+			let pattern = /fuck|马化腾|[日操]/gi
+			content = content.replace(pattern, '*')
+			alert(content)
+			const welcome = document.getElementById('welcome')
+			function move() {
+				let str = welcome.textContent
+				str = str.substring(1) + str.charAt(0)
+				welcome.textContent = str
+			}
+			setInterval(move, 500)
+		</script>
+	</body>
+</html>

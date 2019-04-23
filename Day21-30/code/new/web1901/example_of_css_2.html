@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS - 优先级</title>
+		<!-- 一般情况下网站的首页会使用内部样式表 - 首页正常渲染 -->
+		<!-- 其他的页面可以共享一个或多个外部样式表 - 代码复用/减少对带宽和流量的使用 -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- 不冲突的样式会叠加，有冲突的样式遵循三条原则 -->
+		<!-- 1. 就近原则 -->
+		<!-- 2. 具体性原则（ID > 类 > 标签 > 通配符） -->
+		<!-- 3. 重要性原则 -->
+		<style>
+			#h1 { color: blue; }
+			.h1 { color: green !important; }
+			.h1 { 
+				color: pink !important;
+				border: 5px dotted #FFA500;
+				width: 300px;
+				height: 80px;
+				line-height: 80px;
+				text-align: center;
+				margin-top: 50px;
+				padding: 100px 100px;
+			}
+			h1 { color: red; }
+		</style>
+	</head>
+	<body>
+		<!-- 内嵌样式表 / 行内样式表 -->
+		<h1 class="a big" style="background-color: #ffff00; font-family: 'courier new'; text-align: center;">Hello, world!</h1>
+		<!-- Box Model（盒子模型）-->
+		<h1 class="h1" id="h1">Goodbye world!</h1>
+	</body>
+</html>

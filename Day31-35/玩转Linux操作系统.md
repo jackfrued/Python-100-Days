@@ -26,6 +26,8 @@
 
 3. 1969年：Ken Tompson为了玩“Space Travel”游戏用汇编语言在PDP-7上开发了Unics。
 
+   ![](./res/Ken-Thompson.png)
+
    ![](./res/pdp-7.png)
 
 4. 1970年~1971年：Ken Tompson和Dennis Ritchie用B语言在PDP-11上重写了Unics，并在Brian Kernighan的建议下将其更名为Unix。
@@ -34,21 +36,19 @@
 
 5. 1972年~1973年：Dennis Ritchie发明了C语言来取代可移植性较差的B语言，并开启了用C语言重写Unix的工作。
 
+   ![](./res/dennis-ritchie.png)
+
 6. 1974年：Unix推出了里程碑意义的第5版，几乎完全用C语言来实现。
 
 7. 1979年：从Unix第7版开始，AT&T发布新的使用条款，将Unix私有化。
 
 8. 1987年：Andrew S. Tanenbaum教授为了能在课堂上教授学生操作系统运作的细节，决定在不使用任何AT&T的源代码前提下，自行开发与Unix兼容的操作系统，以避免版权上的争议并将其命名为Minix。
 
+   ![](./res/andrew-tanenbaum.png)
+
 9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的操作系统，功能并不强大，为了方便在学校的主机的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些成为了Linux系统内核的雏形。
 
-   ![](./res/Ken-Thompson.png)Ken L. Thompson (ken)
-
-   ![](./res/dennis-ritchie.png)Dennis M. Ritchie (DMR)
-
-   ![](./res/andrew-tanenbaum.png)Andrew S. Tanenbaum (ast)
-
-   ![](./res/linus-torvalds.png)Linus B. Torvalds
+   ![](./res/linus-torvalds.png)
 
 下图是Unix操作系统家族的图谱。
 
@@ -1025,12 +1025,15 @@ build environment:
 
 ### 网络访问和管理
 
-1. 通过网络获取资源 - **wget**。
+1. 安全远程连接 - **ssh**。
+
+2. 通过网络获取资源 - **wget**。
+
    - -b 后台下载模式
    - -O 下载到指定的目录
    - -r 递归下载
 
-2. 显示/操作网络配置（旧） - **ifconfig**。
+3. 显示/操作网络配置（旧） - **ifconfig**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ifconfig eth0
@@ -1043,7 +1046,7 @@ build environment:
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 
    ```
 
-3. 显示/操作网络配置（新） - **ip**。
+4. 显示/操作网络配置（新） - **ip**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ip address
@@ -1057,7 +1060,7 @@ build environment:
           valid_lft forever preferred_lft forever
    ```
 
-4. 网络可达性检查 - **ping**。
+5. 网络可达性检查 - **ping**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ping www.baidu.com -c 3
@@ -1070,19 +1073,19 @@ build environment:
    rtt min/avg/max/mdev = 36.392/36.406/36.427/0.156 ms
    ```
 
-5. 查看网络服务和端口 - **netstat**。
+6. 查看网络服务和端口 - **netstat**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# netstat -nap | grep nginx
    ```
 
-6. 安全文件拷贝 - **scp**。
+7. 安全文件拷贝 - **scp**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
    ```
 
-7. 安全文件传输 - **sftp**。
+8. 安全文件传输 - **sftp**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# sftp root@120.77.222.217

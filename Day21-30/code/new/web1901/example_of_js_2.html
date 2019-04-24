@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>判断闰年</title>
+	</head>
+	<body>
+		<script>
+			// var / let / const
+			// JavaScript中的比较运算符带有隐式的类型转换
+			// === / !== / && / || / !
+			// 分支结构 - if...else... / switch...case...default...
+			// 循环结构 - while / for / do...while
+			// JavaScript中的数据类型:
+			// - 简单数据类型: string / number / boolean / undefined / symbol / null
+			// - 复杂数据类型: object
+			// 检查变量或常量的数据类型可以使用typeof关键字
+			var yearStr = prompt('请输入年份: ')
+			var year = parseInt(yearStr)
+			// && - and - 短路与运算
+			// 一对花括号可以构成一个块级作用域 - let定义的变量就是块级作用域变量
+			if (year == yearStr && year > 0) {
+				// || - or - 短路或运算
+				// 逻辑运算(短路运算)会产生一个布尔值要么是true要么是false
+				let isLeap = (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+				let yesOrNo = isLeap? '是' : '不是'
+				// ES6语法中的带占位符的字符串
+				alert(`${year}年${yesOrNo}闰年`)
+			} else {
+				alert('请输入有效的年份')
+			}
+		</script>
+	</body>
+</html>

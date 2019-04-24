@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#data {
+				border-collapse: collapse;
+			}
+			#data td, #data th {
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				border: 1px solid black;
+			}
+			#buttons {
+				margin: 10px 0;
+			}
+			#adv {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="data">
+			<caption>数据统计表</caption>
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>身高</th>
+					<th>体重</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+				<tr>
+					<td>Item1</td>
+					<td>Item2</td>
+					<td>Item3</td>
+					<td>Item4</td>
+					<td>Item5</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="buttons">
+			<button id="pretty">隔行换色</button>
+			<button id="clear">清除数据</button>
+			<button id="remove">删除一行</button>
+			<button id="hide">表格淡出</button>
+		</div>
+		<div id="adv"></div>
+		<script>
+			const pretty = document.querySelector('#pretty')
+			pretty.addEventListener('click', (evt) => {
+				let rows = document.querySelectorAll('#data>tbody>tr')
+				rows.forEach((row, i) => {
+					let color = (i % 2 == 0 ? 'lightgray' : 'lightseagreen')
+					row.style.backgroundColor = color
+				})
+			})
+			
+			const clear = document.querySelector('#clear')
+			clear.addEventListener('click', (evt) => {
+				let cols = document.querySelectorAll('#data>tbody>tr>td')
+				cols.forEach((col) => {
+					col.innerHTML = ''
+				})
+			})
+			const remove = document.querySelector('#remove')
+			remove.addEventListener('click', (evt) => {
+				let tbody = document.querySelector('#data>tbody')
+				let lastRow = tbody.lastElementChild
+				if (lastRow) {
+					tbody.removeChild(lastRow)
+				}
+			})
+			
+			var opacity = 100
+			var delta = -5
+			const table = document.querySelector('#data')
+			const hide = document.querySelector('#hide')
+			hide.addEventListener('click', (evt) => {
+				let button = evt.target
+				setTimeout(function() {
+					opacity += delta
+					table.style.opacity = opacity / 100
+					if (opacity == 0 || opacity == 100) {
+						delta = -delta
+						button.textContent = opacity == 0? '表格淡入' : '表格淡出'
+					} else {
+						setTimeout(arguments.callee, 50)
+					}
+				}, 50)
+			})	
+			
+			let adv = document.querySelector('#adv')
+			adv.addEventListener('click', (evt) => {
+				// 读取样式
+				let currentStyle = document.defaultView.getComputedStyle(adv)
+				let top = parseInt(currentStyle.top) + 5
+				// 修改样式
+				adv.style.top = top + 'px'
+				let right = parseInt(currentStyle.right) + 5
+				adv.style.right = right + 'px'
+			})
+		</script>
+	</body>
+</html>

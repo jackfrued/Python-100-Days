@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#fruits {
+				width: 120px;
+				margin: 20px 20px;
+			}
+			#fruits>li {
+				list-style-type: none;
+				height: 40px;
+				color: white;
+				background-color: #009966;
+				line-height: 40px;
+				text-align: center;
+				margin-top: 2px;
+			}
+			#fruits>li>a {
+				float: right;
+				color: white;
+				text-decoration: none;
+			}
+			#fruits~input {
+				border: none;
+				outline: none;
+				text-align: center;
+				margin: 20px 15px;
+			}
+			input[type=text] {
+				border-bottom: 1px solid gray !important;
+			}
+			#ok {
+				width: 80px;
+				height: 30px;
+				background-color: #CC3333;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>苹果<a href="">×</a></li>
+				<li>香蕉<a href="">×</a></li>
+				<li>火龙果<a href="">×</a></li>
+				<li>西瓜<a href="">×</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script>
+			function addListItem() {
+				let name = input.value.trim()
+				if (name) {
+					// 通过document对象的createElement方法创建新元素
+					let li = document.createElement('li')
+					// 可以用textContent或innerHTML属性来修改标签的内容
+					li.innerHTML = name
+					let a = document.createElement('a')
+					a.innerHTML = '&times;'
+					a.href = ''
+					a.addEventListener('click', removeListItem)
+					li.appendChild(a)
+					// 通过父元素的appendChild或insertBefore可以添加子元素
+					ul.appendChild(li)
+					input.value = ''
+					// 元素的focus和blur方法可以让元素获得或失去焦点
+					input.focus()
+				}
+			}
+			
+			function removeListItem(evt) {
+				// evt.stopPropagation()
+				// 通过事件对象的preventDefault方法阻止事件的默认行为
+				evt.preventDefault()
+				// 通过元素获取父元素 - parentNode
+				// 通过元素获取子元素 - children / firstElementChild / lastElementChild
+				// 通过元素获取兄弟元素 - previousElementSibling / nextElementSibling
+				let li = evt.target.parentNode
+				// 通过父元素的removeChild方法可以删除指定的子元素
+				ul.removeChild(li)
+			}
+			
+			const ul = document.querySelector('#fruits')
+			const input = ul.nextElementSibling
+			input.addEventListener('keypress', (evt) => {
+				let code = evt.keyCode || evt.which
+				if (code == 13) {
+					addListItem()
+				}
+			})
+			const ok = input.nextElementSibling
+			ok.addEventListener('click', addListItem)
+			let anchors = document.querySelectorAll('#fruits>li>a')
+			for (let i = 0; i < anchors.length; i += 1) {
+				// addEventListener方法有三个参数
+				// 第一个参数是事件的名称，例如: click / dbclick / mouseover / mouseout 
+				// 第二个参数是事件发生时要执行的回调函数，函数的参数是事件对象:
+				// 	~ 传入一个已有函数的名字
+				// 	~ 写一个匿名函数 function(evt) {}
+				// 	~ 写一个箭头函数 (evt) => {}
+				// 第三个参数表示使用事件捕获还是事件冒泡,如果不写表示事件冒泡(从里向外传播事件)
+				//  ~ 如果设置为true表示事件捕获(从外向里传播事件)
+				// 	~ 如果希望阻止事件的传播行为可以调用事件对象的stopPropagation方法
+				anchors[i].addEventListener('click', removeListItem)
+			}
+		</script>
+	</body>
+</html>

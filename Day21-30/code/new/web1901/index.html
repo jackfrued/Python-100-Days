@@ -1,0 +1,102 @@
+<!-- HTML注释 -->
+<!-- 1. 标签 - 承载内容 -->
+<!-- 2. 层叠样式表 - 渲染页面 -->
+<!-- 3. JavaScript - 交互式行为 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>骆昊的技术专栏</title>
+		<!-- css - cascading style sheet -->
+		<style>
+			h1 {
+				color: purple; /* 颜色 */
+				font-size: 2cm; /* 字体大小 */
+				font-family: "华文宋体"; /* 字体 */
+			}
+			p {
+				font-size: 1cm;
+			}
+			p:first-letter {
+				font-size: 1.5cm;
+				color: blue;
+			}
+			.a {
+				color: green;
+			}
+			.b {
+				color: red;
+			}
+			a {
+				color: red;
+				text-decoration: none;
+			}
+			a:hover {
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- http://shang.qq.com -->
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=957658&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:957658:53" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+		<a name="shit"></a>
+		<a href="example_of_anchor.html#foo">革命理想</a>
+		<a href="example_of_anchor.html#bar">坚持马克思</a>
+		<h1>&lt;jackfrued&gt;的博客 - H<sub>2</sub>O</h1>
+		<hr>
+		<h2>骆昊喜欢的网站</h2>
+		<ul>
+			<!-- anchor -->
+			<!-- 1. 页面链接 -->
+			<!-- 2. 锚点链接 -->
+			<!-- 3. 功能链接 -->
+			<li><a href="http://www.baidu.com" target="_blank">百度</a></li>
+			<li><a href="http://www.jd.com" target="_self">京东</a></li>
+			<li>
+				视频网站
+				<ol>
+					<li><a href="http://www.youku.com">优酷</a></li>
+					<li><a href="hello.html">爱奇艺</a></li>
+					<li>腾讯视频</li>
+				</ol>
+			</li>
+		</ul>
+		<dl>
+			<dt>
+				<p><img title="千锋教育" src="images/logo-1.gif" align="center" alt="图片加载失败">Python</p>
+			</dt>
+			<dd>
+				<dl>
+					<dt>面向对象的编程语言</dt>
+					<dd>基本概念：类、对象</dd>
+					<dd>三大支柱：封装、继承、多态</dd>
+				</dl>
+			</dd>	
+			<dd>动态弱类型语言，需要Python解释器才能执行</dd>
+		</dl>
+		<p class="a">床&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前<del>明月光</del><sup>1</sup></p>	
+		<p class="b"><ins>疑似</ins>地上霜&copy;</p>
+		<p>举头&trade;望<strong>明月</strong><sup>2</sup></p>
+		<p>低头<strong><em>思</em></strong>故乡</p>
+		<button onclick="showWriter()">确定</button>
+		<button onclick="shutdown()">关闭</button>
+		<div>
+			<a href="#shit">回顶部</a>
+			<a href="mailto:jackfrued@126.com">联系站长</a>
+		</div>
+		<script>
+			function shutdown() {
+				if (window.confirm('确定要关闭吗?')) {
+					window.close()
+				}
+			}
+			
+			// 驼峰命名法 - Camel Notation
+			function showWriter() {
+				for (var i = 1; i <= 3; i += 1) {
+					window.alert('作者：李白')
+				}
+			}
+		</script>
+	</body>
+</html>

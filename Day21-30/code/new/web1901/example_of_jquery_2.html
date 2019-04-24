@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#fruits {
+				width: 120px;
+				margin: 20px 20px;
+			}
+			#fruits>li {
+				list-style-type: none;
+				height: 40px;
+				color: white;
+				background-color: #009966;
+				line-height: 40px;
+				text-align: center;
+				margin-top: 2px;
+			}
+			#fruits>li>a {
+				float: right;
+				color: white;
+				text-decoration: none;
+			}
+			#fruits~input {
+				border: none;
+				outline: none;
+				text-align: center;
+				margin: 20px 15px;
+			}
+			input[type=text] {
+				border-bottom: 1px solid gray !important;
+			}
+			#ok {
+				width: 80px;
+				height: 30px;
+				background-color: #CC3333;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>苹果<a href="">×</a></li>
+				<li>香蕉<a href="">×</a></li>
+				<li>火龙果<a href="">×</a></li>
+				<li>西瓜<a href="">×</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function removeListItem(evt) {
+				evt.preventDefault()
+				// $函数的参数是一个原生的JavaScript对象,返回与原生JavaScript对象对应的jQuery对象
+				$(evt.target).parent().remove()
+			}
+			// $函数的四种用法:
+			// $函数的参数是一个匿名函数或箭头函数,传入的函数是页面加载完成后要执行的回调函数
+			$(() => {
+				// $函数的参数是一个样式表选择器字符串,获取页面元素得到一个jQuery对象(伪数组 - 数组中装的是原生JavaScript对象)
+				$('#fruits>li>a').on('click', removeListItem)
+				
+				$('#ok').on('click', (evt) => {
+					let input = $('#ok').prev();
+					let name = input.val().trim()
+					if (name) {
+						$('#fruits').append(
+							// $函数的参数是一个标签字符串,创建一个新的元素并获得对应的jQuery对象
+							$('<li>').text(name).append(
+								$('<a href="">').html('&times;').on('click', removeListItem)
+							)
+						)
+					}
+					input.val('').get(0).focus()
+				})
+			})
+		</script>
+	</body>
+</html>

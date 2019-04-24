@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parent Float - Problem</title>
+		<style type="text/css">
+			body {
+				width: 752px;
+				font-family: Arial, Verdana, sans-serif;
+				color: #665544;
+			}
+			/* CSS hack */
+			/* 问题：因为p标签的浮动边框会变成一条线 */
+			.container {
+				border: 1px solid #665544;
+				overflow: auto;
+			}
+			p {
+				width: 230px;
+				float: left;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>The Evolution of the Bicycle</h1>
+		<div class="container">
+			<p>
+				In 1817 Baron von Drais invented a walking machine that would help him get around the royal gardens faster.
+			</p>
+			<p>
+				The device know as the Draisienne (or "hobby horse") was made of wood, and propelled by pushing your feed on the
+				ground in a gliding movement.
+			</p>
+			<p>
+				It was not seen a suitable for any place other than a well maintained pathway. 
+			</p>
+			<p class="clear">
+				In 1865, the velocipede (meaning "fast foot") attached pedals to the front wheel, but its wooden
+				structure made it extremely uncomfortable.
+			</p>
+			<p>
+				In 1870 the first all-metal machine appeared. The pedals were attached directly to the front wheel.
+			</p>
+			<p>
+				Solid rubber tires and the long spokes of the large front wheel provided a much smoother ride than its
+					predecessor.
+			</p>
+			<p>
+				In 1817 Baron von Drais invented a walking machine that would help him get around the royal gardens faster.
+			</p>
+			<p>
+				The device know as the Draisienne (or "hobby horse") was made of wood, and propelled by pushing your feed on the
+				ground in a gliding movement.
+			</p>
+			<!-- <div style="clear: both;"></div> -->
+		</div>
+	</body>
+</html>

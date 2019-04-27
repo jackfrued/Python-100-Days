@@ -31,9 +31,141 @@
 
 ### MySQL简介
 
-1. 安装和配置（以Linux环境为例）。
+1. 安装和配置（以CentOS Linux环境为例）。
+
+   - Linux下有一个MySQL的分支版本，名为MariaDB，它由MySQL的一些原始开发者开发，有商业支持，旨在继续保持MySQL数据库在[GNU GPL](https://zh.wikipedia.org/wiki/GNU%E9%80%9A%E7%94%A8%E5%85%AC%E5%85%B1%E8%AE%B8%E5%8F%AF%E8%AF%81)下开源（因为大家担心MySQL被甲骨文收购后会不再开源）。如果决定要直接使用MariaDB作为MySQL的替代品，可以使用下面的命令进行安装。
+
+     ```Shell
+     yum install mariadb mariadb-server
+     ```
+
+   - 如果要安装官方版本的MySQL，可以在[MySQL官方网站](<https://www.mysql.com/>)下载安装文件。首先在下载页面中选择平台和版本，然后找到对应的下载链接。下面以MySQL 5.7.26版本和Red Hat Enterprise Linux为例，直接下载包含所有安装文件的归档文件，解归档之后通过包管理工具进行安装。
+
+     ```Shell
+     wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar
+     tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar
+     ```
+
+     如果系统上有MariaDB相关的文件，需要先移除MariaDB相关的文件。
+
+     ```Shell
+     yum list installed | grep mariadb | awk '{print $1}' | xargs yum erase -y
+     ```
+
+     接下来可以按照如下所示的顺序用RPM（Redhat Package Manager）工具安装MySQL。
+
+     ```Shell
+     rpm -ivh mysql-community-common-5.7.26-1.el7.x86_64.rpm
+     rpm -ivh mysql-community-libs-5.7.26-1.el7.x86_64.rpm
+     rpm -ivh mysql-community-client-5.7.26-1.el7.x86_64.rpm
+     rpm -ivh mysql-community-server-5.7.26-1.el7.x86_64.rpm
+     ```
+
+     可以使用下面的命令查看已经安装的MySQL相关的包。
+
+     ```Shell
+     rpm -qa | grep mysql
+     ```
+
+   - 启动MySQL服务。
+
+     先修改MySQL的配置文件（`/etc/my.cnf`）添加一行`skip-grant-tables`，可以设置不进行身份验证即可连接MySQL服务器，然后就可以以超级管理员（root）身份登录。
+
+     ```Shell
+     vim /etc/my.cnf
+     ```
+
+     ```INI
+     [mysqld]
+     skip-grant-tables
+     
+     datadir=/var/lib/mysql
+     socket=/var/lib/mysql/mysql.sock
+     
+     symbolic-links=0
+     
+     log-error=/var/log/mysqld.log
+     pid-file=/var/run/mysqld/mysqld.pid
+     ```
+
+     接下来可以使用下面的命令来启动MySQL。
+
+     ```Shell
+     service mysqld start
+     ```
+
+     在CentOS 7中建议使用下面的命令来启动MySQL。
+
+     ```Shell
+     systemctl start mysqld
+     ```
+
+   - 使用MySQL客户端工具连接服务器。
+
+     命令行工具：
+
+     ```Shell
+     mysql -u root
+     ```
+
+     修改超级管理员（root）的访问口令为hello_world_123。
+
+     ```SQL
+     use mysql;
+     update user set authentication_string=password('i_LOVE_macos_123') where user='root';
+     flush privileges;
+     ```
+
+     将MySQL配置文件中的`skip-grant-tables`去掉，然后重启服务器，重新登录。这一次需要提供用户名和口令才能连接MySQL服务器。
+
+     ```Shell
+     systemctl restart mysqld
+     mysql -u root -p
+     ```
+
+     也可以选择图形化的客户端工具来连接MySQL服务器，可以选择下列工具之一：
+
+     - MySQL Workbench（官方提供的工具）
+     - Navicat for MySQL（界面简单优雅，功能直观强大）
+     - SQLyog for MySQL（强大的MySQL数据库管理员工具）
 
 2. 常用命令。
+
+   - 查看服务器版本。
+
+     ```SQL
+     select version();
+     ```
+
+   - 查看所有数据库。
+
+     ```SQL
+     show databases;
+     ```
+
+   - 切换到指定数据库。
+
+     ```SQL
+     use mysql;
+     ```
+
+   - 查看数据库下所有表。
+
+     ```Shell
+     show tables;
+     ```
+
+   - 获取帮助。
+
+     ```SQL
+     ? contents;
+     ? functions;
+     ? numeric functions;
+     ? round;
+     
+     ? data types;
+     ? longblob;
+     ```
 
 
 ### SQL详解
@@ -142,7 +274,7 @@
    delete from tb_student where stuid=4040;
    
    -- 更新学生数据
-   update tb_student set stuname='周芷若', stuaddr='湖南长沙' where stuid=1378;
+   update tb_student set stuname='杨过', stuaddr='湖南长沙' where stuid=1001;
    
    -- 插入老师数据
    insert into tb_teacher (teaid, teaname, teatitle, collid) values 
@@ -196,6 +328,7 @@
    select couname, coucredit from tb_course;
    select couname as 课程名称, coucredit as 学分 from tb_course;
    
+   -- 查询所有学生的姓名和性别(条件运算)
    select stuname as 姓名, case stusex when 1 then '男' else '女' end as 性别 from tb_student;
    select stuname as 姓名, if(stusex, '男', '女') as 性别 from tb_student;
    
@@ -231,8 +364,7 @@
    select distinct stuaddr from tb_student where stuaddr is not null;
    
    -- 查询男学生的姓名和生日按年龄从大到小排列(排序)
-   -- asc - ascending - 升序（从小到大）
-   -- desc - descending - 降序（从大到小）
+   -- asc (ascending) - 升序（从小到大）/ desc (descending) - 降序（从大到小）
    select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student where stusex=1 order by 年龄 desc;
    
    -- 聚合函数：max / min / count / sum / avg
@@ -243,15 +375,10 @@
    select max(stubirth) from tb_student;
    
    -- 查询男女学生的人数(分组和聚合函数)
-   select count(stuid) from tb_student;
    select stusex, count(*) from tb_student group by stusex;
-   select stusex, min(stubirth) from tb_student group by stusex;
    
    -- 查询课程编号为1111的课程的平均成绩(筛选和聚合函数)
    select avg(scmark) from tb_score where couid=1111;
-   select min(scmark) from tb_score where couid=1111;
-   select count(scid) from tb_score where couid=1111;
-   select count(scmark) from tb_score where couid=1111;
    
    -- 查询学号为1001的学生所有课程的平均分(筛选和聚合函数)
    select avg(scmark) from tb_score where stuid=1001;
@@ -260,8 +387,7 @@
    select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid;
    
    -- 查询平均成绩大于等于90分的学生的学号和平均成绩
-   -- 分组以前的筛选使用where子句
-   -- 分组以后的筛选使用having子句
+   -- 分组以前的筛选使用where子句 / 分组以后的筛选使用having子句
    select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid having 平均分>=90;
    
    -- 查询年龄最大的学生的姓名(子查询/嵌套的查询)
@@ -282,7 +408,7 @@
    -- 查询学生姓名、课程名称以及成绩(连接查询)
    select stuname, couname, scmark from tb_student t1, tb_course t2, tb_score t3 where t1.stuid=t3.stuid and t2.couid=t3.couid and scmark is not null;
    
-   -- 内连接和分页查询
+   -- 查询学生姓名、课程名称以及成绩按成绩从高到低查询第11-15条记录(内连接+分页)
    select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.stuid=t3.stuid inner join tb_course t2 on t2.couid=t3.couid where scmark is not null order by scmark desc limit 5 offset 10;
    
    select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.stuid=t3.stuid inner join tb_course t2 on t2.couid=t3.couid where scmark is not null order by scmark desc limit 10, 5;
@@ -293,9 +419,8 @@
    select stuname, avgmark from tb_student t1 inner join 
    (select stuid, avg(scmark) as avgmark from tb_score group by stuid) t2 on t1.stuid=t2.stuid;
    
-   -- 内连接（inner join）：只有满足连接条件的记录才会被查出来
-   -- 外连接（outer join）：左外连接 / 右外连接 / 全外连接
-   -- left outer join / right outer join / full outer join
+   -- 内连接（inner join）- 只有满足连接条件的记录才会被查出来
+   -- 外连接（outer join）- 左外连接(left outer join) / 右外连接(right outer join) / 全外连接
    -- 查询每个学生的姓名和选课数量(左外连接和子查询)
    select stuname, ifnull(total, 0) from tb_student t1 left outer join (select stuid, count(stuid) as total from tb_score group by stuid) t2 on t1.stuid=t2.stuid;
    ```
@@ -306,32 +431,42 @@
    -- 创建名为hellokitty的用户
    create user 'hellokitty'@'%' identified by '123123';
    
-   -- 将对SRS数据库所有对象的所有操作权限授予hellokitty
+   -- 将对school数据库所有对象的所有操作权限授予hellokitty
    grant all privileges on school.* to 'hellokitty'@'%';
    
-   -- 召回hellokitty对SRS数据库所有对象的insert/delete/update权限
+   -- 召回hellokitty对school数据库所有对象的insert/delete/update权限
    revoke insert, delete, update on school.* from 'hellokitty'@'%';
    ```
 
 ###  相关知识
 
-#### 范式理论
+#### 范式理论 - 设计二维表的指导思想
 
-1. 第一范式
-2. 第二范式
-3. 第三范式
+1. 第一范式：数据表的每个列的值域都是由原子值组成的，不能够再分割。
+2. 第二范式：数据表里的所有数据都要和该数据表的键（主键与候选键）有完全依赖关系。
+3. 第三范式：所有非键属性都只和候选键有相关性，也就是说非键属性之间应该是独立无关的。
 
 #### 数据完整性
 
 1. 实体完整性 - 每个实体都是独一无二的
-   - 主键 / 唯一约束 / 唯一索引
-2. 引用完整性（参照完整性）
-   - 外键
+   - 主键（primary key） / 唯一约束 / 唯一索引（unique）
+2. 引用完整性（参照完整性）- 关系中不允许引用不存在的实体
+   - 外键（foreign key）
 3. 域完整性 - 数据是有效的
-   - 数据类型
-   - 非空约束
-   - 默认值约束
-   - 检查约束
+   - 数据类型及长度
+   - 非空约束（not null）
+   - 默认值约束（default）
+   - 检查约束（check）
+
+#### 数据一致性
+
+1. 事务：一系列对数据库进行读/写的操作。
+
+2. 事务的ACID特性
+   - 原子性：事务作为一个整体被执行，包含在其中的对数据库的操作要么全部被执行，要么都不执行
+   - 一致性：事务应确保数据库的状态从一个一致状态转变为另一个一致状态
+   - 隔离性：多个事务并发执行时，一个事务的执行不应影响其他事务的执行
+   - 持久性：已被提交的事务对数据库的修改应该永久保存在数据库中
 
 ### Python数据库编程
 

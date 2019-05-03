@@ -27,7 +27,7 @@
    - [DB2](https://www.ibm.com/analytics/us/en/db2/) - IBM公司开发的、主要运行于Unix（包括IBM自家的[AIX](https://zh.wikipedia.org/wiki/AIX)）、Linux、以及Windows服务器版等系统的关系数据库产品。DB2历史悠久且被认为是最早使用SQL的数据库产品，它拥有较为强大的商业智能功能。
    - [SQL Server](https://www.microsoft.com/en-us/sql-server/) - 由Microsoft开发和推广的关系型数据库产品，最初适用于中小企业的数据管理，但是近年来它的应用范围有所扩展，部分大企业甚至是跨国公司也开始基于它来构建自己的数据管理系统。
    - [MySQL](https://www.mysql.com/) - MySQL是开放源代码的，任何人都可以在GPL（General Public License）的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。
-   - [PostgreSQL]() - 在BSD许可证下发行的开发源代码的关系数据库产品。
+   - [PostgreSQL]() - 在BSD许可证下发行的开放源代码的关系数据库产品。
 
 ### MySQL简介
 
@@ -108,7 +108,7 @@
      mysql -u root
      ```
 
-     修改超级管理员（root）的访问口令为hello_world_123。
+     修改超级管理员（root）的访问口令为i_LOVE_macos_123。
 
      ```SQL
      use mysql;

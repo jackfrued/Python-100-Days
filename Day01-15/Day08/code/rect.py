@@ -11,7 +11,7 @@ class Rect(object):
     """矩形类"""
 
     def __init__(self, width=0, height=0):
-        """构造器"""
+        """初始化方法"""
         self.__width = width
         self.__height = height
 

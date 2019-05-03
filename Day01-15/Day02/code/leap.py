@@ -1,11 +1,9 @@
 """
-
 输入年份 如果是闰年输出True 否则输出False
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-02-27
-
 """
 
 year = int(input('请输入年份: '))

@@ -1,11 +1,9 @@
 """
-
 不使用多线程的情况 - 模拟多个下载任务
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-03-20
-
 """
 
 from random import randint

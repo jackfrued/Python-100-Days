@@ -1,11 +1,9 @@
 """
-
 读取Word文件
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-03-26
-
 """
 
 from docx import Document
@@ -17,5 +15,5 @@ print(doc.paragraphs[0].text)
 
 content = []
 for para in doc.paragraphs:
-	content.append(para.text)
+    content.append(para.text)
 print(''.join(content))

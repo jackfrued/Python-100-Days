@@ -1,7 +1,7 @@
 """
 
 使用tkinter创建GUI
-	- 在窗口上制作动画
+- 在窗口上制作动画
 
 Version: 0.1
 Author: 骆昊
@@ -15,9 +15,9 @@ import time
 
 # 播放动画效果的函数
 def play_animation():
-	canvas.move(oval, 2, 2)
-	canvas.update()
-	top.after(50, play_animation)
+    canvas.move(oval, 2, 2)
+    canvas.update()
+    top.after(50, play_animation)
 
 
 x = 10

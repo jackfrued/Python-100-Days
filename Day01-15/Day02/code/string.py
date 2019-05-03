@@ -1,11 +1,9 @@
 """
-
 字符串常用操作
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-02-27
-
 """
 
 str1 = 'hello, world!'

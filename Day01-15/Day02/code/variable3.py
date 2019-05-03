@@ -1,11 +1,9 @@
 """
-
 格式化输出
 
 Version: 0.1
 Author: 骆昊
 Date: 2018-02-27
-
 """
 
 a = int(input('a = '))

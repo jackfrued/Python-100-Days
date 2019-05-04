@@ -242,7 +242,7 @@
 
 #### Day44 - [表单的应用](./Day41-55/04.表单的应用.md)
 
-#### Day45 - [Cookie和会话](./Day41-55/05.Cookie和会话.md)
+#### Day45 - [Cookie和Session](./Day41-55/05.Cookie和Session.md)
 
 #### Day46 - [中间件的应用](./Day41-55/06.中间件的应用.md)
 

@@ -180,6 +180,13 @@ jupyter notebook
 
 ![](./res/python-jupyter-2.png)
 
+#### anaconda - 一站式的数据科学神器
+Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。
+因为包含了大量的科学包，Anaconda 的下载文件比较大（约 531 MB），如果只需要某些包，或者需要节省带宽或存储空间，也可以使用Miniconda这个较小的发行版（仅包含conda和 Python）。
+对于学习数据科学的人来说，anaconda是绝对的神器，安装简便，而且anaconda支持安装相关软件【例如前文提到的ipython，jupyter notebook，甚至有R等其他数据科学软件 】
+[一个相当有价值的介绍](https://www.jianshu.com/p/169403f7e40c)
+现在唯一的问题在于清华镜像服务已经关闭，跨国下载会比较慢
+
 #### Sublime - 文本编辑神器
 
 ![](./res/python-sublime.png)

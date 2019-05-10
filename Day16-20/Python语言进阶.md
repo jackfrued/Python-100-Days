@@ -555,7 +555,7 @@
 
      ```Python
      from functools import wraps
-     from asyncio import Lock
+     from threading import Lock
      
      def singleton(cls):
          """线程安全的单例装饰器"""

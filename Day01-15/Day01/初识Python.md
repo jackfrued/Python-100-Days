@@ -221,6 +221,12 @@ PyCharm的安装、配置和使用我们在后面会进行介绍。
 
 ![](./res/python-pycharm.png)
 
+#### Gitpod - 一键式在线开发工具
+
+只需单击即可在GitHub上打开任何Python项目。
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jackfrued/Python-100-Days)
+
 ### 练习
 
 1. 在Python交互环境中查看下面的代码结果，并将内容翻译成中文。

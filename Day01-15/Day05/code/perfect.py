@@ -11,7 +11,7 @@ import time
 import math
 
 start = time.clock()
-for num in range(1, 10000):
+for num in range(1, 10000): # 此处范围应是range(2,10000)，否则1会被当做完美数
     sum = 0
     for factor in range(1, int(math.sqrt(num)) + 1):
         if num % factor == 0:

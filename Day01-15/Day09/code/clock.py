@@ -11,7 +11,7 @@ class Clock(object):
 
     @classmethod
     def now(cls):
-        ctime = localtime(time())
+        ctime = localtime()
         return cls(ctime.tm_hour, ctime.tm_min, ctime.tm_sec)
 
     def run(self):

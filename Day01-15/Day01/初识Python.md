@@ -180,12 +180,8 @@ jupyter notebook
 
 ![](./res/python-jupyter-2.png)
 
-#### anaconda - 一站式的数据科学神器
-Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项。
-因为包含了大量的科学包，Anaconda 的下载文件比较大（约 531 MB），如果只需要某些包，或者需要节省带宽或存储空间，也可以使用Miniconda这个较小的发行版（仅包含conda和 Python）。
-对于学习数据科学的人来说，anaconda是绝对的神器，安装简便，而且anaconda支持安装相关软件【例如前文提到的ipython，jupyter notebook，甚至有R等其他数据科学软件 】
-[一个相当有价值的介绍](https://www.jianshu.com/p/169403f7e40c)
-现在唯一的问题在于清华镜像服务已经关闭，跨国下载会比较慢
+#### Anaconda - 一站式的数据科学神器
+Anaconda是专注于数据科学的Python发行版本，其包含了conda、Python等190多个科学包及其依赖项。因为包含的内容较多，Anaconda的下载文件比较大，如果只需要其中一部分的包，或者需要节省带宽或存储空间，也可以使用Miniconda这个较小的发行版（仅包含conda和 Python）。对于学习数据科学的人来说，Anaconda是绝对的神器，有兴趣的读者可以阅读[《致Python初学者们 - Anaconda入门使用指南》](https://www.jianshu.com/p/169403f7e40c)一文进行了解。
 
 #### Sublime - 文本编辑神器
 
@@ -193,19 +189,23 @@ Anaconda指的是一个开源的Python发行版本，其包含了conda、Python�
 
 - 首先可以通过[官方网站](https://www.sublimetext.com/)下载安装程序安装Sublime 3或Sublime 2。
 
-- 安装包管理工具。通过快捷键Ctrl+`或者在View菜单中选择Show Console打开控制台，输入下面的代码。
+- 安装包管理工具。
+  1. 通过快捷键Ctrl+`或者在View菜单中选择Show Console打开控制台，输入下面的代码。
 
   - Sublime 3
 
   ```Python
   import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
   ```
-
   - Sublime 2
 
   ```Python
   import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read());print('Please restart Sublime Text to finish installation')
   ```
+  2. 手动安装浏览器输入  https://sublime.wbond.net/Package%20Control.sublime-package 下载这个文件
+  下载好以后，打开sublime text，选择菜单Preferences->Browse Packages... 打开安装目录
+  此时会进入到一个叫做Packages的目录下，点击进入上一层目录Sublime Text3，在此目录下有一个文件夹叫做Installed Packages，把刚才下载的文件放到这里就可以了。然后重启sublime text3，观察Preferences菜单最下边是否有Package Settings 和Package Control两个选项，如果有，则代表安装成功了。
+
 
 - 安装插件。通过Preference菜单的Package Control或快捷键Ctrl+Shift+P打开命令面板，在面板中输入Install Package就可以找到安装插件的工具，然后再查找需要的插件。我们推荐大家安装以下几个插件：
 
@@ -220,6 +220,12 @@ Anaconda指的是一个开源的Python发行版本，其包含了conda、Python�
 PyCharm的安装、配置和使用我们在后面会进行介绍。
 
 ![](./res/python-pycharm.png)
+
+#### Gitpod - 一键式在线开发工具
+
+只需单击即可在GitHub上打开任何Python项目。
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jackfrued/Python-100-Days)
 
 ### 练习
 

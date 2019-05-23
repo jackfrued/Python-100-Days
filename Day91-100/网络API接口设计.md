@@ -46,7 +46,7 @@ API接口返回的数据通常都是JSON或XML格式，我们这里不讨论后�
 | 10003 | 评论已被删除     | 查看评论时评论因不和谐因素已被删除                |
 | 10004 | …… | …… |
 
-1. **GET** `/comments/{article-id}`
+1. **GET** `/articles/{article-id}/comments/`
 
    开发者：王大锤
 
@@ -95,7 +95,7 @@ API接口返回的数据通常都是JSON或XML格式，我们这里不讨论后�
    }
    ```
 
-2. **POST** `/comments/{article-id}`
+2. **POST** `/articles/{article-id}/comments`
 
    开发者：王大锤
 

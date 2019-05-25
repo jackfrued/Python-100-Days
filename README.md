@@ -256,7 +256,7 @@
 - 实现用户跟踪
 - cookie和session的关系
 - Django框架对session的支持
-- 视图函数中实现cookie读写
+- 视图函数中的cookie读写操作
 
 #### Day46 - [中间件的应用](./Day41-55/06.中间件的应用.md)
 

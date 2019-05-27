@@ -1,3 +1,11 @@
+### Hey
+
+This is a quite good python learning source I find, for now the most of stuff has been written in Chinese but I will find the time to translate all of them into English version for everyone who wants getting into Python.
+
+So be patient ... because I have to read them all first :)
+
+---
+
 给初学者的几个建议：
 
 - Make English as your working language.

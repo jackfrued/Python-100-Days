@@ -48,7 +48,7 @@ class Line(object):
 
     @property
     def end(self):
-        return self.end
+        return self._end
 
     @end.setter
     def end(self, end):

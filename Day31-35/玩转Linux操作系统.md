@@ -87,7 +87,7 @@ Linux系统的命令通常都是如下所示的格式：
 命令名称 [命名参数] [命令对象]
 ```
 
-1. 获取登录信息 - **w** / **who** / **last **/ **lastb**。
+1. 获取登录信息 - **w** / **who** / **last**/ **lastb**。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# w

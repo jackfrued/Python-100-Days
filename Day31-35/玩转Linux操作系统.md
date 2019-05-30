@@ -1406,5 +1406,3 @@ build environment:
    | SEE ALSO     | 和命令相关的其他命令或信息                                   |
    | BUGS         | 和命令相关的缺陷的描述                                       |
    | AUTHOR       | 该命令的作者介绍                                             |
-
-3. 

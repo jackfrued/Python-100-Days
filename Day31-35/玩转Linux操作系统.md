@@ -1,8 +1,10 @@
 ## 玩转Linux操作系统
 
+> 说明：本文中对Linux命令的讲解都是基于名为CentOS的Linux发行版本，我自己使用的是阿里云服务器，系统版本为CentOS Linux release 7.6.1810。不同的Linux发行版本在Shell命令和工具程序上会有一些差别，但是这些差别是很小的。
+
 ### 操作系统发展史
 
-只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是系统软件，其中最为重要的就是“操作系统”。“操作系统”是控制和管理整个计算机系统的硬件和软件资源，合理的分配资源和调配任务，为系统用户和其他软件提供接口和环境的程序的集合。
+只有硬件没有软件的计算机系统被称之为“裸机”，我们很难用“裸机”来完成计算机日常的工作（如存储和运算），所以必须用特定的软件来控制硬件的工作。最靠近计算机硬件的软件是系统软件，其中最为重要的就是“操作系统”。“操作系统”是控制和管理整个计算机硬件和软件资源、实现资源分配和任务调配、为系统用户以及其他软件提供接口和环境的程序的集合。
 
 #### 没有操作系统（手工操作）
 
@@ -42,11 +44,11 @@
 
 7. 1979年：从Unix第7版开始，AT&T发布新的使用条款，将Unix私有化。
 
-8. 1987年：Andrew S. Tanenbaum教授为了能在课堂上教授学生操作系统运作的细节，决定在不使用任何AT&T的源代码前提下，自行开发与Unix兼容的操作系统，以避免版权上的争议并将其命名为Minix。
+8. 1987年：Andrew S. Tanenbaum教授为了能在课堂上为学生讲解操作系统运作的细节，决定在不使用任何AT&T的源代码前提下，自行开发与Unix兼容的操作系统以避免版权上的争议，该系统被命名为Minix。
 
    ![](./res/andrew-tanenbaum.png)
 
-9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的操作系统，功能并不强大，为了方便在学校的主机的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些成为了Linux系统内核的雏形。
+9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的操作系统，功能并不强大，为了方便在学校的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些东西形成了Linux系统内核的雏形。
 
    ![](./res/linus-torvalds.png)
 
@@ -63,7 +65,7 @@ Linux内核是芬兰人Linus Torvalds开发的，于1991年9月发布。而Linux
 ### Linux系统优点
 
 1. 通用操作系统，不跟特定的硬件绑定。
-2. 用C语言编写，有可移植性，有内核编程接口。
+2. 用C语言编写，可移植性强，有内核编程接口。
 3. 支持多用户和多任务，支持安全的分层文件系统。
 4. 大量的实用程序，完善的网络功能以及强大的支持文档。
 5. 可靠的安全性和良好的稳定性，对开发者更友好。
@@ -85,7 +87,7 @@ Linux系统的命令通常都是如下所示的格式：
 命令名称 [命名参数] [命令对象]
 ```
 
-1. 获取登录信息 - **w** / **who** / **last**。
+1. 获取登录信息 - **w** / **who** / **last**/ **lastb**。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# w
@@ -98,11 +100,21 @@ Linux系统的命令通常都是如下所示的格式：
    jackfrued pts/1        2018-04-12 23:26 (182.139.66.250)
    [root@izwz97tbgo9lkabnat2lo8z ~]# who am i
    root     pts/0        2018-04-12 23:03 (182.139.66.250)
+   [root@izwz97tbgo9lkabnat2lo8z ~]# who mom likes
+   root     pts/0        2018-04-12 23:03 (182.139.66.250)
+   [root@izwz97tbgo9lkabnat2lo8z ~]# last
+   root     pts/0        117.136.63.184   Sun May 26 18:57   still logged in   
+   reboot   system boot  3.10.0-957.10.1. Mon May 27 02:52 - 19:10  (-7:-42)   
+   root     pts/4        117.136.63.184   Sun May 26 18:51 - crash  (08:01)    
+   root     pts/4        117.136.63.184   Sun May 26 18:49 - 18:49  (00:00)    
+   root     pts/3        117.136.63.183   Sun May 26 18:35 - crash  (08:17)    
+   root     pts/2        117.136.63.183   Sun May 26 18:34 - crash  (08:17)    
+   root     pts/0        117.136.63.183   Sun May 26 18:10 - crash  (08:42)    
    ```
 
 2. 查看自己使用的Shell - **ps**。
 
-   Shell也被称为“壳”，它是用户与内核交流的翻译官，简单的说就是人与计算机交互的接口。目前很多Linux系统默认的Shell都是bash（<u>B</u>ourne <u>A</u>gain <u>SH</u>ell），因为它可以使用Tab键进行命令补全、可以保存历史命令、可以方便的配置环境变量以及执行批处理操作等。
+   Shell也被称为“壳”或“壳程序”，它是用户与操作系统内核交流的翻译官，简单的说就是人与计算机交互的界面和接口。目前很多Linux系统默认的Shell都是bash（<u>B</u>ourne <u>A</u>gain <u>SH</u>ell），因为它可以使用tab键进行命令和路径补全、可以保存历史命令、可以方便的配置环境变量以及执行批处理操作。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps
@@ -133,7 +145,7 @@ Linux系统的命令通常都是如下所示的格式：
    /usr/bin/python
    ```
 
-5. 查看帮助文档 - **man** / **info** / **apropos**。
+5. 查看帮助文档 - **man** / **info** / **help** / **apropos**。
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# ps --help
    Usage:
@@ -154,43 +166,7 @@ Linux系统的命令通常都是如下所示的格式：
    ...
    ```
 
-6. 切换用户 - **su**。
-
-   ```Shell
-   [root@izwz97tbgo9lkabnat2lo8z ~]# su hellokitty
-   [hellokitty@izwz97tbgo9lkabnat2lo8z root]$
-   ```
-
-7. 以管理员身份执行命令 - **sudo**。
-
-   ```Shell
-   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
-   ls: cannot open directory /root: Permission denied
-   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
-   [sudo] password for jackfrued:
-   calendar.py  code  error.txt  hehe  hello.c  index.html  myconf  result.txt
-   ```
-
-   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须被添加到sudoers名单中，该文件在 `/etc`目录下。
-
-8. 登入登出相关 - **logout** / **exit** / **adduser** / **userdel** / **passwd** / **ssh**。
-
-   ```Shell
-   [root@izwz97tbgo9lkabnat2lo8z ~]# adduser hellokitty
-   [root@izwz97tbgo9lkabnat2lo8z ~]# passwd hellokitty
-   Changing password for user jackfrued.
-   New password:
-   Retype new password:
-   passwd: all authentication tokens updated successfully.
-   [root@izwz97tbgo9lkabnat2lo8z ~]# ssh hellokitty@1.2.3.4
-   hellokitty@1.2.3.4's password:
-   Last login: Thu Apr 12 23:05:32 2018 from 10.12.14.16
-   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ logout
-   Connection to 1.2.3.4 closed.
-   [root@izwz97tbgo9lkabnat2lo8z ~]#
-   ```
-
-9. 查看系统和主机名 - **uname** / **hostname**。
+6. 查看系统和主机名 - **uname** / **hostname**。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# uname
@@ -198,24 +174,74 @@ Linux系统的命令通常都是如下所示的格式：
    [root@izwz97tbgo9lkabnat2lo8z ~]# hostname
    izwz97tbgo9lkabnat2lo8z
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat /etc/centos-release
-   CentOS Linux release 7.4.1708 (Core) 
+   CentOS Linux release 7.6.1810 (Core)
    ```
 
-10. 重启和关机 - **reboot** / **init 6** / **shutdown** / **init 0**。
+   > 说明：`cat`是连接文件内容并打印到标准输出的命令，后面会讲到该命令；`/etc`是Linux系统上的一个非常重要的目录，它保存了很多的配置文件；`centos-release`是该目录下的一个文件，因为我自己使用的Linux发行版本是CentOS 7.6，因此这里会有一个这样的文件。
 
-11. 查看历史命令 - **history**。
+7. 时间和日期 - **date** / **cal**。
 
-    ```Shell
-    [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
-    ...
-    452  ls
-    453  cd Python-3.6.5/
-    454  clear
-    455  history
-    [root@iZwz97tbgo9lkabnat2lo8Z ~]# !454
-    ```
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# date
+   Wed Jun 20 12:53:19 CST 2018
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal
+         June 2018
+   Su Mo Tu We Th Fr Sa
+                   1  2
+    3  4  5  6  7  8  9
+   10 11 12 13 14 15 16
+   17 18 19 20 21 22 23
+   24 25 26 27 28 29 30
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal 5 2017
+         May 2017
+   Su Mo Tu We Th Fr Sa
+       1  2  3  4  5  6
+    7  8  9 10 11 12 13
+   14 15 16 17 18 19 20
+   21 22 23 24 25 26 27
+   28 29 30 31
+   ```
 
-    > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令；通过`history -c`可以清除历史命令。
+8. 重启和关机 - **reboot** / **shutdown**。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# shutdown -h +5
+   Shutdown scheduled for Sun 2019-05-26 19:34:27 CST, use 'shutdown -c' to cancel.
+   [root@izwz97tbgo9lkabnat2lo8z ~]# 
+   Broadcast message from root@izwz97tbgo9lkabnat2lo8z (Sun 2019-05-26 19:29:27 CST):
+   
+   The system is going down for power-off at Sun 2019-05-26 19:34:27 CST!
+   [root@izwz97tbgo9lkabnat2lo8z ~]# shutdown -c
+   
+   Broadcast message from root@izwz97tbgo9lkabnat2lo8z (Sun 2019-05-26 19:30:22 CST):
+   
+   The system shutdown has been cancelled at Sun 2019-05-26 19:31:22 CST!
+   [root@izwz97tbgo9lkabnat2lo8z ~]# shutdown -r 23:58
+   Shutdown scheduled for Sun 2019-05-26 23:58:00 CST, use 'shutdown -c' to cancel.
+   [root@izwz97tbgo9lkabnat2lo8z ~]# shutdown -c
+   
+   Broadcast message from root@izwz97tbgo9lkabnat2lo8z (Sun 2019-05-26 19:31:06 CST):
+   
+   The system shutdown has been cancelled at Sun 2019-05-26 19:32:06 CST!
+   ```
+
+   > 说明：在执行`shutdown`命令时会向登录系统的用户发出警告，可以在命令后面跟上警告消息来替换默认的警告消息，也可以在`-h`参数后通过`now`来表示立刻关机。
+
+9. 退出登录 -  **exit** / **logout**。
+
+10. 查看历史命令 - **history**。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
+   ...
+   452  ls
+   453  cd Python-3.6.5/
+   454  clear
+   455  history
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# !454
+   ```
+
+   > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令；通过`history -c`可以清除历史命令。
 
 ### 实用程序
 
@@ -250,7 +276,7 @@ Linux系统的命令通常都是如下所示的格式：
 
 3. 切换和查看当前工作目录 - **cd** / **pwd**。
 
-   > 说明：`cd`命令后面可以跟相对路径（以当前路径作为参照）或绝对路径（以`/`开头）来切换到指定的目录，也可以用`cd ..`来返回上一级目录。
+   > 说明：`cd`命令后面可以跟相对路径（以当前路径作为参照）或绝对路径（以`/`开头）来切换到指定的目录，也可以用`cd ..`来返回上一级目录。请大家想一想，如果要返回到上上一级目录应该给`cd`命令加上什么样的参数呢？
 
 4. 查看目录内容 - **ls**。
 
@@ -260,7 +286,7 @@ Linux系统的命令通常都是如下所示的格式：
    - -d：只列出目录，不列出其他内容。
    - -S/-t：按大小/时间排序。
 
-5. 查看文件内容 - **cat** / **head** / **tail** / **more** / **less**。
+5. 查看文件内容 - **cat** / **tac** / **head** / **tail** / **more** / **less** / **rev** / **od**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://www.sohu.com/ -O sohu.html
@@ -293,6 +319,8 @@ Linux系统的命令通常都是如下所示的格式：
    ...
    ```
 
+   > 说明：上面用到了一个名为`wget`的命令，它是用于网络下载的程序，可以从指定的URL下载资源。
+
 6. 拷贝/移动文件 - **cp** / **mv**。
 
    ```Shell
@@ -306,7 +334,13 @@ Linux系统的命令通常都是如下所示的格式：
    sohu_index.html
    ```
 
-7. 查找文件和查找内容 - **find** / **grep**。
+7. 文件重命名 - **rename**。
+
+  ```Shell
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# rename .htm .html *.htm
+  ```
+
+8. 查找文件和查找内容 - **find** / **grep**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# find / -name "*.html"
@@ -329,7 +363,7 @@ Linux系统的命令通常都是如下所示的格式：
    ```
    > 说明：`grep`在搜索字符串时可以使用正则表达式，如果需要使用正则表达式可以用`grep -E`或者直接使用`egrep`。
 
-8. 链接 - **ln**。
+9. 创建链接和查看链接 - **ln** / **readlink**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls -l sohu.html
@@ -351,23 +385,28 @@ Linux系统的命令通常都是如下所示的格式：
 
    > 说明：链接可以分为硬链接和软链接（符号链接）。硬链接可以认为是一个指向文件数据的指针，就像Python中对象的引用计数，每添加一个硬链接，文件的对应链接数就增加1，只有当文件的链接数为0时，文件所对应的存储空间才有可能被其他文件覆盖。我们平常删除文件时其实并没有删除硬盘上的数据，我们删除的只是一个指针，或者说是数据的一条使用记录，所以类似于“文件粉碎机”之类的软件在“粉碎”文件时除了删除文件指针，还会在文件对应的存储区域填入数据来保证文件无法再恢复。软链接类似于Windows系统下的快捷方式，当软链接链接的文件被删除时，软链接也就失效了。
 
-9. 压缩/解压缩和归档/解归档 - **gzip** / **gunzip** / **xz** / **tar**。
+10. 压缩/解压缩和归档/解归档 - **gzip** / **gunzip** / **xz**。
+
+  ```Shell
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://download.redis.io/releases/redis-4.0.10.tar.gz
+  --2018-06-20 19:29:59--  http://download.redis.io/releases/redis-4.0.10.tar.gz
+  Resolving download.redis.io (download.redis.io)... 109.74.203.151
+  Connecting to download.redis.io (download.redis.io)|109.74.203.151|:80... connected.
+  HTTP request sent, awaiting response... 200 OK
+  Length: 1738465 (1.7M) [application/x-gzip]
+  Saving to: ‘redis-4.0.10.tar.gz’
+  100%[==================================================>] 1,738,465   70.1KB/s   in 74s
+  2018-06-20 19:31:14 (22.9 KB/s) - ‘redis-4.0.10.tar.gz’ saved [1738465/1738465]
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls redis*
+  redis-4.0.10.tar.gz
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip redis-4.0.10.tar.gz
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls redis*
+  redis-4.0.10.tar
+  ```
+
+11. 归档和解归档 - **tar**。
 
    ```Shell
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://download.redis.io/releases/redis-4.0.10.tar.gz
-   --2018-06-20 19:29:59--  http://download.redis.io/releases/redis-4.0.10.tar.gz
-   Resolving download.redis.io (download.redis.io)... 109.74.203.151
-   Connecting to download.redis.io (download.redis.io)|109.74.203.151|:80... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: 1738465 (1.7M) [application/x-gzip]
-   Saving to: ‘redis-4.0.10.tar.gz’
-   100%[==================================================>] 1,738,465   70.1KB/s   in 74s
-   2018-06-20 19:31:14 (22.9 KB/s) - ‘redis-4.0.10.tar.gz’ saved [1738465/1738465]
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls redis*
-   redis-4.0.10.tar.gz
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# gunzip redis-4.0.10.tar.gz
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls redis*
-   redis-4.0.10.tar
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# tar -xvf redis-4.0.10.tar
    redis-4.0.10/
    redis-4.0.10/.gitignore
@@ -383,61 +422,62 @@ Linux系统的命令通常都是如下所示的格式：
    redis-4.0.10/deps/Makefile
    redis-4.0.10/deps/README.md
    ...
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls redis*
-   redis-4.0.10.tar
-   redis-4.0.10:
-   00-RELEASENOTES  COPYING  Makefile   redis.conf       runtest-sentinel  tests
-   BUGS             deps     MANIFESTO  runtest          sentinel.conf     utils
-   CONTRIBUTING     INSTALL  README.md  runtest-cluster  src
    ```
 
-10. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **paste** / **file** / **wc**。
+12. 将标准输入转成命令行参数 - **xargs**。
 
-  ```Shell
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat foo.txt
-  grape
-  apple
-  pitaya
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat bar.txt
-  100
-  200
-  300
-  400
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt
-  grape   100
-  apple   200
-  pitaya  300
-          400
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt > hello.txt
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 hello.txt
-  pe      10
-  le      20
-  aya     3
-  0
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat hello.txt | tr '\t' ','
-  grape,100
-  apple,200
-  pitaya,300
-  ,400
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.baidu.com/img/bd_logo1.png
-  --2018-06-20 18:46:53--  https://www.baidu.com/img/bd_logo1.png
-  Resolving www.baidu.com (www.baidu.com)... 220.181.111.188, 220.181.112.244
-  Connecting to www.baidu.com (www.baidu.com)|220.181.111.188|:443... connected.
-  HTTP request sent, awaiting response... 200 OK
-  Length: 7877 (7.7K) [image/png]
-  Saving to: ‘bd_logo1.png’
-  100%[==================================================>] 7,877       --.-K/s   in 0s
-  2018-06-20 18:46:53 (118 MB/s) - ‘bd_logo1.png’ saved [7877/7877][root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
-  bd_logo1.png: PNG image data, 540 x 258, 8-bit colormap, non-interlaced
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc sohu.html
-    2979   6355 212527 sohu.html
-  [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc -l sohu.html
-  2979 sohu.html
-  ```
+13. 显示文件或目录 - **basename** / **dirname**。
+
+14. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **split** / **paste** / **file** / **wc** / **iconv**。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat foo.txt
+   grape
+   apple
+   pitaya
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat bar.txt
+   100
+   200
+   300
+   400
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt
+   grape   100
+   apple   200
+   pitaya  300
+           400
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# paste foo.txt bar.txt > hello.txt
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cut -b 4-8 hello.txt
+   pe      10
+   le      20
+   aya     3
+   0
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat hello.txt | tr '\t' ','
+   grape,100
+   apple,200
+   pitaya,300
+   ,400
+   [root@izwz97tbgo9lkabnat2lo8z ~]# split -l 100 sohu.html hello
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.baidu.com/img/bd_logo1.png
+   --2018-06-20 18:46:53--  https://www.baidu.com/img/bd_logo1.png
+   Resolving www.baidu.com (www.baidu.com)... 220.181.111.188, 220.181.112.244
+   Connecting to www.baidu.com (www.baidu.com)|220.181.111.188|:443... connected.
+   HTTP request sent, awaiting response... 200 OK
+   Length: 7877 (7.7K) [image/png]
+   Saving to: ‘bd_logo1.png’
+   100%[==================================================>] 7,877       --.-K/s   in 0s
+   2018-06-20 18:46:53 (118 MB/s) - ‘bd_logo1.png’ saved [7877/7877][root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
+   bd_logo1.png: PNG image data, 540 x 258, 8-bit colormap, non-interlaced
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc sohu.html
+     2979   6355 212527 sohu.html
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc -l sohu.html
+   2979 sohu.html
+   ```
 
 #### 管道和重定向
 
-1. 管道的使用 - **\|**。
+1. 多重定向 - **tee**。
+
+2. 管道的使用 - **\|**。
 
    例子：查找当前目录下文件个数。
 
@@ -463,7 +503,7 @@ Linux系统的命令通常都是如下所示的格式：
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
    ```
 
-2. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
+3. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat readme.txt
@@ -485,7 +525,7 @@ Linux系统的命令通常都是如下所示的格式：
    watermelon
    ```
 
-3. 输入重定向 - **\<**。
+4. 输入重定向 - **\<**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# echo 'hello, world!' > hello.txt
@@ -523,35 +563,47 @@ Linux系统的命令通常都是如下所示的格式：
    -bash: frm: command not found
    ```
 
+#### 文本处理
+
+1. 字符流编辑器 - **sed**。
+2. 模式匹配和处理语言 - **awk**。
+
 #### 其他程序
 
-1. 时间和日期 - **date** / **cal**。
+1. 录制操作脚本 - **script**。
+
+2. 给用户发送消息 - **mesg** / **write** / **wall** / **mail**。
+
+### 用户管理
+
+1. 创建和删除用户 - **useradd** / **userdel**。
+
+2. 创建和删除用户组 - **groupadd** / **groupdel**。
+
+3. 修改密码 - **passwd**。
+
+4. 切换用户 - **su**。
 
    ```Shell
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# date
-   Wed Jun 20 12:53:19 CST 2018
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal
-         June 2018
-   Su Mo Tu We Th Fr Sa
-                   1  2
-    3  4  5  6  7  8  9
-   10 11 12 13 14 15 16
-   17 18 19 20 21 22 23
-   24 25 26 27 28 29 30
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# cal 5 2017
-         May 2017
-   Su Mo Tu We Th Fr Sa
-       1  2  3  4  5  6
-    7  8  9 10 11 12 13
-   14 15 16 17 18 19 20
-   21 22 23 24 25 26 27
-   28 29 30 31
+   [root@izwz97tbgo9lkabnat2lo8z ~]# su hellokitty
+   [hellokitty@izwz97tbgo9lkabnat2lo8z root]$
    ```
 
-2. 录制操作脚本 - **script**。
+5. 以管理员身份执行命令 - **sudo**。
 
-3. 给用户发送消息 - **mesg** / **write** / **wall** / **mail**。
+   ```Shell
+   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
+   ls: cannot open directory /root: Permission denied
+   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
+   [sudo] password for jackfrued:
+   calendar.py  code  error.txt  hehe  hello.c  index.html  myconf  result.txt
+   ```
 
+   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须被添加到sudoers名单中，该文件在 `/etc`目录下，如果希望直接编辑该文件也可以使用下面的命令。
+
+6. 编辑sudoers文件 - **visudo**。
+
+7. 显示用户与用户组的信息 - **id**。
 
 ### 文件系统
 
@@ -623,6 +675,8 @@ Linux系统的命令通常都是如下所示的格式：
     ...
     ```
 
+3. **chgrp** - 改变用户组。
+
 #### 磁盘管理
 
 1. 列出文件系统的磁盘使用状况 - **df**。
@@ -656,11 +710,17 @@ Linux系统的命令通常都是如下所示的格式：
    I/O size (minimum/optimal): 512 bytes / 512 bytes
    ```
 
-3. 格式化文件系统 - **mkfs**。
+3. 磁盘分区工具 - **parted**。
 
-4. 文件系统检查 - **fsck**。
+4. 格式化文件系统 - **mkfs**。
 
-5. 挂载/卸载 - **mount** / **umount**。
+5. 文件系统检查 - **fsck**。
+
+6. 转换或拷贝文件 - **dd**。
+
+7. 挂载/卸载 - **mount** / **umount**。
+
+8. 创建/激活/关闭交换分区 - **mkswap** / **swapon** / **swapoff**。
 
 ### 编辑器 - vim
 
@@ -982,7 +1042,9 @@ build environment:
 
 ### 计划任务
 
-1. **crontab**命令。
+1. 推迟执行的任务 - **at** / **batch** / **atq** / **atrm**。
+
+2. 计划任务表 - **crontab**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# crontab -e
@@ -991,7 +1053,7 @@ build environment:
    ```
    > 说明：输入`crontab -e`命令会打开vim来编辑Cron表达式并指定触发的任务，上面我们定制了两个计划任务，一个是每分钟向/root目录下的hello.txt中追加输出`hello, world!`；另一个是每天23时59分执行删除/root目录下以log为后缀名的文件。如果不知道Cron表达式如何书写，可以参照/etc/crontab文件中的提示（下面会讲到）或者用谷歌或百度搜索一下，也可以使用Cron表达式在线生成器来生成Cron表达式。
 
-2. crontab相关文件。
+   和crontab相关的文件在`/etc`目录下，通过修改`/etc`目录下的crontab文件也能够定制计划任务。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cd /etc
@@ -1021,7 +1083,6 @@ build environment:
     14 # *  *  *  *  * user-name  command to be executed
    ```
 
-   通过修改`/etc`目录下的crontab文件也能够定制计划任务。
 
 ### 网络访问和管理
 
@@ -1033,7 +1094,7 @@ build environment:
    - -O 下载到指定的目录
    - -r 递归下载
 
-3. 显示/操作网络配置（旧） - **ifconfig**。
+3. 网络配置工具（旧） - **ifconfig**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ifconfig eth0
@@ -1046,7 +1107,11 @@ build environment:
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 
    ```
 
-4. 显示/操作网络配置（新） - **ip**。
+4. 激活/禁用网络接口 - **ifup** / **ifdown**。
+
+5. 显示或管理路由表 - **route**。
+
+6. 网络配置工具（新） - **ip**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ip address
@@ -1060,7 +1125,7 @@ build environment:
           valid_lft forever preferred_lft forever
    ```
 
-5. 网络可达性检查 - **ping**。
+7. 网络可达性检查 - **ping**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ping www.baidu.com -c 3
@@ -1073,48 +1138,52 @@ build environment:
    rtt min/avg/max/mdev = 36.392/36.406/36.427/0.156 ms
    ```
 
-6. 查看网络服务和端口 - **netstat**。
+8. 查看网络服务和端口 - **netstat**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# netstat -nap | grep nginx
    ```
 
-7. 安全文件拷贝 - **scp**。
+9. 查看网络状态 - **ss**。
 
-   ```Shell
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
-   ```
+10. 网络监听抓包 - **tcpdump**。
 
-8. 安全文件传输 - **sftp**。
+11. 安全文件拷贝 - **scp**。
 
-   ```Shell
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# sftp root@120.77.222.217
-   root@120.77.222.217's password:
-   Connected to 120.77.222.217.
-   sftp>
-   ```
+    ```Shell
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
+    ```
 
-   - `help`：显示帮助信息。
+12. 安全文件传输 - **sftp**。
 
-   - `ls`/`lls`：显示远端/本地目录列表。
+    ```Shell
+    [root@iZwz97tbgo9lkabnat2lo8Z ~]# sftp root@120.77.222.217
+    root@120.77.222.217's password:
+    Connected to 120.77.222.217.
+    sftp>
+    ```
 
-   - `cd`/`lcd`：切换远端/本地路径。
+    - `help`：显示帮助信息。
 
-   - `mkdir`/`lmkdir`：创建远端/本地目录。
+    - `ls`/`lls`：显示远端/本地目录列表。
 
-   - `pwd`/`lpwd`：显示远端/本地当前工作目录。
+    - `cd`/`lcd`：切换远端/本地路径。
 
-   - `get`：下载文件。
+    - `mkdir`/`lmkdir`：创建远端/本地目录。
 
-   - `put`：上传文件。
+    - `pwd`/`lpwd`：显示远端/本地当前工作目录。
 
-   - `rm`：删除远端文件。
+    - `get`：下载文件。
 
-   - `bye`/`exit`/`quit`：退出sftp。
+    - `put`：上传文件。
+
+    - `rm`：删除远端文件。
+
+    - `bye`/`exit`/`quit`：退出sftp。
 
 ### 进程管理
 
-1. **ps** - 查询进程。
+1. 查看进程 - **ps**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps -ef
@@ -1127,7 +1196,9 @@ build environment:
    mysql    25257     1  0 Jun25 ?        00:00:39 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid
    ```
 
-2. **kill** - 终止进程。
+2. 显示进程状态树 - **pstree**。
+
+3. 通过进程号终止进程 - **kill**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill 1234
@@ -1140,7 +1211,9 @@ build environment:
    ps -ef | grep redis | grep -v grep | awk '{print $2}' | xargs kill
     ```
 
-3. 将进程置于后台运行。
+4. 通过进程名终止进程 - **killall**。
+
+5. 将进程置于后台运行。
 
    - `Ctrl+Z`
    - `&`
@@ -1153,7 +1226,7 @@ build environment:
    [4]+  Stopped                 redis-server
    ```
 
-4. **jobs** - 查询后台进程。
+6. 查询后台进程 - **jobs**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
@@ -1162,7 +1235,7 @@ build environment:
    [4]+  Stopped                 redis-server
    ```
 
-5. **bg** - 让进程在后台继续运行。
+7. 让进程在后台继续运行 - **bg**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# bg %4
@@ -1173,7 +1246,7 @@ build environment:
    [4]-  Running                 redis-server &
    ```
 
-6. **fg** - 将后台进程置于前台。
+8. 将后台进程置于前台 - **fg**。
 
     ```Shell
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
@@ -1187,23 +1260,31 @@ build environment:
 
     > 说明：置于前台的进程可以使用`Ctrl+C`来终止它。
 
-7. **top** - 进程监控。
+9. 调整程序/进程运行时优先级 - **nice** / **renice**。
 
-    ```Shell
-    [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
-    top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
-    Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
-    %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-    KiB Mem :  1016168 total,   191060 free,   324700 used,   500408 buff/cache
-    KiB Swap:        0 total,        0 free,        0 used.   530944 avail Mem
-    ...
-    ```
+10. 用户登出后进程继续工作 - **nohup**。
 
-### 系统性能
+11. 跟踪进程的系统调用 - **strace**。
 
-1. 查看系统活动信息 - **sar**。
+12. 实时监控进程占用资源状况 - **top**。
 
-2. 查看内存使用情况 - **free**。
+     ```Shell
+     [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
+     top - 23:04:23 up 3 days, 14:10,  1 user,  load average: 0.00, 0.01, 0.05
+     Tasks:  65 total,   1 running,  64 sleeping,   0 stopped,   0 zombie
+     %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+     KiB Mem :  1016168 total,   191060 free,   324700 used,   500408 buff/cache
+     KiB Swap:        0 total,        0 free,        0 used.   530944 avail Mem
+     ...
+     ```
+
+### 系统诊断
+
+1. 系统启动异常诊断 - **dmesg**。
+
+2. 查看系统活动信息 - **sar**。
+
+3. 查看内存使用情况 - **free**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# free
@@ -1212,7 +1293,26 @@ build environment:
    Swap:             0           0           0
    ```
 
-3. 查看进程使用内存状况 - **pmap**。
+4. 虚拟内存统计 - **vmstat**。
+
+   ```Shell
+   [root@iZ8vba0s66jjlfmo601w4xZ ~]# vmstat
+   procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+    r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+    2  0      0 204020  79036 667532    0    0     5    18  101   58  1  0 99  0  0
+   ```
+
+5. CPU信息统计 - **mpstat**。
+
+   ```Shell
+   [root@iZ8vba0s66jjlfmo601w4xZ ~]# mpstat
+   Linux 3.10.0-957.5.1.el7.x86_64 (iZ8vba0s66jjlfmo601w4xZ)       05/30/2019      _x86_64_        (1 CPU)
+   
+   01:51:54 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+   01:51:54 AM  all    0.71    0.00    0.17    0.04    0.00    0.00    0.00    0.00    0.00   99.07
+   ```
+
+6. 查看进程使用内存状况 - **pmap**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ps
@@ -1231,7 +1331,7 @@ build environment:
    ...
    ```
 
-4. 报告设备CPU和I/O统计信息 - **iostat**。
+7. 报告设备CPU和I/O统计信息 - **iostat**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# iostat
@@ -1243,3 +1343,66 @@ build environment:
    vdb               0.00         0.01         0.00       2088          0
    ```
 
+8. 查询网卡参数 - **ethtool**。
+
+9. 显示所有PCI设备 - **lspci**。
+
+10. 显示进程间通信设施的状态 - **ipcs**。
+
+    ```Shell
+    [root@iZ8vba0s66jjlfmo601w4xZ ~]# ipcs
+    
+    ------ Message Queues --------
+    key        msqid      owner      perms      used-bytes   messages    
+    
+    ------ Shared Memory Segments --------
+    key        shmid      owner      perms      bytes      nattch     status      
+    
+    ------ Semaphore Arrays --------
+    key        semid      owner      perms      nsems
+    ```
+
+### 相关资源
+
+1. Linux命令行常用快捷键
+
+   | 快捷键     | 功能说明                                     |
+   | ---------- | -------------------------------------------- |
+   | tab        | 自动补全命令或路径                           |
+   | Ctrl+a     | 将光标移动到命令行行首                       |
+   | Ctrl+e     | 将光标移动到命令行行尾                       |
+   | Ctrl+f     | 将光标向右移动一个字符                       |
+   | Ctrl+b     | 将光标向左移动一个字符                       |
+   | Ctrl+k     | 剪切从光标到行尾的字符                       |
+   | Ctrl+u     | 剪切从光标到行首的字符                       |
+   | Ctrl+w     | 剪切光标前面的一个单词                       |
+   | Ctrl+y     | 复制剪切命名剪切的内容                       |
+   | Ctrl+c     | 中断正在执行的任务                           |
+   | Ctrl+h     | 删除光标前面的一个字符                       |
+   | Ctrl+d     | 退出当前命令行                               |
+   | Ctrl+r     | 搜索历史命令                                 |
+   | Ctrl+g     | 退出历史命令搜索                             |
+   | Ctrl+l     | 清除屏幕上所有内容在屏幕的最上方开启一个新行 |
+   | Ctrl+s     | 锁定终端使之暂时无法输入内容                 |
+   | Ctrl+q     | 退出终端锁定                                 |
+   | Ctrl+z     | 将正在终端执行的任务停下来放到后台           |
+   | !!         | 执行上一条命令                               |
+   | !数字      | 执行数字对应的历史命令                       |
+   | !字母      | 执行最近的以字母打头的命令                   |
+   | !$ / Esc+. | 获得上一条命令最后一个参数                   |
+   | Esc+b      | 移动到当前单词的开头                         |
+   | Esc+f      | 移动到当前单词的结尾                         |
+
+2. man查阅命令手册的内容说明
+
+   | 手册中的标题 | 功能说明                                                     |
+   | ------------ | ------------------------------------------------------------ |
+   | NAME         | 命令的说明和介绍                                             |
+   | SYNOPSIS     | 使用该命令的基本语法                                         |
+   | DESCRIPTION  | 使用该命令的详细描述，各个参数的作用，有时候这些信息会出现在OPTIONS中 |
+   | OPTIONS      | 命令相关参数选项的说明                                       |
+   | EXAMPLES     | 使用该命令的参考例子                                         |
+   | EXIT STATUS  | 命令结束的退出状态码，通常0表示成功执行                      |
+   | SEE ALSO     | 和命令相关的其他命令或信息                                   |
+   | BUGS         | 和命令相关的缺陷的描述                                       |
+   | AUTHOR       | 该命令的作者介绍                                             |

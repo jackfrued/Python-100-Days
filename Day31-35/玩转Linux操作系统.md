@@ -8,9 +8,7 @@
 
 #### 没有操作系统（手工操作）
 
-在计算机诞生之初没有操作系统的年代，人们先把程序纸带（或卡片）装上计算机，然后启动输入机把程序和送入计算机，接着通过控制台开关启动程序运行。当程序执行完毕，打印机输出计算的结果，用户卸下并取走纸带（或卡片）。第二个用户上机，重复同样的步骤。在整个过程中用户独占机器，CPU等待手工操作，资源利用率极低。下图是IBM生产的书写Fortran程序的80栏打孔卡，当然这个已经是比较先进的打孔卡了。
-
-![](./res/ibm-col80-punched-card.png)
+在计算机诞生之初没有操作系统的年代，人们先把程序纸带（或卡片）装上计算机，然后启动输入机把程序送入计算机，接着通过控制台开关启动程序运行。当程序执行完毕，打印机输出计算的结果，用户卸下并取走纸带（或卡片）。第二个用户上机，重复同样的步骤。在整个过程中用户独占机器，CPU等待手工操作，资源利用率极低。
 
 #### 批处理系统
 
@@ -26,19 +24,23 @@
 
 2. 1965年：AT&T的贝尔实验室加入GE和MIT的合作计划开始开发MULTICS。
 
-3. 1969年：Ken Tompson为了玩“Space Travel”游戏用汇编语言在PDP-7上开发了Unics。
+3. 1969年：MULTICS项目失败，Ken Tompson赋闲在家，为了玩“Space Travel”游戏用汇编语言在当时已经被淘汰的PDP-7上开发了Unics。
 
-   ![](./res/Ken-Thompson.png)
+   ![](./res/ken_young.jpg)
 
    ![](./res/pdp-7.png)
 
+   > 注：很难想象，Unix这么伟大的系统，居然是一个赋闲在家的程序员（关键是老婆回娘家还带上了孩子）在一台被淘汰的设备上为了玩游戏开发出来的。
+
 4. 1970年~1971年：Ken Tompson和Dennis Ritchie用B语言在PDP-11上重写了Unics，并在Brian Kernighan的建议下将其更名为Unix。
+
+   ![](./res/dmr.png)
 
    ![](./res/ken-and-dennis-pdp-11.png)
 
-5. 1972年~1973年：Dennis Ritchie发明了C语言来取代可移植性较差的B语言，并开启了用C语言重写Unix的工作。
+   ![](./res/pdp-11.jpg)
 
-   ![](./res/dennis-ritchie.png)
+5. 1972年~1973年：Dennis Ritchie发明了C语言来取代可移植性较差的B语言，并开启了用C语言重写Unix的工作。
 
 6. 1974年：Unix推出了里程碑意义的第5版，几乎完全用C语言来实现。
 
@@ -46,11 +48,11 @@
 
 8. 1987年：Andrew S. Tanenbaum教授为了能在课堂上为学生讲解操作系统运作的细节，决定在不使用任何AT&T的源代码前提下，自行开发与Unix兼容的操作系统以避免版权上的争议，该系统被命名为Minix。
 
-   ![](./res/andrew-tanenbaum.png)
+   ![](./res/andrew.jpg)
 
 9. 1991年：Linus Torvalds就读于芬兰赫尔辛基大学期间，尝试在Minix上做一些开发工作，但因为Minix只是作为教学用途的操作系统，功能并不强大，为了方便在学校的新闻组和邮件系统中读写和下载文件，Linus编写了磁盘驱动程序和文件系统，这些东西形成了Linux系统内核的雏形。
 
-   ![](./res/linus-torvalds.png)
+   ![](./res/linus.png)
 
 下图是Unix操作系统家族的图谱。
 
@@ -123,18 +125,13 @@ Linux系统的命令通常都是如下所示的格式：
     3553 pts/0    00:00:00 ps
    ```
 
-3. 查看命令的说明 - **whatis**。
+3. 查看命令的说明和位置 - **whatis** / **which** / **whereis**。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis ps
    ps (1)        - report a snapshot of the current processes.
    [root@izwz97tbgo9lkabnat2lo8z ~]# whatis python
    python (1)    - an interpreted, interactive, object-oriented programming language
-   ```
-
-4. 查看命令的位置 - **which** / **whereis**。
-
-   ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis ps
    ps: /usr/bin/ps /usr/share/man/man1/ps.1.gz
    [root@izwz97tbgo9lkabnat2lo8z ~]# whereis python
@@ -144,6 +141,8 @@ Linux系统的命令通常都是如下所示的格式：
    [root@izwz97tbgo9lkabnat2lo8z ~]# which python
    /usr/bin/python
    ```
+
+4. 清除屏幕上显示的内容 - **clear**。
 
 5. 查看帮助文档 - **man** / **info** / **help** / **apropos**。
    ```Shell
@@ -161,8 +160,6 @@ Linux系统的命令通常都是如下所示的格式：
    SYNOPSIS
           ps [options]
    DESCRIPTION
-   ...
-   [root@izwz97tbgo9lkabnat2lo8z ~]# info ps
    ...
    ```
 
@@ -231,23 +228,23 @@ Linux系统的命令通常都是如下所示的格式：
 
 10. 查看历史命令 - **history**。
 
-   ```Shell
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
-   ...
-   452  ls
-   453  cd Python-3.6.5/
-   454  clear
-   455  history
-   [root@iZwz97tbgo9lkabnat2lo8Z ~]# !454
-   ```
+  ```Shell
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# history
+  ...
+  452  ls
+  453  cd Python-3.6.5/
+  454  clear
+  455  history
+  [root@iZwz97tbgo9lkabnat2lo8Z ~]# !454
+  ```
 
-   > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令；通过`history -c`可以清除历史命令。
+  > 说明：查看到历史命令之后，可以用`!历史命令编号`来重新执行该命令；通过`history -c`可以清除历史命令。
 
 ### 实用程序
 
 #### 文件和文件夹操作
 
-1. 创建/删除目录 - **mkdir** / **rmdir**。
+1. 创建/删除空目录 - **mkdir** / **rmdir**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mkdir abc
@@ -265,14 +262,14 @@ Linux系统的命令通常都是如下所示的格式：
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# rm -rf xyz
    ```
 
-   - touch命令用于创建空白文件或修改文件时间。在Linux系统中一个文件有三种时间：
+   - `touch`命令用于创建空白文件或修改文件时间。在Linux系统中一个文件有三种时间：
      - 更改内容的时间 - mtime。
      - 更改权限的时间 - ctime。
      - 最后访问时间 - atime。
-   - rm的几个重要参数：
-     - -i：交互式删除，每个删除项都会进行询问。
-     - -r：删除目录并递归的删除目录中的文件和目录。
-     - -f：强制删除，忽略不存在的文件，没有任何提示。
+   - `rm`的几个重要参数：
+     - `-i`：交互式删除，每个删除项都会进行询问。
+     - `-r`：删除目录并递归的删除目录中的文件和目录。
+     - `-f`：强制删除，忽略不存在的文件，没有任何提示。
 
 3. 切换和查看当前工作目录 - **cd** / **pwd**。
 
@@ -280,11 +277,11 @@ Linux系统的命令通常都是如下所示的格式：
 
 4. 查看目录内容 - **ls**。
 
-   - -l：以长格式查看文件和目录。
-   - -a：显示以点开头的文件和目录（隐藏文件）。
-   - -R：遇到目录要进行递归展开（继续列出目录下面的文件和目录）。
-   - -d：只列出目录，不列出其他内容。
-   - -S/-t：按大小/时间排序。
+   - `-l`：以长格式查看文件和目录。
+   - `-a`：显示以点开头的文件和目录（隐藏文件）。
+   - `-R`：遇到目录要进行递归展开（继续列出目录下面的文件和目录）。
+   - `-d`：只列出目录，不列出其他内容。
+   - `-S` / `-t`：按大小/时间排序。
 
 5. 查看文件内容 - **cat** / **tac** / **head** / **tail** / **more** / **less** / **rev** / **od**。
 
@@ -319,7 +316,7 @@ Linux系统的命令通常都是如下所示的格式：
    ...
    ```
 
-   > 说明：上面用到了一个名为`wget`的命令，它是用于网络下载的程序，可以从指定的URL下载资源。
+   > 说明：上面用到了一个名为`wget`的命令，它是一个网络下载器程序，可以从指定的URL下载资源。
 
 6. 拷贝/移动文件 - **cp** / **mv**。
 
@@ -424,11 +421,36 @@ Linux系统的命令通常都是如下所示的格式：
    ...
    ```
 
+   > 说明：归档（也称为创建归档）和解归档都使用`tar`命令，通常创建归档需要`-cvf`三个参数，其中`c`表示创建（create），`v`表示显示创建归档详情（verbose），`f`表示指定归档的文件（file）；解归档需要加上`-xvf`参数，其中`x`表示抽取（extract），其他两个参数跟创建归档相同。
+
 12. 将标准输入转成命令行参数 - **xargs**。
+
+   下面的命令会将查找当前路径下的html文件，然后通过`xargs`将这些文件作为参数传给`rm`命令，实现查找并删除文件的操作。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# find . -type f -name "*.html" | xargs rm -f
+   ```
+
+   下面的命令将a.txt文件中的多行内容变成一行输出到b.txt文件中，其中`<`表示从a.txt中读取输入，`>`表示将命令的执行结果输出到b.txt中。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# xargs < a.txt > b.txt
+   ```
+
+   > 说明：这个命令就像上面演示的那样常在管道（实现进程间通信的一种方式）和重定向（重新指定输入输出的位置）操作中用到，后面的内容中会讲到管道操作和输入输出重定向操作。
 
 13. 显示文件或目录 - **basename** / **dirname**。
 
-14. 其他工具 - **sort** / **uniq** / **diff** / **tr** / **cut** / **split** / **paste** / **file** / **wc** / **iconv**。
+14. 其他相关工具。 
+
+   - **sort** - 对内容排序
+   - **uniq** - 去掉相邻重复内容
+   - **tr** - 替换指定内容为新内容
+   - **cut** / **paste** - 剪切/黏贴内容
+   - **split** - 拆分文件
+   - **file** - 判断文件类型
+   - **wc** - 统计文件行数、单词数、字节数
+   - **iconv** - 编码转换
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat foo.txt
@@ -458,26 +480,19 @@ Linux系统的命令通常都是如下所示的格式：
    ,400
    [root@izwz97tbgo9lkabnat2lo8z ~]# split -l 100 sohu.html hello
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget https://www.baidu.com/img/bd_logo1.png
-   --2018-06-20 18:46:53--  https://www.baidu.com/img/bd_logo1.png
-   Resolving www.baidu.com (www.baidu.com)... 220.181.111.188, 220.181.112.244
-   Connecting to www.baidu.com (www.baidu.com)|220.181.111.188|:443... connected.
-   HTTP request sent, awaiting response... 200 OK
-   Length: 7877 (7.7K) [image/png]
-   Saving to: ‘bd_logo1.png’
-   100%[==================================================>] 7,877       --.-K/s   in 0s
-   2018-06-20 18:46:53 (118 MB/s) - ‘bd_logo1.png’ saved [7877/7877][root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# file bd_logo1.png
    bd_logo1.png: PNG image data, 540 x 258, 8-bit colormap, non-interlaced
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc sohu.html
      2979   6355 212527 sohu.html
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# wc -l sohu.html
    2979 sohu.html
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# wget http://www.qq.com -O qq.html
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# iconv -f gb2312 -t utf-8 qq.html
    ```
 
 #### 管道和重定向
 
-1. 多重定向 - **tee**。
-
-2. 管道的使用 - **\|**。
+1. 管道的使用 - **\|**。
 
    例子：查找当前目录下文件个数。
 
@@ -503,7 +518,7 @@ Linux系统的命令通常都是如下所示的格式：
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat record.log | grep AAA | grep -v BBB | wc -l
    ```
 
-3. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
+2. 输出重定向和错误重定向 - **\>** / **>>** / **2\>**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# cat readme.txt
@@ -525,7 +540,7 @@ Linux系统的命令通常都是如下所示的格式：
    watermelon
    ```
 
-4. 输入重定向 - **\<**。
+3. 输入重定向 - **\<**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# echo 'hello, world!' > hello.txt
@@ -539,6 +554,14 @@ Linux系统的命令通常都是如下所示的格式：
    Broadcast message from root@iZwz97tbgo9lkabnat2lo8Z (Wed Jun 20 19:43:55 2018):
    hello, world!
    I will show you some code.
+   ```
+
+4. 多重定向 - **tee**。
+
+   下面的命令除了在终端显示命令`ls`的结果之外，还会追加输出到`ls.txt`文件中。
+
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# ls | tee -a ls.txt
    ```
 
 #### 别名
@@ -566,44 +589,253 @@ Linux系统的命令通常都是如下所示的格式：
 #### 文本处理
 
 1. 字符流编辑器 - **sed**。
+
+   sed是操作、过滤和转换文本内容的工具。假设有一个名为fruit.txt的文件，内容如下所示。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# cat -n fruit.txt 
+        1  banana
+        2  grape
+        3  apple
+        4  watermelon
+        5  orange
+   ```
+
+   接下来，我们在第2行后面添加一个pitaya。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed '2a pitaya' fruit.txt 
+   banana
+   grape
+   pitaya
+   apple
+   watermelon
+   orange
+   ```
+
+   > 注意：刚才的命令和之前我们讲过的很多命令一样并没有改变fruit.txt文件，而是将添加了新行的内容输出到终端中，如果想保存到fruit.txt中，可以使用输出重定向操作。
+
+   在第2行前面插入一个waxberry。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed '2i waxberry' fruit.txt
+   banana
+   waxberry
+   grape
+   apple
+   watermelon
+   orange
+   ```
+
+   删除第3行。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed '3d' fruit.txt
+   banana
+   grape
+   watermelon
+   orange
+   ```
+
+   删除第2行到第4行。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed '2,4d' fruit.txt
+   banana
+   orange
+   ```
+
+   将文本中的字符a替换为@。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed 's#a#@#' fruit.txt 
+   b@nana
+   gr@pe
+   @pple
+   w@termelon
+   or@nge
+   ```
+
+   将文本中的字符a替换为@，使用全局模式。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sed 's#a#@#g' fruit.txt 
+   b@n@n@
+   gr@pe
+   @pple
+   w@termelon
+   or@nge
+   ```
+
 2. 模式匹配和处理语言 - **awk**。
 
-#### 其他程序
+   awk是一种编程语言，也是Linux系统中处理文本最为强大的工具，它的作者之一和现在的维护者就是之前提到过的Brian Kernighan（ken和dmr最亲密的伙伴）。通过该命令可以从文本中提取出指定的列、用正则表达式从文本中取出我们想要的内容、显示指定的行以及进行统计和运算，总之它非常强大。
 
-1. 录制操作脚本 - **script**。
+   假设有一个名为fruit2.txt的文件，内容如下所示。
 
-2. 给用户发送消息 - **mesg** / **write** / **wall** / **mail**。
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# cat fruit2.txt 
+   1       banana      120
+   2       grape       500
+   3       apple       1230
+   4       watermelon  80
+   5       orange      400
+   ```
+
+   显示文件的第3行。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# awk 'NR==3' fruit2.txt 
+   3       apple       1230
+   ```
+
+   显示文件的第2列。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# awk '{print $2}' fruit2.txt 
+   banana
+   grape
+   apple
+   watermelon
+   orange
+   ```
+
+   显示文件的最后一列。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# awk '{print $NF}' fruit2.txt 
+   120
+   500
+   1230
+   80
+   400
+   ```
+
+   输出末尾数字大于等于300的行。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# awk '{if($3 >= 300) {print $0}}' fruit2.txt 
+   2       grape       500
+   3       apple       1230
+   5       orange      400
+   ```
+
+   上面展示的只是awk命令的冰山一角，更多的内容留给读者自己在实践中去探索。
 
 ### 用户管理
 
 1. 创建和删除用户 - **useradd** / **userdel**。
 
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z home]# useradd hellokitty
+   [root@izwz97tbgo9lkabnat2lo8z home]# userdel hellokitty
+   ```
+
+   - `-d` - 创建用户时为用户指定用户主目录
+   - `-g` - 创建用户时指定用户所属的用户组
+
 2. 创建和删除用户组 - **groupadd** / **groupdel**。
+
+   > 说明：用户组主要是为了方便对一个组里面所有用户的管理。
 
 3. 修改密码 - **passwd**。
 
-4. 切换用户 - **su**。
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# passwd hellokitty
+   New password: 
+   Retype new password: 
+   passwd: all authentication tokens updated successfully.
+   ```
+
+   > 说明：输入密码和确认密码没有回显且必须一气呵成的输入完成（不能使用退格键），密码和确认密码需要一致。如果使用`passwd`命令时没有指定命令作用的对象，则表示要修改当前用户的密码。如果想批量修改用户密码，可以使用`chpasswd`命令。
+
+   - `-l` / `-u` - 锁定/解锁用户。
+   - `-d` - 清除用户密码。
+   - `-e` - 设置密码立即过期，用户登录时会强制要求修改密码。
+   - `-i` - 设置密码过期多少天以后禁用该用户。
+
+4. 查看和修改密码有效期 - **chage**。
+
+   设置hellokitty用户100天后必须修改密码，过期前15天通知该用户，过期后15天禁用该用户。
+
+   ```Shell
+   chage -M 100 -W 15 -I 15 hellokitty
+   ```
+
+5. 切换用户 - **su**。
 
    ```Shell
    [root@izwz97tbgo9lkabnat2lo8z ~]# su hellokitty
    [hellokitty@izwz97tbgo9lkabnat2lo8z root]$
    ```
 
-5. 以管理员身份执行命令 - **sudo**。
+6. 以管理员身份执行命令 - **sudo**。
 
    ```Shell
-   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ ls /root
    ls: cannot open directory /root: Permission denied
-   [jackfrued@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
-   [sudo] password for jackfrued:
-   calendar.py  code  error.txt  hehe  hello.c  index.html  myconf  result.txt
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ sudo ls /root
+   [sudo] password for hellokitty:
    ```
 
-   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须被添加到sudoers名单中，该文件在 `/etc`目录下，如果希望直接编辑该文件也可以使用下面的命令。
+   > **说明**：如果希望用户能够以管理员身份执行命令，用户必须要出现在sudoers名单中，sudoers文件在 `/etc`目录下，如果希望直接编辑该文件也可以使用下面的命令。
 
-6. 编辑sudoers文件 - **visudo**。
+7. 编辑sudoers文件 - **visudo**。
 
-7. 显示用户与用户组的信息 - **id**。
+   这里使用的编辑器是vi，关于vi的知识在后面有讲解。该文件的部分内容如下所示：
+
+   ```
+   ## Allow root to run any commands anywhere 
+   root    ALL=(ALL)   ALL
+   
+   ## Allows members of the 'sys' group to run networking, software, 
+   ## service management apps and more.
+   # %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS
+   ## Allows people in group wheel to run all commands
+   %wheel  ALL=(ALL)   ALL
+   
+   ## Same thing without a password
+   # %wheel    ALL=(ALL)   NOPASSWD: ALL
+   
+   ## Allows members of the users group to mount and unmount the
+   ## cdrom as root
+   # %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+   
+   ## Allows members of the users group to shutdown this system
+   # %users  localhost=/sbin/shutdown -h now
+   ```
+
+8. 显示用户与用户组的信息 - **id**。
+
+9. 给其他用户发消息 -**write** / **wall**。
+
+   发送方：
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# write hellokitty
+   Dinner is on me.
+   Call me at 6pm.
+   ```
+
+   接收方：
+
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ 
+   Message from root@izwz97tbgo9lkabnat2lo8z on pts/0 at 17:41 ...
+   Dinner is on me.
+   Call me at 6pm.
+   EOF
+   ```
+
+10. 查看/设置是否接收其他用户发送的消息 - **mesg**。
+
+    ```Shell
+    [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ mesg
+    is y
+    [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ mesg n
+    [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ mesg
+    is n
+    ```
 
 ### 文件系统
 
@@ -714,6 +946,14 @@ Linux系统的命令通常都是如下所示的格式：
 
 4. 格式化文件系统 - **mkfs**。
 
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ mkfs -t ext4 -v /dev/sdb
+   ```
+
+   - `-t` - 指定文件系统的类型。
+   - `-c` - 创建文件系统时检查磁盘损坏情况。
+   - `-v` - 显示详细信息。
+
 5. 文件系统检查 - **fsck**。
 
 6. 转换或拷贝文件 - **dd**。
@@ -721,6 +961,8 @@ Linux系统的命令通常都是如下所示的格式：
 7. 挂载/卸载 - **mount** / **umount**。
 
 8. 创建/激活/关闭交换分区 - **mkswap** / **swapon** / **swapoff**。
+
+> 说明：执行上面这些命令会带有一定的风险，如果不清楚这些命令的用法，最好不用随意使用，在使用的过程中，最好对照参考资料进行操作，并在操作前确认是否要这么做。
 
 ### 编辑器 - vim
 
@@ -768,7 +1010,7 @@ Linux系统的命令通常都是如下所示的格式：
 
    - 设置启用/关闭搜索结果高亮：`set hls` / `set nohls`
 
-     > 说明：如果希望上面的这些设定在每次启动vim时都能生效，需要将这些设定写到用户主目录下的.vimrc文件中。
+     > 说明：如果希望上面的这些设定在每次启动vim时都能自动生效，需要将这些设定写到用户主目录下的.vimrc文件中。
 
 8. 高级技巧
 
@@ -814,7 +1056,7 @@ Linux系统的命令通常都是如下所示的格式：
 
      - 通过`@a`（`a`是刚才使用的寄存器的名字）播放宏，如果要多次执行宏可以在前面加数字，例如`100@a`表示将宏播放100次。
 
-     - 可以试一试下面的例子来体验录制宏的操作，该例子来源于[Harttle Land网站](https://harttle.land/tags.html#Vim)，该网站上提供了很多关于vim的使用技巧，有兴趣的可以去了解一下。
+     - 可以试一试下面的例子来体验录制宏的操作，该例子来源于[Harttle Land网站](https://harttle.land/tags.html#Vim)，该网站上提供了很多关于vim的使用技巧，有兴趣的可以了解一下。
 
        ![](./res/vim-macro.png)
 
@@ -876,11 +1118,10 @@ nginx version: nginx/1.12.2
 移除Nginx。
 
 ```Shell
-[root@iZwz97tbgo9lkabnat2lo8Z ~]# nginx -s stop
 [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y remove nginx
 ```
 
-下面以MySQL为例，演示如何使用rpm安装软件。要安装MySQL需要先到[MySQL官方网站](https://www.mysql.com/)下载对应的[RPM文件](https://dev.mysql.com/downloads/mysql/)，当然要选择和你使用的Linux系统对应的版本。MySQL现在是Oracle公司旗下的产品，在MySQL被收购后，MySQL的作者重新制作了一个MySQL的分支MariaDB，可以通过yum进行安装。如果要安装MySQL需要先通过yum删除`mariadb-libs`这个可能会跟MySQL底层库冲突的库，然后还需要安装一个名为`libaio`的依赖库。
+下面以MySQL为例，演示如何使用rpm安装软件。要安装MySQL需要先到[MySQL官方网站](https://www.mysql.com/)下载对应的[RPM文件](https://dev.mysql.com/downloads/mysql/)，当然要选择和你使用的Linux系统对应的版本。MySQL现在是Oracle公司旗下的产品，在MySQL被收购后，MySQL的作者重新制作了一个MySQL的分支MariaDB，可以通过yum进行安装。
 
 ```Shell
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# ls
@@ -890,13 +1131,17 @@ mysql-community-libs-5.7.22-1.el7.x86_64.rpm
 mysql-community-server-5.7.22-1.el7.x86_64.rpm
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y remove mariadb-libs
 [root@iZwz97tbgo9lkabnat2lo8Z mysql]# yum -y install libaio
-[root@iZwz97tbgo9lkabnat2lo8Z mysql]# ls | xargs rpm -ivh
-warning: mysql-community-client-5.7.22-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
-Preparing...                          ################################# [100%]
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]#rpm -ivh mysql-community-common-5.7.26-1.el7.x86_64.rpm
+...
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]#rpm -ivh mysql-community-libs-5.7.26-1.el7.x86_64.rpm
+...
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]#rpm -ivh mysql-community-client-5.7.26-1.el7.x86_64.rpm
+...
+[root@iZwz97tbgo9lkabnat2lo8Z mysql]#rpm -ivh mysql-community-server-5.7.26-1.el7.x86_64.rpm
 ...
 ```
 
-> 说明：由于MySQL和[MariaDB](https://mariadb.org/)的底层依赖库是有冲突的，所以上面我们首先用`yum`移除了名为mariadb-libs的依赖库并安装了名为libaio的依赖库。由于我们将安装MySQL所需的rpm文件放在一个独立的目录中，所以可以通过`ls`命令查看到安装文件并用`xargs`将`ls`的输出作为参数交给`rpm -ivh`来进行安装。关于MySQL和MariaDB之间的关系，可以阅读[维基百科](https://zh.wikipedia.org/wiki/MariaDB)上关于MariaDB的介绍。
+> 说明：由于MySQL和[MariaDB](https://mariadb.org/)的底层依赖库是有冲突的，所以上面我们首先用`yum`移除了名为mariadb-libs的依赖库并安装了名为libaio支持异步I/O操作的依赖库。关于MySQL和MariaDB之间的关系，可以阅读[维基百科](https://zh.wikipedia.org/wiki/MariaDB)上关于MariaDB的介绍。
 
 移除安装的MySQL。
 
@@ -981,13 +1226,15 @@ build environment:
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ./configure --prefix=/usr/local/python36 --enable-optimizations
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# make && make install
-   ... 配置环境变量 ...
+   ...
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ln -s /usr/local/python36/bin/python3.6 /usr/bin/python3
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 --version
    Python 3.6.5
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# python3 -m pip install -U pip
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# pip3 --version
    ```
+
+   > 说明：上面在安装好Python之后还需要注册PATH环境变量，将Python安装路径下bin文件夹的绝对路径注册到PATH环境变量中。注册环境变量可以修改用户主目录下的.bash_profile或者/etc目录下的profile文件，二者的区别在于前者相当于是用户环境变量，而后者相当于是系统环境变量。
 
 2. 安装Redis-3.2.12。
 
@@ -1005,31 +1252,33 @@ build environment:
 
 ### 配置服务
 
-1. 启动服务。
+我们可以Linux系统下安装和配置各种服务，也就是说我们可以把Linux系统打造成数据库服务器、Web服务器、缓存服务器、文件服务器、消息队列服务器等等。Linux下的大多数服务都被设置为守护进程（驻留在系统后台运行，但不会因为服务还在运行而导致Linux无法停止运行），所以我们安装的服务通常名字后面都有一个字母`d`，它是英文单词`daemon`的缩写，例如：防火墙服务叫firewalld，我们之前安装的MySQL服务叫mysqld，Apache服务器叫httpd等。在安装好服务之后，可以使用`systemctl`命令或`service`命令来完成对服务的启动、停止等操作，具体操作如下所示。
+
+1. 启动防火墙服务。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl start firewalld
    ```
 
-2. 终止服务。
+2. 终止防火墙服务。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl stop firewalld
    ```
 
-3. 重启服务。
+3. 重启防火墙服务。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl restart firewalld
    ```
 
-4. 查看服务。
+4. 查看防火墙服务状态。
 
     ```Shell
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl status firewalld
     ```
 
-5. 设置是否开机自启。
+5. 设置/禁用防火墙服务开机自启。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# systemctl enable firewalld
@@ -1042,7 +1291,33 @@ build environment:
 
 ### 计划任务
 
-1. 推迟执行的任务 - **at** / **batch** / **atq** / **atrm**。
+1. 在指定的时间执行命令
+
+   - **at** - 将任务排队，在指定的时间执行。
+   - **atq** - 查看待执行的任务队列。
+   - **atrm** - 从队列中删除待执行的任务。
+
+   指定3天以后下午5点要执行的任务。
+
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ at 5pm+3days
+   at> rm -f /root/*.html
+   at> <EOT>
+   job 9 at Wed Jun  5 17:00:00 2019
+   ```
+
+   查看待执行的任务队列。
+
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ atq
+   9       Wed Jun  5 17:00:00 2019 a hellokitty
+   ```
+
+   从队列中删除指定的任务。
+
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ atrm 9
+   ```
 
 2. 计划任务表 - **crontab**。
 
@@ -1051,7 +1326,7 @@ build environment:
    * * * * * echo "hello, world!" >> /root/hello.txt
    59 23 * * * rm -f /root/*.log
    ```
-   > 说明：输入`crontab -e`命令会打开vim来编辑Cron表达式并指定触发的任务，上面我们定制了两个计划任务，一个是每分钟向/root目录下的hello.txt中追加输出`hello, world!`；另一个是每天23时59分执行删除/root目录下以log为后缀名的文件。如果不知道Cron表达式如何书写，可以参照/etc/crontab文件中的提示（下面会讲到）或者用谷歌或百度搜索一下，也可以使用Cron表达式在线生成器来生成Cron表达式。
+   > 说明：输入`crontab -e`命令会打开vim来编辑Cron表达式并指定触发的任务，上面我们定制了两个计划任务，一个是每分钟向/root目录下的hello.txt中追加输出`hello, world!`；另一个是每天23时59分执行删除/root目录下以log为后缀名的文件。如果不知道Cron表达式如何书写，可以参照/etc/crontab文件中的提示（下面会讲到）或者用谷歌搜索一下，也可以使用Cron表达式在线生成器来生成Cron表达式。
 
    和crontab相关的文件在`/etc`目录下，通过修改`/etc`目录下的crontab文件也能够定制计划任务。
 
@@ -1088,13 +1363,25 @@ build environment:
 
 1. 安全远程连接 - **ssh**。
 
+    ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ ssh root@120.77.222.217
+   The authenticity of host '120.77.222.217 (120.77.222.217)' can't be established.
+   ECDSA key fingerprint is SHA256:BhUhykv+FvnIL03I9cLRpWpaCxI91m9n7zBWrcXRa8w.
+   ECDSA key fingerprint is MD5:cc:85:e9:f0:d7:07:1a:26:41:92:77:6b:7f:a0:92:65.
+   Are you sure you want to continue connecting (yes/no)? yes
+   Warning: Permanently added '120.77.222.217' (ECDSA) to the list of known hosts.
+   root@120.77.222.217's password: 
+    ```
+
 2. 通过网络获取资源 - **wget**。
 
    - -b 后台下载模式
    - -O 下载到指定的目录
    - -r 递归下载
 
-3. 网络配置工具（旧） - **ifconfig**。
+3. 发送和接收邮件 - **mail**。
+
+4. 网络配置工具（旧） - **ifconfig**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ifconfig eth0
@@ -1107,11 +1394,7 @@ build environment:
            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 
    ```
 
-4. 激活/禁用网络接口 - **ifup** / **ifdown**。
-
-5. 显示或管理路由表 - **route**。
-
-6. 网络配置工具（新） - **ip**。
+5. 网络配置工具（新） - **ip**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ip address
@@ -1125,7 +1408,7 @@ build environment:
           valid_lft forever preferred_lft forever
    ```
 
-7. 网络可达性检查 - **ping**。
+6. 网络可达性检查 - **ping**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# ping www.baidu.com -c 3
@@ -1138,21 +1421,25 @@ build environment:
    rtt min/avg/max/mdev = 36.392/36.406/36.427/0.156 ms
    ```
 
-8. 查看网络服务和端口 - **netstat**。
+7. 显示或管理路由表 - **route**。
+
+8. 查看网络服务和端口 - **netstat** / **ss**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# netstat -nap | grep nginx
    ```
 
-9. 查看网络状态 - **ss**。
+9. 网络监听抓包 - **tcpdump**。
 
-10. 网络监听抓包 - **tcpdump**。
+10. 安全文件拷贝 - **scp**。
 
-11. 安全文件拷贝 - **scp**。
+   ```Shell
+   [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
+   ```
 
-    ```Shell
-    [root@iZwz97tbgo9lkabnat2lo8Z ~]# scp root@1.2.3.4:/root/guido.jpg hellokitty@4.3.2.1:/home/hellokitty/pic.jpg
-    ```
+11. 文件同步工具 - **rsync**。
+
+    > 说明：使用`rsync`可以实现文件的自动同步，这个对于文件服务器来说相当重要。关于这个命令的用法，我们在后面讲项目部署的时候为大家详细说明。
 
 12. 安全文件传输 - **sftp**。
 
@@ -1198,9 +1485,54 @@ build environment:
 
 2. 显示进程状态树 - **pstree**。
 
-3. 通过进程号终止进程 - **kill**。
+    ```Shell
+    [root@izwz97tbgo9lkabnat2lo8z ~]# pstree
+    systemd─┬─AliYunDun───18*[{AliYunDun}]
+            ├─AliYunDunUpdate───3*[{AliYunDunUpdate}]
+            ├─2*[agetty]
+            ├─aliyun-service───2*[{aliyun-service}]
+            ├─atd
+            ├─auditd───{auditd}
+            ├─dbus-daemon
+            ├─dhclient
+            ├─irqbalance
+            ├─lvmetad
+            ├─mysqld───28*[{mysqld}]
+            ├─nginx───2*[nginx]
+            ├─ntpd
+            ├─polkitd───6*[{polkitd}]
+            ├─rsyslogd───2*[{rsyslogd}]
+            ├─sshd───sshd───bash───pstree
+            ├─systemd-journal
+            ├─systemd-logind
+            ├─systemd-udevd
+            └─tuned───4*[{tuned}]
+    ```
+
+3. 查找与指定条件匹配的进程 - **pgrep**。
 
    ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ pgrep mysqld
+   3584
+   ```
+
+4. 通过进程号终止进程 - **kill**。
+
+   ```Shell
+   [hellokitty@izwz97tbgo9lkabnat2lo8z ~]$ kill -l
+    1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+    6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+   11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+   16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+   21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+   26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+   31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+   38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+   43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+   48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+   53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+   58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+   63) SIGRTMAX-1  64) SIGRTMAX
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill 1234
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# kill -9 1234
    ```
@@ -1211,12 +1543,26 @@ build environment:
    ps -ef | grep redis | grep -v grep | awk '{print $2}' | xargs kill
     ```
 
-4. 通过进程名终止进程 - **killall**。
+5. 通过进程名终止进程 - **killall** / **pkill**。
 
-5. 将进程置于后台运行。
+    结束名为mysqld的进程。
 
-   - `Ctrl+Z`
-   - `&`
+    ```Shell
+    [root@izwz97tbgo9lkabnat2lo8z ~]# pkill mysqld
+    ```
+
+    结束hellokitty用户的所有进程。
+
+    ```Shell
+    [root@izwz97tbgo9lkabnat2lo8z ~]# pkill -u hellokitty
+    ```
+
+    > 说明：这样的操作会让hellokitty用户和服务器断开连接。
+
+6. 将进程置于后台运行。
+
+   - `Ctrl+Z` - 快捷键，用于停止进程并置于后台。
+   - `&` - 将进程置于后台运行。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# mongod &
@@ -1226,7 +1572,7 @@ build environment:
    [4]+  Stopped                 redis-server
    ```
 
-6. 查询后台进程 - **jobs**。
+7. 查询后台进程 - **jobs**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# jobs
@@ -1235,7 +1581,7 @@ build environment:
    [4]+  Stopped                 redis-server
    ```
 
-7. 让进程在后台继续运行 - **bg**。
+8. 让进程在后台继续运行 - **bg**。
 
    ```Shell
    [root@iZwz97tbgo9lkabnat2lo8Z ~]# bg %4
@@ -1246,27 +1592,52 @@ build environment:
    [4]-  Running                 redis-server &
    ```
 
-8. 将后台进程置于前台 - **fg**。
+9. 将后台进程置于前台 - **fg**。
 
     ```Shell
     [root@iZwz97tbgo9lkabnat2lo8Z ~]# fg %4
     redis-server
-    ^C5554:signal-handler (1530025281) Received SIGINT scheduling shutdown...
-    5554:M 26 Jun 23:01:21.413 # User requested shutdown...
-    5554:M 26 Jun 23:01:21.413 * Saving the final RDB snapshot before exiting.
-    5554:M 26 Jun 23:01:21.415 * DB saved on disk
-    5554:M 26 Jun 23:01:21.415 # Redis is now ready to exit, bye bye...
     ```
 
     > 说明：置于前台的进程可以使用`Ctrl+C`来终止它。
 
-9. 调整程序/进程运行时优先级 - **nice** / **renice**。
+10. 调整程序/进程运行时优先级 - **nice** / **renice**。
 
-10. 用户登出后进程继续工作 - **nohup**。
+11. 用户登出后进程继续工作 - **nohup**。
 
-11. 跟踪进程的系统调用 - **strace**。
+     ```Shell
+     [root@izwz97tbgo9lkabnat2lo8z ~]# nohup ping www.baidu.com > result.txt &
+     ```
 
-12. 实时监控进程占用资源状况 - **top**。
+12. 跟踪进程系统调用情况 - **strace**。
+
+     ```Shell
+     [root@izwz97tbgo9lkabnat2lo8z ~]# pgrep mysqld
+     8803
+     [root@izwz97tbgo9lkabnat2lo8z ~]# strace -c -p 8803
+     strace: Process 8803 attached
+     ^Cstrace: Process 8803 detached
+     % time     seconds  usecs/call     calls    errors syscall
+     ------ ----------- ----------- --------- --------- ----------------
+      99.18    0.005719        5719         1           restart_syscall
+       0.49    0.000028          28         1           mprotect
+       0.24    0.000014          14         1           clone
+       0.05    0.000003           3         1           mmap
+       0.03    0.000002           2         1           accept
+     ------ ----------- ----------- --------- --------- ----------------
+     100.00    0.005766                     5           total
+     ```
+
+     > 说明：这个命令的用法和参数都比较复杂，建议大家在真正用到这个命令的时候再根据实际需要进行了解。
+
+13. 查看当前运行级别 - **runlevel**。
+
+     ```Shell
+     [root@izwz97tbgo9lkabnat2lo8z ~]# runlevel
+     N 3
+     ```
+
+14. 实时监控进程占用资源状况 - **top**。
 
      ```Shell
      [root@iZwz97tbgo9lkabnat2lo8Z ~]# top
@@ -1278,11 +1649,33 @@ build environment:
      ...
      ```
 
+     - `-c` - 显示进程的整个路径。
+     - `-d` - 指定两次刷屏之间的间隔时间（秒为单位）。
+     - `-i` - 不显示闲置进程或僵尸进程。
+     - `-p` - 显示指定进程的信息。
+
 ### 系统诊断
 
 1. 系统启动异常诊断 - **dmesg**。
 
 2. 查看系统活动信息 - **sar**。
+
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# sar -u -r 5 10
+   Linux 3.10.0-957.10.1.el7.x86_64 (izwz97tbgo9lkabnat2lo8z)      06/02/2019      _x86_64_        (2 CPU)
+   
+   06:48:30 PM     CPU     %user     %nice   %system   %iowait    %steal     %idle
+   06:48:35 PM     all      0.10      0.00      0.10      0.00      0.00     99.80
+   
+   06:48:30 PM kbmemfree kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
+   06:48:35 PM   1772012   2108392     54.33    102816   1634528    784940     20.23    793328   1164704         0
+   ```
+
+   - `-A` - 显示所有设备（CPU、内存、磁盘）的运行状况。
+   - `-u` - 显示所有CPU的负载情况。
+   - `-d` - 显示所有磁盘的使用情况。
+   - `-r` - 显示内存的使用情况。
+   - `-n` - 显示网络运行状态。
 
 3. 查看内存使用情况 - **free**。
 
@@ -1343,24 +1736,37 @@ build environment:
    vdb               0.00         0.01         0.00       2088          0
    ```
 
-8. 查询网卡参数 - **ethtool**。
+8. 显示所有PCI设备 - **lspci**。
 
-9. 显示所有PCI设备 - **lspci**。
+   ```Shell
+   [root@izwz97tbgo9lkabnat2lo8z ~]# lspci
+   00:00.0 Host bridge: Intel Corporation 440FX - 82441FX PMC [Natoma] (rev 02)
+   00:01.0 ISA bridge: Intel Corporation 82371SB PIIX3 ISA [Natoma/Triton II]
+   00:01.1 IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II]
+   00:01.2 USB controller: Intel Corporation 82371SB PIIX3 USB [Natoma/Triton II] (rev 01)
+   00:01.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 03)
+   00:02.0 VGA compatible controller: Cirrus Logic GD 5446
+   00:03.0 Ethernet controller: Red Hat, Inc. Virtio network device
+   00:04.0 Communication controller: Red Hat, Inc. Virtio console
+   00:05.0 SCSI storage controller: Red Hat, Inc. Virtio block device
+   00:06.0 SCSI storage controller: Red Hat, Inc. Virtio block device
+   00:07.0 Unclassified device [00ff]: Red Hat, Inc. Virtio memory balloon
+   ```
 
-10. 显示进程间通信设施的状态 - **ipcs**。
+9. 显示进程间通信设施的状态 - **ipcs**。
 
-    ```Shell
-    [root@iZ8vba0s66jjlfmo601w4xZ ~]# ipcs
-    
-    ------ Message Queues --------
-    key        msqid      owner      perms      used-bytes   messages    
-    
-    ------ Shared Memory Segments --------
-    key        shmid      owner      perms      bytes      nattch     status      
-    
-    ------ Semaphore Arrays --------
-    key        semid      owner      perms      nsems
-    ```
+   ```Shell
+   [root@iZ8vba0s66jjlfmo601w4xZ ~]# ipcs
+   
+   ------ Message Queues --------
+   key        msqid      owner      perms      used-bytes   messages    
+   
+   ------ Shared Memory Segments --------
+   key        shmid      owner      perms      bytes      nattch     status      
+   
+   ------ Semaphore Arrays --------
+   key        semid      owner      perms      nsems
+   ```
 
 ### 相关资源
 

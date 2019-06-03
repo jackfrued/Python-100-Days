@@ -87,6 +87,12 @@
      netstat -nap | grep mysql
      ```
 
+     也可以使用下面的命令查找是否有名为mysqld的进程。
+
+     ```Shell
+     pgrep mysqld
+     ```
+
    - 使用MySQL客户端工具连接服务器。
 
      命令行工具：
@@ -177,35 +183,32 @@
    -- 创建学院表
    create table tb_college
    (
-   collid int not null auto_increment comment '编号',
-   collname varchar(50) not null comment '名称',
-   collmaster varchar(20) not null comment '院长',
-   collweb varchar(511) default '' comment '网站',
+   collid		int auto_increment comment '编号',
+   collname	varchar(50) not null comment '名称',
+   collmaster	varchar(20) not null comment '院长',
    primary key (collid)
    );
    
    -- 创建学生表
    create table tb_student
    (
-   stuid int not null comment '学号',
-   stuname varchar(20) not null comment '姓名',
-   stusex bit default 1 comment '性别',
-   stubirth date not null comment '出生日期',
-   stuaddr varchar(255) default '' comment '籍贯',
-   collid int not null comment '所属学院',
+   stuid		int not null comment '学号',
+   stuname		varchar(20) not null comment '姓名',
+   stusex		boolean default 1 comment '性别',
+   stubirth	date not null comment '出生日期',
+   stuaddr		varchar(255) default '' comment '籍贯',
+   collid		int not null comment '所属学院',
    primary key (stuid),
    foreign key (collid) references tb_college (collid)
    );
    
-   -- alter table tb_student add constraint fk_student_collid foreign key (collid) references tb_college (collid);
-   
    -- 创建教师表
    create table tb_teacher
    (
-   teaid int not null comment '工号',
-   teaname varchar(20) not null comment '姓名',
-   teatitle varchar(10) default '助教' comment '职称',
-   collid int not null comment '所属学院',
+   teaid		int not null comment '工号',
+   teaname		varchar(20) not null comment '姓名',
+   teatitle	varchar(10) default '助教' comment '职称',
+   collid		int not null comment '所属学院',
    primary key (teaid),
    foreign key (collid) references tb_college (collid)
    );
@@ -213,40 +216,37 @@
    -- 创建课程表
    create table tb_course
    (
-   couid int not null comment '编号',
-   couname varchar(50) not null comment '名称',
-   coucredit int not null comment '学分',
-   teaid int not null comment '授课老师',
+   couid		int not null comment '编号',
+   couname		varchar(50) not null comment '名称',
+   coucredit	int not null comment '学分',
+   teaid		int not null comment '授课老师',
    primary key (couid),
    foreign key (teaid) references tb_teacher (teaid)
    );
    
    -- 创建选课记录表
-   create table tb_score
+   create table tb_record
    (
-   scid int auto_increment comment '选课记录编号',
-   stuid int not null comment '选课学生',
-   couid int not null comment '所选课程',
-   scdate datetime comment '选课时间日期',
-   scmark decimal(4,1) comment '考试成绩',
-   primary key (scid),
-   foreign key (stuid) references tb_student (stuid),
-   foreign key (couid) references tb_course (couid)
+   recid		int auto_increment comment '选课记录编号',
+   sid			int not null comment '选课学生',
+   cid			int not null comment '所选课程',
+   seldate		datetime default now() comment '选课时间日期',
+   score		decimal(4,1) comment '考试成绩',
+   primary key (recid),
+   foreign key (sid) references tb_student (stuid),
+   foreign key (cid) references tb_course (couid),
+   unique (sid, cid)
    );
-   
-   -- 添加唯一性约束（一个学生选某个课程只能选一次）
-   alter table tb_score add constraint uni_score_stuid_couid unique (stuid, couid);
    ```
 
 2. DML
 
    ```SQL
-   
    -- 插入学院数据
-   insert into tb_college (collname, collmaster, collweb) values 
-   ('计算机学院', '左冷禅', 'http://www.abc.com'),
-   ('外国语学院', '岳不群', 'http://www.xyz.com'),
-   ('经济管理学院', '风清扬', 'http://www.foo.com');
+   insert into tb_college (collname, collmaster) values 
+   ('计算机学院', '左冷禅'),
+   ('外国语学院', '岳不群'),
+   ('经济管理学院', '风清扬');
    
    -- 插入学生数据
    insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) values
@@ -289,7 +289,7 @@
    (9999, '审计学', 3, 3366);
    
    -- 插入选课数据
-   insert into tb_score (stuid, couid, scdate, scmark) values 
+   insert into tb_record (sid, cid, seldate, score) values 
    (1001, 1111, '2017-09-01', 95),
    (1001, 2222, '2017-09-01', 87.5),
    (1001, 3333, '2017-09-01', 100),
@@ -304,9 +304,9 @@
    (1378, 1111, '2017-09-05', 82),
    (1378, 7777, '2017-09-02', 65.5),
    (2035, 7777, '2018-09-03', 88),
-   (2035, 9999, curdate(), null),
-   (3755, 1111, date(now()), null),
-   (3755, 8888, date(now()), null),
+   (2035, 9999, default, null),
+   (3755, 1111, default, null),
+   (3755, 8888, default, null),
    (3755, 9999, '2017-09-01', 92);
    ```
 
@@ -459,6 +459,26 @@
    - 一致性：事务应确保数据库的状态从一个一致状态转变为另一个一致状态
    - 隔离性：多个事务并发执行时，一个事务的执行不应影响其他事务的执行
    - 持久性：已被提交的事务对数据库的修改应该永久保存在数据库中
+
+3. MySQL中的事务操作
+
+   - 开启事务环境
+
+     ```SQL
+     start transaction
+     ```
+
+   - 提交事务
+
+     ```Shell
+     commit
+     ```
+
+   - 回滚事务
+
+     ```SQL
+     rollback
+     ```
 
 ### Python数据库编程
 

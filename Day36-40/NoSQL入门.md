@@ -345,8 +345,6 @@ mongo --host 172.18.61.250
 
 MongoDB shell version v3.6.5
 connecting to: mongodb://172.18.61.250:27017/
-...
-> 
 ```
 
 1. 查看、创建和删除数据库。
@@ -544,4 +542,4 @@ python3
 >>> 
 ```
 
-关于PyMongo更多的知识可以通过它的[官方文档](https://api.mongodb.com/python/current/tutorial.html)进行了解。
+关于PyMongo更多的知识可以通过它的[官方文档](https://api.mongodb.com/python/current/tutorial.html)进行了解，也可以使用[MongoEngine](<https://pypi.org/project/mongoengine/>)这样的库来简化Python程序对MongoDB的操作，除此之外，还有以异步I/O方式访问MongoDB的三方库[motor](<https://pypi.org/project/motor/>)都是不错的选择。

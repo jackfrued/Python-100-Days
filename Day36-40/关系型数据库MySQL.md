@@ -69,35 +69,22 @@
 
    - 启动MySQL服务。
 
-     先修改MySQL的配置文件（`/etc/my.cnf`）添加一行`skip-grant-tables`，可以设置不进行身份验证即可连接MySQL服务器，然后就可以以超级管理员（root）身份登录。
-
-     ```Shell
-     vim /etc/my.cnf
-     ```
-
-     ```INI
-     [mysqld]
-     skip-grant-tables
-     
-     datadir=/var/lib/mysql
-     socket=/var/lib/mysql/mysql.sock
-     
-     symbolic-links=0
-     
-     log-error=/var/log/mysqld.log
-     pid-file=/var/run/mysqld/mysqld.pid
-     ```
-
-     接下来可以使用下面的命令来启动MySQL。
+     可以使用下面的命令来启动MySQL。
 
      ```Shell
      service mysqld start
      ```
 
-     在CentOS 7中建议使用下面的命令来启动MySQL。
+     在CentOS 7中，更推荐使用下面的命令来启动MySQL。
 
      ```Shell
      systemctl start mysqld
+     ```
+
+     启动MySQL成功后，可以通过下面的命令来检查网络端口使用情况，MySQL默认使用3306端口。
+
+     ```Shell
+     netstat -nap | grep mysql
      ```
 
    - 使用MySQL客户端工具连接服务器。
@@ -105,25 +92,30 @@
      命令行工具：
 
      ```Shell
-     mysql -u root
-     ```
-
-     修改超级管理员（root）的访问口令为i_LOVE_macos_123。
-
-     ```SQL
-     use mysql;
-     update user set authentication_string=password('i_LOVE_macos_123') where user='root';
-     flush privileges;
-     ```
-
-     将MySQL配置文件中的`skip-grant-tables`去掉，然后重启服务器，重新登录。这一次需要提供用户名和口令才能连接MySQL服务器。
-
-     ```Shell
-     systemctl restart mysqld
      mysql -u root -p
      ```
 
-     也可以选择图形化的客户端工具来连接MySQL服务器，可以选择下列工具之一：
+     > 说明：启动客户端时，`-u`参数用来指定用户名，MySQL默认的超级管理账号为`root`；`-p`表示要输入密码（用户口令）；如果连接的是其他主机而非本机，可以用`-h`来指定连接主机的主机名或IP地址。
+
+     如果是首次安装MySQL，可以使用下面的命令来找到默认的初始密码。
+
+     ```Shell
+     cat /var/log/mysqld.log | grep password
+     ```
+
+     上面的命令会查看MySQL的日志带有password的行，在显示的结果中`root@localhost:`后面的部分就是默认设置的初始密码。
+
+     修改超级管理员（root）的访问口令为`123456`。
+
+     ```SQL
+     set global validate_password_policy=0;
+     set global validate_password_length=6;
+     alter user 'root'@'localhost' identified by '123456';
+     ```
+
+     > 说明：MySQL默认不允许使用弱口令作为用户口令，所以我们通过上面的前两条命令修改了验证用户口令的策略和口令的长度。事实上我们不应该使用弱口令，因为存在用户口令被暴力破解的风险。近年来，攻击数据库窃取数据和劫持数据库勒索比特币的事件屡见不鲜，要避免这些潜在的风险，最为重要的一点是不要让数据库服务器暴露在公网上（最好的做法是将数据库置于内网，至少要做到不向公网开放数据库服务器的访问端口），另外要保管好`root`账号的口令，应用系统需要访问数据库时，通常不使用`root`账号进行访问，而是创建其他拥有适当权限的账号来访问。
+
+     再次使用客户端工具连接MySQL服务器时，就可以使用新设置的口令了。在实际开发中，为了方便用户操作，可以选择图形化的客户端工具来连接MySQL服务器，包括：
 
      - MySQL Workbench（官方提供的工具）
      - Navicat for MySQL（界面简单优雅，功能直观强大）

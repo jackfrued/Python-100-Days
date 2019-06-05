@@ -554,7 +554,7 @@
    - [理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful.html)
    - [RESTful API设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
    - [RESTful API最佳实践](http://www.ruanyifeng.com/blog/2018/10/restful-api-best-practices.html)
-2. API接口文档的撰写（[《网络API接口设计》](Day91-100/网络API接口设计.md)）
+2. API接口文档的撰写
    - [RAP2](http://rap2.taobao.org/)
    - [YAPI](http://yapi.demo.qunar.com/)
 3. [django-REST-framework](https://www.django-rest-framework.org/)的应用
@@ -574,8 +574,6 @@
 
 ##### 项目部署
 
-> 说明：请参考[《项目部署上线指南》](Day91-100/项目部署上线指南.md)。
-
 1. 部署前的准备工作
    - 关键设置（SECRET_KEY / DEBUG / ALLOWED_HOSTS / 缓存 / 数据库）
    - HTTPS / CSRF_COOKIE_SECUR  / SESSION_COOKIE_SECURE  
@@ -591,8 +589,6 @@
 5. 虚拟化技术（Docker）
 
 ##### 性能测试
-
-> 说明：具体内容请参考[《Django知识点概述》](Day91-100/Django知识点概述.md)。
 
 1. AB的使用
 2. SQLslap的使用
@@ -611,13 +607,7 @@
 
 #### 第98天：[项目部署上线和性能调优](./Day91-100/98.项目部署上线和性能调优.md)
 
-1. 数据库性能调优 - 请参考[《MySQL相关知识》](Day91-100/MySQL相关知识.md)
-   - 软硬件优化
-   - SQL优化
-   - 架构优化
-     - 分表分库
-     - 主从复制，读写分离
-     - 集群架构
+1. MySQL数据库调优
 2. Web服务器性能优化
    - Nginx负载均衡配置
    - Keepalived实现高可用

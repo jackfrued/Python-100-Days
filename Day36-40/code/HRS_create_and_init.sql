@@ -51,15 +51,15 @@ insert into tb_emp values
 	(3588, '朱九真', '会计', 5566, 2500, null, 10);
 
 
--- 查询薪资最高的员工姓名和工资
+-- 查询月薪最高的员工姓名和工资
 
--- 查询员工的姓名和年薪((月薪+补贴)*12)
+-- 查询员工的姓名和年薪((月薪+补贴)*13)
 
 -- 查询有员工的部门的编号和人数
 
 -- 查询所有部门的名称和人数
 
--- 查询薪资最高的员工(Boss除外)的姓名和工资
+-- 查询月薪最高的员工(Boss除外)的姓名和工资
 
 -- 查询薪水超过平均薪水的员工的姓名和工资
 
@@ -69,24 +69,4 @@ insert into tb_emp values
 
 -- 查询主管的姓名和职位
 
--- 查询薪资排名4~6名的员工姓名和工资
-
--- use hrs;
-
--- drop procedure if exists sp_avg_sal_by_dept;
-
-
--- create procedure sp_avg_sal_by_dept(dno integer, out avg_sal float)
--- begin 
---     select avg(sal) into avg_sal from tb_emp where dno=dno;
--- end;
-
-
-
-
--- call sp_avg_sal_by_dept(10, @avgSal);
-
--- select @avgSal;
-
-
-
+-- 查询月薪排名4~6名的员工姓名和工资

@@ -7,7 +7,6 @@ Version: 0.1
 Author: 骆昊
 Date: 2018-03-02
 """
-
 import random
 
 answer = random.randint(1, 100)

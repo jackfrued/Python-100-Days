@@ -1,9 +1,0 @@
-asn1crypto==0.24.0
-cffi==1.11.5
-cryptography==2.3
-Django>=2.1.6
-idna==2.7
-pycparser==2.18
-PyMySQL==0.9.2
-pytz==2018.5
-six==1.11.0

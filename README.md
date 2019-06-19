@@ -570,7 +570,7 @@
    python manage.py inspectdb > app/models.py
    ```
 
-#### 第94天：[网络API接口设计](./Day91-100/94.网络API接口设计)
+#### 第94天：[网络API接口设计](./Day91-100/94.网络API接口设计.md)
 
 #### 第95天：[使用Django开发项目](./Day91-100/95.使用Django开发项目.md)
 

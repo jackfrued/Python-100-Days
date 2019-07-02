@@ -1,3 +1,0 @@
-tasks:
-  - before: gp open Day01-15/Day01/code/hello.py
-    command: python3 Day01-15/Day01/code/hello.py

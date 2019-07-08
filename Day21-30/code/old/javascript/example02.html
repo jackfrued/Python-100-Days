@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>成都机动车限行查询</title>
+		<style>
+			#search {
+				width: 640px;
+				margin: 0 auto;
+				text-align: center;
+				margin-top: 150px;
+			}
+			#carno {
+				display: inline-block;
+				width: 460px;
+				height: 36px;
+				font: 36px/36px arial;
+				text-align: center;
+				vertical-align: middle;
+				border: none;
+				outline: none;
+				border-bottom: 1px dotted darkgray;
+			}
+			#search input[type=button] {
+				width: 80px;
+				height: 36px;
+				font: 28px/36px arial;
+				border: none;
+				color: white;
+				background-color: red;
+				vertical-align: middle;
+			}
+			#result {
+				width: 640px;
+				margin: 0 auto;
+				text-align: center;
+				font: 32px/36px arial;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="search">
+			<input type="text" id="carno" placeholder="请输入车牌号">
+			<input type="button" value="查询" onclick="showResult()">
+			<input type="button" value="清除" onclick="clearResult()">
+		</div>
+		<hr>
+		<p id="result"></p>
+		<script>
+			var p = document.getElementById('result');
+			
+			function clearResult() {
+				p.textContent = '';
+			}
+			
+			function showResult() {
+				var input = document.getElementById('carno');
+				var carNo = input.value;
+				var regex = /^[京津沪渝辽吉黑冀鲁豫晋陕甘闽粤桂川云贵苏浙皖湘鄂赣青新宁蒙藏琼][A-Z]\s*[0-9A-Z]{5}$/;
+				if (regex.test(carNo)) {
+					var digitStr = lastDigit(carNo);
+					if (digitStr) {
+						var digit = parseInt(digitStr);
+						var day = new Date().getDay();
+						if (digit % 5 == day || digit % 5 == day - 5) {
+							p.innerHTML = carNo + '今日限行<br>' + p.innerHTML;
+						} else {
+							p.innerHTML = carNo + '今日不限行<br>' + p.innerHTML;
+						}
+					} else {
+						p.innerHTML = carNo + '不是有效的车牌号<br>' + p.innerHTML; 
+					}
+				} else {
+					p.innerHTML = carNo + '不是有效的车牌号<br>' + p.innerHTML; 
+				}
+				input.value = '';
+			}
+			
+			function lastDigit(str) {
+				for (var index = str.length - 1; index >= 0; index -= 1) {
+					var digitStr = str[index];
+					if (digitStr >= '0' && digitStr <= '9') {
+						return digitStr;
+					}
+				}
+				return null;
+			}
+		</script>
+	</body>
+</html>

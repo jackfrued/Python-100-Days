@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#one {
+				width: 400px;
+				height: 400px;
+				background-color: indianred;
+				margin: 60px auto;
+			}
+			#two {
+				width: 300px;
+				height: 300px;
+				background-color: darkseagreen;
+			}
+			#three {
+				width: 200px;
+				height: 200px;
+				background-color: lightsteelblue;
+			}
+			#two, #three {
+				position: relative;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="one">
+			<div id="two">
+				<div id="three"></div>
+			</div>
+		</div>
+		<script>
+			var one = document.querySelector('#one');
+			var two = document.querySelector('#two');
+			var three = document.querySelector('#three');
+			// addEventListener方法的第一个参数是事件名
+			// 第二个参数是事件发生时需要执行的回调函数
+			// 第三个参数是一个布尔值 
+			// 如果是true表示事件捕获 - 从外层向内层传递事件
+			// 如果是false表示事件冒泡 - 从内存向外层传递事件
+			// 一般情况下事件处理的方式都是事件冒泡（默认行为）
+			// 如果想阻止事件的传播行为可以调用事件对象的stopPropagation方法
+			one.addEventListener('click', function() {
+				window.alert('I am one!');
+			});
+			two.addEventListener('click', function() {
+				window.alert('I am two!');
+			});
+			// 事件回调函数中的第一个参数是事件对象（封装了和事件相关的信息）
+			three.addEventListener('click', function(evt) {
+				window.alert('I am three!');
+				evt.stopPropagation();
+			});
+		</script>
+	</body>
+</html>

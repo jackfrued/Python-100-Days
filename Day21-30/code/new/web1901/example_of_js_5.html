@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>类和对象</title>
+	</head>
+	<body>
+		<script>
+			class Person {
+				constructor(name, age) {
+					this.name = name
+					this.age = age
+				}
+				eat(food) {
+					alert(`${this.name}正在吃${food}`)
+				}
+				watchAv() {
+					if (this.age < 18) {
+						alert(`${this.name}只能看《熊出没》`)
+					} else {
+						alert(`${this.name}正在观看岛国爱情动作片`)
+					}
+				}
+			}
+			
+			let person = new Person('骆昊', 39)
+			person.eat('蛋炒饭')
+			let person2 = new Person('王大锤', 15)
+			person2.watchAv()
+			
+			// 构造器函数
+			/*
+			function Person(name, age) {
+				this.name = name
+				this.age = age
+			}
+			Person.prototype.eat = function(food) {
+				alert(this.name + '正在吃' + food)
+			}
+			Person.prototype.watchAv = function() {
+				if (this.age < 18) {
+					alert(this.name + '只能看《熊出没》')
+				} else {
+					alert(this.name + '正在观看岛国爱情动作片')
+				}
+			}
+			let person = new Person('骆昊', 39)
+			person.eat('蛋炒饭')
+			let person2 = new Person('王大锤', 15)
+			person2.watchAv()
+			*/
+			
+			// JSON - JavaScript Object Notation
+			// JavaScript对象表达式 - 创建对象的字面量语法
+			/*
+			const person = {
+				name: '骆昊',
+				age: 39,
+				eat: function(food) {
+					alert(this.name + '正在吃' + food)
+				},
+				watchAv: function() {
+					if (this.age < 18) {
+						alert(this.name + '只能看《熊出没》')
+					} else {
+						alert(this.name + '正在观看岛国爱情动作片')
+					}
+				}
+			}
+			// person.age = 15
+			person.eat('蛋炒饭')
+			person.watchAv()
+			*/
+		</script>
+	</body>
+</html>

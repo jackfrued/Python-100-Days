@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>给多个元素绑定事件</title>
+		<style>
+			#buttons>button {
+				border: none;
+				outline: none;
+				width: 120px;
+				height: 40px;
+				font: 22px/40px Arial;
+				background-color: red;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="buttons">
+			<button><input type="checkbox" disabled>苹果</button>
+			<button><input type="checkbox" disabled>香蕉</button>
+			<button><input type="checkbox" disabled>草莓</button>
+			<button><input type="checkbox" disabled>蓝莓</button>
+			<button><input type="checkbox" disabled>榴莲</button>
+			<button><input type="checkbox" disabled>西瓜</button>
+			<button><input type="checkbox" disabled>芒果</button>
+			<button><input type="checkbox" disabled>柠檬</button>
+		</div>
+		<script src="js/hello.js"></script>
+		<script>
+			const allButtons = document.querySelectorAll('#buttons>button')
+			allButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					let checkbox = button.firstChild
+					checkbox.checked = !checkbox.checked
+					// button.style.backgroundColor = 
+						// checkbox.checked? 'green' : 'red'
+					button.style.backgroundColor = randomColor()
+				})
+			})
+			// textContent / innerHTML
+			// image.src / image.title / image.style / checkbox.checked
+			// ES6的做法:
+// 			for (let i = 0; i < allButtons.length; i += 1) {
+// 				// 闭包(closure) - 将一个块级作用域的变量生命周期延长至了全局
+// 				allButtons[i].addEventListener('click', () => {
+// 					let checkbox = allButtons[i].firstChild
+// 					checkbox.checked = !checkbox.checked
+// 					allButtons[i].style.backgroundColor =
+// 						checkbox.checked? 'green' : 'red'
+// 				})
+// 			}
+			// ES5的做法:
+			// for (var i = 0; i < allButtons.length; i += 1) {
+				// allButtons[i].addEventListener('click', function(evt) {
+					// // 我们知道事件发生时要做什么但我们不知道事件什么时候发生
+					// // 在这种情况下就需要放置一个回调函数(callback function)
+					// // 绑定事件时传入的函数通常我们称之为回调函数
+					// // 当浏览器执行该回调函数时会传入一个代表事件的对象
+					// 通过事件对象的target属性就可以获取到事件源(谁引发了事件)
+					// var checkbox = evt.target.firstChild
+					// checkbox.checked = !checkbox.checked
+					// evt.target.style.backgroundColor =
+						// checkbox.checked? 'green' : 'red'
+				// })
+			//}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* { 
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				width: 960px;
+				margin: 20px auto;
+			}
+			#cart {
+				margin: 0 auto;
+				width: 850px;
+			}
+			#cart-header {
+				height: 40px;
+				background-color: lightgray;
+				margin-bottom: 20px;
+			}
+			#cart-header div {
+				line-height: 40px;
+			}
+			.left {
+				float: left;
+			}
+			.right {
+				float: right;
+			}
+			.w110 {
+				width: 100px;
+			}
+			.ml10 {
+				margin-left: 10px;
+			}
+			.w120 {
+				width: 120px;
+			}
+			.w250 {
+				width: 250px;
+			}
+			.center {
+				text-align: center;
+			}
+			.w20 {
+				width: 20px;
+			}
+			.w90 {
+				width: 90px;
+			}
+			.clear {
+				clear: both;
+			}
+			#cart-items>div {
+				height: 100px;
+			}
+			#cart-items>div>div {
+				line-height: 100px;
+			}
+			.w250 span {
+				display: inline-block;
+				font-size: 12px;
+				line-height: 16px !important;
+			}
+			.single-item {
+				border-bottom: 1px solid gray;
+			}
+			.small-button {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border: none;
+			}
+			.big-button {
+				color: white;
+				background-color: red;
+				display: inline-block;
+				width: 120px;
+				height: 40px;
+				border: none;
+				font-size: 22px;
+			}
+			#totalCount, #totalPrice {
+				color: red;
+			}
+			#totalPrice {
+				font: bolder 20px Arial;
+				display: inline-block;
+				width: 150px;
+			}
+			#cart a {
+				text-decoration: none;
+			}
+			#cart a:link, #cart a:visited, #cart a:active {
+				color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cart">
+			<div id="cart-header">
+				<div class="left w110 ml10">
+					<input id="selectAll" type="checkbox">
+					<label for="selectAll">全选</label>
+				</div>
+				<div class="left w250">商品</div>
+				<div class="left w120 center">单价</div>
+				<div class="left w120 center">数量</div>
+				<div class="left w120 center">小计</div>
+				<div class="left w120 center">操作</div>
+			</div>
+			<div id="cart-items">
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a1.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						海澜之家/Heilan Home春装商务白衬衫男修身HNCAD3A067Y 漂白(69) 漂
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">138.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;<span>138.00</span></div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a2.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						HLA海澜之家长袖衬衫男牛津纺休闲干净透气HNEAJ1E048A浅灰
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">128.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;<span>128.00</span></div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+				<div class="clear single-item">
+					<div class="left w20 ml10">
+						<input name="selectOne" type="checkbox">
+					</div>
+					<div class="left w90">
+						<a href="">
+							<img src="img/a3.jpg">
+						</a>
+					</div>
+					<div class="left w250">
+						<span>
+						HLA海澜之家牛津纺清新休闲衬衫2018春季新品质感柔软长袖衬衫男
+						</span>
+					</div>
+					<div class="left w120 center">&yen;<span class="price">99.00</span></div>
+					<div class="left w120 center">
+						<button class="small-button">-</button>
+						<input class="center count" readonly type="text" size="3" value="1">
+						<button class="small-button">+</button>
+					</div>
+					<div class="left w120 center">&yen;99.00</div>
+					<div class="left w120 center">
+						<a href="javascript:void(0);">删除</a>
+					</div>
+				</div>
+			</div>
+			<div id="cart-footer">
+				<div class="clear left">
+					<a id="clearSelected" href="javascript:void(0);">删除选中商品</a>
+				</div>
+				<div class="right">
+					<span>总共选中了<span id="totalCount">0</span>件商品</span>
+					<span>总计: <span id="totalPrice">&yen;0.00</span></span>
+					<button id="pay" class="big-button">去结算</button>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			function calcTotal() {
+				var amountsInput = $('.single-item input[type=text]');
+				var pricesSpan = $('.single-item .price');
+				var checkboxes = $('.single-item input[type=checkbox]');
+				var totalAmount = 0;
+				var totalPrice = 0;
+				amountsInput.each(function(index) {
+					if (checkboxes[index].checked) {
+						var amount = parseInt($(this).val());
+						totalAmount += amount;
+						var price = parseFloat($(pricesSpan[index]).text());
+						var currentPrice = (price * amount).toFixed(2);
+						$(this).parent().next().find('span').text(currentPrice);
+						totalPrice += parseFloat(currentPrice);
+					}
+				});
+				$('#totalCount').text(totalAmount);
+				$('#totalPrice').text('￥' + totalPrice.toFixed(2));
+			}
+			
+			$(function() {				
+				$('#selectAll').on('click', function(evt) {
+					$('.single-item input[type=checkbox]').prop('checked', evt.target.checked);
+					calcTotal();
+				});
+				
+				$('.single-item button').on('click', function(evt) {
+					var op = $(evt.target).text();
+					if (op == '-') {
+						var numInput = $(evt.target).next();
+						var num = parseInt(numInput.val());
+						if (num > 1) {
+							numInput.val(num - 1);
+						}
+					} else {
+						var numInput = $(evt.target).prev();
+						var num = parseInt(numInput.val());
+						if (num < 200) {
+							numInput.val(num + 1);
+						}
+					}
+					$(evt.target).parent().parent().find('input[type=checkbox]').prop('checked', true);
+					calcTotal();
+				});
+				
+				$('.single-item input[type=checkbox]').on('click', function() {
+					calcTotal();
+				});
+				
+				$('.single-item a').on('click', function(evt) {
+					if (confirm('确定要删除该商品吗?')) {
+						$(evt.target).parent().parent().remove();
+						calcTotal();
+					}
+				});
+				
+				$('#clearSelected').on('click', function() {
+					if (confirm('确定要删除选中的商品吗?')) {
+						$('.single-item').each(function() {
+							if ($(this).find('input:checkbox').prop('checked')) {
+								$(this).remove();
+							}
+						});
+						calcTotal();
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

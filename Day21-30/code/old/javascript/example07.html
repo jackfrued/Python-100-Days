@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			#container {
+				margin: 20px 50px;
+			}
+			#fruits li {
+				list-style: none;
+				width: 200px;
+				height: 50px;
+				font-size: 20px;
+				line-height: 50px;
+				background-color: cadetblue;
+				color: white;
+				text-align: center;
+				margin: 2px 0;
+			}
+			#fruits>li>a {
+				float: right;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				right: 5px;
+			}
+			#fruits~input {
+				border: none;
+				outline: none;
+				font-size: 18px;
+			}
+			#fruits~input[type=text] {
+				border-bottom: 1px solid darkgray;
+				width: 200px;
+				height: 50px;
+				text-align: center;
+			}
+			#fruits~input[type=button] {
+				width: 80px;
+				height: 30px;
+				background-color: coral;
+				color: white;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <a href="mailto:957658@qq.com">联系站长</a> -->
+		<div id="container">
+			<ul id="fruits">
+				<!-- a标签有默认的跳转页面的行为有两种方法可以阻止它的默认行为-->
+				<li>苹果<a href="">×</a></li>
+				<li>香蕉<a href="">×</a></li>
+				<li>火龙果<a href="">×</a></li>
+				<li>西瓜<a href="">×</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script src="js/mylib.js"></script>
+		<script>
+			function removeItem(evt) {
+				evt.preventDefault();
+				var a = evt.target || evt.srcElement;
+				var li = a.parentNode;
+				li.parentNode.removeChild(li);
+			}
+			
+			function addItem() {
+				var fruitName = input.value.trim();
+				if (fruitName.length > 0) {
+					var li = document.createElement('li');
+					li.textContent = fruitName;
+					li.style.backgroundColor = randomColor();
+					var a = document.createElement('a');
+					a.href = '';
+					a.textContent = '×';
+					a.addEventListener('click', removeItem);
+					li.appendChild(a);
+					ul.insertBefore(li, ul.firstChild);
+				}
+				input.value = '';
+				input.focus();
+			}
+			
+			var anchors = document.querySelectorAll('#fruits a');
+			for (var i = 0; i < anchors.length; i += 1) {
+				anchors[i].addEventListener('click', removeItem);
+			}
+			
+			var ul = document.getElementById('fruits');
+			var input = document.querySelector('#container input[type=text]');
+			input.addEventListener('keypress', function(evt) {
+				var key = evt.keyCode || evt.which;
+				if (key == 13) {
+					addItem();
+				}
+			});
+			var okButton = document.querySelector('#ok');
+			okButton.addEventListener('click', addItem);
+		</script>
+	</body>
+</html>

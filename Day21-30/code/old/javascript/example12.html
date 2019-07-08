@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="ok">换一组</button>
+		<div id="container"></div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var page = 0;
+				$('#ok').on('click', function() {
+					page += 1;
+					$.ajax({
+						'url': 'http://api.tianapi.com/meinv/',
+						'type': 'get',
+						'data': {
+							'key': '772a81a51ae5c780251b1f98ea431b84',
+							'num': 12,
+							'page': page
+						},
+						'dataType': 'json',
+						'success': function(jsonObj) {
+							$('#container').empty();
+							$.each(jsonObj.newslist, function(index, mmObj) {
+								var img = $('<img>').attr('width', '250')
+													.attr('src', mmObj.picUrl);
+								$('#container').append(img);
+							});
+						}
+					});
+					/*
+					var url = 'http://api.tianapi.com/meinv/?key=772a81a51ae5c780251b1f98ea431b84&num=10';
+					$.getJSON(url, function(jsonObj) {
+						$('#container').empty();
+						$.each(jsonObj.newslist, function(index, mm) {
+							$('#container').append(
+								$('<img>').attr('width', '250').attr('src', mm.picUrl)
+							);
+						});
+					});
+					*/
+				});
+			});
+		</script>
+	</body>
+</html>

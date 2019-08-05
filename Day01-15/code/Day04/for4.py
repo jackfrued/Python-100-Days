@@ -5,7 +5,6 @@ Version: 0.1
 Author: 骆昊
 Date: 2018-03-01
 """
-
 from math import sqrt
 
 num = int(input('请输入一个正整数: '))

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态列表</title>
+    <style>
+    	* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #000;
+			color: #fff;
+		}
+		#app {
+			width: 40%;
+			margin: 20px auto;
+		}
+		#fruits>li {
+			width: 90%;
+			height: 50px;
+			background-color: #6ca;
+			margin: 4px 0;
+			text-align: center;
+			font-size: 20px;
+			list-style-type: none;
+			line-height: 50px;
+		}
+		#fruits>li>a {
+			float: right;
+			color: #fff;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+		#fruits+div {
+			margin-top: 20px;
+		}
+		#fname {
+			width: 70%;
+			height: 40px;
+			color: #fff;
+			border-radius: 8px;
+			border: none;
+			outline: none;
+			font-size: 20px;
+			text-align: center;
+			vertical-align: middle;
+			background-color: #999;
+		}
+		#ok {
+			width: 19%;
+			height: 40px;
+			color: #fff;
+			background-color: #a45;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			vertical-align: middle;
+		}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul id="fruits">
+            <li>苹果<a href="">×</a></li>
+            <li>香蕉<a href="">×</a></li>
+            <li>榴莲<a href="">×</a></li>
+            <li>火龙果<a href="">×</a></li>
+        </ul>
+        <div>
+            <input type="text" id="fname">
+            <button id="ok">确定</button>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    // 1. $函数的参数是一个函数，该函数是页面加载完成后执行的回调函数
+    $(() => {
+        function removeItem(evt) {
+            evt.preventDefault()
+            // 4. $函数的参数是原生JavaScript对象，返回该原生JavaScript对象对应的jQuery对象
+            $(evt.target).parent().remove()
+        }
+
+        function addItem(evt) {
+            let fname = $('#fname').val().trim()
+            if (fname.length > 0) {
+                $('#fruits').append(
+                    // 3. $函数的参数是标签字符串，创建对应的标签元素并返回jQuery对象
+                    $('<li>').text(fname).append(
+                        $('<a>').attr('href', '').text('×')
+                        	.on('click', removeItem)
+                    )
+                )
+            }
+            $('#fname').val('')
+            // jQuery对象通过下标运算或get方法可以获得与之对应的原生JavaScript对象
+            // input.get(0).focus()
+            $('#fname')[0].focus()
+        }
+
+        // 2. $函数的参数是选择器字符串，返回对应元素的jQuery对象
+        $('#fruits a').on('click', removeItem)
+        $('#ok').on('click', addItem)
+        $('#fname').on('keydown', (evt) => {
+        	let code = evt.keyCode || evt.which
+        	if (code == 13) {
+        		addItem(evt) 
+        	}
+        })
+    })
+    </script>
+</body>
+</html>

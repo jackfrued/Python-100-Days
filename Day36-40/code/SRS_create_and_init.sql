@@ -216,7 +216,7 @@ select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student w
 );
 
 -- 查询选了两门以上的课程的学生姓名(子查询/分组条件/集合运算)
-select stuname from tb_student where stuid=(
+select stuname from tb_student where stuid in (
 	select stuid from tb_score group by stuid having count(stuid)>2
 )
 

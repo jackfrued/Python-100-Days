@@ -170,7 +170,7 @@
 - 读写Excel文件 - xlrd模块 / xlwt模块
 - 生成PDF文件 - pypdf2模块 / reportlab模块
 
-### Day16~Day20 - [Python语言进阶 ](./Day16-20/16.Python语言进阶.md)
+### Day16~Day20 - [Python语言进阶 ](./Day16-20/16-20.Python语言进阶.md)
 
 - 常用数据结构
 - 函数的高级用法 - “一等公民” / 高阶函数 / Lambda函数 / 作用域和闭包 / 装饰器
@@ -178,7 +178,7 @@
 - 迭代器和生成器 - 相关魔术方法 / 创建生成器的两种方式 / 
 - 并发和异步编程 - 多线程 / 多进程 / 异步IO / async和await
 
-### Day21~30 - [Web前端入门](./Day21-30/21.Web前端概述.md)
+### Day21~30 - [Web前端入门](./Day21-30/21-30.Web前端概述.md)
 
 - 用HTML标签承载页面内容
 - 用CSS渲染页面
@@ -188,7 +188,7 @@
 - Element的使用
 - Bootstrap的使用
 
-### Day31~35 - [玩转Linux操作系统](./Day31-35/31.玩转Linux操作系统.md)
+### Day31~35 - [玩转Linux操作系统](./Day31-35/31-35.玩转Linux操作系统.md)
 
 - 操作系统发展史和Linux概述
 - Linux基础命令
@@ -202,7 +202,7 @@
 
 ### Day36~40 - [数据库基础和进阶](./Day36-40)
 
-- [关系型数据库MySQL](./Day36-40/36.关系型数据库MySQL.md)
+- [关系型数据库MySQL](./Day36-40/36-38.关系型数据库MySQL.md)
   - 关系型数据库概述
   - MySQL的安装和使用
   - SQL的使用
@@ -214,7 +214,7 @@
     - 数据完整性
     - 数据一致性
   - 在Python中操作MySQL
-- [NoSQL入门](./Day36-40/39.NoSQL入门.md)
+- [NoSQL入门](./Day36-40/39-40.NoSQL入门.md)
   - NoSQL概述
   - Redis概述
   - Mongo概述

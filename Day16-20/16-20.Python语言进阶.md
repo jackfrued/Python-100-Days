@@ -70,7 +70,7 @@
      def merge(items1, items2, comp):
          """合并(将两个有序的列表合并成一个有序的列表)"""
          items = []
-         index, index2 = 0, 0
+         index1, index2 = 0, 0
          while index1 < len(items1) and index2 < len(items2):
              if comp(items1[index1], items2[index2]):
                  items.append(items1[index1])

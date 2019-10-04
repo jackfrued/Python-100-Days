@@ -1,6 +1,6 @@
 ## 玩转PyCharm
 
-PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个集成开发环境，它最大的优点是能够大大提升Python开发者的工作效率，为开发者集成了很多用起来非常顺手的功能，包括代码调试、高亮语法、代码跳转、智能提示、自动补全、单元测试、版本控制等等。此外，PyCharm还提供了对一些高级功能的支持，包括支持基于Django框架的Web开发、。
+PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个集成开发环境，它最大的优点是能够大大提升Python开发者的工作效率，为开发者集成了很多用起来非常顺手的功能，包括代码调试、高亮语法、代码跳转、智能提示、自动补全、单元测试、版本控制等等。此外，PyCharm还提供了对一些高级功能的支持，包括支持基于Django框架的Web开发。
 
 ### PyCharm的安装
 
@@ -46,4 +46,50 @@ PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个�
 
 ![](./res/pycharm-workspace.png)
 
-在工作窗口的右键菜单中可以找到“Run ...”和“Debug ...”菜单项，通过这两个菜单项我们就可以运行和调试我们的代码啦。建议关注一下菜单栏中的“Code”、“Refactor”和“Tools”菜单，这里面为编写Python代码提供了很多有用的帮助，我们在后面也会陆续为大家介绍这些功能。
+在工作窗口的右键菜单中可以找到“Run ...”和“Debug ...”菜单项，通过这两个菜单项我们就可以运行和调试我们的代码啦。建议关注一下菜单栏中的“Code”、“Refactor”和“Tools”菜单，这里面为编写Python代码提供了很多有用的帮助。
+
+### 创建Django项目
+
+#### 专业版
+
+PyCharm专业版提供了对Django、Flask、Google App Engine、web2py等Python Web框架以及SQL、UML、前端语言和框架、远程调试、虚拟化部署等功能的支持，如果使用PyCharm专业版，在创建项目时可以直接选择创建Django项目并设置模板语言以及放置模板页的文件夹。
+
+![](./res/pycharm-prof-django-3.png)
+
+创建好项目之后，打开终端输入`pip list`命令，可以看到项目所需的依赖项已经安装好了，而且可以直接点击屏幕右上方的运行或调试按钮来直接运行Django项目。
+
+![](./res/pycharm-prof-django-2.png)
+
+#### 社区版
+
+PyCharm社区版只能创建Python项目，如果项目中需要Django的支持，可以自行安装依赖库并创建Django项目。
+
+![](./res/pycharm-comm-django-1.png)
+
+创建好Python项目之后，可以打开屏幕下方的终端（Terminal），并通过`pip install`安装Django项目的依赖项，可以通过`-i https://pypi.doubanio.com/simple`来指定下载依赖库的镜像仓库。
+
+![](./res/pycharm-comm-django-2.png)
+
+当然也可以在项目的设置菜单中找到解释器配置，并选择要添加的依赖项。
+
+![](./res/pycharm-comm-django-7.png)
+
+下面是搜索依赖项的界面，可以通过点击“Install Package”按钮来安装指定的依赖项；也可以通过点击“Manage Repositories”按钮来指定下载依赖项的仓库，国内用户推荐使用豆瓣镜像<http://pypi.doubanio.com/simple>。
+
+![](./res/pycharm-comm-django-8.png)
+
+接下来可以在终端中输入`django-amdin startproject`指令来创建项目。
+
+![](./res/pycharm-comm-django-3.png)
+
+如果要运行项目，可以在终端中输入`python manage.py runserver`启动测试服务器。当然，也可以点击屏幕右上方的“Add Configuration”按钮，进入如下所示的配置界面，并点击窗口左上角的“+”来添加一个运行配置。
+
+![](./res/pycharm-comm-django-4.png)
+
+在配置窗口的右侧，指定要执行的脚本路径（Django项目的manage.py文件的位置）和运行参数（runserver），运行参数的后面还可以跟IP地址和端口。
+
+![](./res/pycharm-comm-django-5.png)
+
+注意到窗口的右上角了吗？现在可以点击运行或调试按钮来启动测试服务器运行项目了。
+
+![](./res/pycharm-comm-django-6.png)

@@ -1,0 +1,67 @@
+<!-- chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tornado聊天室</title>
+</head>
+<body>
+    <h1>聊天室</h1>
+    <hr>
+    <div>
+        <textarea id="contents" rows="20" cols="120" readonly></textarea>
+    </div>
+    <div class="send">
+        <input type="text" id="content" size="50">
+        <input type="button" id="send" value="发送">
+    </div>
+    <p>
+        <a id="quit" href="javascript:void(0);">退出聊天室</a>
+    </p>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            // 将内容追加到指定的文本区
+            function appendContent($ta, message) {
+                var contents = $ta.val();
+                contents += '\n' + message;
+                $ta.val(contents);
+                $ta[0].scrollTop = $ta[0].scrollHeight;
+            }
+            // 通过WebSocket发送消息
+            function sendMessage() {
+                message = $('#content').val().trim();
+                if (message.length > 0) {
+                    ws.send(message);
+                    appendContent($('#contents'), '我说：' + message);
+                    $('#content').val('');
+                }
+            }
+            // 创建WebSocket对象
+            var ws= new WebSocket('ws://localhost:8888/chat');
+            // 连接建立后执行的回调函数
+            ws.onopen = function(evt) {
+                $('#contents').val('~~~欢迎您进入聊天室~~~');
+            };
+            // 收到消息后执行的回调函数
+            ws.onmessage = function(evt) {
+                appendContent($('#contents'), evt.data);
+            };
+            // 为发送按钮绑定点击事件回调函数
+            $('#send').on('click', sendMessage);
+            // 为文本框绑定按下回车事件回调函数
+            $('#content').on('keypress', function(evt) {
+                keycode = evt.keyCode || evt.which;
+                if (keycode == 13) {
+                    sendMessage();
+                }
+            });
+            // 为退出聊天室超链接绑定点击事件回调函数
+            $('#quit').on('click', function(evt) {
+                ws.close();
+                location.href = '/login';
+            });
+        });
+    </script>
+</body>
+</html>

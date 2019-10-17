@@ -1,6 +1,6 @@
 ## 玩转PyCharm
 
-PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个集成开发环境，它最大的优点是能够大大提升Python开发者的工作效率，为开发者集成了很多用起来非常顺手的功能，包括代码调试、高亮语法、代码跳转、智能提示、自动补全、单元测试、版本控制等等。此外，PyCharm还提供了对一些高级功能的支持，包括支持基于Django框架的Web开发、。
+PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个集成开发环境，它最大的优点是能够大大提升Python开发者的工作效率，为开发者集成了很多用起来非常顺手的功能，包括代码调试、高亮语法、代码跳转、智能提示、自动补全、单元测试、版本控制等等。此外，PyCharm还提供了对一些高级功能的支持，包括支持基于Django框架的Web开发。
 
 ### PyCharm的安装
 
@@ -66,13 +66,15 @@ PyCharm社区版只能创建Python项目，如果项目中需要Django的支持�
 
 ![](./res/pycharm-comm-django-1.png)
 
-创建好Python项目之后，可以打开屏幕下方的终端（Terminal），并通过`pip install`安装Django项目的依赖项。
+创建好Python项目之后，可以打开屏幕下方的终端（Terminal），并通过`pip install`安装Django项目的依赖项，可以通过`-i https://pypi.doubanio.com/simple`来指定下载依赖库的镜像仓库。
 
 ![](./res/pycharm-comm-django-2.png)
 
 当然也可以在项目的设置菜单中找到解释器配置，并选择要添加的依赖项。
 
 ![](./res/pycharm-comm-django-7.png)
+
+下面是搜索依赖项的界面，可以通过点击“Install Package”按钮来安装指定的依赖项；也可以通过点击“Manage Repositories”按钮来指定下载依赖项的仓库，国内用户推荐使用豆瓣镜像<http://pypi.doubanio.com/simple>。
 
 ![](./res/pycharm-comm-django-8.png)
 
@@ -84,7 +86,7 @@ PyCharm社区版只能创建Python项目，如果项目中需要Django的支持�
 
 ![](./res/pycharm-comm-django-4.png)
 
-在配置窗口的右侧，指定要执行的脚本路径（Django项目的manage.py文件的位置）和运行参数（runserver）。
+在配置窗口的右侧，指定要执行的脚本路径（Django项目的manage.py文件的位置）和运行参数（runserver），运行参数的后面还可以跟IP地址和端口。
 
 ![](./res/pycharm-comm-django-5.png)
 

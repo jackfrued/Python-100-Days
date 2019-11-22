@@ -1,0 +1,120 @@
+<!--
+    HTML - 超文本标记语言 - 可以在浏览器中运行出网页的编程语言
+    1. 标签 - 承载网页上显示的内容
+    2. 层叠样式表 - 负责网页的显示
+    3. JavaScript - 负责交互行为
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>垃圾分类查询助手</title>
+    <!-- 
+        0. 可回收物（如：玻璃类、牛奶盒、金属类、塑料类、废纸类、织物类）
+        1. 有害垃圾（如：废电池、废墨盒、废油漆桶、过期药品、废灯管、杀虫剂）
+        2. 厨余垃圾（如：骨骼内脏、菜梗菜叶、果皮、茶叶渣、残枝落叶、剩菜剩饭）
+        3. 其他垃圾（如：宠物粪便、烟头、污染纸张、破旧陶瓷品、灰土、一次性餐具）
+    -->
+    <!-- 层叠样式表 -->
+    <style>
+        .search, .result {
+            width: 720px;
+            margin: 50px auto;
+        }
+        .search > input {
+            width: 520px;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 36px;
+            line-height: 36px;
+            border-bottom: 1px solid gray;
+            margin: 0 20px;
+        }
+        .search button {
+            background-color: red;
+            color: white;
+            font-size: 28px;
+            border: none;
+            outline: none;
+            width: 120px;
+        }
+        .result > p, .result > div {
+            width: 640px;
+            margin: 0 auto;
+        }
+        .result > p, .result span {
+            text-align: left;
+            font-size: 28px;
+        }
+        .result img {
+            vertical-align: middle;
+        }
+        .explain {
+            font-size: 12px;
+            color: darkgray;
+        }
+        .result .pre {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div 是代表一个逻辑区域的块标签 -->
+    <div id="app">
+        <div class="search">
+            <!-- type属性是text的input标签代表文本框 可以接收用户输入 -->
+            <!-- placeholder是文本框的输入提示 -->
+            <input type="text" placeholder="请输入垃圾名字" v-model="word" @keydown.enter="search()">
+            <!-- button代表按钮 点击可以开始查询 -->
+            <button @click="search()">查询</button>
+        </div>
+        <div class="result">
+            <!-- p代表一个段落 -->
+            <p v-if="searched && !results">没有对应的查询结果</p>
+            <div v-for="result in results">
+                <p>
+                    <!-- img是图像标签 可以用来实现图片-->
+                    <img :src="pictures[result.type]" width="56" :alt="types[result.type]">
+                    &nbsp;&nbsp;
+                    <!-- span是跨度标签 代表一个逻辑区域（不分段）-->
+                    <span>{{ result.name }}</span>
+                    &nbsp;&nbsp;
+                    <span class="pre" v-if="result.aipre == 1">（预测结果）</span>
+                </p>
+                <p class="explain">说明：{{ result.explain }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript代码 可以负责在用户点击查询按钮时联网获取垃圾分类结果 -->
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app', 
+            data: {
+                word: '',
+                searched: false,
+                types: ['可回收物', '有害垃圾', '厨余垃圾', '其他垃圾'],
+                pictures: ['recyclable.png', 'harmful-waste.png', 'kitchen-waste.png', 'other-waste.png'],
+                results: []
+            },
+            methods: {
+                // 查询垃圾分类的函数
+                search() {
+                    if (this.word.trim().length > 0) {
+                        let key = '9aeb28ee8858a167c1755f856f830e22'
+                        let url = `http://api.tianapi.com/txapi/lajifenlei/?key=${key}&word=${this.word}`
+                        fetch(url)
+                            .then(resp => resp.json())
+                            .then(json => {
+                                // 处理返回的JSON格式数据
+                                this.searched = true
+                                this.results = json.newslist
+                            })
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

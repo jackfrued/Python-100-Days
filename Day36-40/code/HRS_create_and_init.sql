@@ -32,6 +32,7 @@ dno int comment '所在部门编号',
 primary key (eno)
 );
 
+alter table tb_emp add constraint fk_emp_mgr foreign key (mgr) references tb_emp (eno);
 alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
 
 insert into tb_emp values 
@@ -51,7 +52,7 @@ insert into tb_emp values
 	(3588, '朱九真', '会计', 5566, 2500, null, 10);
 
 
--- 查询月薪最高的员工姓名和工资
+-- 查询月薪最高的员工姓名和月薪
 
 -- 查询员工的姓名和年薪((月薪+补贴)*13)
 
@@ -59,14 +60,14 @@ insert into tb_emp values
 
 -- 查询所有部门的名称和人数
 
--- 查询月薪最高的员工(Boss除外)的姓名和工资
+-- 查询月薪最高的员工(Boss除外)的姓名和月薪
 
--- 查询薪水超过平均薪水的员工的姓名和工资
+-- 查询薪水超过平均薪水的员工的姓名和月薪
 
--- 查询薪水超过其所在部门平均薪水的员工的姓名、部门编号和工资
+-- 查询薪水超过其所在部门平均薪水的员工的姓名、部门编号和月薪
 
--- 查询部门中薪水最高的人姓名、工资和所在部门名称
+-- 查询部门中薪水最高的人姓名、月薪和所在部门名称
 
 -- 查询主管的姓名和职位
 
--- 查询月薪排名4~6名的员工姓名和工资
+-- 查询月薪排名4~6名的员工姓名和月薪

@@ -570,7 +570,7 @@
     python manage.py inspectdb > app/models.py
     ```
 
-#### 第92天：[使用Docker部署应用](./Day91-100/92.使用Docker部署应用.md)
+#### 第92天：[Docker容器详解](./Day91-100/92.Docker容器详解.md)
 
 1. Docker简介
 2. 安装Docker

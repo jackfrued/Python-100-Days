@@ -21,13 +21,13 @@ define('port', default=8888, type=int)
 
 def get_mysql_connection():
     return connect(
-        host='120.77.222.217',
+        host='1.2.3.4',
         port=3306,
         db='hrs',
         charset='utf8',
         use_unicode=True,
-        user='root',
-        password='123456',
+        user='yourname',
+        password='yourpass',
     )
 
 

@@ -19,13 +19,13 @@ from service.handlers.handlers_for_charts import ChartHandler
 
 async def connect_mysql():
     return await aiomysql.connect(
-        host='1.2.3.4',
+        host='120.77.222.217',
         port=3306,
         db='hrs',
         charset='utf8',
         use_unicode=True,
-        user='yourname',
-        password='yourpass',
+        user='root',
+        password='123456',
     )
 
 

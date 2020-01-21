@@ -14,8 +14,10 @@ from tornado.options import define, options, parse_command_line
 
 define('port', default=8888, type=int)
 
+# 请求天行数据提供的API数据接口
 REQ_URL = 'http://api.tianapi.com/guonei/'
-API_KEY = '772a81a51ae5c780251b1f98ea431b84'
+# 在天行数据网站注册后可以获得API_KEY
+API_KEY = 'your_personal_api_key'
 
 
 class MainHandler(tornado.web.RequestHandler):

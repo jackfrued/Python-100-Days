@@ -1,45 +1,11 @@
-## Python - 100天从新手到大师
+### Hey
 
-> 作者：骆昊
->
-> 最近有很多想学习Python的小伙伴陆陆续续加入我们的交流群，目前我们的交流群人数已经超过一万人。我们的目标是打造一个优质的Python交流社区，一方面为想学习Python的初学者扫平入门过程中的重重障碍；另一方为新入行的开发者提供问道的途径，帮助他们迅速成长为优秀的职业人；此外，有经验的开发者可以利用这个平台把自己的工作经验无偿分享或有偿提供出来，让大家都能够得到职业技能以及综合素质的全面提升。之前的公开课和线下技术交流活动因为工作的关系荒废了一段时间了，但是各位小伙伴仍然活跃在交流群并一如既往的支持我们，在此向大家表示感谢。近期开始持续更新前15天和最后10天的内容，前15天是写给初学者的，我希望把上手的难度进一步降低，例子程序更加简单清晰；最后10天是Python项目实战和面试相关的东西，我希望内容更详实和完整，尤其是第100天的面试题部分；创作不易，感谢大家的打赏支持，这些钱不会用于购买咖啡而是通过腾讯公益平台捐赠给需要帮助的人（[点击](./更新日志.md)了解捐赠情况）。
 
-![](./res/python-qq-group.png)
+This is a quite good python learning source I find, for now the most of stuff has been written in Chinese but I will find the time to translate all of them into English version for everyone who wants getting into Python.
 
-### Python应用领域和就业形势分析
+So be patient ... because I have to read them all first :)
 
-简单的说，Python是一个“优雅”、“明确”、“简单”的编程语言。
-
- - 学习曲线低，非专业人士也能上手
- - 开源系统，拥有强大的生态圈
- - 解释型语言，完美的平台可移植性
- - 支持面向对象和函数式编程
- - 能够通过调用C/C++代码扩展功能
- - 代码规范程度高，可读性强
-
-目前几个比较流行的领域，Python都有用武之地。
-
- - 云基础设施 - Python / Java / Go
- - DevOps - Python / Shell / Ruby / Go
- - 网络爬虫 - Python / PHP / C++
- - 数据分析挖掘 - Python / R / Scala / Matlab
- - 机器学习 - Python / R / Java / Lisp
-
-作为一名Python开发者，主要的就业领域包括：
-
-- Python服务器后台开发 / 游戏服务器开发 / 数据接口开发工程师
-- Python自动化运维工程师
-- Python数据分析 / 数据可视化 / 大数据工程师
-- Python爬虫工程师
-- Python聊天机器人开发 / 图像识别和视觉算法 / 深度学习工程师
-
-下图显示了主要城市Python招聘需求量及薪资待遇排行榜（截止到2018年5月）。
-
-![Python招聘需求及薪资待遇Top 10](./res/python-top-10.png)
-
-![](./res/python-bj-salary.png)
-
-![](./res/python-salary-chengdu.png)
+---
 
 给初学者的几个建议：
 

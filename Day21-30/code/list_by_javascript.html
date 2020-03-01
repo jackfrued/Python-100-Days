@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态列表</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #000;
+			color: #fff;
+		}
+		#app {
+			width: 40%;
+			margin: 20px auto;
+		}
+		#fruits>li {
+			width: 90%;
+			height: 50px;
+			background-color: #6ca;
+			margin: 4px 0;
+			text-align: center;
+			font-size: 20px;
+			list-style-type: none;
+			line-height: 50px;
+		}
+		#fruits>li>a {
+			float: right;
+			color: #fff;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+		#fruits+div {
+			margin-top: 20px;
+		}
+		#fname {
+			width: 70%;
+			height: 40px;
+			color: #fff;
+			border-radius: 8px;
+			border: none;
+			outline: none;
+			font-size: 20px;
+			text-align: center;
+			vertical-align: middle;
+			background-color: #999;
+		}
+		#ok {
+			width: 19%;
+			height: 40px;
+			color: #fff;
+			background-color: #a45;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<ul id="fruits">
+			<li>苹果<a href="">×</a></li>
+			<li>香蕉<a href="">×</a></li>
+			<li>榴莲<a href="">×</a></li>
+			<li>火龙果<a href="">×</a></li>
+		</ul>
+		<div>
+			<input type="text" id="fname">
+			<button id="ok">确定</button>
+		</div>
+	</div>
+	<script>
+	const ul = document.querySelector('#fruits')
+	const fnameInput = document.querySelector('#fname')
+	const okBtn = document.querySelector('#ok')
+	const anchors = document.querySelectorAll('#fruits a')
+
+	function removeItem(evt) {
+		evt.preventDefault()
+		let li = evt.target.parentNode
+		li.parentNode.removeChild(li)
+	}
+
+	function addItem(evt) {
+		let fname = fnameInput.value.trim()
+		if (fname.length > 0) {
+			let li = document.createElement('li')
+			li.textContent = fname
+			let a = document.createElement('a')
+			a.setAttribute('href', '')
+			a.textContent = '×'
+			a.addEventListener('click', removeItem)
+			li.appendChild(a)
+			ul.insertBefore(li, ul.firstElementChild)
+		}
+		fnameInput.value = ''
+		fnameInput.focus()
+	}
+	
+	window.addEventListener('load', (evt) => {
+		for (let i = 0; i < anchors.length; i += 1) {
+			anchors[i].addEventListener('click', removeItem)
+		}
+
+		fnameInput.addEventListener('keydown', (evt) => {
+			let code = evt.keyCode || evt.which
+			if (code == 13) {
+				addItem()
+			} 
+		})
+		
+		okBtn.addEventListener('click', addItem)
+	})
+	</script>
+</body>
+</html>

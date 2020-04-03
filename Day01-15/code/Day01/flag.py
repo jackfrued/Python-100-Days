@@ -1,7 +1,9 @@
 """
 用Python的turtle模块绘制国旗
 """
-import turtle
+from turtle import Turtle,Screen
+turtle = Turtle()
+screen = Screen()
 
 
 def draw_rectangle(x, y, width, height):
@@ -10,7 +12,7 @@ def draw_rectangle(x, y, width, height):
     turtle.pencolor('red')
     turtle.fillcolor('red')
     turtle.begin_fill()
-    for i in range(2):
+    for _ in range(2):
         turtle.forward(width)
         turtle.left(90)
         turtle.forward(height)
@@ -67,7 +69,7 @@ def main():
     # 隐藏海龟
     turtle.ht()
     # 显示绘图窗口
-    turtle.mainloop()
+    screen.mainloop()
 
 
 if __name__ == '__main__':

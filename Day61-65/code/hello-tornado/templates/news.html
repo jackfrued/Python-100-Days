@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻列表</title>
+</head>
+<body>
+    <h1>新闻列表</h1>
+    <hr>
+    {% for news in newslist %}
+    <div>
+        <img src="{{news['picUrl']}}" alt="">
+        <p>{{news['title']}}</p>
+    </div>
+    {% end %}
+</body>
+</html>

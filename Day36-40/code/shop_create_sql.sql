@@ -1,6 +1,8 @@
-drop database if exists Shop;
-create database Shop default charset utf8;
-use Shop;
+drop database if exists shop;
+create database shop default charset utf8;
+	
+use shop;
+
 drop table if exists tb_goods;
 create table tb_goods
 (
@@ -10,6 +12,7 @@ gprice decimal(10,2) not null,
 gimage varchar(255),
 primary key (gid)
 );
+
 insert into tb_goods values 
 (default, '乐事（Lay’s）无限薯片', 8.2, 'images/lay.jpg'),
 (default, '旺旺 仙贝 加量装 540g', 18.5, 'images/wang.jpg'),

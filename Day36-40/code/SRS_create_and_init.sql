@@ -1,93 +1,74 @@
--- 关系型数据库可以保证数据的完整性
--- 实体完整性：每条记录都是独一无二的没有冗余 - 主键/唯一索引
--- 参照完整性（引用完整性）：外键
--- 域完整性：数据类型、非空约束、默认值约束、检查约束
+-- 如果存在名为school的数据库就删除它
+drop database if exists school;
 
+-- 创建名为school的数据库并设置默认的字符集和排序方式
+create database school default charset utf8 collate utf8_bin;
 
--- 创建SRS数据库
-drop database if exists srs;
-create database srs default charset utf8 collate utf8_bin;
-
--- 切换到srs数据库
-use srs;
+-- 切换到school数据库上下文环境
+use school;
 
 -- 创建学院表
 create table tb_college
 (
-collid int not null auto_increment comment '学院编号',
-collname varchar(50) not null comment '学院名称',
-collmaster varchar(20) not null comment '院长姓名',
-collweb varchar(511) default '' comment '学院网站',
+collid int not null auto_increment comment '编号',
+collname varchar(50) not null comment '名称',
+collmaster varchar(20) not null comment '院长',
+collweb varchar(511) default '' comment '网站',
 primary key (collid)
 );
-
--- 添加唯一约束
-alter table tb_college add constraint uni_college_collname unique (collname);
 
 -- 创建学生表
 create table tb_student
 (
 stuid int not null comment '学号',
-sname varchar(20) not null comment '学生姓名',
-gender bit default 1 comment '性别',
-birth date not null comment '出生日期',
-addr varchar(255) default '' comment '籍贯',
-collid int not null comment '所属学院编号',
-primary key (stuid)
+stuname varchar(20) not null comment '姓名',
+stusex bit default 1 comment '性别',
+stubirth date not null comment '出生日期',
+stuaddr varchar(255) default '' comment '籍贯',
+collid int not null comment '所属学院',
+primary key (stuid),
+foreign key (collid) references tb_college (collid)
 );
 
--- 检查约束（MySQL不支持它）
-alter table tb_student add constraint ck_student_birth 
-check (birth between '1990-1-1' and '1999-12-31');
-
--- 添加外键约束
-alter table tb_student add constraint fk_student_collid foreign key (collid) references tb_college (collid);
+-- alter table tb_student add constraint fk_student_collid foreign key (collid) references tb_college (collid);
 
 -- 创建教师表
 create table tb_teacher
 (
-teaid int not null comment '教师工号',
-tname varchar(20) not null comment '教师姓名',
-title varchar(10) default '' comment '职称',
-collid int not null comment '所属学院编号'
+teaid int not null comment '工号',
+teaname varchar(20) not null comment '姓名',
+teatitle varchar(10) default '助教' comment '职称',
+collid int not null comment '所属学院',
+primary key (teaid),
+foreign key (collid) references tb_college (collid)
 );
-
--- 添加主键约束
-alter table tb_teacher add constraint pk_teacher primary key (teaid);
-
--- 添加外键约束
-alter table tb_teacher add constraint fk_teacher_collid foreign key (collid) references tb_college (collid);
 
 -- 创建课程表
 create table tb_course
 (
-couid int not null comment '课程编号',
-cname varchar(50) not null comment '课程名称',
-credit tinyint not null comment '学分',
-teaid int not null comment '教师工号',
-primary key (couid)
+couid int not null comment '编号',
+couname varchar(50) not null comment '名称',
+coucredit int not null comment '学分',
+teaid int not null comment '授课老师',
+primary key (couid),
+foreign key (teaid) references tb_teacher (teaid)
 );
 
--- 添加外键约束
-alter table tb_course add constraint fk_course_tid foreign key (teaid) references tb_teacher (teaid);
-
--- 创建学生选课表
+-- 创建选课记录表
 create table tb_score
 (
-scid int not null auto_increment comment '选课编号',
-sid int not null comment '学号',
-cid int not null comment '课程编号',
-seldate date comment '选课时间日期',
-mark decimal(4,1) comment '考试成绩',
-primary key (scid)
+scid int auto_increment comment '选课记录编号',
+stuid int not null comment '选课学生',
+couid int not null comment '所选课程',
+scdate datetime comment '选课时间日期',
+scmark decimal(4,1) comment '考试成绩',
+primary key (scid),
+foreign key (stuid) references tb_student (stuid),
+foreign key (couid) references tb_course (couid)
 );
 
--- 添加外键约束
-alter table tb_score add constraint fk_score_sid foreign key (sid) references tb_student (stuid);
-alter table tb_score add constraint fk_score_cid foreign key (cid) references tb_course (couid);
--- 添加唯一约束
-alter table tb_score add constraint uni_score_sid_cid unique (sid, cid);
-
+-- 添加唯一性约束（一个学生选某个课程只能选一次）
+alter table tb_score add constraint uni_score_stuid_couid unique (stuid, couid);
 
 -- 插入学院数据
 insert into tb_college (collname, collmaster, collweb) values 
@@ -96,7 +77,7 @@ insert into tb_college (collname, collmaster, collweb) values
 ('经济管理学院', '风清扬', 'http://www.foo.com');
 
 -- 插入学生数据
-insert into tb_student (stuid, sname, gender, birth, addr, collid) values
+insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) values
 (1001, '杨逍', 1, '1990-3-4', '四川成都', 1),
 (1002, '任我行', 1, '1992-2-2', '湖南长沙', 1),
 (1033, '王语嫣', 0, '1989-12-3', '四川成都', 1),
@@ -109,7 +90,7 @@ insert into tb_student (stuid, sname, gender, birth, addr, collid) values
 (3923, '杨不悔', 0, '1985-4-17', '四川成都', 3);
 
 -- 插入老师数据
-insert into tb_teacher (teaid, tname, title, collid) values 
+insert into tb_teacher (teaid, teaname, teatitle, collid) values 
 (1122, '张三丰', '教授', 1),
 (1133, '宋远桥', '副教授', 1),
 (1144, '杨逍', '副教授', 1),
@@ -117,7 +98,7 @@ insert into tb_teacher (teaid, tname, title, collid) values
 (3366, '韦一笑', '讲师', 3);
 
 -- 插入课程数据
-insert into tb_course (couid, cname, credit, teaid) values 
+insert into tb_course (couid, couname, coucredit, teaid) values 
 (1111, 'Python程序设计', 3, 1122),
 (2222, 'Web前端开发', 2, 1122),
 (3333, '操作系统', 4, 1122),
@@ -129,7 +110,7 @@ insert into tb_course (couid, cname, credit, teaid) values
 (9999, '审计学', 3, 3366);
 
 -- 插入选课数据
-insert into tb_score (sid, cid, seldate, mark) values 
+insert into tb_score (stuid, couid, scdate, scmark) values 
 (1001, 1111, '2017-09-01', 95),
 (1001, 2222, '2017-09-01', 87.5),
 (1001, 3333, '2017-09-01', 100),
@@ -151,111 +132,111 @@ insert into tb_score (sid, cid, seldate, mark) values
 
 -- 查询所有学生信息
 select * from tb_student;
+
 -- 查询所有课程名称及学分(投影和别名)
-select cname as 课程名称, credit as 学分 from tb_course;
+select couname, coucredit from tb_course;
+select couname as 课程名称, coucredit as 学分 from tb_course;
+
+select stuname as 姓名, case stusex when 1 then '男' else '女' end as 性别 from tb_student;
+select stuname as 姓名, if(stusex, '男', '女') as 性别 from tb_student;
+
 -- 查询所有女学生的姓名和出生日期(筛选)
-select sname as 姓名, birth as 出生日期 from tb_student where gender=0;
+select stuname, stubirth from tb_student where stusex=0;
+
 -- 查询所有80后学生的姓名、性别和出生日期(筛选)
-select sname, gender, birth from tb_student where birth between '1980-1-1' and '1989-12-31';
--- 查询姓”杨“的学生姓名和性别(模糊)
-select sname, gender from tb_student where sname like '杨%';
--- 查询姓”杨“名字两个字的学生姓名和性别(模糊)
-select sname, gender from tb_student where sname like '杨_';
--- 查询姓”杨“名字三个字的学生姓名和性别(模糊)
-select sname, gender from tb_student where sname like '杨__';
--- 查询名字中有”不“字或“嫣”字的学生的姓名(模糊)
-select sname from tb_student where sname like '%不%' or sname like '%嫣%';
+select stuname, stusex, stubirth from tb_student where stubirth>='1980-1-1' and stubirth<='1989-12-31';
+select stuname, stusex, stubirth from tb_student where stubirth between '1980-1-1' and '1989-12-31';
+
+-- 查询姓"杨"的学生姓名和性别(模糊)
+select stuname, stusex from tb_student where stuname like '杨%';
+
+-- 查询姓"杨"名字两个字的学生姓名和性别(模糊)
+select stuname, stusex from tb_student where stuname like '杨_';
+
+-- 查询姓"杨"名字三个字的学生姓名和性别(模糊)
+select stuname, stusex from tb_student where stuname like '杨__';
+
+-- 查询名字中有"不"字或"嫣"字的学生的姓名(模糊)
+select stuname, stusex from tb_student where stuname like '%不%' or stuname like '%嫣%';
+
 -- 查询没有录入家庭住址的学生姓名(空值)
-select sname from tb_student where addr is null or addr='';
+select stuname from tb_student where stuaddr is null;
+
 -- 查询录入了家庭住址的学生姓名(空值)
-select sname from tb_student where addr is not null and addr<>'';
+select stuname from tb_student where stuaddr is not null;
+
 -- 查询学生选课的所有日期(去重)
-select distinct seldate from tb_score;
+select distinct scdate from tb_score;
+
 -- 查询学生的家庭住址(去重)
-select distinct addr from tb_student where addr is not null and addr<>'';
+select distinct stuaddr from tb_student where stuaddr is not null;
+
 -- 查询男学生的姓名和生日按年龄从大到小排列(排序)
-select sname, birth from tb_student where gender=1 order by birth asc;
--- max() / min() / sum() / avg() / count()
+-- asc - ascending - 升序（从小到大）
+-- desc - descending - 降序（从大到小）
+select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student where stusex=1 order by 年龄 desc;
+
+-- 聚合函数：max / min / count / sum / avg
 -- 查询年龄最大的学生的出生日期(聚合函数)
-select min(birth) from tb_student;
+select min(stubirth) from tb_student;
+
 -- 查询年龄最小的学生的出生日期(聚合函数)
-select max(birth) from tb_student;
+select max(stubirth) from tb_student;
+
 -- 查询男女学生的人数(分组和聚合函数)
-select if(gender, '男', '女') as 性别, count(gender) as 人数 
-from tb_student group by gender;
+select count(stuid) from tb_student;
+select stusex, count(*) from tb_student group by stusex;
+select stusex, min(stubirth) from tb_student group by stusex;
+
 -- 查询课程编号为1111的课程的平均成绩(筛选和聚合函数)
-select avg(mark) as 平均分 from tb_score where cid=1111;
+select avg(scmark) from tb_score where couid=1111;
+select min(scmark) from tb_score where couid=1111;
+select count(scid) from tb_score where couid=1111;
+select count(scmark) from tb_score where couid=1111;
+
 -- 查询学号为1001的学生所有课程的平均分(筛选和聚合函数)
-select avg(mark) as 平均分 from tb_score where sid=1001;
+select avg(scmark) from tb_score where stuid=1001;
+
 -- 查询每个学生的学号和平均成绩(分组和聚合函数)
-select sid, avg(mark) from tb_score where mark is not null group by sid;
+select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid;
+
 -- 查询平均成绩大于等于90分的学生的学号和平均成绩
-select sid, avg(mark) from tb_score group by sid having avg(mark)>=90;
--- 子查询 - 在一个查询中又使用到了另外一个查询的结果
--- 查询年龄最大的学生的姓名(子查询)
-select sname from tb_student where birth=(select min(birth) from tb_student);
+-- 分组以前的筛选使用where子句
+-- 分组以后的筛选使用having子句
+select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid having 平均分>=90;
+
+-- 查询年龄最大的学生的姓名(子查询/嵌套的查询)
+select stuname from tb_student where stubirth=(
+	select min(stubirth) from tb_student
+);
+
 -- 查询年龄最大的学生姓名和年龄(子查询+运算)
-select sname as 姓名, year(now()) - year(birth) as 年龄 
-from tb_student where birth=(select min(birth) from tb_student);
+select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student where stubirth=(
+	select min(stubirth) from tb_student
+);
+
 -- 查询选了两门以上的课程的学生姓名(子查询/分组条件/集合运算)
-select sname from tb_student where stuid in ( 
-select sid from tb_score group by sid having count(sid)>2);
--- 连接查询（联结查询/联接查询）
--- 查询学生姓名、课程名称以及成绩
-select sname, cname, mark 
-from tb_score t1, tb_student t2, tb_course t3 
-where t2.stuid=t1.sid and t3.couid=t1.cid and mark is not null;
+select stuname from tb_student where stuid in (
+	select stuid from tb_score group by stuid having count(stuid)>2
+)
 
-select sname, cname, mark from tb_student t1 
-inner join tb_score t2 on t1.stuid=t2.sid 
-inner join tb_course t3 on t3.couid=t2.cid 
-where mark is not null;
+-- 查询学生姓名、课程名称以及成绩(连接查询)
+select stuname, couname, scmark from tb_student t1, tb_course t2, tb_score t3 where t1.stuid=t3.stuid and t2.couid=t3.couid and scmark is not null;
+
+select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.stuid=t3.stuid inner join tb_course t2 on t2.couid=t3.couid where scmark is not null order by scmark desc limit 5 offset 10;
+
+select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.stuid=t3.stuid inner join tb_course t2 on t2.couid=t3.couid where scmark is not null order by scmark desc limit 10, 5;
+
+-- 单表：65535TB
+-- 单列：4G - LONGBLOB (Binary Large OBject) / LONGTEXT
 -- 查询选课学生的姓名和平均成绩(子查询和连接查询)
-select sname, avgmark from tb_student t1, 
-(select sid, avg(mark) as avgmark from tb_score group by sid) t2 
-where stuid=sid;
+select stuname, avgmark from tb_student t1, (select stuid, avg(scmark) as avgmark from tb_score group by stuid) t2 where t1.stuid=t2.stuid;
 
-select sname, avgmark from tb_student inner join 
-(select sid, avg(mark) as avgmark from tb_score group by sid) t2 
-on stuid=sid;
--- 注意：在连接查询时如果没有给出连接条件就会形成笛卡尔积
+select stuname, avgmark from tb_student t1 inner join 
+(select stuid, avg(scmark) as avgmark from tb_score group by stuid) t2 on t1.stuid=t2.stuid;
 
+-- 内连接（inner join）：只有满足连接条件的记录才会被查出来
+-- 外连接（outer join）：左外连接 / 右外连接 / 全外连接
+-- left outer join / right outer join / full outer join
 -- 查询每个学生的姓名和选课数量(左外连接和子查询)
--- 左外连接 - 把左表(写在前面的表)不满足连接条件的记录也查出来对应记录补null值
--- 右外连接 - 把右表(写在后面的表)不满足连接条件的记录也查出来对应记录补null值
-select sname, total from tb_student left join 
-(select sid, count(sid) as total from tb_score group by sid) tb_temp 
-on stuid=sid;
-
--- DDL (Data Definition Language)
--- DML (Data Manipulation Language)
--- DCL (Data Control Language)
-
--- 创建名为hellokitty的用户并设置口令
-create user 'hellokitty'@'%' identified by '123123';
-
--- 授权
-grant select on srs.* to 'hellokitty'@'%';
-grant insert, delete, update on srs.* to 'hellokitty'@'%';
-grant create, drop, alter on srs.* to 'hellokitty'@'%';
-
-grant all privileges on srs.* to 'hellokitty'@'%';
-grant all privileges on srs.* to 'hellokitty'@'%' with grant option;
-
--- 召回
-revoke all privileges on srs.* from 'hellokitty'@'%';
-
--- 事务控制
--- 开启事务环境
-begin;
--- start transaction;
-update tb_score set mark=mark-2 where sid=1001 and mark is not null;
-update tb_score set mark=mark+2 where sid=1002 and mark is not null;
--- 事务提交
-commit;
- -- 事务回滚
-rollback;
-
-begin;
-delete from tb_score;
-rollback;
+select stuname, ifnull(total, 0) from tb_student t1 left outer join (select stuid, count(stuid) as total from tb_score group by stuid) t2 on t1.stuid=t2.stuid;

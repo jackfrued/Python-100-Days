@@ -221,34 +221,28 @@
 
 ### Day41~55 - [实战Django](./Day41-55)
 
-#### Day41 - [快速上手](./Day41-55/41.快速上手.md)
+#### Day41 - [Django快速上手](./Day41-55/41.Django快速上手.md)
 
-- Web应用工作原理和HTTP协议
+- Web应用工作机制
+- HTTP请求和响应
 - Django框架概述
 - 5分钟快速上手
-- 使用视图模板
 
 #### Day42 - [深入模型](./Day41-55/42.深入模型.md)
 
 - 关系型数据库配置
-- 管理后台的使用
 - 使用ORM完成对模型的CRUD操作
+- 管理后台的使用
 - Django模型最佳实践
 - 模型定义参考
 
 #### Day43 - [静态资源和Ajax请求](./Day41-55/43.静态资源和Ajax请求.md)
 
 - 加载静态资源
-- 用Ajax请求获取数据
+- Ajax概述
+- 用Ajax实现投票功能
 
-#### Day44 - [表单的应用](./Day41-55/44.表单的应用.md)
-
-- 表单和表单控件
-- 跨站请求伪造和CSRF令牌
-- Form和ModelForm
-- 表单验证
-
-#### Day45 - [Cookie和Session](./Day41-55/45.Cookie和Session.md)
+#### Day44 - [Cookie和Session](./Day41-55/44.Cookie和Session.md)
 
 - 实现用户跟踪
 - cookie和session的关系

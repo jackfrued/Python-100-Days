@@ -1,5 +1,5 @@
 drop database if exists hrs;
-create database hrs default charset utf8;
+create database hrs default charset utf8mb4;
 
 use hrs;
 
@@ -13,6 +13,8 @@ dname varchar(10) not null comment '名称',
 dloc varchar(20) not null comment '所在地',
 primary key (dno)
 );
+
+-- alter table tb_dept add constraint pk_dept_dno primary key(dno);
 
 insert into tb_dept values 
 	(10, '会计部', '北京'),
@@ -29,11 +31,13 @@ mgr int comment '主管编号',
 sal int not null comment '员工月薪',
 comm int comment '每月补贴',
 dno int comment '所在部门编号',
-primary key (eno)
+primary key (eno),
+foreign key (dno) references tb_dept(dno),
+foreign key (mgr) references tb_emp(eno)
 );
 
-alter table tb_emp add constraint fk_emp_mgr foreign key (mgr) references tb_emp (eno);
-alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
+-- alter table tb_emp add constraint fk_emp_mgr foreign key (mgr) references tb_emp (eno);
+-- alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
 
 insert into tb_emp values 
 	(7800, '张三丰', '总裁', null, 9000, 1200, 20),
@@ -70,4 +74,4 @@ insert into tb_emp values
 
 -- 查询主管的姓名和职位
 
--- 查询月薪排名4~6名的员工姓名和月薪
+-- 查询月薪排名4~6名的员工排名、姓名和月薪

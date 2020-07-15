@@ -8,7 +8,7 @@ sample output: 1010
 """
 
 # input comma separated elements as string 
-str = str (raw_input ("Enter comma separated integers: "))
+str = str (input ("Enter comma separated integers: "))
 
 # conver to the list
 list = str.split (",")
@@ -17,3 +17,20 @@ list = str.split (",")
 li = []
 for i in list:
     li.append(i)
+#print(li)
+di = []
+for i in range(len(li)):
+    a = int(li[i], 2)
+    di.append(a)
+    i += 1
+#print(di)
+
+# print the numbers that are divisible by 5
+i = 0
+while i <= len(li):
+    if di[i] % 5 == 0:
+        print(li[i])
+        break
+    i += 1 
+else:
+    print('non is divisible by 5')

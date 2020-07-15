@@ -111,6 +111,9 @@ class TaobaoDownloaderMiddleWare(object):
 
     def __init__(self, timeout=None):
         self.timeout = timeout
+        # options = webdriver.ChromeOptions()
+        # options.add_argument('headless')
+        # self.browser = webdriver.Chrome(options=options)
         self.browser = webdriver.Chrome()
         self.browser.set_window_size(1000, 600)
         self.browser.set_page_load_timeout(self.timeout)

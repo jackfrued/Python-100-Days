@@ -3,10 +3,14 @@
 用while loop完成
 """
 a = int(input('int = '))
-while True:
-    for i in range(2, a):
-        if a % i != 0:
-            print(f'{a} is a prime') 
-        else:
-            print(f'{a} is not a prime')
+if a == 1:
+    print(f'{a} is not a prime')
+else:
+    i = 2
+    while i < a:
+        if a % i == 0:
+            print(f'{a} is not a prime') 
             break
+        i += 1
+    else:
+        print(f'{a} is a prime')

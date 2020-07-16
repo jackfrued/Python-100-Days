@@ -17,13 +17,41 @@ list = str.split (",")
 li = []
 for i in list:
     li.append(i)
-#print(li)
+print(li)
+# # convert to int list
+# bi = []
+# for i in range(len(li)):
+#     a = int(li[i])
+#     bi.append(a)
+# print(bi)
+# di = []
+# c = 0
+# for i in range(len(di)):
+#     for digit in di[i]:
+#         c = c*2 + int(digit)
+#         di.append(c)
+
+# print(di)
+# c = 0
+# di = []
+# for i in range(len(li)):
+#     for j in range(len(li[i])):
+#         c = c + pow(2, j)
+#         di.append(c)
+#     i += 1
+# print(di)
 di = []
 for i in range(len(li)):
-    a = int(li[i], 2)
-    di.append(a)
+    for j in li[i]:
+        base = 1
+        sum = 0
+        for digit in li[i]:
+            sum += base *2*int(digit)
+            base*2
+            di.append(j)
     i += 1
-#print(di)
+print(di)
+
 
 # print the numbers that are divisible by 5
 i = 0

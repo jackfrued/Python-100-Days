@@ -68,7 +68,7 @@
             </li>
         </ul>
         <div>
-            <input @keydown.enter="addItem()" type="text" id="fname" v-model="fname">
+            <input @keydown.enter="addItem()" type="text" id="fname" v-model.trim="fname">
             <button id="ok" @click="addItem()">确定</button>
         </div>
     </div>
@@ -82,8 +82,8 @@
         },
         methods: {
             addItem() {
-                if (this.fname.trim().length > 0) {
-                    this.fruits.push(this.fname.trim())
+                if (this.fname.length > 0) {
+                    this.fruits.push(this.fname)
                 }
                 this.fname = ''
             },

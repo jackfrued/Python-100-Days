@@ -71,10 +71,10 @@ IMAGES_STORE = './resources/'
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#     'image360.pipelines.SaveImagePipeline': 300,
-#     'image360.pipelines.SaveToMongoPipeline': 301,
-# }
+ITEM_PIPELINES = {
+    'image360.pipelines.SaveImagePipeline': 300,
+    'image360.pipelines.SaveToMongoPipeline': 301,
+}
 
 LOG_LEVEL = 'DEBUG'
 

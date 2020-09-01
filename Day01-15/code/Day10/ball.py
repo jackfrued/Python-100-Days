@@ -38,6 +38,17 @@ class Ball(object):
         self.color = color
         self.alive = True
 
+    def fixedCoordinates(self, screen):
+        """修正当前坐标"""
+        if self.x - self.radius <= 0:
+            self.x = self.radius
+        elif self.x + self.radius >= screen.get_width():
+            self.x = screen.get_width()-self.radius
+        if self.y - self.radius <= 0:
+            self.y = self.radius
+        elif self.y + self.radius >= screen.get_height():
+            self.y = screen.get_height()-self.radius
+
     def move(self, screen):
         """移动"""
         self.x += self.sx
@@ -46,8 +57,9 @@ class Ball(object):
             self.sx = -self.sx
         if self.y - self.radius <= 0 or self.y + self.radius >= screen.get_height():
             self.sy = -self.sy
+        self.fixedCoordinates(screen)
 
-    def eat(self, other):
+    def eat(self, other, screen):
         """吃其他球"""
         if self.alive and other.alive and self != other:
             dx, dy = self.x - other.x, self.y - other.y
@@ -56,6 +68,7 @@ class Ball(object):
                     and self.radius > other.radius:
                 other.alive = False
                	self.radius = self.radius + int(other.radius * 0.146)
+                self.fixedCoordinates(screen)
 
     def draw(self, screen):
         """在窗口上绘制球"""
@@ -102,7 +115,7 @@ def main():
         for ball in balls:
             ball.move(screen)
             for other in balls:
-                ball.eat(other)
+                ball.eat(other, screen)
 
 
 if __name__ == '__main__':

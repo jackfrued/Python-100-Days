@@ -171,8 +171,8 @@ def find_contacters(con):
 
 
 def main():
-    con = pymysql.connect(host='120.77.222.217', port=3306,
-                          user='root', passwd='123456',
+    con = pymysql.connect(host='1.2.3.4', port=3306,
+                          user='yourname', passwd='yourpass',
                           db='address', charset='utf8',
                           autocommit=True,
                           cursorclass=pymysql.cursors.DictCursor)

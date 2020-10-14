@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态列表</title>
+    <style>
+    	* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background-color: #000;
+			color: #fff;
+		}
+		#app {
+			width: 40%;
+			margin: 20px auto;
+		}
+		#fruits>li {
+			width: 90%;
+			height: 50px;
+			background-color: #6ca;
+			margin: 4px 0;
+			text-align: center;
+			font-size: 20px;
+			list-style-type: none;
+			line-height: 50px;
+		}
+		#fruits>li>a {
+			float: right;
+			color: #fff;
+			text-decoration: none;
+			margin-right: 10px;
+		}
+		#fruits+div {
+			margin-top: 20px;
+		}
+		#fname {
+			width: 70%;
+			height: 40px;
+			color: #fff;
+			border-radius: 8px;
+			border: none;
+			outline: none;
+			font-size: 20px;
+			text-align: center;
+			vertical-align: middle;
+			background-color: #999;
+		}
+		#ok {
+			width: 19%;
+			height: 40px;
+			color: #fff;
+			background-color: #a45;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			vertical-align: middle;
+		}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul id="fruits">
+            <li v-for="fruit in fruits">
+                {{ fruit }}
+                <a href="" @click.prevent="removeItem(fruit)">×</a>
+            </li>
+        </ul>
+        <div>
+            <input @keydown.enter="addItem()" type="text" id="fname" v-model.trim="fname">
+            <button id="ok" @click="addItem()">确定</button>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            fruits: ['苹果', '香蕉', '榴莲', '火龙果'],
+            fname: ''
+        },
+        methods: {
+            addItem() {
+                if (this.fname.length > 0) {
+                    this.fruits.push(this.fname)
+                }
+                this.fname = ''
+            },
+            removeItem(fruit) {
+				let index = this.fruits.indexOf(fruit)
+				if (index >= 0) {
+					this.fruits.splice(index, 1)
+				}
+            }
+        }
+    })
+    </script>
+</body>
+</html>

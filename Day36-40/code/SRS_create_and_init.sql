@@ -2,7 +2,7 @@
 drop database if exists school;
 
 -- 创建名为school的数据库并设置默认的字符集和排序方式
-create database school default charset utf8;
+create database school default charset utf8mb4;
 
 -- 切换到school数据库上下文环境
 use school;
@@ -34,7 +34,7 @@ create table tb_teacher
 (
 teaid 		int not null comment '工号',
 teaname 	varchar(20) not null comment '姓名',
-teatitle 	varchar(10) default '助教' comment '职称',
+teatitle 	varchar(10) default '讲师' comment '职称',
 collid 		int not null comment '所属学院',
 primary key (teaid),
 foreign key (collid) references tb_college (collid)
@@ -68,8 +68,8 @@ unique (sid, cid)
 -- 插入学院数据
 insert into tb_college (collname, collintro) values 
 ('计算机学院', '计算机学院1958年设立计算机专业，1981年建立计算机科学系，1998年设立计算机学院，2005年5月，为了进一步整合教学和科研资源，学校决定，计算机学院和软件学院行政班子合并统一运作、实行教学和学生管理独立运行的模式。 学院下设三个系：计算机科学与技术系、物联网工程系、计算金融系；两个研究所：图象图形研究所、网络空间安全研究院（2015年成立）；三个教学实验中心：计算机基础教学实验中心、IBM技术中心和计算机专业实验中心。'),
-('外国语学院', '四川大学外国语学院设有7个教学单位，6个文理兼收的本科专业；拥有1个一级学科博士授予点，3个二级学科博士授予点，5个一级学科硕士学位授权点，5个二级学科硕士学位授权点，5个硕士专业授权领域，同时还有2个硕士专业学位（MTI）专业；有教职员工210余人，其中教授、副教授80余人，教师中获得中国国内外名校博士学位和正在职攻读博士学位的教师比例占专任教师的60%以上。'),
-('经济管理学院', '四川大学经济学院前身是创办于1905年的四川大学经济科；已故经济学家彭迪先、张与九、蒋学模、胡寄窗、陶大镛、胡代光，以及当代学者刘诗白等曾先后在此任教或学习；1905年，四川大学设经济科；1924年，四川大学经济系成立；1998年，四川大学经济管理学院变更为四川大学经济学院。');
+('外国语学院', '外国语学院设有7个教学单位，6个文理兼收的本科专业；拥有1个一级学科博士授予点，3个二级学科博士授予点，5个一级学科硕士学位授权点，5个二级学科硕士学位授权点，5个硕士专业授权领域，同时还有2个硕士专业学位（MTI）专业；有教职员工210余人，其中教授、副教授80余人，教师中获得中国国内外名校博士学位和正在职攻读博士学位的教师比例占专任教师的60%以上。'),
+('经济管理学院', '经济学院前身是创办于1905年的经济科；已故经济学家彭迪先、张与九、蒋学模、胡寄窗、陶大镛、胡代光，以及当代学者刘诗白等曾先后在此任教或学习。');
 
 -- 插入学生数据
 insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) 
@@ -98,7 +98,7 @@ insert into tb_teacher (teaid, teaname, teatitle, collid) values
 (1133, '宋远桥', '副教授', 1),
 (1144, '杨逍', '副教授', 1),
 (2255, '范遥', '副教授', 2),
-(3366, '韦一笑', '讲师', 3);
+(3366, '韦一笑', default, 3);
 
 -- 插入课程数据
 insert into tb_course (couid, couname, coucredit, teaid) values 

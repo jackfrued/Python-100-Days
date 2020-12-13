@@ -74,17 +74,17 @@ insert into tb_college (collname, collintro) values
 -- 插入学生数据
 insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) 
 values
-	(1001, '杨逍', 1, '1990-3-4', '四川成都', 1),
-	(1002, '任我行', 1, '1992-2-2', '湖南长沙', 1),
-	(1033, '王语嫣', 0, '1989-12-3', '四川成都', 1),
-	(1572, '岳不群', 1, '1993-7-19', '陕西咸阳', 1),
-	(1378, '纪嫣然', 0, '1995-8-12', '四川绵阳', 1),
-	(1954, '林平之', 1, '1994-9-20', '福建莆田', 1),
-	(2035, '东方不败', 1, '1988-6-30', null, 2),
-	(3011, '林震南', 1, '1985-12-12', '福建莆田', 3),
-	(3755, '项少龙', 1, '1993-1-25', null, 3),
-	(3923, '杨不悔', 0, '1985-4-17', '四川成都', 3),
-	(4040, '炼腰的隔壁老王', 1, '1989-1-1', '四川成都', 2);
+    (1001, '杨逍', 1, '1990-3-4', '四川成都', 1),
+    (1002, '任我行', 1, '1992-2-2', '湖南长沙', 1),
+    (1033, '王语嫣', 0, '1989-12-3', '四川成都', 1),
+    (1572, '岳不群', 1, '1993-7-19', '陕西咸阳', 1),
+    (1378, '纪嫣然', 0, '1995-8-12', '四川绵阳', 1),
+    (1954, '林平之', 1, '1994-9-20', '福建莆田', 1),
+    (2035, '东方不败', 1, '1988-6-30', null, 2),
+    (3011, '林震南', 1, '1985-12-12', '福建莆田', 3),
+    (3755, '项少龙', 1, '1993-1-25', null, 3),
+    (3923, '杨不悔', 0, '1985-4-17', '四川成都', 3),
+    (4040, '炼腰的隔壁老王', 1, '1989-1-1', '四川成都', 2);
 
 -- 删除学生数据
 delete from tb_student where stuid=4040;
@@ -210,17 +210,17 @@ select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid ha
 
 -- 查询年龄最大的学生的姓名(子查询/嵌套的查询)
 select stuname from tb_student where stubirth=(
-	select min(stubirth) from tb_student
+    select min(stubirth) from tb_student
 );
 
 -- 查询年龄最大的学生姓名和年龄(子查询+运算)
 select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student where stubirth=(
-	select min(stubirth) from tb_student
+    select min(stubirth) from tb_student
 );
 
 -- 查询选了两门以上的课程的学生姓名(子查询/分组条件/集合运算)
 select stuname from tb_student where stuid in (
-	select stuid from tb_score group by stuid having count(stuid)>2
+    select stuid from tb_score group by stuid having count(stuid)>2
 )
 
 -- 查询学生姓名、课程名称以及成绩(连接查询)

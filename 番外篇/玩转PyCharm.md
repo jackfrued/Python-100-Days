@@ -12,23 +12,23 @@ PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个�
 
 第一次使用PyCharm时，会有一个导入设置的向导，如果之前没有使用PyCharm或者没有保存过设置的就直接选择“Do not import settings”进入下一步即可，下面是我在macOS系统下第一次使用PyCharm时的截图。
 
-![](./res/pycharm-import-settings.png)
+![](res/pycharm-import-settings.png)
 
 专业版的PyCharm是需要激活的，**强烈建议大家在条件允许的情况下支付费用来支持优秀的产品**，如果不用做商业用途或者不需要使用PyCharm的高级功能，我们可以暂时选择试用30天或者使用社区版的PyCharm。如果你是一名学生，希望购买PyCharm来使用，可以看看[教育优惠官方申请指南](https://sales.jetbrains.com/hc/zh-cn/articles/207154369)。如下图所示，我们需要点击“Evaluate”按钮来试用专业版PyCharm。
 
-![](./res/pycharm-activation.png)
+![](res/pycharm-activation.png)
 
 接下来是选择UI主题，可以根据个人喜好进行选择，深色的主题比较护眼而浅色的主题对比度更好。
 
-![](./res/pycharm-ui-themes.png)
+![](res/pycharm-ui-themes.png)
 
 再接下来是创建可以在“终端”或“命令行提示符”中运行PyCharm的启动脚本，当然也可以不做任何勾选，直接点击“Next: Featured plugins”按钮进入下一环节。
 
-![](./res/pycharm-create-launcher.png)
+![](res/pycharm-create-launcher.png)
 
 然后可以选择需要安装哪些插件，我们可以暂时什么都不安装，等需要的时候再来决定。
 
-![](./res/pycharm-install-plugins.png)
+![](res/pycharm-install-plugins.png)
 
 最后点击上图右下角的“Start using PyCharm”（开始使用PyCharm）就可以开启你的PyCharm之旅了。
 
@@ -36,17 +36,17 @@ PyCharm是由JetBrains公司开发的提供给Python专业的开发者的一个�
 
 启动PyCharm之后会来到一个欢迎页，在欢迎页上我们可以选择“创建新项目”（Create New Project）、“打开已有项目”（Open）和“从版本控制系统中检出项目”（Get from Version Control）。
 
-![](./res/pycharm-welcome.png)
+![](res/pycharm-welcome.png)
 
 如果选择了“Create New Project”来创建新项目就会打一个创建项目的向导页。下图所示是PyCharm专业版创建新项目的向导页，可以看出专业版支持的项目类型非常的多，而社区版只能创建纯Python项目（Pure Python），没有这一系列的选项。
 
-![](./res/pycharm-project-wizard.png)
+![](res/pycharm-project-wizard.png)
 
 接下来，我们要为项目创建专属的虚拟环境，每个Python项目最好都在自己专属的虚拟环境中运行，因为每个项目对Python解释器和三方库的需求并不相同，虚拟环境对不同的项目进行了隔离。在上图所示的界面在，我们可以选择新建虚拟环境（New environment using Virtualenv），这里的“Virtualenv”是PyCharm默认选择的创建虚拟环境的工具，我们就保留这个默认的选项就可以了。
 
 项目创建完成后就可以开始新建各种文件来书写Python代码了，如下图所示。左侧是项目浏览器，可以看到刚才创建的项目文件夹以及虚拟环境文件夹。我们可以在项目上点击鼠标右键，选择“New”，在选择“Python File”来创建Python代码文件，下图中我们创建了两个Python文件，分别是`poker_game.py`和`salary_system.py`。当然，如果愿意，也可以使用复制粘贴的方式把其他地方的Python代码文件复制到项目文件夹下。
 
-![](./res/pycharm-workspace.png)
+![](res/pycharm-workspace.png)
 
 在工作窗口点击鼠标右键可以在上下文菜单中找到“Run”选项，例如要运行`salary_system.py`文件，右键菜单会显示“Run 'salary_system'”选项，点击这个选项我们就可以运行Python代码啦，运行结果在屏幕下方的窗口可以看到，如下图所示。
 

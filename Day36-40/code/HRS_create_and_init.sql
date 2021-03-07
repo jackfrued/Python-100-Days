@@ -1,5 +1,5 @@
 drop database if exists hrs;
-create database hrs default charset utf8mb4;
+create database hrs default charset utf8mb4 collate utf8_bin;
 
 use hrs;
 

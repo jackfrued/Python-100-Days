@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>首页</title>
+        <style>
+            #fruits {
+                font-size: 1.25em;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>今天推荐的水果是：</h1>
+        <hr>
+        <ul id="fruits">
+            {% for fruit in fruits %}
+            <li>{{ fruit }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

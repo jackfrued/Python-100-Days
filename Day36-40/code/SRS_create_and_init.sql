@@ -2,7 +2,7 @@
 drop database if exists school;
 
 -- 创建名为school的数据库并设置默认的字符集和排序方式
-create database school default charset utf8 collate utf8_bin;
+create database school default charset utf8mb4;
 
 -- 切换到school数据库上下文环境
 use school;
@@ -10,35 +10,32 @@ use school;
 -- 创建学院表
 create table tb_college
 (
-collid int not null auto_increment comment '编号',
-collname varchar(50) not null comment '名称',
-collmaster varchar(20) not null comment '院长',
-collweb varchar(511) default '' comment '网站',
+collid 		int auto_increment comment '编号',
+collname 	varchar(50) not null comment '名称',
+collintro 	varchar(500) default '' comment '介绍',
 primary key (collid)
 );
 
 -- 创建学生表
 create table tb_student
 (
-stuid int not null comment '学号',
-stuname varchar(20) not null comment '姓名',
-stusex bit default 1 comment '性别',
-stubirth date not null comment '出生日期',
-stuaddr varchar(255) default '' comment '籍贯',
-collid int not null comment '所属学院',
+stuid 		int not null comment '学号',
+stuname 	varchar(20) not null comment '姓名',
+stusex 		boolean default 1 comment '性别',
+stubirth 	date not null comment '出生日期',
+stuaddr 	varchar(255) default '' comment '籍贯',
+collid 		int not null comment '所属学院',
 primary key (stuid),
 foreign key (collid) references tb_college (collid)
 );
 
--- alter table tb_student add constraint fk_student_collid foreign key (collid) references tb_college (collid);
-
 -- 创建教师表
 create table tb_teacher
 (
-teaid int not null comment '工号',
-teaname varchar(20) not null comment '姓名',
-teatitle varchar(10) default '助教' comment '职称',
-collid int not null comment '所属学院',
+teaid 		int not null comment '工号',
+teaname 	varchar(20) not null comment '姓名',
+teatitle 	varchar(10) default '讲师' comment '职称',
+collid 		int not null comment '所属学院',
 primary key (teaid),
 foreign key (collid) references tb_college (collid)
 );
@@ -46,48 +43,54 @@ foreign key (collid) references tb_college (collid)
 -- 创建课程表
 create table tb_course
 (
-couid int not null comment '编号',
-couname varchar(50) not null comment '名称',
-coucredit int not null comment '学分',
-teaid int not null comment '授课老师',
+couid 		int not null comment '编号',
+couname 	varchar(50) not null comment '名称',
+coucredit 	int not null comment '学分',
+teaid 		int not null comment '授课老师',
 primary key (couid),
 foreign key (teaid) references tb_teacher (teaid)
 );
 
 -- 创建选课记录表
-create table tb_score
+create table tb_record
 (
-scid int auto_increment comment '选课记录编号',
-stuid int not null comment '选课学生',
-couid int not null comment '所选课程',
-scdate datetime comment '选课时间日期',
-scmark decimal(4,1) comment '考试成绩',
-primary key (scid),
-foreign key (stuid) references tb_student (stuid),
-foreign key (couid) references tb_course (couid)
+recid 		int auto_increment comment '选课记录编号',
+sid 		int not null comment '选课学生',
+cid 		int not null comment '所选课程',
+seldate 	datetime default now() comment '选课时间日期',
+score 		decimal(4,1) comment '考试成绩',
+primary key (recid),
+foreign key (sid) references tb_student (stuid),
+foreign key (cid) references tb_course (couid),
+unique (sid, cid)
 );
 
--- 添加唯一性约束（一个学生选某个课程只能选一次）
-alter table tb_score add constraint uni_score_stuid_couid unique (stuid, couid);
-
 -- 插入学院数据
-insert into tb_college (collname, collmaster, collweb) values 
-('计算机学院', '左冷禅', 'http://www.abc.com'),
-('外国语学院', '岳不群', 'http://www.xyz.com'),
-('经济管理学院', '风清扬', 'http://www.foo.com');
+insert into tb_college (collname, collintro) values 
+('计算机学院', '计算机学院1958年设立计算机专业，1981年建立计算机科学系，1998年设立计算机学院，2005年5月，为了进一步整合教学和科研资源，学校决定，计算机学院和软件学院行政班子合并统一运作、实行教学和学生管理独立运行的模式。 学院下设三个系：计算机科学与技术系、物联网工程系、计算金融系；两个研究所：图象图形研究所、网络空间安全研究院（2015年成立）；三个教学实验中心：计算机基础教学实验中心、IBM技术中心和计算机专业实验中心。'),
+('外国语学院', '外国语学院设有7个教学单位，6个文理兼收的本科专业；拥有1个一级学科博士授予点，3个二级学科博士授予点，5个一级学科硕士学位授权点，5个二级学科硕士学位授权点，5个硕士专业授权领域，同时还有2个硕士专业学位（MTI）专业；有教职员工210余人，其中教授、副教授80余人，教师中获得中国国内外名校博士学位和正在职攻读博士学位的教师比例占专任教师的60%以上。'),
+('经济管理学院', '经济学院前身是创办于1905年的经济科；已故经济学家彭迪先、张与九、蒋学模、胡寄窗、陶大镛、胡代光，以及当代学者刘诗白等曾先后在此任教或学习。');
 
 -- 插入学生数据
-insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) values
-(1001, '杨逍', 1, '1990-3-4', '四川成都', 1),
-(1002, '任我行', 1, '1992-2-2', '湖南长沙', 1),
-(1033, '王语嫣', 0, '1989-12-3', '四川成都', 1),
-(1572, '岳不群', 1, '1993-7-19', '陕西咸阳', 1),
-(1378, '纪嫣然', 0, '1995-8-12', '四川绵阳', 1),
-(1954, '林平之', 1, '1994-9-20', '福建莆田', 1),
-(2035, '东方不败', 1, '1988-6-30', null, 2),
-(3011, '林震南', 1, '1985-12-12', '福建莆田', 3),
-(3755, '项少龙', 1, '1993-1-25', null, 3),
-(3923, '杨不悔', 0, '1985-4-17', '四川成都', 3);
+insert into tb_student (stuid, stuname, stusex, stubirth, stuaddr, collid) 
+values
+    (1001, '杨逍', 1, '1990-3-4', '四川成都', 1),
+    (1002, '任我行', 1, '1992-2-2', '湖南长沙', 1),
+    (1033, '王语嫣', 0, '1989-12-3', '四川成都', 1),
+    (1572, '岳不群', 1, '1993-7-19', '陕西咸阳', 1),
+    (1378, '纪嫣然', 0, '1995-8-12', '四川绵阳', 1),
+    (1954, '林平之', 1, '1994-9-20', '福建莆田', 1),
+    (2035, '东方不败', 1, '1988-6-30', null, 2),
+    (3011, '林震南', 1, '1985-12-12', '福建莆田', 3),
+    (3755, '项少龙', 1, '1993-1-25', null, 3),
+    (3923, '杨不悔', 0, '1985-4-17', '四川成都', 3),
+    (4040, '炼腰的隔壁老王', 1, '1989-1-1', '四川成都', 2);
+
+-- 删除学生数据
+delete from tb_student where stuid=4040;
+
+-- 更新学生数据
+update tb_student set stuname='杨过', stuaddr='湖南长沙' where stuid=1001;
 
 -- 插入老师数据
 insert into tb_teacher (teaid, teaname, teatitle, collid) values 
@@ -95,7 +98,7 @@ insert into tb_teacher (teaid, teaname, teatitle, collid) values
 (1133, '宋远桥', '副教授', 1),
 (1144, '杨逍', '副教授', 1),
 (2255, '范遥', '副教授', 2),
-(3366, '韦一笑', '讲师', 3);
+(3366, '韦一笑', default, 3);
 
 -- 插入课程数据
 insert into tb_course (couid, couname, coucredit, teaid) values 
@@ -110,7 +113,7 @@ insert into tb_course (couid, couname, coucredit, teaid) values
 (9999, '审计学', 3, 3366);
 
 -- 插入选课数据
-insert into tb_score (stuid, couid, scdate, scmark) values 
+insert into tb_record (sid, cid, seldate, score) values 
 (1001, 1111, '2017-09-01', 95),
 (1001, 2222, '2017-09-01', 87.5),
 (1001, 3333, '2017-09-01', 100),
@@ -125,9 +128,9 @@ insert into tb_score (stuid, couid, scdate, scmark) values
 (1378, 1111, '2017-09-05', 82),
 (1378, 7777, '2017-09-02', 65.5),
 (2035, 7777, '2018-09-03', 88),
-(2035, 9999, curdate(), null),
-(3755, 1111, date(now()), null),
-(3755, 8888, date(now()), null),
+(2035, 9999, default, null),
+(3755, 1111, default, null),
+(3755, 8888, default, null),
 (3755, 9999, '2017-09-01', 92);
 
 -- 查询所有学生信息
@@ -207,17 +210,17 @@ select stuid as 学号, avg(scmark) as 平均分 from tb_score group by stuid ha
 
 -- 查询年龄最大的学生的姓名(子查询/嵌套的查询)
 select stuname from tb_student where stubirth=(
-	select min(stubirth) from tb_student
+    select min(stubirth) from tb_student
 );
 
 -- 查询年龄最大的学生姓名和年龄(子查询+运算)
 select stuname as 姓名, year(now())-year(stubirth) as 年龄 from tb_student where stubirth=(
-	select min(stubirth) from tb_student
+    select min(stubirth) from tb_student
 );
 
 -- 查询选了两门以上的课程的学生姓名(子查询/分组条件/集合运算)
 select stuname from tb_student where stuid in (
-	select stuid from tb_score group by stuid having count(stuid)>2
+    select stuid from tb_score group by stuid having count(stuid)>2
 )
 
 -- 查询学生姓名、课程名称以及成绩(连接查询)
@@ -227,8 +230,6 @@ select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.
 
 select stuname, couname, scmark from tb_student t1 inner join tb_score t3 on t1.stuid=t3.stuid inner join tb_course t2 on t2.couid=t3.couid where scmark is not null order by scmark desc limit 10, 5;
 
--- 单表：65535TB
--- 单列：4G - LONGBLOB (Binary Large OBject) / LONGTEXT
 -- 查询选课学生的姓名和平均成绩(子查询和连接查询)
 select stuname, avgmark from tb_student t1, (select stuid, avg(scmark) as avgmark from tb_score group by stuid) t2 where t1.stuid=t2.stuid;
 

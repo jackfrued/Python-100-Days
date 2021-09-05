@@ -25,14 +25,13 @@ job varchar(20) not null comment '员工职位',
 mgr int comment '主管编号',
 sal int not null comment '员工月薪',
 comm int comment '每月补贴',
-dno int comment '所在部门编号',
-primary key (eno),
-foreign key (dno) references tb_dept(dno),
-foreign key (mgr) references tb_emp(eno)
+dno int comment '所在部门编号'
 );
 
+alter table tb_emp add constraint pk_emp_eno primary key (eno);
+alter table tb_emp add constraint uk_emp_ename unique (ename);
 -- alter table tb_emp add constraint fk_emp_mgr foreign key (mgr) references tb_emp (eno);
--- alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
+alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
 
 insert into tb_emp values 
     (7800, '张三丰', '总裁', null, 9000, 1200, 20),
@@ -61,11 +60,11 @@ insert into tb_emp values
 
 -- 查询月薪最高的员工(Boss除外)的姓名和月薪
 
--- 查询薪水超过平均薪水的员工的姓名和月薪
+-- 查询月薪超过平均月薪的员工的姓名和月薪
 
--- 查询薪水超过其所在部门平均薪水的员工的姓名、部门编号和月薪
+-- 查询月薪超过其所在部门平均月薪的员工的姓名、部门编号和月薪
 
--- 查询部门中薪水最高的人姓名、月薪和所在部门名称
+-- 查询部门中月薪最高的人姓名、月薪和所在部门名称
 
 -- 查询主管的姓名和职位
 

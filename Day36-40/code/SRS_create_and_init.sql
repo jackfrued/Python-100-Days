@@ -14,7 +14,7 @@ create table `tb_college`
 `col_name` varchar(50) not null comment '名称',
 `col_intro` varchar(5000) default '' comment '介绍',
 primary key (`col_id`)
-) engine=innodb;
+) engine=innodb comment '学院表';
 
 -- 创建学生表
 create table `tb_student`
@@ -27,7 +27,7 @@ create table `tb_student`
 `col_id` int unsigned not null comment '所属学院',
 primary key (`stu_id`),
 foreign key (`col_id`) references `tb_college` (`col_id`)
-) engine=innodb;
+) engine=innodb comment '学生表';
 
 -- 创建教师表
 create table `tb_teacher`
@@ -38,7 +38,7 @@ create table `tb_teacher`
 `col_id` int unsigned not null comment '所属学院',
 primary key (`tea_id`),
 foreign key (`col_id`) references `tb_college` (`col_id`)
-);
+) engine=innodb comment '老师表';
 
 -- 创建课程表
 create table `tb_course`
@@ -49,7 +49,7 @@ create table `tb_course`
 `tea_id` int unsigned not null comment '授课老师',
 primary key (`cou_id`),
 foreign key (`tea_id`) references `tb_teacher` (`tea_id`)
-);
+) engine=innodb comment '课程表';
 
 -- 创建选课记录表
 create table `tb_record`
@@ -63,7 +63,7 @@ primary key (`rec_id`),
 foreign key (`sid`) references `tb_student` (`stu_id`),
 foreign key (`cid`) references `tb_course` (`cou_id`),
 unique (`sid`, `cid`)
-);
+) engine=innodb comment '选课记录表';
 
 -- 插入学院数据
 insert into `tb_college` 

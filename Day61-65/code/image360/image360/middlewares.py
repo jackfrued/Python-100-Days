@@ -111,9 +111,6 @@ class TaobaoDownloaderMiddleWare(object):
 
     def __init__(self, timeout=None):
         self.timeout = timeout
-        # options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')
-        # self.browser = webdriver.Chrome(options=options)
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
         self.browser = webdriver.Chrome(options)
@@ -128,7 +125,6 @@ class TaobaoDownloaderMiddleWare(object):
     def process_request(self, request, spider):
         try:
             self.browser.get(request.url)
-            # Chrome对象的page_source代表了页面的HTML代码（带动态内容）
             return HtmlResponse(url=request.url, body=self.browser.page_source,
                                 request=request, encoding='utf-8', status=200)
         except TimeoutException:

@@ -9,3 +9,11 @@ for num in range(100,1000):
     # else print('%d不是水仙花数',(num))
 
 # 练习1 附加练习：数字颠倒顺序：
+num = int(input('请输入一个多位正整数：'))
+num_reversed = 0
+while num > 0:
+    num_reversed = num_reversed*10 + num%10
+    num //= 10
+print(num_reversed)
+
+# 练习2 百钱百鸡

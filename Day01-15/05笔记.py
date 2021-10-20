@@ -33,3 +33,48 @@ for xx in range(0,3):
 最终得到问题的解。这种方法看起来比较笨拙，但对于运算能力非常强大的计算机来说，
 通常都是一个可行的甚至是不错的选择，而且问题的解如果存在，这种方法一定能够找到它。
 '''
+
+# 练习3 CRAPS赌博游戏
+# 由于游戏规则较为复杂且难于验证，因此我这里仅给出伪代码：
+from random import randint
+money = 1000
+while money > 0:
+    # 【结构】第一种死循环直到输出正确结果的办法：
+    while True: # 【注意】大写开头的True才是逻辑值
+        debt = int(input('请下赌注：'))
+        if 0<debt<=money:
+            break
+
+    print('玩家要出了%d点：' % debt)
+
+    first = randint(1,6) + randint(1,6) # 相当于摇两次色子求和
+
+    # 【结构】判断是否进入下一次循环的办法：
+    needs_go_on = False
+    if 2<1:
+        print('玩家胜!')
+    elif 1>2:
+        print('玩家胜!')
+    else:
+        needs_go_on = True
+    # 【结构】第二种死循环直到输出正确结果的办法：
+    
+    while needs_go_on:
+        needs_go_on = False
+        if 5<3:
+            print('玩家胜!')
+        elif 3>5:
+            print('玩家胜!')
+        else:
+            needs_go_on = True
+print('你破产了, 游戏结束!')
+
+# 【说明】本程序一共三次循环，满足条件方才进入下一次循环。
+# 上一次的循环产生的结果可以作为下一次循环是否开始的逻辑判断条件
+# 也可以作为自身是否继续循环的条件
+
+
+# 有用的练习1~3
+
+# 有用的练习1：生成**斐波那契数列**的前20个数
+

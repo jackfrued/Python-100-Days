@@ -94,5 +94,53 @@ for _ in range(20):
 
 
 # 有用的练习2：找出10000以内的**完美数**
+import math
 
+for num in range(0,10001):
+    result = 0
+    # for factor in range(1,math.sqrt(num)+1):
+    for factor in range(1,int(num)+1):
+        if num % factor == 0:
+            result += factor
+    if num == result:
+        print(num)
 
+'''
+标准答案这部分，用了平方减小循环，并利用互补的因子直接求出大因子，这是利用了因式分解的互补特性。
+下面是标准答案
+'''
+import math
+
+for num in range(1, 10000):
+    result = 0
+    for factor in range(1, int(math.sqrt(num)) + 1):
+        if num % factor == 0:
+            result += factor
+            if factor > 1 and num // factor != factor:
+                result += num // factor
+    if result == num:
+        print(num)
+
+# 练习3：输出**100以内所有的素数**
+import math
+for num in range(2,101):
+    # for factor in range(2,math.sqrt(num)+1):
+    for factor in range(2, int(math.sqrt(num)) + 1):
+        if num % factor == 0:
+            break
+    if factor == int(math.sqrt(num)):
+        print(num,end=' ')
+
+# 标准答案（修改）：
+
+import math
+
+for num in range(2, 100):
+    # is_prime = True
+    for factor in range(2, int(math.sqrt(num)) + 1):
+        if num % factor == 0:
+        #    is_prime = False
+            break
+    #if is_prime:
+    if factor == int(math.sqrt(num)):
+        print(num, end=' ')

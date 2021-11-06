@@ -398,9 +398,9 @@ Python在以下领域都有用武之地。
 
 #### Day88 - [深度学习入门](./Day81-90/88.深度学习入门.md)
 
-#### Day89 - [Tensorflow概述](./Day81-90/89.Tensorflow概述.md)
+#### Day89 - [PyTorch概述](./Day81-90/89.PyTorch概述.md)
 
-#### Day90 - [Tensorflow实战](./Day81-90/90.Tensorflow实战.md)
+#### Day90 - [PyTorch实战](./Day81-90/90.PyTorch实战.md)
 
 ### Day91~100 - [团队项目开发](./Day91-100)
 

@@ -1,20 +1,14 @@
-"""
-判断输入的边长能否构成三角形
-如果能则计算出三角形的周长和面积
 
-Version: 0.1
-Author: 骆昊
-Date: 2018-02-28
-"""
 import math
 
 a = float(input('a = '))
 b = float(input('b = '))
 c = float(input('c = '))
-if a + b > c and a + c > b and b + c > a:
-    print('周长: %f' % (a + b + c))
-    p = (a + b + c) / 2
-    area = math.sqrt(p * (p - a) * (p - b) * (p - c))
-    print('面积: %f' % (area))
+
+if a + b < c or a + c < b or b + c < a:
+    print('%.1f, %.1f, and %.1f can not be edges of a triangle' % (a, b, c))
 else:
-    print('不能构成三角形')
+    p = a + b + c
+    s = p / 2
+    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
+    print('The perimeter of this trangle is %.1f, and the area of it is %.1f' % (p, area) )

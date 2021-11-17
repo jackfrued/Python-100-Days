@@ -1,17 +1,23 @@
 """
 输入两个正整数计算最大公约数和最小公倍数
-
-Version: 0.1
-Author: 骆昊
-Date: 2018-03-01
 """
+a = x = int(input('a = '))
+b = y = int(input('b = '))
 
-x = int(input('x = '))
-y = int(input('y = '))
-if x > y:
-    (x, y) = (y, x)
-for factor in range(x, 0, -1):
-    if x % factor == 0 and y % factor == 0:
-        print('%d和%d的最大公约数是%d' % (x, y, factor))
-        print('%d和%d的最小公倍数是%d' % (x, y, x * y // factor))
-        break
+if a < b:
+    a, b = b, a
+c = a % b
+while c != 0:
+    a, b = b, c
+    c = a % b
+# for i in range(1, min(a,b) + 1):
+#     if a % i == 0 and b % i == 0:
+#         c = i
+print(f'{b} is the gcd of {x} and {y}')
+
+
+# for j in range(max(a,b), a * b + 1):
+#     if j % a == 0 and j % b == 0:
+#         d = j
+d = x * y / b
+print(f'{d} is the lcm of {x} and {y}')

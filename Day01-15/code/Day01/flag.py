@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 用Python的turtle模块绘制国旗
 """

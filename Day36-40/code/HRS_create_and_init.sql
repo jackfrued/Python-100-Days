@@ -1,39 +1,43 @@
-drop database if exists hrs;
-create database hrs default charset utf8mb4;
+-- 创建名为hrs的数据库
+drop database if exists `hrs`;
+create database `hrs` default charset utf8mb4;
 
-use hrs;
+-- 切换到hrs数据库
+use `hrs`;
 
-create table tb_dept
+-- 创建部门表
+create table `tb_dept`
 (
-dno int not null comment '编号',
-dname varchar(10) not null comment '名称',
-dloc varchar(20) not null comment '所在地',
+`dno` int not null comment '编号',
+`dname` varchar(10) not null comment '名称',
+`dloc` varchar(20) not null comment '所在地',
 primary key (dno)
 );
 
-insert into tb_dept values 
+-- 插入4个部门
+insert into `tb_dept` values 
     (10, '会计部', '北京'),
     (20, '研发部', '成都'),
     (30, '销售部', '重庆'),
     (40, '运维部', '深圳');
 
-create table tb_emp
+-- 创建员工表
+create table `tb_emp`
 (
-eno int not null comment '员工编号',
-ename varchar(20) not null comment '员工姓名',
-job varchar(20) not null comment '员工职位',
-mgr int comment '主管编号',
-sal int not null comment '员工月薪',
-comm int comment '每月补贴',
-dno int comment '所在部门编号'
+`eno` int not null comment '员工编号',
+`ename` varchar(20) not null comment '员工姓名',
+`job` varchar(20) not null comment '员工职位',
+`mgr` int comment '主管编号',
+`sal` int not null comment '员工月薪',
+`comm` int comment '每月补贴',
+`dno` int comment '所在部门编号',
+primary key (eno),
+constraint `fk_emp_mgr` foreign key (`mgr`) references tb_emp (`eno`),
+constraint `fk_emp_dno` foreign key (`dno`) references tb_dept (`dno`)
 );
 
-alter table tb_emp add constraint pk_emp_eno primary key (eno);
--- alter table tb_emp add constraint uk_emp_ename unique (ename);
--- alter table tb_emp add constraint fk_emp_mgr foreign key (mgr) references tb_emp (eno);
--- alter table tb_emp add constraint fk_emp_dno foreign key (dno) references tb_dept (dno);
-
-insert into tb_emp values 
+-- 插入14个员工
+insert into `tb_emp` values 
     (7800, '张三丰', '总裁', null, 9000, 1200, 20),
     (2056, '乔峰', '分析师', 7800, 5000, 1500, 20),
     (3088, '李莫愁', '设计师', 2056, 3500, 800, 20),
@@ -52,13 +56,11 @@ insert into tb_emp values
 
 -- 查询月薪最高的员工姓名和月薪
 
--- 查询员工的姓名和年薪((月薪+补贴)*13)
+-- 查询员工的姓名和年薪(年薪=(sal+comm)*13)
 
 -- 查询有员工的部门的编号和人数
 
 -- 查询所有部门的名称和人数
-
--- 查询月薪最高的员工(Boss除外)的姓名和月薪
 
 -- 查询月薪超过平均月薪的员工的姓名和月薪
 

@@ -250,7 +250,11 @@ deploy:
 ```Markdown
 ---
 title: Python编程惯例
-category: Python基础
+categories: 
+- Python基础
+tags:
+- Python
+- PEP8
 date: 2019-8-1
 ---
 ## Python惯例

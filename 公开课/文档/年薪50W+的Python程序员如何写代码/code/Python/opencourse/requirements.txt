@@ -6,7 +6,7 @@ certifi==2020.4.5.1
 chardet==3.0.4
 decorator==4.4.2
 idna==2.9
-ipython==7.13.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 isort==4.3.21
 jedi==0.17.0

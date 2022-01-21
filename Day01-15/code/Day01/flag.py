@@ -19,24 +19,20 @@ def draw_rectangle(x, y, width, height):
 
 
 def draw_star(x, y, radius):
-    """绘制五角星"""
+    '''绘制五角星'''
     turtle.setpos(x, y)
-    pos1 = turtle.pos()
     turtle.circle(-radius, 72)
-    pos2 = turtle.pos()
     turtle.circle(-radius, 72)
-    pos3 = turtle.pos()
     turtle.circle(-radius, 72)
-    pos4 = turtle.pos()
     turtle.circle(-radius, 72)
-    pos5 = turtle.pos()
     turtle.color('yellow', 'yellow')
     turtle.begin_fill()
-    turtle.goto(pos3)
-    turtle.goto(pos1)
-    turtle.goto(pos4)
-    turtle.goto(pos2)
-    turtle.goto(pos5)
+    turtle.right(72)
+    for i in range(0,5):
+        turtle.fd(radius * 3/4)
+        turtle.left(72)
+        turtle.fd(radius * 3 / 4)
+        turtle.right(72*2)
     turtle.end_fill()
 
 

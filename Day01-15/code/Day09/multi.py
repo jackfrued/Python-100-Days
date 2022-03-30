@@ -46,8 +46,8 @@ class Musician(object):
 
 
 # 试一试下面的代码看看有什么区别
-# class Son(Monk, Father, Musician):
-# class Son(Musician, Father, Monk):
+# class Child(Monk, Parent, Musician):
+# class Child(Musician, Parent, Monk):
 
 
 class Son(Father, Monk, Musician):

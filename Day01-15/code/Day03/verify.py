@@ -8,6 +8,7 @@ Date: 2018-02-28
 # import getpass
 # from getpass import getpass
 # from getpass import *
+import getpass
 
 username = input('请输入用户名: ')
 password = input('请输入口令: ')

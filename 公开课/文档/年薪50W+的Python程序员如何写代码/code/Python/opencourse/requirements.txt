@@ -12,7 +12,7 @@ isort==4.3.21
 jedi==0.17.0
 lazy-object-proxy==1.4.3
 line-profiler==3.0.2
-lxml==4.5.0
+lxml==4.9.1
 mccabe==0.6.1
 memory-profiler==0.57.0
 numpy==1.18.3

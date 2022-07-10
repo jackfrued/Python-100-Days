@@ -1,3 +1,9 @@
+drop database if exists `app_store`;
+
+create database `app_store` default character set utf8mb4;
+
+use `app_store`;
+
 create table `app_info` (
 `id` bigint(20) not null auto_increment comment '自增id, app的id',
 `app_name` varchar(255) default '' comment '名称',
@@ -14,10 +20,8 @@ create table `app_info` (
 `version_desc` varchar(4096) default '' comment '',
 `create_time` datetime not null default '0000-00-00 00:00:00' comment '创建时间',
 `update_time` datetime not null default '0000-00-00 00:00:00' comment '更新时间',
-primary key (`id`),
-key `idx_app_name` (`app_name`),
-key `idx_developer` (`user_id`)
-) engine=innodb auto_increment=100000 default charset=utf8 comment='app基本信息表';
+primary key (`id`)
+) engine=innodb auto_increment=100000 default charset=utf8mb4 comment='app基本信息表';
 
 create table `app_ext_info` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -27,9 +31,8 @@ create table `app_ext_info` (
 `comment_count` int(10) unsigned not null default '0' comment '评论量',
 `create_time` int(10) not null default 0 comment '创建时间',
 `update_time` int(10) not null default 0 comment '更新时间',
-primary key (`id`),
-unique key `idx_app_id` (`app_id`)
-) engine=innodb default charset=utf8 comment='App扩展信息表';
+primary key (`id`)
+) engine=innodb default charset=utf8mb4 comment='App扩展信息表';
 
 create table `app_category` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -43,7 +46,7 @@ create table `app_category` (
 `create_time` int(10) not null default 0 comment '创建时间',
 `update_time` int(10) not null default 0 comment '更新时间',
 primary key (`id`)
-) engine=innodb default charset=utf8 comment='分类信息表';
+) engine=innodb default charset=utf8mb4 comment='分类信息表';
 
 create table `app_category_rel` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -51,8 +54,7 @@ create table `app_category_rel` (
 `category_id` bigint(20) unsigned not null default '0' comment '最低层分类id',
 primary key (`id`),
 unique key `idx_category_app` (`category_id`,`app_record_id`),
-key `idx_app` (`app_id`)
-) engine=innodb default charset=utf8 comment='App和分类关联表';
+) engine=innodb default charset=utf8mb4 comment='App和分类关联表';
 
 create table `app_comment` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -70,7 +72,7 @@ create table `app_comment` (
 `update_time` int(10) not null default 0 comment '更新时间',
 primary key (`id`),
 key `idx_app_status` (`app_id`, `status`, `top_flag`)
-) engine=innodb default charset=utf8 comment='评论信息表';
+) engine=innodb default charset=utf8mb4 comment='评论信息表';
 
 create table `user_app_relation` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -81,7 +83,7 @@ create table `user_app_relation` (
 `is_del` tinyint(4) not null default '0' comment '1：删除 0：未删除',
 primary key (`id`),
 key `idx_user_app` (`user_id`,`app_id`)
-) engine=innodb auto_increment=8063 default charset=utf8 comment='用户购买关系表';
+) engine=innodb auto_increment=8063 default charset=utf8mb4 comment='用户购买关系表';
 
 create table `bot_score` (
 `id` bigint(20) not null auto_increment comment '自增id',
@@ -93,4 +95,4 @@ create table `bot_score` (
 `update_time` int(10) not null default 0 comment '更新时间',
 primary key (`id`),
 unique key `idx_uid_score` (`app_id`,`commenter_uid`)
-) engine=innodb default charset=utf8 comment='App评分表';
+) engine=innodb default charset=utf8mb4 comment='App评分表';

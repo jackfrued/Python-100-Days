@@ -25,6 +25,8 @@ print(f1(c=2, b=3, a=1))
 # 可变参数
 def f2(*args):
     sum = 0
+    print(args)
+    print(type(args))       # 以元组tuple传参，以小括号()表示
     for num in args:
         sum += num
     return sum
@@ -34,9 +36,11 @@ print(f2(1, 2, 3))
 print(f2(1, 2, 3, 4, 5))
 print(f2())
 
+print(set([1,3,4,4]))   # 集合以花括号{}表示
+
 
 # 关键字参数
-def f3(**kw):
+def f3(**kw):           # 以字典dict形式传参，字典以花括号{}表示
     if 'name' in kw:
         print('欢迎你%s!' % kw['name'])
     elif 'tel' in kw:

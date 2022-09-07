@@ -1,21 +1,7 @@
-name: Translate README
-
-on:
-  push:
-    branches:
-      - main
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      # ISO Langusge Codes: https://cloud.google.com/translate/docs/languages  
-      - name: Adding README - English
-        uses: samadpls/translate-readme@master
-        with:
-          LANG: en
+- name: Readme Translate
+# You may pin to the exact commit or the version.
+# uses: InProgres/translate-readme@2f69b9f475c1f039788d3564f147b21b2eb0e7b7
+uses: InProgres/translate-readme@v2.3
+with:
+  # The Language you want to translate to in JSON format
+  LANG: # default is ['en', 'uk']

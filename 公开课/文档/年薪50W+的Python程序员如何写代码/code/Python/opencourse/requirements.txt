@@ -2,7 +2,7 @@ appnope==0.1.0
 astroid==2.3.3
 backcall==0.1.0
 beautifulsoup4==4.9.0
-certifi==2020.4.5.1
+certifi==2022.12.7
 chardet==3.0.4
 decorator==4.4.2
 idna==2.9

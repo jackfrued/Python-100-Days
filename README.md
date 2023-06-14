@@ -8,7 +8,7 @@
 >
 > 项目“Day80~90”部分目前仍在创作中，因为作者平时也挤不出太多时间来写文档，因此更新的速度比较缓慢，感谢大家的理解。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20211120192545.png">
+<img src="https://github.com/jackfrued/mypic/raw/master/20220616120218.JPG" style="zoom: 75%;">
 
 ### Python应用领域和职业发展分析
 

@@ -615,3 +615,6 @@ Python在以下领域都有用武之地。
 
 #### 第100天：[Python面试题实录](./Day91-100/100.Python面试题实录.md)
 
+#### 附录：[Python巩固与提高---网上教程参考]
+     Some online python studying program:
+     Udacity:    AI Programming with Python https://www.udacity.com/course/ai-programming-python-nanodegree--nd089

@@ -33,8 +33,11 @@ print(strtime)
 mydate = time.strptime('2018-1-1', '%Y-%m-%d')
 print(mydate)
 
-shutil.copy('/Users/Hao/hello.py', '/Users/Hao/Desktop/first.py')
-os.system('ls -l')
-os.chdir('/Users/Hao')
-os.system('ls -l')
-os.mkdir('test')
+# shutil.copy('/Users/Hao/hello.py', '/Users/Hao/Desktop/first.py')py
+# os.system('ls -l')
+# os.chdir('/Users/Hao')
+# os.system('ls -l')
+# os.mkdir('test')
+
+import sys
+print(sys.maxunicode)

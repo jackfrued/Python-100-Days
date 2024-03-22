@@ -6,16 +6,16 @@ import turtle
 
 def draw_rectangle(x, y, width, height):
     """绘制矩形"""
-    turtle.goto(x, y)
+    turtle.goto(x, y)       # 默认原点在中心，将原点向右移动x个像素，向上移动y个像素
     turtle.pencolor('red')
-    turtle.fillcolor('red')
-    turtle.begin_fill()
-    for i in range(2):
+    turtle.fillcolor('red') # 设置填充色
+    turtle.begin_fill()     # 开始填充
+    for i in range(2):      # 走两遍以下步骤，每遍画一半；也可以不写循环，直接写完整
         turtle.forward(width)
-        turtle.left(90)
+        turtle.left(90)     # 乌龟面向右侧，left为上，right为下，数值表示转向角度
         turtle.forward(height)
         turtle.left(90)
-    turtle.end_fill()
+    turtle.end_fill()       #结束填充
 
 
 def draw_star(x, y, radius):

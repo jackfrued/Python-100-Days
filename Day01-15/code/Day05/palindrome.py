@@ -14,6 +14,7 @@ while temp > 0:
     num2 *= 10
     num2 += temp % 10
     temp //= 10
+    # print(temp)
 if num == num2:
     print('%d是回文数' % num)
 else:

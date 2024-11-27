@@ -8,25 +8,33 @@ Date: 2018-03-20
 import multiprocessing
 import os
 
-
-def sub_task(queue):
-    print('子进程进程号:', os.getpid())
+def sub_task1(queue):
+    print('子进程进程号:',os.getpid())
     counter = 0
-    while counter < 1000:
+    while counter < 10:
         queue.put('Pong')
         counter += 1
 
-
-if __name__ == '__main__':
-    print('当前进程号:', os.getpid())
-    queue = multiprocessing.Queue()
-    p = multiprocessing.Process(target=sub_task, args=(queue,))
-    p.start()
+def sub_task2(queue):
     counter = 0
-    while counter < 1000:
+    while counter < 10:
         queue.put('Ping')
         counter += 1
-    p.join()
+
+def main():
+    print('当前进程号:', os.getpid())
+    queue = multiprocessing.Queue()
+    p1 = multiprocessing.Process(target=sub_task1, args=(queue,))
+    p1.start()
+    p1.join()
+
+    p2 = multiprocessing.Process(target=sub_task2, args=(queue,))
+    p2.start()
+    p2.join()
+
     print('子任务已经完成.')
-    for _ in range(2000):
+    for _ in range(20):
         print(queue.get(), end='')
+
+if __name__ == '__main__':
+    main()

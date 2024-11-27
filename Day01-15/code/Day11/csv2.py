@@ -8,10 +8,9 @@ Date: 2018-03-13
 
 import csv
 
-
 class Teacher(object):
 
-    def __init__(self, name, age, title):
+    def __init__(self,name,age,title):
         self.__name = name
         self.__age = age
         self.__title = title
@@ -29,16 +28,19 @@ class Teacher(object):
     def title(self):
         return self.__title
 
+def main():
+    filename = 'teacher.csv'
+    teachers = [Teacher('骆昊', 38, '叫兽'), Teacher('狄仁杰', 25, '砖家')]
 
-filename = 'teacher.csv'
-teachers = [Teacher('骆昊', 38, '叫兽'), Teacher('狄仁杰', 25, '砖家')]
+    try:
+        with open(filename,'w') as f:
+            writer = csv.writer(f)
+            for teacher in teachers:
+                writer.writerow([teacher.name,teacher.age,teacher.title])
+    except BaseException as e:
+        print('无法写入文件:',filename)
+    else:
+        print('保存数据完成!')
 
-try:
-    with open(filename, 'w') as f:
-        writer = csv.writer(f)
-        for teacher in teachers:
-            writer.writerow([teacher.name, teacher.age, teacher.title])
-except BaseException as e:
-    print('无法写入文件:', filename)
-else:
-    print('保存数据完成!')
+if __name__ == '__main__':
+    main()

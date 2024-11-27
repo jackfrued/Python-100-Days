@@ -50,7 +50,7 @@ if __name__ == '__main__':
         while not game_over:
             your_answer = int(input('请输入: '))
             game_over = gm.guess(your_answer)
-            print(gm.hint)
-        if gm.counter > 7:
+            print(gm._hint)
+        if gm._counter > 7:
             print('智商余额不足!')
         play_again = input('再玩一次?(yes|no)') == 'yes'

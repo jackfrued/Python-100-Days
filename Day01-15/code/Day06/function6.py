@@ -27,16 +27,17 @@ foo2()
 
 
 def foo3():
+    print("foo3")
     b = 100     # 局部变量
-    print(b)
+    print(b)    # 函数内部是局部变量的地盘，局部变量与全局变量同名时可体现
 
 
 foo3()
-print(b)
+print(b)        # 函数外部是全局部变量的地盘，局部变量与全局变量同名时可体现
 
 
 def foo4():
-    global b
+    global b    # 函数内部定义全局变量，会覆盖掉原来在之前其他位置定义的全局变量
     b = 200     # 全局变量
     print(b)
 

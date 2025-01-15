@@ -15,7 +15,7 @@ line-profiler==3.0.2
 lxml==4.5.0
 mccabe==0.6.1
 memory-profiler==0.57.0
-numpy==1.18.3
+numpy==1.22.2
 pandas==1.0.3
 parso==0.7.0
 pexpect==4.8.0

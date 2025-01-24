@@ -18,5 +18,5 @@ python3 hello.py
 print('hello, world!')
 # print("你好,世界！")
 print('你好', '世界')
-print('hello', 'world', sep=', ', end='!')
+print('hello', 'world', sep=', ', end='!')  # 间隔符，行尾符
 print('goodbye, world', end='!\n')

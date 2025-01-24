@@ -13,14 +13,14 @@ answer = random.randint(1, 100)
 counter = 0
 while True:
     counter += 1
-    number = int(input('请输入: '))
+    number = int(input('请猜测1~100间一个整数: '))
     if number < answer:
-        print('大一点')
+        print('再大一点！')
     elif number > answer:
-        print('小一点')
+        print('再小一点！')
     else:
-        print('恭喜你猜对了!')
+        print('恭喜您猜对了!')
         break
-print('你总共猜了%d次' % counter)
+print('咦，不孬，您总共猜了%d次！' % counter)
 if counter > 7:
-    print('你的智商余额明显不足')
+    print('您的智商余额已不足!')

@@ -39,6 +39,21 @@ def main():
             w = 0
     print()
 
+def get_days(year, month):
+    """
+    获取指定年份和月份的天数
+    """
+    if month in {1, 3, 5, 7, 8, 10, 12}:
+        return 31
+    elif month in {4, 6, 9, 11}:
+        return 30
+    elif month == 2:
+        if is_leap(year):
+            return 29
+        else:
+            return 28
+    else:
+        return None  # 对于非法的月份返回 None
 
 if __name__ == '__main__':
     main()

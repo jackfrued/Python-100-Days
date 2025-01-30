@@ -6,9 +6,7 @@
 >
 > <img src="res/python_study_qq_group.png" style="zoom:30%;">
 >
-> **配套的视频在抖音和B站持续更新中**，有兴趣的小伙伴可以关注我的抖音或B站账号，最近刚刚起号，还希望大家多多支持，非常感谢您！
->
-> <img src="res/qrcode.jpg" style="zoom:16%;">
+> **配套的视频在抖音和B站持续更新中**，有兴趣的小伙伴可以关注我的抖音（Python-Jack）或B站（[骆昊jackfrued](https://space.bilibili.com/1177252794)），最近刚刚起号，还希望大家多多支持，非常感谢您！
 
 ### Python应用领域和职业发展分析
 

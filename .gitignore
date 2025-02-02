@@ -1,16 +1,10 @@
-venv
-.idea
-*.pyc
-__pycache__
-
-### VisualStudioCode ###
-.vscode/*
-.vscode/**
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
+venv.idea*.pyc__pycache__
+###Visual StudioCode###vscode
+/**/
+settings.jsonvscode
+/
+tasks.jsonvscode
+/
+launch.jsonvscode/extensions.json
+### VisualStudioCode Patch
+#### Ignore all local history of files.history

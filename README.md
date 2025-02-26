@@ -833,7 +833,7 @@ Python在以下领域都有用武之地。
 
      ![](./res/pylint.png)
 
-   - Python中的一些“惯例”（请参考[《Python惯例-如何编写Pythonic的代码》](Python惯例.md)）
+   - Python中的一些“惯例”（请参考[《Python惯例-如何编写Pythonic的代码》](./番外篇/Python编程惯例.md)）
 
    - 影响代码可读性的原因：
 

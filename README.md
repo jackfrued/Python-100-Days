@@ -244,13 +244,13 @@ Python在以下领域都有用武之地。
 3. 包管理工具pip
 4. 使用网络API获取数据
 
-#### Day23 - [Python读写CSV文件](23.Python读写CSV文件.md)
+#### Day23 - [Python读写CSV文件](./Day21-30/23.Python读写CSV文件.md)
 
 1. CSV文件介绍
 2. 将数据写入CSV文件
 3. 从CSV文件读取数据
 
-#### Day24 - [Python读写Excel文件-1](./Day21-30/24.用Python读写Excel文件-1.md)
+#### Day24 - [Python读写Excel文件-1](./Day21-30/24.Python读写Excel文件-1.md)
 
 1. Excel简介
 2. 读Excel文件
@@ -925,7 +925,7 @@ Python在以下领域都有用武之地。
     - 其他问题
 2. 文档撰写
 
-#### 第95天：[使用Django开发商业项目](./Day91-100/95.使用Django开发商业项	目.md)
+#### 第95天：[使用Django开发商业项目](./Day91-100/95.使用Django开发商业项目.md)
 
 ##### 项目开发中的公共问题
 

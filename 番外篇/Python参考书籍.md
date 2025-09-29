@@ -29,7 +29,7 @@
 7. 《Flask Web开发：基于Python的Web应用开发实战》（*Flask Web Development: Developing Web Applications with Python*）
 8. 《深入理解Flask》（*Mastering Flask*）
 
-### 爬虫开发
+### 数据采集
 
 1. 《用Python写网络爬虫》（*Web Scraping with Python*）
 2. 《精通Python爬虫框架Scrapy》（*Learning Scrapy*）

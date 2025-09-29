@@ -1,14 +1,14 @@
 ## 我为什么选择了Python
 
-目前，Python语言的发展势头在国内国外都是不可阻挡的，Python凭借其简单优雅的语法，强大的生态圈从众多语言中脱颖而出，如今已经是稳坐编程语言排行榜前三的位置。国内很多Python开发者都是从Java开发者跨界过来的，我自己也不例外。我简单的跟大家交代一下，我为什么选择了Python。
+目前，Python 语言的发展势头在国内国外都是不可阻挡的，Python 凭借其简单优雅的语法，强大的生态圈从众多语言中脱颖而出，如今已经是稳坐编程语言排行榜前三的位置。国内很多 Python 开发者都是从 Java 开发者跨界过来的，我自己也不例外。我简单的跟大家交代一下，我为什么选择了 Python。
 
 ### Python vs. Java
 
-我们通过几个例子来比较一下，做同样的事情Java和Python的代码都是怎么写的。
+我们通过几个例子来比较一下，做同样的事情 Java 和 Python 的代码都是怎么写的。
 
 例子1：在终端中输出“hello, world”。
 
-Java代码：
+Java 代码：
 
 ```Java
 class Test {
@@ -19,7 +19,7 @@ class Test {
 }
 ```
 
-Python代码：
+Python 代码：
 
 ```Python
 print('hello, world')
@@ -27,7 +27,7 @@ print('hello, world')
 
 例子2：从1到100求和。
 
-Java代码：
+Java 代码：
 
 ```Java
 class Test {
@@ -42,7 +42,7 @@ class Test {
 }
 ```
 
-Python代码：
+Python 代码：
 
 ```Python
 print(sum(range(1, 101)))
@@ -50,7 +50,7 @@ print(sum(range(1, 101)))
 
 例子3：双色球随机选号。
 
-Java代码：
+Java 代码：
 
 ```Java
 import java.util.List;
@@ -93,7 +93,7 @@ class Test {
 }
 ```
 
-Python代码：
+Python 代码：
 
 ```Python
 from random import randint, sample

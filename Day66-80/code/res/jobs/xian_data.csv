@@ -1,0 +1,906 @@
+company_name,uri,salary,site,year,edu,job_name,city,pos_count
+华为,https://www.zhipin.com/job_detail/d01752e174b1650103F-0t-8EFc~.html,15-30K,西安  ,3-5年,本科,Python,xian,6
+软通动力,https://www.zhipin.com/job_detail/9204a3af73aefbb81XR80tW0GVU~.html,7-14K,西安 雁塔区 ,3-5年,本科,Python,xian,3
+软通动力,https://www.zhipin.com/job_detail/7a701286eedb53a81HB829u5Fls~.html,10-15K,西安 雁塔区 高新软件园,1-3年,本科,Python,xian,1
+软通动力,https://www.zhipin.com/job_detail/c48a3a8f596efef31HR60t69FVI~.html,11-18K,西安  ,1-3年,本科,Python,xian,2
+中软国际,https://www.zhipin.com/job_detail/be75d097381340ef03d-0tm7EVA~.html,8-13K,西安 雁塔区 高新软件园,1-3年,本科,Python工程师,xian,5
+傲梦网络科技,https://www.zhipin.com/job_detail/1ff197d45a88a85403R62tm5FlQ~.html,5-10K,西安 雁塔区 唐延路,经验不限,本科,Python讲师,xian,2
+软通动力,https://www.zhipin.com/job_detail/74e3c7f978fe63081XV92tS9FFQ~.html,9-14K,西安 长安区 王寺,3-5年,本科,Python,xian,4
+华信智慧,https://www.zhipin.com/job_detail/f8bb3865d883188f0nZ739q6EVE~.html,12-17K,西安  ,5-10年,本科,python开发,xian,6
+软通动力信息技术集团,https://www.zhipin.com/job_detail/82e032c4dae8ab8d1HB_09y5F1s~.html,10-15K,西安  ,3-5年,本科,Python自动化测试,xian,1
+中软国际,https://www.zhipin.com/job_detail/1c4bf5b562d423f31XZy3NS_FVA~.html,9-18K,西安 雁塔区 ,1-3年,本科,Python,xian,6
+Elight,https://www.zhipin.com/job_detail/57c373d4f07b3a671Xd62tm0ElA~.html,8-15K,西安 雁塔区 唐延路,3-5年,本科,Python,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/899fcaf52987667b1HV_09S5FlI~.html,7-12K,西安 雁塔区 唐延路,经验不限,本科,Python老师,xian,6
+软通动力,https://www.zhipin.com/job_detail/1d7fc9bdcc7a903e1HJ739W5F1o~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,Python自动化,xian,2
+中软国际,https://www.zhipin.com/job_detail/335d14274e449ab61X1_3tu_EFU~.html,8-16K,西安 雁塔区 高新软件园,经验不限,本科,Python开发工程师,xian,2
+华信智慧,https://www.zhipin.com/job_detail/00d1e0fae78c27610nZ_39S1FVU~.html,9-14K,西安  ,3-5年,本科,Python开发,xian,5
+联创佳讯,https://www.zhipin.com/job_detail/322e7b64c3fd45061Hd92dW1ElA~.html,8-13K,西安 未央区 二府庄,3-5年,本科,Python，PHP,xian,5
+华信智慧,https://www.zhipin.com/job_detail/9ae129a87c6fd3a903J529i_EFA~.html,10-15K,西安  ,3-5年,本科,Python开发,xian,2
+傲梦网络科技,https://www.zhipin.com/job_detail/10fe90aa91eaa42503R739m1FFU~.html,3-8K,西安 雁塔区 唐延路,经验不限,本科,python线上试听课老师,xian,5
+数拓科技,https://www.zhipin.com/job_detail/b2a24b6763454e93031_3Ny7EFo~.html,7-12K·13薪,西安  ,3-5年,本科,Python开发工程师,xian,3
+中软国际,https://www.zhipin.com/job_detail/c7b4ff03d57dc80a031-2dq-GFc~.html,10-15K,西安  ,3-5年,本科,高级Python开发工程师,xian,1
+中软国际,https://www.zhipin.com/job_detail/b02d309f2a19bcae03d53ti5EVo~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,软件测试&python开发,xian,6
+软通动力,https://www.zhipin.com/job_detail/1bb98464ebc1b6fc1nF_2dW0F1I~.html,8-16K,西安 雁塔区 高新软件园,1-3年,本科,Python开发工程师,xian,2
+中软国际,https://www.zhipin.com/job_detail/094d1a4c983ad94803B52Ni9EVE~.html,8-13K,西安 雁塔区 高新软件园,1-3年,本科,Python开发工程师,xian,1
+西安飞凡软件教育,https://www.zhipin.com/job_detail/5d5c66074e701e2f1n160ty6GVQ~.html,7-11K,西安 雁塔区 高新路,1年以内,大专,Python讲师,xian,1
+中软国际,https://www.zhipin.com/job_detail/35f1d85ff46f4c8903d90tW7Elo~.html,13-26K·13薪,西安 雁塔区 高新软件园,5-10年,本科,python（AI 人工智能方向）,xian,6
+联创佳讯,https://www.zhipin.com/job_detail/302088f80db909b11HZ62921E1E~.html,7-12K,西安 未央区 二府庄,3-5年,本科,python程序员,xian,6
+贝业思,https://www.zhipin.com/job_detail/0e35278733848baf03F82tW5GVc~.html,11-22K,西安 雁塔区 唐延路,1-3年,本科,算法工程师（python MySQL),xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/325fb8d09cf21a2903V42960GFE~.html,6-8K,西安 雁塔区 唐延路,经验不限,本科,Python坐班老师,xian,4
+傲梦网络科技,https://www.zhipin.com/job_detail/cb14a3a3e8e9b70603V429-0GVs~.html,6-8K,西安 雁塔区 唐延路,经验不限,本科,Python老师,xian,3
+西安乐推,https://www.zhipin.com/job_detail/cf3ef17c940a267c1Hd-3ty1FlU~.html,6-10K,西安  ,1-3年,本科,Python,xian,5
+绿盟科技,https://www.zhipin.com/job_detail/f5b92ed845e509c61Xd-2NS1GFc~.html,10-16K,西安  ,3-5年,本科,python开发工程师（西安）,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/285a45861775a3261HN639y5ElE~.html,6-11K,西安 雁塔区 唐延路,经验不限,本科,Python线上讲师,xian,6
+天邦测绘,https://www.zhipin.com/job_detail/f2f2b7f5991c12091HJ829u_FVo~.html,6-8K,西安  ,1-3年,本科,Python工程师,xian,3
+华信智慧,https://www.zhipin.com/job_detail/9f6d3f025367fed6031z3du5GVI~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,Python开发工程师,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/752ab7d0476a10ea1XV72dq1F1I~.html,5-10K,西安 雁塔区 昆明路,经验不限,本科,python,xian,5
+傲梦网络科技,https://www.zhipin.com/job_detail/861c96443258b9be03Zz2di4F1I~.html,4-7K,西安 雁塔区 唐延路,经验不限,本科,全国在线Python老师,xian,4
+极客晨星,https://www.zhipin.com/job_detail/1ab250c3c9df66c303B93Nq1E1Q~.html,3-8K,西安  ,经验不限,本科,编程老师Python,xian,1
+小码教育,https://www.zhipin.com/job_detail/a3845c0bfeec945e03V_29S8EFQ~.html,8-12K,西安 雁塔区 小寨,3-5年,本科,Python， C ++培训讲师,xian,4
+傲梦网络科技,https://www.zhipin.com/job_detail/9c4b575ce1cd81ed1XJ_2tu5FFM~.html,5-8K,西安 雁塔区 昆明路,经验不限,本科,全国在线Python少儿老师,xian,3
+软通动力,https://www.zhipin.com/job_detail/7005a95905e6e6201X1529S6FFQ~.html,11-18K,西安  ,3-5年,本科,Java，web，Python，测试，C++，运维，go,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/e8c2df1a76ddbeee1XZ92dW0EFQ~.html,4-6K,西安 雁塔区 昆明路,经验不限,本科,在线python讲师,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/eb6cf63eb40e488103R709m_ElI~.html,6-11K,西安 雁塔区 唐延路,经验不限,本科,全国在线Python 坐班老师,xian,3
+傲梦网络科技,https://www.zhipin.com/job_detail/e09ab37c3e8d03a71H182N25GVE~.html,5-8K,西安 雁塔区 唐延路,经验不限,本科,Python青少儿编程老师,xian,5
+猿辅导,https://www.zhipin.com/job_detail/c91e2fb77fb2c3b01HJ909q_GFM~.html,6-10K,西安 雁塔区 长延堡,经验不限,本科,python技术辅导老师,xian,1
+恺瀚信息科技,https://www.zhipin.com/job_detail/9232e1ed61f8d6d50nR42N69GVA~.html,8-11K,西安  ,3-5年,本科,Python开发工程师,xian,6
+童程童创,https://www.zhipin.com/job_detail/857ae23073fc23060nV73dm8ElY~.html,6-7K,西安  ,经验不限,本科,Python讲师,xian,6
+四叶草安全,https://www.zhipin.com/job_detail/5e162a644c3176a70Xd_3ti5Fg~~.html,5-10K,西安  ,经验不限,学历不限,Python，openstack，django,xian,3
+远江盛邦,https://www.zhipin.com/job_detail/05823a6b6d0ee9701XZy3t69GVI~.html,6-12K,西安  ,3-5年,本科,Python,xian,4
+微感,https://www.zhipin.com/job_detail/0a7471fbecf76e7d1XN-29i6FFE~.html,7-12K,西安 雁塔区 紫薇田园都市,1年以内,本科,Python,xian,5
+若恩教育,https://www.zhipin.com/job_detail/cf018f52293dfdb303Zz2dW_Els~.html,6-11K,西安 碑林区 小寨,3-5年,本科,python培训讲师,xian,6
+翰海睿智,https://www.zhipin.com/job_detail/2c0e62ec0ed798511Xxy3NW6F1Y~.html,6-10K,西安 雁塔区 西万路口,经验不限,本科,python讲师,xian,3
+陕西交通电子,https://www.zhipin.com/job_detail/d6d652208a5a218a1XNz3tq9F1M~.html,10-15K,西安 雁塔区 唐延路,3-5年,本科,Python,xian,3
+酷聊智能,https://www.zhipin.com/job_detail/4f065f269444506103N739-9EVA~.html,6-10K,西安  ,1-3年,本科,Python数据分析工程师,xian,1
+景行锐创,https://www.zhipin.com/job_detail/bcae8cc783f0e37b1HNy2tm1E1A~.html,8-13K,西安 雁塔区 紫薇田园都市,3-5年,本科,python开发工程师,xian,5
+联拓永欣,https://www.zhipin.com/job_detail/3a3b3504810692581Hx_0tm5EFY~.html,10-15K,西安 雁塔区 高新路,3-5年,本科,Python高级开发工程师,xian,4
+中兴通讯股份有限公司,https://www.zhipin.com/job_detail/346a2948a3dc5efb0nZ62tu4GVI~.html,11-20K,西安 长安区 郭杜,1-3年,本科,Python开发工程师,xian,2
+领航教育,https://www.zhipin.com/job_detail/ade108e62f6a60591HNz29m1FlE~.html,5-6K,西安  ,3-5年,大专,php python工程师,xian,3
+西安优盛,https://www.zhipin.com/job_detail/2bd076bb1ac715d003Vy39m_FlM~.html,5-10K,西安 雁塔区 电子城,经验不限,本科,Python讲师,xian,2
+星垂智能,https://www.zhipin.com/job_detail/ba914f6916586baa1Xdz09y6ElU~.html,20-30K,西安  ,3-5年,本科,高级 Python 后台开发工程师,xian,3
+烛照科技,https://www.zhipin.com/job_detail/ede5f66a31a3865d03x709q9E1c~.html,9-12K,西安 雁塔区 高新软件园,3-5年,本科,Python,xian,5
+思华科技,https://www.zhipin.com/job_detail/6f5e365d5cc1174d0nR629y0GVE~.html,10-15K,西安  ,3-5年,本科,Python,xian,4
+华为技术有限公司,https://www.zhipin.com/job_detail/c3f57682ebc36bd01XB53tW6FFc~.html,18-20K,西安 雁塔区 高新软件园,1-3年,本科,Python,xian,5
+天融信教育,https://www.zhipin.com/job_detail/6a18911541ef731f1H190ty_E1M~.html,8-10K,西安 雁塔区 电子城,1-3年,本科,python讲师,xian,2
+华为,https://www.zhipin.com/job_detail/bd562d097438a6ab0nV-3Nq4FFU~.html,16-30K,西安  ,5-10年,本科,高级python开发工程师-云计算方向,xian,6
+华为,https://www.zhipin.com/job_detail/5165808d62c11c7d03142dS5ElU~.html,18-35K,西安  ,5-10年,本科,高级python开发工程师,xian,6
+华为,https://www.zhipin.com/job_detail/c9a7f0f5db4fc35703xy3tu6GVo~.html,17-30K,西安  ,5-10年,本科,高级python开发工程师,xian,4
+西安野马教育,https://www.zhipin.com/job_detail/6967bd9de27734761n150tq_GVA~.html,8-10K,西安 碑林区 交大,3-5年,本科,Python讲师(兼职),xian,6
+大主宰科技(天津...,https://www.zhipin.com/job_detail/518c8835633af5871H153dq8F1o~.html,4-7K,西安 碑林区 黄雁村,1-3年,本科,python web开发工程师,xian,4
+大禹网科,https://www.zhipin.com/job_detail/08f42f42f7b491aa1nx53d-9E1E~.html,5-9K,西安 雁塔区 高新路,1-3年,本科,Python,xian,5
+北京韦众承志,https://www.zhipin.com/job_detail/e6c2bf16373fc5591HZ-39y-ElY~.html,8-10K,西安 长安区 南大学城,1-3年,本科,Python 研发工程师,xian,3
+西安图迹信息科技,https://www.zhipin.com/job_detail/4a51a26dc3299cff0HV439q7GQ~~.html,5-10K,西安  ,3-5年,本科,Python,xian,4
+影卫医疗,https://www.zhipin.com/job_detail/df13e0d56bb9870d1Hx-29m0FlI~.html,6-10K,西安 新城区 金花路,1年以内,本科,Python开发工程师,xian,1
+大熊科技,https://www.zhipin.com/job_detail/c2ed8ebe8d152a7703J53Ni0FVY~.html,8-13K,西安 雁塔区 高新软件园,经验不限,本科,持续集成和python开发,xian,4
+华为技术有限公司,https://www.zhipin.com/job_detail/8f7035a0c092577003Z42tq-ElI~.html,15-30K,西安 雁塔区 高新软件园,3-5年,本科,Python开发工程师,xian,6
+理光之星少儿编程,https://www.zhipin.com/job_detail/0aadc8dc5aad329a1HJ53tq8EFU~.html,7-8K,西安 雁塔区 雁翔路,经验不限,本科,Python讲师,xian,5
+有联科技,https://www.zhipin.com/job_detail/72d84d77f07079ee03Ry2dq8ElU~.html,15-20K,西安 莲湖区 青年路,5-10年,学历不限,人工智能+python架构师/高级研发工程师,xian,6
+绿盟科技,https://www.zhipin.com/job_detail/f3e69a65a75d932e03d42dq_EVY~.html,2-4K,西安  ,1年以内,本科,Python开发工程师,xian,5
+理光之星少儿编程,https://www.zhipin.com/job_detail/0cba4e2400ed9a711HJ739q5EVQ~.html,6-7K,西安 雁塔区 雁翔路,经验不限,本科,少儿编程老师/python老师,xian,1
+西安好点科技公司,https://www.zhipin.com/job_detail/aa48d3c431b200ca1H192tu0E1Y~.html,19-25K,西安  ,3-5年,本科,Python,xian,1
+微感,https://www.zhipin.com/job_detail/49197baeca537f9d1XN92t25FFc~.html,6-11K,西安 雁塔区 紫薇田园都市,3-5年,本科,Python,xian,3
+华为,https://www.zhipin.com/job_detail/8c02bbebc94865b01XZ63d-5GVM~.html,24-36K,西安 雁塔区 高新软件园,3-5年,本科,Python,xian,6
+WisdomGarden,https://www.zhipin.com/job_detail/ca9c1e56544e74b61XR50t26Elc~.html,9-18K,西安  ,3-5年,本科,Python开发工程师,xian,3
+华为技术有限公司,https://www.zhipin.com/job_detail/400e4de5c677a7161XR-39S8FVM~.html,10-20K,西安 雁塔区 高新软件园,1年以内,本科,Python,xian,6
+君舟网络,https://www.zhipin.com/job_detail/f837731c2c33104d1Xd83t25FFo~.html,6-12K,西安 雁塔区 郭杜,5-10年,本科,python工程师,xian,2
+深圳华为,https://www.zhipin.com/job_detail/5fb8b1b2248b339b1XB90t-9EVc~.html,15-30K,西安  ,1-3年,本科,Python,xian,5
+华为,https://www.zhipin.com/job_detail/3686bf8def2a5b021XN40tm8EFU~.html,15-25K,西安 雁塔区 高新软件园,1-3年,本科,Python,xian,5
+迅猛龙,https://www.zhipin.com/job_detail/fd79683088cb20751HV62d2-GFM~.html,15-20K,西安 长安区 南大学城,3-5年,学历不限,Python讲师,xian,3
+华商传媒二三里,https://www.zhipin.com/job_detail/e602c979915d492a1XV43dW0Flc~.html,6-12K,西安 雁塔区 雁翔路,3-5年,本科,Python,xian,6
+华为,https://www.zhipin.com/job_detail/600d4fe7ac73357b1XF42NW6GVo~.html,10-20K,西安 雁塔区 高新软件园,经验不限,本科,Python,xian,5
+深圳华为,https://www.zhipin.com/job_detail/af63b03210a1a08b1XZ639m7GVA~.html,10-15K,西安  ,1-3年,本科,Python,xian,5
+华为技术有限公司,https://www.zhipin.com/job_detail/4d27f34eccd3b7081Xd82dS4GVo~.html,10-20K,西安  ,1-3年,本科,Python,xian,6
+华为,https://www.zhipin.com/job_detail/77c7bb780cf39a421XB93t61FFE~.html,15-18K,西安 雁塔区 高新软件园,1年以内,本科,Python,xian,5
+西安野马教育,https://www.zhipin.com/job_detail/60fd65671f8597471XJ639-5GFo~.html,2-4K,西安 碑林区 交大,3-5年,硕士,python兼职讲师,xian,2
+斯维智能,https://www.zhipin.com/job_detail/1f384deed25674dd1nJz0tW4Els~.html,8-15K,西安 雁塔区 高新路,1-3年,本科,Python/Django开发工程师,xian,6
+小橘科技,https://www.zhipin.com/job_detail/fec9984a149121a41nJ42969E1s~.html,15-30K,西安 雁塔区 旺座现代城,3-5年,本科,Python,xian,3
+耐思托管辅导中心,https://www.zhipin.com/job_detail/8f71d15e142b915c1HZ63di4FFc~.html,3-6K,西安 高陵区 车城花园,应届生,本科,IT技术支持,xian,4
+凡德,https://www.zhipin.com/job_detail/ed410f6d47e3fb5b03dz2tS4FFI~.html,15-30K,西安 雁塔区 高新软件园,10年以上,硕士,技术总监,xian,4
+软通动力,https://www.zhipin.com/job_detail/b42f3fe98dabf1011XR92N61Elo~.html,9-14K,西安  ,1-3年,本科,Hadoop,xian,1
+ABeamGDC,https://www.zhipin.com/job_detail/1a2ffa9b097a431903Nz09y4GFs~.html,5-8K·13薪,西安  ,应届生,本科,（会日语）SAP开发工程师,xian,5
+华为,https://www.zhipin.com/job_detail/dbde6cb861f420421HRy3tm-F1A~.html,15-25K,西安  ,3-5年,本科,测试开发工程师,xian,3
+腾语科技,https://www.zhipin.com/job_detail/37bdbd787a68bf141HV_0ty7FFU~.html,3-7K,西安 雁塔区 电视塔,1-3年,大专,少儿编程老师,xian,3
+软通动力,https://www.zhipin.com/job_detail/a05db86f798a4d561XV40t2_FVQ~.html,10-20K,西安 雁塔区 高新软件园,10年以上,本科,测试工程师,xian,2
+软通动力,https://www.zhipin.com/job_detail/0454a624ab30d9161HB_29m6GVI~.html,8-12K,西安 雁塔区 高新软件园,1-3年,大专,软件测试,xian,3
+精诊科技,https://www.zhipin.com/job_detail/616b49760902ac670nRy3dy1E1c~.html,15-25K,西安 雁塔区 高新软件园,3-5年,本科,图像算法工程师,xian,1
+益康特信息科技,https://www.zhipin.com/job_detail/bcf4ae6d2d12a81003J_2N60FFM~.html,5-10K,西安 雁塔区 雁翔路,1-3年,大专,少儿编程,xian,5
+长银消费金融,https://www.zhipin.com/job_detail/1b16803589c074e6031_29q7EFI~.html,12-24K·13薪,西安 未央区 张家堡,3-5年,本科,大数据开发工程师,xian,3
+金信德贝,https://www.zhipin.com/job_detail/165d95146be29f5803B72t21F1Y~.html,7-9K,西安 雁塔区 电子城,1-3年,大专,PHP开发工程师,xian,3
+活跃网络,https://www.zhipin.com/job_detail/0b1397c92fbf904103Fz3925GFI~.html,14-17K,西安  ,3-5年,本科,Devops 工程师,xian,4
+联拓永欣,https://www.zhipin.com/job_detail/ea22d6c1b58fc8631HJy2dm_GVY~.html,7-12K,西安 雁塔区 高新路,1-3年,本科,数据库管理工程师,xian,5
+阿里巴巴集团,https://www.zhipin.com/job_detail/3e2dc355f96f7b8b1Hx43N26E1A~.html,11-12K,西安  ,应届生,本科,开发工程师(实习),xian,1
+华为,https://www.zhipin.com/job_detail/bb6484bd0a74d6cc031_3d--EFU~.html,15-20K,西安  ,经验不限,本科,java开发,xian,4
+智仕道,https://www.zhipin.com/job_detail/740099b2ea7be9c203d80tW1EFU~.html,5-9K·13薪,西安 莲湖区 土门,3-5年,本科,产品开发,xian,6
+智仕道,https://www.zhipin.com/job_detail/2f26ffe02c79bc2503x52d-0FFI~.html,4-8K,西安 莲湖区 土门,1-3年,大专,PHP,xian,6
+西安长河通讯有限...,https://www.zhipin.com/job_detail/803fe395176f090103d_2Nq-ElE~.html,6-11K,西安 雁塔区 沣惠南路,经验不限,本科,软件开发工程师,xian,2
+雪豹商情,https://www.zhipin.com/job_detail/63fc103b4bb30e091HB6392_E1c~.html,9-14K,西安  ,3-5年,本科,Golang 工程师,xian,6
+熊赳赳数据科技,https://www.zhipin.com/job_detail/10536b765b6815ae03N73tu5GFA~.html,4-5K,西安  ,经验不限,学历不限,数据分析师,xian,5
+标签墙,https://www.zhipin.com/job_detail/23a0da7d62b3405f1n183t26ElQ~.html,1-2K,西安 雁塔区 永松路,经验不限,学历不限,Java实习生,xian,5
+华为,https://www.zhipin.com/job_detail/7c3464a9ce3d3f980XJ93dS5FA~~.html,17-34K,西安 雁塔区 高新软件园,经验不限,本科,Java,xian,1
+陕西泊享商贸有限公司,https://www.zhipin.com/job_detail/3f44dd763d9aeda903d42ty6E1s~.html,5-10K,西安 雁塔区 吉祥路,3-5年,学历不限,区块链,xian,5
+西安云雀软件有限公司,https://www.zhipin.com/job_detail/076b977b5ebb343e1XB62dq6F1Y~.html,5-10K,西安  ,3-5年,大专,软件研发,xian,3
+中软国际,https://www.zhipin.com/job_detail/3c720f5575b84c331nN_2tu8Elo~.html,9-18K,西安 雁塔区 高新软件园,经验不限,本科,Java,xian,2
+中软国际,https://www.zhipin.com/job_detail/03a900c9a24ce0c00nZ_3Nq0FA~~.html,8-12K,西安 雁塔区 ,1-3年,本科,Java,xian,6
+软通动力,https://www.zhipin.com/job_detail/7bad62006c4e95141nF-3Nm5E1E~.html,9-18K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,2
+软通动力,https://www.zhipin.com/job_detail/f05fa9229b795f2a1XZ839i-EVE~.html,8-15K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,1
+软通动力,https://www.zhipin.com/job_detail/cf3a42a0ca3e469d1HB50t21GFE~.html,11-20K,西安 雁塔区 高新软件园,1-3年,大专,Java,xian,2
+武汉佰钧成,https://www.zhipin.com/job_detail/107dde5b13aff4a71nJz0tu0FVQ~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,3
+软通动力,https://www.zhipin.com/job_detail/3f31252b46c115311HJy0tq6FVs~.html,12-20K,西安 长安区 王寺,5-10年,本科,Java,xian,4
+软通动力,https://www.zhipin.com/job_detail/f5092e0266f578131HV-0ty9E1A~.html,8-12K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,3
+中软国际,https://www.zhipin.com/job_detail/54a35341f240826603d43t29EFU~.html,15-25K,西安 雁塔区 高新软件园,5-10年,本科,Java,xian,4
+西安利百家商贸,https://www.zhipin.com/job_detail/b2e5b224f64d9b5d1XFy09m0EVI~.html,8-16K,西安 雁塔区 永松路,3-5年,本科,Java,xian,4
+屹通信息科技,https://www.zhipin.com/job_detail/fb7af5a885931fca1HZz3d-9FFQ~.html,7-10K,西安 雁塔区 沣惠南路,1-3年,本科,Java,xian,5
+中软国际,https://www.zhipin.com/job_detail/18ea16ad5746065203Z70tu0F1s~.html,9-14K,西安 雁塔区 高新软件园,1-3年,本科,Java,xian,4
+华为技术有限公司,https://www.zhipin.com/job_detail/92ac7e72a48b2d9a1XN639i8F1c~.html,10-20K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,5
+软通动力,https://www.zhipin.com/job_detail/4a6d608ad15153ca1HZ72tq_E1o~.html,12-24K,西安  ,3-5年,本科,java后台,xian,5
+坐标软件,https://www.zhipin.com/job_detail/6cd4a0788305aa540XB52tq_Fg~~.html,9-10K,西安 新城区 钟楼,5-10年,大专,Java,xian,2
+宇信科技,https://www.zhipin.com/job_detail/6c79f96aecdb28a21HB-2dW1GFQ~.html,9-13K,西安 雁塔区 曲江新区,3-5年,本科,Java,xian,5
+陕西金合,https://www.zhipin.com/job_detail/57eec29a8c8631761HJ_3NW8EVY~.html,9-12K,西安  ,3-5年,本科,高级java,xian,1
+中软国际,https://www.zhipin.com/job_detail/e129d7fea169fa2203V62NW1FFY~.html,10-15K,西安  ,3-5年,本科,java,xian,5
+软通动力,https://www.zhipin.com/job_detail/53a1ca2a77febc891Hd83di1EFs~.html,10-15K·13薪,西安 长安区 王寺,1-3年,本科,java开发,xian,5
+北明正实,https://www.zhipin.com/job_detail/d0fdc4ec0d6e9e8a1nx53Ny5GFc~.html,7-12K,西安  ,1-3年,本科,Java,xian,6
+中软国际,https://www.zhipin.com/job_detail/90debce03a96811a1XV72t65FlI~.html,10-20K,西安  ,3-5年,本科,java,xian,5
+中软国际,https://www.zhipin.com/job_detail/457f5a8d1981327703B53d61EFQ~.html,12-15K,西安 雁塔区 高新软件园,5-10年,大专,Java开发,xian,3
+三星数据,https://www.zhipin.com/job_detail/83c807beb1c9b7fd0nd72d-8ElM~.html,11-16K·13薪,西安 雁塔区 高新软件园,10年以上,本科,JAVA开发Leader,xian,2
+易宝,https://www.zhipin.com/job_detail/5282a803a36b17481Hd72N-6E1Q~.html,11-20K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,5
+人人蟹,https://www.zhipin.com/job_detail/444e21cf7e9b44860nR-3dW1EVU~.html,8-12K,西安  ,5-10年,本科,Java,xian,3
+软通动力,https://www.zhipin.com/job_detail/3d6f7ca540868e041HJ_3tu7GVU~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,Java开发,xian,3
+软通动力,https://www.zhipin.com/job_detail/ad73f69b27049fa703Fz39y_GFU~.html,12-18K,西安  ,3-5年,本科,高级Java开发,xian,4
+京北方,https://www.zhipin.com/job_detail/8e8c9834268e0a421Hd43tW-ElM~.html,8-12K,西安 雁塔区 高新路,3-5年,本科,Java开发工程师（西安）,xian,5
+蜀海公司,https://www.zhipin.com/job_detail/4ee280d4afbcd700031z3du6E1s~.html,15-25K,西安  ,5-10年,本科,Java,xian,6
+神州数码,https://www.zhipin.com/job_detail/e2f409171f4a07fb1Xx53d6-EVc~.html,15-20K,西安  ,5-10年,本科,高级java工程师,xian,3
+神州数码,https://www.zhipin.com/job_detail/8fc8b6b7553f94be03Z92Nm0E1M~.html,8-13K,西安  ,3-5年,本科,Java工程师（西安）,xian,3
+宇信科技,https://www.zhipin.com/job_detail/e4f2703be37427150nZ_2tu9GFA~.html,10-15K,西安 雁塔区 曲江新区,5-10年,本科,Java开发,xian,5
+软通动力信息技术集团,https://www.zhipin.com/job_detail/829d213588ca07970nd70t29Fls~.html,12-22K,西安  ,5-10年,本科,Java,xian,3
+中软国际,https://www.zhipin.com/job_detail/18b94e49b9ab879c03F_3tm8EVE~.html,8-13K,西安 雁塔区 高新软件园,1-3年,本科,java开发工程师,xian,1
+交大长天,https://www.zhipin.com/job_detail/c079e18de6f17bb61XB82N-1E1M~.html,10-16K,西安  ,3-5年,本科,Java,xian,2
+中软国际,https://www.zhipin.com/job_detail/1bc0516b07a192ec1nF43dm4GVo~.html,8-13K·13薪,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,4
+中软国际,https://www.zhipin.com/job_detail/adbe64c6b17e62e60XJ_0ty6Ew~~.html,7-12K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,5
+武汉佰钧成,https://www.zhipin.com/job_detail/b70b6fc83daf3f7e1nJy3t6-Elo~.html,12-20K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,1
+哲宣网络,https://www.zhipin.com/job_detail/3a931b9da28d7b840HZ93dS-GQ~~.html,5-6K,西安 雁塔区 旺座现代城,1-3年,本科,Java,xian,4
+极客原点,https://www.zhipin.com/job_detail/3479c8e8c9eef5740nx_2NS_GVU~.html,12-18K,西安 莲湖区 土门,3-5年,学历不限,Java,xian,5
+中软国际科技服务,https://www.zhipin.com/job_detail/3fb498bfac8c212f1nJ-39-0GVo~.html,10-20K,西安  ,经验不限,本科,Java,xian,2
+思特奇,https://www.zhipin.com/job_detail/6eab4aebe114c9491XR-2967EFE~.html,8-15K,西安 雁塔区 高新路,3-5年,本科,Java高级工程师,xian,2
+武汉佰钧成,https://www.zhipin.com/job_detail/37c238cb44bb64d803xy3N2_F1s~.html,11-22K,西安  ,5-10年,大专,java,xian,2
+大展科技,https://www.zhipin.com/job_detail/e3fd833d7b478afe1HNy2di8E1Y~.html,8-13K,西安  ,3-5年,本科,java,xian,4
+骋安延保科技,https://www.zhipin.com/job_detail/fa25cf3da00119d803V73tu1F1s~.html,10-15K,西安  ,3-5年,本科,Java,xian,5
+秦驰信息,https://www.zhipin.com/job_detail/ab8db9f381f362ca1nJ509W-GA~~.html,8-10K,西安 雁塔区 高新软件园,3-5年,学历不限,Java,xian,4
+久弘软件,https://www.zhipin.com/job_detail/f645d13c214982081nN42N26Eg~~.html,4-6K,西安 雁塔区 旺座现代城,3-5年,大专,Java,xian,4
+澳鹏网络,https://www.zhipin.com/job_detail/ad714a025a48d98b1XV73d60GVs~.html,10-15K,西安 雁塔区 鱼化寨,3-5年,本科,Java,xian,4
+佰钧成,https://www.zhipin.com/job_detail/69ffb26be76daa011Hx40tS8EVo~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,Java开发,xian,4
+富腾网络,https://www.zhipin.com/job_detail/6a46e9e0949599661HJz0tW9EFI~.html,11-16K,西安 雁塔区 高新路,3-5年,本科,Java,xian,1
+大唐软件,https://www.zhipin.com/job_detail/9340795cae1027ff1XR_3dS1FVU~.html,4-7K,西安 雁塔区 科技二路,1-3年,本科,Java,xian,4
+汇智联盟,https://www.zhipin.com/job_detail/96aee54bed9653080nZ90ti0E1Q~.html,7-10K,西安 雁塔区 高新路,3-5年,大专,Java,xian,1
+中软国际,https://www.zhipin.com/job_detail/fd2c0928b808cfb203N92t-7GFI~.html,12-18K,西安  ,5-10年,本科,Java,xian,1
+大唐软件,https://www.zhipin.com/job_detail/b5b294d177517a791nx_2tq7EFc~.html,1-2K,西安 雁塔区 科技二路,经验不限,本科,Java,xian,1
+易宝软件,https://www.zhipin.com/job_detail/8e24afdd1b8ad1a403Ry2tu8FVM~.html,10-15K,西安  ,3-5年,本科,Java软件工程师,xian,4
+鸣智信息,https://www.zhipin.com/job_detail/e53236725e2f13b40nR73Ni7FVc~.html,7-12K,西安 雁塔区 电子城,3-5年,本科,Java,xian,1
+麦仓数据,https://www.zhipin.com/job_detail/15335f93e3863dc203R42Ny-F1Y~.html,4-8K,西安 雁塔区 长延堡,1年以内,本科,Java,xian,5
+武汉佰钧成,https://www.zhipin.com/job_detail/9b1d6316c49e79640nV83Ny8FFI~.html,15-30K,西安  ,5-10年,大专,java开发,xian,5
+中软国际,https://www.zhipin.com/job_detail/bd0d0f5daaba67681XV90921GVI~.html,14-16K,西安 雁塔区 高新软件园,5-10年,本科,高级java,xian,4
+西安贝图,https://www.zhipin.com/job_detail/77ccafa76c2b56b11HB62966E1Y~.html,7-11K,西安  ,3-5年,本科,JAVA,xian,2
+屹通信息科技,https://www.zhipin.com/job_detail/78e57aff9028671d1HZz3dy7FFQ~.html,6-11K·13薪,西安 雁塔区 西影路,1-3年,本科,中级Java工程师,xian,4
+软通动力,https://www.zhipin.com/job_detail/1a53254f9b6472021XB52N2-GFI~.html,8-12K,西安  ,1-3年,本科,java开发,xian,4
+软通动力,https://www.zhipin.com/job_detail/b9350f5cc271e0561X1_39-1Flc~.html,8-13K,西安 雁塔区 高新软件园,1年以内,本科,Java,xian,2
+中软国际,https://www.zhipin.com/job_detail/ac07f0aa7e582e1103Z60tm_FVs~.html,10-15K,西安  ,1-3年,本科,Java,xian,2
+中软国际,https://www.zhipin.com/job_detail/aaf3853bf2b23c560nR70ty8Eg~~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,5
+爱尚金服,https://www.zhipin.com/job_detail/3152b0dc1d246fc71Hdy2NW7FVo~.html,13-26K,西安 碑林区 长安路,3-5年,本科,Java,xian,3
+交大捷普,https://www.zhipin.com/job_detail/73002ea8bc2f67c81XF72Ny0GVE~.html,8-15K,西安 雁塔区 科技二路,3-5年,本科,Java,xian,2
+鸿泉物联网,https://www.zhipin.com/job_detail/c6cb15771b1e29ed1XJ_2tm4GFE~.html,8-16K,西安 雁塔区 高新软件园,3-5年,本科,Java工程师,xian,4
+武汉佰钧成,https://www.zhipin.com/job_detail/8765b39fc65bfeef0nd43Nu1GFM~.html,9-14K,西安  ,3-5年,本科,Java,xian,3
+软通动力,https://www.zhipin.com/job_detail/f5c55aeb166b6c431XV40tu7E1A~.html,10-15K,西安  ,3-5年,本科,java开发工程师,xian,1
+博彦科技,https://www.zhipin.com/job_detail/9cb83c54faa434760nV83t68F1c~.html,12-20K·13薪,西安  ,3-5年,大专,Java开发,xian,1
+云聚物流,https://www.zhipin.com/job_detail/b3798a5be9799a881HZ53d28GVU~.html,10-15K,西安 雁塔区 电子城,5-10年,本科,Java高级工程师,xian,5
+中软国际,https://www.zhipin.com/job_detail/59537b6d8a7a07cf03Z52tq1EVU~.html,11-22K,西安 雁塔区 高新软件园,经验不限,本科,Java开发工程师,xian,6
+陕西华筑科技有限公司,https://www.zhipin.com/job_detail/860c084629bfe0231X1z3du0EVA~.html,8-16K,西安 雁塔区 高新软件园,3-5年,本科,Java工程师,xian,3
+武汉联影医疗,https://www.zhipin.com/job_detail/b8ebc5150eee494f0nV62Ni8ElU~.html,11-16K·13薪,西安  ,3-5年,硕士,Java,xian,5
+中国电信,https://www.zhipin.com/job_detail/2b441d1d2da5da1b1nZ53d64EVU~.html,8-13K,西安 雁塔区 高新路,5-10年,本科,java高级工程师,xian,5
+卫宁健康,https://www.zhipin.com/job_detail/67fe19feb23f9e3d1Hd629i8FVM~.html,11-20K,西安  ,5-10年,本科,Java,xian,6
+神州数码,https://www.zhipin.com/job_detail/fcece3f7e078dafe03B43dq9F1M~.html,12-16K·13薪,西安  ,3-5年,本科,高级java开发 (MJ000277),xian,3
+航天宏图,https://www.zhipin.com/job_detail/9ca1b2185c4406721XV929y1FVY~.html,8-16K,西安 长安区 航天城,1-3年,本科,Java,xian,3
+软通动力信息技术集团,https://www.zhipin.com/job_detail/6b5c16d20fd3bdbd1HZ909-4GVs~.html,15-20K,西安  ,3-5年,本科,JAVA,xian,6
+浙江大华,https://www.zhipin.com/job_detail/cff55a5e5ec796571HB53dW6EFM~.html,10-20K,西安  ,3-5年,本科,JAVA开发工程师,xian,6
+旅拍通,https://www.zhipin.com/job_detail/f31e12b394ab8e251XB809-0FFE~.html,11-16K,西安 未央区 张家堡,5-10年,本科,Java,xian,3
+Essex,https://www.zhipin.com/job_detail/4264bcbecea06ba41HJz29u9FVA~.html,16-30K,西安 雁塔区 玫瑰大楼,5-10年,本科,Java Developer,xian,4
+神州信息,https://www.zhipin.com/job_detail/554dfac85cb0879d03F93t61EVE~.html,15-25K·13薪,西安  ,5-10年,本科,Java开发,xian,3
+交大捷普,https://www.zhipin.com/job_detail/bb674a2a17d24be01HV83dS_GFs~.html,13-20K,西安 雁塔区 科技二路,3-5年,本科,Java,xian,4
+易宝,https://www.zhipin.com/job_detail/bffd1a69adba1c8e0nRz2NW0Elc~.html,15-22K,西安  ,5-10年,本科,Java开发,xian,4
+途悠悠,https://www.zhipin.com/job_detail/cb60c85fa2c0b64403R829q4EVU~.html,6-11K,西安  ,3-5年,本科,java工程师,xian,6
+天诚软件,https://www.zhipin.com/job_detail/42a4656be753570203J83tW1GVA~.html,6-11K,西安  ,1-3年,本科,Java工程师,xian,6
+中软国际,https://www.zhipin.com/job_detail/5b22c7a4a09585940nJ70tm8Ew~~.html,11-22K,西安  ,3-5年,本科,Java,xian,6
+西安文鼎,https://www.zhipin.com/job_detail/05ef0973d03f6b1a03Ry3tq_ElA~.html,7-12K,西安 雁塔区 长延堡,3-5年,大专,java后台开发,xian,5
+中钧,https://www.zhipin.com/job_detail/d61cababc494cb1703J-0tq7F1s~.html,12-20K,西安  ,3-5年,本科,JAVA 工程师,xian,3
+软通动力集团,https://www.zhipin.com/job_detail/6a0f1e3a2fa1e95c0XB42N28FA~~.html,9-18K,西安 雁塔区 高新软件园,3-5年,本科,Java开发,xian,4
+软通动力,https://www.zhipin.com/job_detail/7d6ab406652cbbd21XV40t2-FVM~.html,15-25K,西安 雁塔区 高新软件园,3-5年,本科,Java,xian,4
+软通动力信息技术集团,https://www.zhipin.com/job_detail/acb23198855218dd1X1-2Nu1FVs~.html,10-20K,西安  ,3-5年,本科,Java,xian,3
+文思海辉,https://www.zhipin.com/job_detail/9a4351b17f815a7d0nRy29u_E1c~.html,12-15K,西安 未央区 徐家湾,5-10年,大专,高级Java,xian,1
+中软国际,https://www.zhipin.com/job_detail/7505fd8dd7d9fdbb03Z509-9EFE~.html,9-14K,西安  ,3-5年,本科,Java开发,xian,2
+软通动力,https://www.zhipin.com/job_detail/1defa69f005446131X1_3tS-GVc~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,Java开发,xian,6
+卫宁健康,https://www.zhipin.com/job_detail/83c5435e1464ca3903R829S4FFU~.html,12-18K,西安  ,3-5年,本科,Java研发工程师,xian,5
+软通动力,https://www.zhipin.com/job_detail/1cc3a146241f15021XFz39u_GFE~.html,12-24K,西安 雁塔区 高新软件园,5-10年,本科,Java,xian,4
+软通动力信息技术集团,https://www.zhipin.com/job_detail/d93dec34ec5947761Hd72ty-EVs~.html,13-23K,西安 雁塔区 高新软件园,5-10年,本科,JAVA开发,xian,1
+软通动力,https://www.zhipin.com/job_detail/82c4c25d4af011f41nF-2NW4EFo~.html,9-18K,西安  ,1-3年,本科,Java,xian,4
+医链区块链科技,https://www.zhipin.com/job_detail/b5de2058050e584c0nd73Ni1Flo~.html,15-30K,西安 雁塔区 长延堡,5-10年,大专,Java架构师,xian,6
+神州信息,https://www.zhipin.com/job_detail/96271edefbba35f503F63tu6EFA~.html,10-14K,西安  ,3-5年,本科,Java开发,xian,4
+软通动力,https://www.zhipin.com/job_detail/a19bd293b312528403V72N--EFY~.html,8-12K,西安 雁塔区 高新软件园,1-3年,本科,Java开发工程师,xian,1
+华为,https://www.zhipin.com/job_detail/f94e77ba144e5a6a0nR709q_Fls~.html,13-25K·15薪,西安  ,3-5年,本科,Java开发工程师,xian,1
+佰医汇,https://www.zhipin.com/job_detail/1d3cd8d449a9fab21XJ53t-1FlE~.html,5-9K,西安 雁塔区 玫瑰大楼,1-3年,本科,Java,xian,1
+北京壹派科技,https://www.zhipin.com/job_detail/83f4c68f8826a9da03x63N-0ElQ~.html,12-18K,西安 未央区 张家堡,5-10年,大专,JAVA工程师,xian,1
+卫宁健康,https://www.zhipin.com/job_detail/95cacd8f18d449361n1_2d-8EFQ~.html,8-15K,西安  ,5-10年,本科,Java,xian,4
+易宝软件,https://www.zhipin.com/job_detail/46a88f3c012504b203142t-6F1I~.html,15-20K,西安  ,3-5年,本科,Java项目经理,xian,3
+伍强科技,https://www.zhipin.com/job_detail/1271cea9580e5a821HF_2Nq1FlA~.html,5-8K,西安 雁塔区 沣惠南路,经验不限,本科,Java软件工程师,xian,5
+文思海辉·金融,https://www.zhipin.com/job_detail/25ed412d0f07c58303d52tS4FVU~.html,8-13K,西安  ,经验不限,本科,Java开发工程师,xian,6
+精创网络,https://www.zhipin.com/job_detail/2a78f7033dd5bfaa0XZz3924EQ~~.html,10-15K,西安  ,3-5年,本科,Java,xian,1
+蝉鸣科技,https://www.zhipin.com/job_detail/9b0a0f87188cb4541Hx83tq7FFE~.html,15-20K,西安 雁塔区 高新软件园,5-10年,本科,高级Java工程师,xian,2
+方联科技,https://www.zhipin.com/job_detail/83a118a9ff93e34203N_0ti9ElQ~.html,8-13K,西安 莲湖区 土门,5-10年,本科,JAVA,xian,4
+比由技术工场,https://www.zhipin.com/job_detail/3d085aa1152ea27d0nRy2d69FVc~.html,8-10K·13薪,西安 雁塔区 大雁塔,3-5年,学历不限,Java工程师,xian,5
+维萨里,https://www.zhipin.com/job_detail/fcfc22eb61aff33c1HZz2961FVA~.html,10-15K,西安 长安区 韦曲,3-5年,本科,Java后端开发工程师,xian,6
+惠恩资本,https://www.zhipin.com/job_detail/9e70f381a80f06d71nx42d-6FFI~.html,10-20K,西安  ,3-5年,本科,Java,xian,4
+创业软件,https://www.zhipin.com/job_detail/b913a614f6a797cc1XJ-2ti5E1U~.html,9-14K,西安  ,3-5年,本科,java开发工程师,xian,3
+中软国际,https://www.zhipin.com/job_detail/f7f4f180e784a8f21HZ83NS9EFo~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,高级java工程师,xian,6
+上海易宝软件有限公司深圳分公司,https://www.zhipin.com/job_detail/87e2aaaf88b41ab51Xd50ti5FlY~.html,10-15K,西安  ,3-5年,本科,Java,xian,5
+电信易通,https://www.zhipin.com/job_detail/5867e17b3f818cd403J_3dm6FlM~.html,6-10K,西安 雁塔区 高新路,3-5年,本科,JAVA工程师,xian,6
+小鱼易连,https://www.zhipin.com/job_detail/80c6c879c5c4348703R839u6FFo~.html,10-15K,西安 雁塔区 沣惠南路,3-5年,本科,高级Java工程师,xian,6
+数境科技,https://www.zhipin.com/job_detail/71a9c51a103b41941H172dy_ElM~.html,10-15K,西安 雁塔区 唐延路,5-10年,大专,Java工程师,xian,6
+引力科技西安分公司,https://www.zhipin.com/job_detail/46446b05201ec62803N709q4Elo~.html,10-15K,西安  ,3-5年,本科,Java架构师,xian,4
+神州数码,https://www.zhipin.com/job_detail/d88f280973c585261HVy39-0EVs~.html,12-15K·13薪,西安  ,3-5年,本科,高级java工程师（银行软件）,xian,6
+陕西慧水,https://www.zhipin.com/job_detail/d53227ecbf7b53561XZ63dy_FFo~.html,8-15K,西安  ,5-10年,本科,Java,xian,6
+捷邦软件技术,https://www.zhipin.com/job_detail/ed8a245c058e6d271Xxz3ty5E1M~.html,4-7K,西安 雁塔区 电子城,3-5年,本科,Java工程师,xian,6
+畅索软件,https://www.zhipin.com/job_detail/c6ac4ff5e3ad70950nR43dm1FVM~.html,13-20K·13薪,西安  ,5-10年,本科,java工程师,xian,5
+摩卡软件,https://www.zhipin.com/job_detail/3792370c60efb9b61Xd52NS5FlQ~.html,7-9K·14薪,西安  ,3-5年,大专,Java开发工程师,xian,6
+山东新北洋信息技...,https://www.zhipin.com/job_detail/fa83be81e44a0a1c0nR93N28GVE~.html,11-16K·14薪,西安 雁塔区 电子城,5-10年,本科,Java开发工程师,xian,4
+上海哥瑞利软件,https://www.zhipin.com/job_detail/ef16adeec8513c420nRz39i6FVE~.html,8-12K,西安  ,3-5年,本科,Java工程师,xian,1
+纬象科技,https://www.zhipin.com/job_detail/ee405cc8577bfd681XB43dy5FVA~.html,7-12K,西安 莲湖区 高新路,3-5年,本科,java开发工程师,xian,1
+陕西金合,https://www.zhipin.com/job_detail/aabeea128856d5441XVz2ti4FlM~.html,8-10K,西安  ,3-5年,本科,中级java,xian,6
+软通动力信息技术集团,https://www.zhipin.com/job_detail/ac0626604567c50b1X1_09i1E1c~.html,15-25K,西安  ,3-5年,本科,中高级java开发,xian,2
+东华云计算,https://www.zhipin.com/job_detail/f6d3fafcadd0c7770nV929-5EFc~.html,8-13K,西安  ,3-5年,本科,java,xian,6
+武汉佰钧成,https://www.zhipin.com/job_detail/870246466cc524841Hx809q-GVQ~.html,9-14K,西安 雁塔区 高新软件园,3-5年,本科,Java开发工程师,xian,2
+好桔,https://www.zhipin.com/job_detail/4104b43dd031292c1nFy3dm0GFQ~.html,10-20K,西安 雁塔区 高新路,经验不限,本科,Java,xian,6
+Yeahmobi,https://www.zhipin.com/job_detail/2b73823cc81f197d031_29u4GFI~.html,15-20K,西安  ,5-10年,本科,JAVA 开发工程师,xian,6
+国智云鼎,https://www.zhipin.com/job_detail/1e05752297414eb81HJ709W6E1o~.html,5-8K,西安 未央区 凤城一路,3-5年,本科,Java,xian,3
+西安传智播客教育...,https://www.zhipin.com/job_detail/25af35706acf1d390nV929y1ElU~.html,15-30K,西安  ,5-10年,本科,JAVA 双元导师,xian,4
+石化盈科,https://www.zhipin.com/job_detail/4013e387c61df9e30nd62925EFA~.html,12-22K·13薪,西安  ,5-10年,本科,高级JAVA后端开发工程师,xian,6
+西安笃定,https://www.zhipin.com/job_detail/fabafc22604fe429031_2ti0EVE~.html,7-10K,西安  ,3-5年,本科,中级Java开发工程师,xian,2
+西部开源技术中心,https://www.zhipin.com/job_detail/352293cdd5bbc2731Hd829q0E1Y~.html,8-13K,西安 雁塔区 电子城,3-5年,本科,Java讲师,xian,1
+华炎信息,https://www.zhipin.com/job_detail/2370d47e739218a70nV70tS9GFc~.html,8-13K,西安  ,1-3年,大专,对日Java工程师,xian,2
+三星数据,https://www.zhipin.com/job_detail/5971030a2b23919e0nV_09u4GFU~.html,8-12K·13薪,西安 雁塔区 高新软件园,3-5年,本科,JAVA开发工程师,xian,4
+卫宁健康,https://www.zhipin.com/job_detail/36c5545b47abb2851Hx92t21F1o~.html,10-15K,西安  ,5-10年,本科,Java高级开发工程师,xian,4
+软通动力,https://www.zhipin.com/job_detail/52ddd0588e4130011n1929-6F1o~.html,9-18K,西安  ,经验不限,本科,Java开发工程师,xian,4
+奥枫软件,https://www.zhipin.com/job_detail/5ac8d3bead5b30c11nJ82d67FQ~~.html,6-7K,西安 雁塔区 科技二路,1-3年,本科,Java,xian,3
+西安驭思软件,https://www.zhipin.com/job_detail/d587f25b10338dad1nx439S0E1E~.html,8-12K,西安 雁塔区 科技路西口,3-5年,本科,高级java工程师,xian,6
+软通动力,https://www.zhipin.com/job_detail/636a2cd9163a0c3a1Hd72t29FlI~.html,11-17K,西安 雁塔区 高新软件园,1-3年,本科,Java开发工程师,xian,4
+宇信科技,https://www.zhipin.com/job_detail/8bf2fbbb9eac2c9a1HB_0t-7EFc~.html,12-18K,西安 新城区 解放路,5-10年,本科,Java开发(外派工行),xian,4
+软通动力,https://www.zhipin.com/job_detail/a5dd94fc06df01601XV92tW7FFc~.html,15-20K,西安 长安区 王寺,3-5年,本科,Java开发工程师,xian,1
+国博政通,https://www.zhipin.com/job_detail/b995863ef013b0e903J62dy4FlQ~.html,5-10K,西安 雁塔区 唐延路,3-5年,本科,Java软件工程师,xian,2
+云基华海,https://www.zhipin.com/job_detail/4590d8b10edd85e11Hx60tS-GVU~.html,10-15K,西安 莲湖区 高新路,5-10年,本科,高级java工程师,xian,1
+纬象科技,https://www.zhipin.com/job_detail/55b04445b4e4d8cd1HV83Ny_Elc~.html,7-8K,西安 莲湖区 高新路,5-10年,大专,java开发工程师,xian,3
+西安传智播客教育...,https://www.zhipin.com/job_detail/0a87d7305aadbffd0nR63du6EFo~.html,15-30K·13薪,西安  ,5-10年,本科,Java,xian,5
+软通动力信息技术集团,https://www.zhipin.com/job_detail/96f785cce72b41081X183t29F1A~.html,11-22K,西安  ,3-5年,本科,Java开发工程师,xian,6
+兆隆金讯计算机培训,https://www.zhipin.com/job_detail/3d70fe7b4e20721803R83d67FVU~.html,10-15K,西安 碑林区 长安路,3-5年,本科,Java讲师,xian,5
+信大捷安,https://www.zhipin.com/job_detail/4eaf87088e3a5b3f1HB-39u5FlQ~.html,10-15K,西安  ,3-5年,本科,Java Web开发工程师,xian,2
+众智物联,https://www.zhipin.com/job_detail/8fb4e68d5e90b6931nJ73d61E1s~.html,5-10K,西安  ,1-3年,本科,Java,xian,3
+软通动力,https://www.zhipin.com/job_detail/cfa95227338de1620nZ73du0GVo~.html,11-20K,西安  ,3-5年,本科,中高级Java开发工程师,xian,5
+极客原点,https://www.zhipin.com/job_detail/51ac2bbabdfcd8700nNy0tW8GVI~.html,20-30K,西安 莲湖区 土门,5-10年,学历不限,Java Leader,xian,2
+软通动力,https://www.zhipin.com/job_detail/9a4f60ddc391fff7031-3d26EVU~.html,13-18K,西安 雁塔区 高新软件园,5-10年,本科,高级Java开发工程师,xian,5
+壹米滴答,https://www.zhipin.com/job_detail/a524e31129ff70261XF_2dy6EFY~.html,8-13K,西安 未央区 朱宏路,1-3年,本科,java开发工程师,xian,5
+阿里巴巴集团,https://www.zhipin.com/job_detail/68932d2e64c26a430nV63N-9EFc~.html,25-45K·16薪,西安 碑林区 太乙路,3-5年,硕士,Java研发工程师,xian,2
+万盛达企业,https://www.zhipin.com/job_detail/2c83a71f0b49eb1b1nJ93dW4E1M~.html,6-11K,西安 碑林区 南院门,1-3年,本科,Java开发工程师,xian,5
+中海同创,https://www.zhipin.com/job_detail/0dfbab9f07f7ea8c03Bz39q4ElY~.html,8-13K,西安 未央区 三桥,经验不限,大专,JAVA高级工程师,xian,6
+ThoughtWorks,https://www.zhipin.com/job_detail/804d5c4e2bbbc2690nVy29W4F1U~.html,14-28K·14薪,西安  ,3-5年,本科,Java开发工程师-Telecom Digital,xian,2
+网算数据,https://www.zhipin.com/job_detail/b8e7c9d2a1dbf12803Ny3d29GFM~.html,12-18K,西安 长安区 郭杜,5-10年,本科,Java开发工程师,xian,3
+华炎信息,https://www.zhipin.com/job_detail/02fd62514dc465891XZ82d-1FVU~.html,6-12K,西安  ,1-3年,大专,对日java工程师,xian,5
+瓜豆科技,https://www.zhipin.com/job_detail/a01c0310ad43831c1XB409S5GFc~.html,10-15K,西安 雁塔区 曲江新区,3-5年,本科,高级java工程师,xian,1
+西安烽火,https://www.zhipin.com/job_detail/18d6f64d25f623c703x829q_GVU~.html,11-17K,西安 雁塔区 沣惠南路,5-10年,本科,java web 高级开发,xian,6
+卡漠科技,https://www.zhipin.com/job_detail/6701c3da3eef6e711HB-0tW_GFM~.html,10-15K,西安 灞桥区 浐灞半岛,3-5年,本科,JAVA工程师,xian,3
+华为,https://www.zhipin.com/job_detail/ee6af5ee39f4a7eb0X1_0tW0Fw~~.html,15-30K,西安 雁塔区 ,3-5年,本科,Java,xian,5
+华为,https://www.zhipin.com/job_detail/dcf0e1f0c5b186d903N73tW6GFM~.html,13-26K,西安 雁塔区 高新软件园,3-5年,本科,高级软件工程师（Java、C/C++、go）,xian,6
+软通动力,https://www.zhipin.com/job_detail/8e5fcad9ef4e672c03153dq1GFI~.html,15-21K,西安  ,3-5年,本科,高级/资深java研发工程师,xian,1
+陕西得民,https://www.zhipin.com/job_detail/00d92dd47afb12111XR80t-7FVc~.html,8-13K,西安 未央区 张家堡,3-5年,本科,Java,xian,4
+立达兴业科技,https://www.zhipin.com/job_detail/8122270c3a4bd7db1nF72t-4E1A~.html,7-8K,西安 雁塔区 电子城,1-3年,本科,Java开发工程师,xian,1
+方联科技,https://www.zhipin.com/job_detail/650ccef608dc0e471nF_2Ni7GFM~.html,5-10K,西安  ,3-5年,大专,Java,xian,3
+神州数码,https://www.zhipin.com/job_detail/b4b95d0a465d8f6503xy2d69F1c~.html,10-15K·13薪,西安  ,3-5年,本科,JAVA高级工程师,xian,3
+得一创新,https://www.zhipin.com/job_detail/eb57bf793bb411ed1Xx83N69GFA~.html,10-15K,西安 雁塔区 旺座现代城,5-10年,本科,高级JAVA工程师,xian,3
+青麦科技,https://www.zhipin.com/job_detail/fe6ab2a0a07f916a03N_2N-7GFQ~.html,7-11K,西安 碑林区 柏树林,3-5年,本科,java开发,xian,2
+软通动力,https://www.zhipin.com/job_detail/89159221ed80042703V62N65GFE~.html,11-20K,西安 雁塔区 高新软件园,5-10年,本科,Java开发工程师,xian,1
+浙江中控,https://www.zhipin.com/job_detail/ce51ee48011828ec0nZ-09y4ElE~.html,9-14K·14薪,西安  ,3-5年,本科,Java开发工程师,xian,5
+澳鹏网络,https://www.zhipin.com/job_detail/f81ad4d70f7124521XJ53N61E1E~.html,18-35K,西安 雁塔区 鱼化寨,5-10年,大专,Java架构师,xian,2
+中麦通讯,https://www.zhipin.com/job_detail/4174afcf85c790671XN929W9FlA~.html,8-13K,西安  ,5-10年,本科,java工程师,xian,2
+上海易立德,https://www.zhipin.com/job_detail/845ed00863ab120003x809S9EVo~.html,11-20K,西安 雁塔区 高新软件园,3-5年,本科,Java开发工程师,xian,1
+鸿泉物联网,https://www.zhipin.com/job_detail/c649fc04adbac1521XJy2ty4GFc~.html,7-12K,西安 雁塔区 鱼化寨,1-3年,大专,Java开发工程师,xian,3
+软通动力,https://www.zhipin.com/job_detail/6c342ec15494c5141Xd43dm1F1c~.html,9-14K,西安 长安区 王寺,1-3年,本科,java开发,xian,6
+犀牛网络科技,https://www.zhipin.com/job_detail/024db7ab6033a87603J-3tm1GFA~.html,6-10K,西安 雁塔区 旺座现代城,3-5年,本科,Java后端开发工程师,xian,1
+崤云安全,https://www.zhipin.com/job_detail/c496a0cf96dee8541HJ52NS6EFM~.html,6-10K,西安 碑林区 环城南路,3-5年,本科,java工程师,xian,6
+北京国通创投,https://www.zhipin.com/job_detail/a9240831ec84bc001H1z3N60ElE~.html,5-8K·13薪,西安  ,3-5年,大专,Java,xian,2
+中软国际,https://www.zhipin.com/job_detail/3193d5401f50e6ec1XR539q9FVo~.html,15-30K,西安 雁塔区 高新软件园,经验不限,本科,java开发工程师,xian,1
+昆山吉立富软件,https://www.zhipin.com/job_detail/0c1ef96a20d6d0e01HVz2dS0FFc~.html,5-8K,西安  ,3-5年,大专,JAVA工程师,xian,6
+纳吉特,https://www.zhipin.com/job_detail/0df4d7ac836b49c91Xd929S1E1s~.html,11-20K·13薪,西安 雁塔区 旺座现代城,5-10年,本科,Java高级工程师,xian,3
+涛医宝,https://www.zhipin.com/job_detail/ab716b5e5d910d3f0nR_092-Els~.html,13-26K·14薪,西安 雁塔区 高新路,3-5年,本科,java,xian,3
+长银消费金融,https://www.zhipin.com/job_detail/7e14eb7686a9cc8303R-0ti8EVo~.html,11-20K·13薪,西安 未央区 张家堡,3-5年,本科,JAVA开发岗,xian,5
+西安烽火,https://www.zhipin.com/job_detail/b43b43a1d39bc04103x829q_GVc~.html,9-11K,西安 雁塔区 沣惠南路,3-5年,本科,Java,xian,3
+云谷创新,https://www.zhipin.com/job_detail/4cdfdc53230eefe303d83Nm9GFM~.html,4-6K,西安 雁塔区 长延堡,1-3年,大专,JAVA工程师,xian,1
+软通动力,https://www.zhipin.com/job_detail/71c520871e07a8611X1-3NW_EFc~.html,9-14K,西安 长安区 ,1-3年,本科,JAVA开发工程师,xian,5
+神州数码,https://www.zhipin.com/job_detail/3de532484f38027603Bz39y5GVc~.html,8-13K,西安  ,经验不限,本科,高级Java开发工程师,xian,4
+神州数码,https://www.zhipin.com/job_detail/6a51305d541cbb7c03xy09W8GFU~.html,10-15K·13薪,西安  ,3-5年,本科,Java高级开发工程师,xian,3
+上讯信息,https://www.zhipin.com/job_detail/06016b568c3741361XN43dm6FVs~.html,8-14K,西安 雁塔区 科技二路,1-3年,本科,JAVA开发工程师,xian,5
+巨龙,https://www.zhipin.com/job_detail/04939fa09f97e60103d52926GVA~.html,7-12K·14薪,西安 雁塔区 唐延路,3-5年,本科,JAVA开发,xian,3
+当老师,https://www.zhipin.com/job_detail/d927846d80a350f21HV809-7EFo~.html,9-14K,西安 碑林区 小寨,3-5年,本科,JAVA工程师,xian,2
+百变科技,https://www.zhipin.com/job_detail/617b86d0ae2e29ee0nV92N2-FVQ~.html,7-9K,西安 莲湖区 北关,1-3年,本科,java开发,xian,2
+西安图迹信息科技,https://www.zhipin.com/job_detail/3bea741e65e643841nZ729q5F1U~.html,10-15K·13薪,西安  ,3-5年,本科,Java开发工程师,xian,3
+交大长天,https://www.zhipin.com/job_detail/2990dca150e6a9ff1HJy2Nu6ElM~.html,15-24K,西安  ,3-5年,本科,高级Java开发工程师,xian,3
+博达,https://www.zhipin.com/job_detail/ad8820da181116ad0nRz3Nq4Fg~~.html,12-15K,西安  ,3-5年,本科,JAVA开发工程师,xian,4
+西安赛立科,https://www.zhipin.com/job_detail/fd8fe87f4580e5dc1HJ82dq8FlM~.html,8-12K,西安 雁塔区 沣惠南路,1-3年,本科,Java,xian,3
+瑞意康信,https://www.zhipin.com/job_detail/4a546970596692fc1HV52Ni4ElI~.html,14-18K,西安  ,3-5年,本科,Java软件工程师（中级）,xian,1
+信耳云,https://www.zhipin.com/job_detail/2f105d7eae130a200nVz2dq_Flc~.html,6-9K·13薪,西安 雁塔区 高新路,1-3年,大专,Java开发,xian,3
+华为,https://www.zhipin.com/job_detail/8ee851faa23545bf1Xx629m9F1Y~.html,10-20K,西安  ,3-5年,本科,高级Java开发工程师,xian,1
+卫宁健康,https://www.zhipin.com/job_detail/6b626487523aa35003B53t65GVs~.html,9-14K,西安  ,5-10年,本科,Java开发工程师,xian,5
+维恩智联,https://www.zhipin.com/job_detail/f2ed83c4c73bf64003J52dS9FVQ~.html,8-12K,西安  ,3-5年,本科,Java中高级工程师,xian,5
+睿之航,https://www.zhipin.com/job_detail/b484ac29af3737a603R92924GVc~.html,9-14K·13薪,西安 雁塔区 科技路西口,1-3年,本科,java,xian,3
+三盟科技,https://www.zhipin.com/job_detail/5e2c88d09fc1c5b503N939q9FlM~.html,11-16K,西安  ,5-10年,本科,Java高级开发工程师,xian,2
+西安华软,https://www.zhipin.com/job_detail/93fd33a66166ede31XV909S6F1A~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,java工程师,xian,3
+泰德网聚,https://www.zhipin.com/job_detail/0d809af545d14ccd1HZy0928FVs~.html,4-9K,西安 雁塔区 长延堡,经验不限,本科,JAVA工程师,xian,5
+傲梦网络科技,https://www.zhipin.com/job_detail/b77b609eae0e27321XV63t-8F1c~.html,6-8K,西安 雁塔区 昆明路,经验不限,本科,java,xian,1
+飞翔通讯,https://www.zhipin.com/job_detail/22a783c72c2ef50c03x_2N6_EVE~.html,12-16K,西安  ,3-5年,本科,java高级工程师,xian,6
+立达兴业科技,https://www.zhipin.com/job_detail/10ceb92f2ee77bee1Hd52Nu5EFc~.html,2-4K,西安 雁塔区 长延堡,经验不限,本科,Java实习生,xian,1
+西安赛立科,https://www.zhipin.com/job_detail/ba120a177c829b8803xy09m_FlI~.html,7-10K,西安 雁塔区 沣惠南路,3-5年,本科,java开发,xian,3
+西安立辰远景,https://www.zhipin.com/job_detail/3bd66a4eeb7f33240nVy29q6FlQ~.html,12-20K,西安  ,1-3年,本科,Java工程师,xian,4
+神州数码融信,https://www.zhipin.com/job_detail/9fa2295190ee45511XN_2Nm6GFE~.html,13-14K,西安 雁塔区 电子城,5-10年,本科,JAVA高级工程师,xian,3
+皖通科技,https://www.zhipin.com/job_detail/d96649c98380f0980nRz3tu1F1o~.html,8-13K,西安  ,3-5年,本科,Java开发工程师,xian,2
+汇纳科技,https://www.zhipin.com/job_detail/31ed697af831bd3003V43t-4GFU~.html,15-20K,西安 雁塔区 枫林绿洲,5-10年,本科,Java高级开发工程师,xian,2
+天职信息,https://www.zhipin.com/job_detail/5ab14532a3c752aa1XNy0tS1FlU~.html,10-15K,西安  ,5-10年,本科,Java高级工程师,xian,5
+远测科技,https://www.zhipin.com/job_detail/4273cd7c775be50d0nV509i1E1s~.html,8-12K,西安  ,3-5年,大专,Java,xian,4
+文渊软件,https://www.zhipin.com/job_detail/a97f5262a634dbf21XFz3NS7GFc~.html,6-12K,西安 雁塔区 高新路,5-10年,大专,JAVA开发工程师,xian,2
+三星数据,https://www.zhipin.com/job_detail/3bc03dad59784be00nV92Ni4EFE~.html,10-15K·13薪,西安 雁塔区 高新软件园,10年以上,本科,JAVA WEB 开发工程师,xian,2
+巨龙,https://www.zhipin.com/job_detail/955b09789fa6b40a03d52925GFY~.html,6-10K,西安 雁塔区 唐延路,1年以内,本科,Java开发工程师,xian,1
+武汉佰钧成,https://www.zhipin.com/job_detail/dc38c9600cc637340nZ72dW4FVE~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,Java开发,xian,6
+叁陆玖玖网络科技,https://www.zhipin.com/job_detail/8e6a335c183f515303x63N--EFE~.html,6-7K,西安 雁塔区 玫瑰大楼,1-3年,大专,Java程序员,xian,2
+海润通信,https://www.zhipin.com/job_detail/e6db6158c5cf3d3b1HV72ty0EVs~.html,6-11K,西安 雁塔区 高新软件园,1-3年,大专,Java硬件工程师,xian,3
+西安华科,https://www.zhipin.com/job_detail/2803bda7ee269d071HN82di7ElI~.html,10-15K,西安 雁塔区 唐延路,5-10年,本科,java高级工程师,xian,2
+脉云,https://www.zhipin.com/job_detail/488382f143ad82561XV829u9GVE~.html,6-11K·13薪,西安 雁塔区 科技二路,1-3年,本科,java开发工程师,xian,1
+海尔U+智慧生活平台,https://www.zhipin.com/job_detail/dddf836d75c878be03B70t68E1s~.html,15-16K,西安  ,5-10年,本科,Java高级开发工程师,xian,5
+天维信息,https://www.zhipin.com/job_detail/ba78b6c980a525381HB60964EFQ~.html,8-13K,西安 莲湖区 莲湖公园,3-5年,本科,JAVA开发工程师,xian,6
+思特奇,https://www.zhipin.com/job_detail/fa57aa52659f51141HF-3dq-EFM~.html,5-10K,西安 雁塔区 电子城,1-3年,本科,java（crm_mci产品线）,xian,2
+陕西协力,https://www.zhipin.com/job_detail/9defbd0f5aa86c9b03B42NW5ElE~.html,6-9K,西安  ,1-3年,本科,工程师、.net.java 方向,xian,5
+杭州三汇,https://www.zhipin.com/job_detail/7c64992cf2ee561703V409S8GFM~.html,10-15K·14薪,西安 未央区 张家堡,3-5年,本科,Java开发工程师,xian,5
+蜀海公司,https://www.zhipin.com/job_detail/91e635c661cc6f3503xy2N28F1s~.html,15-22K,西安 雁塔区 唐延路,10年以上,大专,JAVA高级开发工程师,xian,6
+易宝软件,https://www.zhipin.com/job_detail/608ec12daff76efa03142ty4GFE~.html,15-25K,西安  ,5-10年,本科,Java架构,xian,2
+Yeahmobi,https://www.zhipin.com/job_detail/cf69fdb52e4da7b11nx-2N64GFs~.html,8-10K,西安 雁塔区 ,3-5年,本科,Java全栈开发工程师,xian,6
+西部电子,https://www.zhipin.com/job_detail/b34d910b30b5d2741XJ60tu7F1E~.html,8-15K,西安 雁塔区 旺座现代城,5-10年,本科,java高级,xian,4
+中钧,https://www.zhipin.com/job_detail/b25713389ce2f20503J83tS5ElQ~.html,10-15K,西安  ,3-5年,本科,Java开发,xian,2
+朗生网络,https://www.zhipin.com/job_detail/6b0da0f7002d1caa0nZz3t2-EFo~.html,8-13K,西安  ,5-10年,本科,高级JAVA开发,xian,3
+摩卡软件,https://www.zhipin.com/job_detail/fa32641ead12587a1nd43ti0F1I~.html,5-8K,西安  ,1-3年,本科,Java开发工程师,xian,6
+石竹软件,https://www.zhipin.com/job_detail/d8eb6805432860cf03R509q1FFQ~.html,12-16K,西安 雁塔区 高新路,5-10年,本科,java高级开发工程师,xian,2
+裕日软件,https://www.zhipin.com/job_detail/62ca5cf499b4ac7e03J409S_GVo~.html,8-10K,西安 雁塔区 沣惠南路,3-5年,本科,Java工程师（中级）,xian,5
+比特教育科技,https://www.zhipin.com/job_detail/23b4d5326459dc0d1HJy3921GFQ~.html,15-25K,西安 长安区 南大学城,5-10年,本科,Java,xian,4
+交大长天,https://www.zhipin.com/job_detail/9aca62cd469d0ad61nB-09-5FVE~.html,10-15K,西安  ,5-10年,本科,Java开发,xian,6
+西安北斗聚力,https://www.zhipin.com/job_detail/5bd9b6d50eb145da0nV829S5E1o~.html,8-10K,西安 雁塔区 长延堡,3-5年,本科,Java,xian,6
+兴汇电力,https://www.zhipin.com/job_detail/8a43c549c14dea251HN82tS-FFE~.html,7-12K,西安 长安区 王寺,3-5年,本科,java开发,xian,4
+软通动力,https://www.zhipin.com/job_detail/7005a95905e6e6201X1529S6FFQ~.html,11-18K,西安  ,3-5年,本科,Java，web，Python，测试，C++，运维，go,xian,1
+西部电子,https://www.zhipin.com/job_detail/407a3696b624fef21XF_2Nq-FVI~.html,15-25K,西安 雁塔区 旺座现代城,5-10年,本科,java研发经理,xian,2
+ThoughtWorks,https://www.zhipin.com/job_detail/53fa5b28d79082f71XN92Nu5ElA~.html,18-35K,西安 雁塔区 高新软件园,经验不限,学历不限,软件开发工程师 Java Developer,xian,5
+比特教育科技,https://www.zhipin.com/job_detail/e092d98dd3b9b3181HV62d-9FVY~.html,15-20K,西安 未央区 北大学城,3-5年,本科,JAVA高级开发讲师,xian,4
+中软国际,https://www.zhipin.com/job_detail/1c880cc0fa4b5f7303V72N61FVY~.html,12-17K,西安 雁塔区 高新软件园,3-5年,本科,Java开发工程师,xian,2
+君学教育集团,https://www.zhipin.com/job_detail/fb687cd58b1814ca1XJ63NS9EFU~.html,12-21K,西安 雁塔区 高新软件园,5-10年,本科,高级java开发工程师,xian,4
+云谷创新,https://www.zhipin.com/job_detail/c789595d6e82fe161H1-3di4EFc~.html,10-15K,西安 雁塔区 长延堡,5-10年,大专,高级JAVA工程师,xian,5
+觉醒网络科技,https://www.zhipin.com/job_detail/081ab832062c8f2a1nJ93NS1FlA~.html,7-12K,西安 雁塔区 长延堡,3-5年,本科,Java高级工程师,xian,1
+陕西菜鸟,https://www.zhipin.com/job_detail/4329c7bb9266a67403V-3dq6EFM~.html,7-8K,西安 雁塔区 唐延路,3-5年,本科,JAVA中级工程师,xian,4
+中软国际,https://www.zhipin.com/job_detail/182a5bbea16aa9bd0nV63t29F1s~.html,10-15K,西安  ,3-5年,本科,Java中高级开发,xian,5
+文思海辉·金融,https://www.zhipin.com/job_detail/50d1de983d4f8a1a03V43N6_FFE~.html,12-15K,西安 灞桥区 浐灞半岛,3-5年,大专,java开发,xian,2
+广州光点信息,https://www.zhipin.com/job_detail/5b41c3709ea876c30nR52t-1F1M~.html,9-14K·13薪,西安  ,1-3年,本科,Java开发工程师,xian,2
+格尔软件,https://www.zhipin.com/job_detail/c307185853d42ea503Zy29u6EVI~.html,11-20K,西安 雁塔区 沣惠南路,5-10年,本科,Java高级软件工程师,xian,3
+浙江优创,https://www.zhipin.com/job_detail/f290eeaf71b5aadc03x939i_GFU~.html,8-12K·13薪,西安  ,1-3年,本科,Java开发工程师,xian,6
+秦驰信息,https://www.zhipin.com/job_detail/93f266f2c8ae740e03Zz3N69EFo~.html,7-9K,西安  ,3-5年,大专,java开发中级工程师,xian,4
+朗生网络,https://www.zhipin.com/job_detail/bd2043365e58248b0nZ90tu8EVY~.html,8-12K,西安  ,5-10年,本科,JAVA开发,xian,4
+格尔软件,https://www.zhipin.com/job_detail/89bff6ea65be80ac03V-3d-9FVA~.html,5-10K,西安 雁塔区 沣惠南路,1-3年,本科,Java中级软件工程师,xian,1
+天网软件,https://www.zhipin.com/job_detail/4aa79433aef22d511HV709u1FVI~.html,8-12K,西安 雁塔区 紫薇田园都市,3-5年,大专,Java程序员,xian,3
+索兆信息科技,https://www.zhipin.com/job_detail/f4dffd10ee5c0a3903d63di6E1U~.html,8-12K,西安 雁塔区 高新路,1-3年,大专,Java高级开发工程师,xian,4
+交大捷普,https://www.zhipin.com/job_detail/12a85144b0956c501Hd92t-7Elc~.html,9-14K,西安 雁塔区 科技二路,经验不限,本科,Java开发工程师,xian,2
+中软国际,https://www.zhipin.com/job_detail/998c01e5964607921XN63tW7EFs~.html,12-24K,西安 雁塔区 高新软件园,3-5年,本科,高级java开发工程师,xian,1
+天诚软件,https://www.zhipin.com/job_detail/14c9cc0e1c3c3b3d03N62tS-F1c~.html,9-12K,西安  ,5-10年,本科,Java高级开发工程师,xian,5
+西安远眺科技,https://www.zhipin.com/job_detail/8a052136841462da03B92dq1FFA~.html,7-10K,西安  ,1-3年,本科,Java初级工程师,xian,6
+西安景兆,https://www.zhipin.com/job_detail/8b08cd6fda07f7d61XFy0961Elo~.html,8-15K,西安 雁塔区 科技路西口,5-10年,大专,Java开发工程师,xian,6
+天房科技,https://www.zhipin.com/job_detail/d5e7825281e951e20nRz2N64E1o~.html,7-12K,西安 雁塔区 电子城,3-5年,本科,Java开发（工作地点：西安）,xian,5
+诺维北斗,https://www.zhipin.com/job_detail/70bc21c1db3ec9d01XZz0924FFU~.html,9-12K,西安  ,3-5年,大专,JAVA工程师,xian,2
+世平信息,https://www.zhipin.com/job_detail/d3b88683b5441f4f03R53t6-FlA~.html,11-17K,西安  ,5-10年,本科,Java开发工程师,xian,3
+华为技术有限公司,https://www.zhipin.com/job_detail/bb3000adaffcd0b50nd729m0FVM~.html,12-20K,西安  ,1-3年,本科,Java开发工程师,xian,3
+拼图科技,https://www.zhipin.com/job_detail/e042c13f2572a73a1nJ53d21FVQ~.html,6-11K,西安 雁塔区 唐延路,5-10年,本科,JAVA高级工程师,xian,4
+广联达,https://www.zhipin.com/job_detail/0883bf989134021303dz39S-GVI~.html,12-20K,西安 未央区 文景路,5-10年,本科,java高级开发工程师,xian,4
+同信互娱,https://www.zhipin.com/job_detail/02a018156cd420051H152N25E1I~.html,5-7K,西安 雁塔区 电子城,1-3年,本科,Java,xian,2
+裕日软件,https://www.zhipin.com/job_detail/1b6e3ebd001fefb103By0t27FlE~.html,6-11K,西安  ,3-5年,本科,JAVA开发工程师,xian,2
+时代科技,https://www.zhipin.com/job_detail/d6cdf7947d30522e1XV_3t6_EFs~.html,9-15K,西安 新城区 解放路,5-10年,本科,Java开发工程师,xian,3
+振邦智慧城市信息系统,https://www.zhipin.com/job_detail/01434f11fbc0bfcb1HV82dS0GVQ~.html,9-14K,西安  ,5-10年,大专,Java高级软件工程师,xian,4
+大道信息,https://www.zhipin.com/job_detail/c926c5bee89dbcb60nV53d-6GVY~.html,8-13K,西安  ,3-5年,本科,高级java开发工程师,xian,1
+瑞思科技,https://www.zhipin.com/job_detail/263161e2bde84b331HR-09u5EFo~.html,4-6K,西安  ,1-3年,大专,Java开发工程师,xian,2
+石竹软件,https://www.zhipin.com/job_detail/0e72844edf863f3303d-2tS6FVc~.html,8-13K,西安 雁塔区 高新路,3-5年,本科,java开发工程师（可出差）,xian,1
+卡多安,https://www.zhipin.com/job_detail/ff141f0773968a1e1nB609W4FVs~.html,3-5K,西安 未央区 未央路,1-3年,本科,Java开发工程师,xian,2
+深圳华为,https://www.zhipin.com/job_detail/0439a679b0ca01981Xx42tW6EVo~.html,20-40K,西安 雁塔区 ,经验不限,本科,Java开发工程师,xian,6
+中软国际,https://www.zhipin.com/job_detail/e39b275ab15708151XJ-3ty4E1c~.html,9-15K,西安 雁塔区 ,1-3年,本科,java高级开发工程师,xian,1
+丝路软件,https://www.zhipin.com/job_detail/f51940716a88b1111X1z0tu7Elc~.html,8-12K,西安 雁塔区 科技二路,3-5年,大专,java软件工程师,xian,4
+施博信息技术有限公司,https://www.zhipin.com/job_detail/829340d89d4e96300nd70t-1E1U~.html,5-8K,西安  ,1-3年,本科,数据分析专员,xian,6
+中软国际,https://www.zhipin.com/job_detail/1167e56940cd791e0nZ93dy_E1c~.html,8-12K,西安  ,经验不限,本科,数据分析,xian,2
+每日瑜伽,https://www.zhipin.com/job_detail/cf6eedb9184ab6f3031z39y9FVo~.html,10-15K·13薪,西安 雁塔区 沣惠南路,1-3年,本科,数据分析,xian,6
+美团点评,https://www.zhipin.com/job_detail/0fcf4d3d0134c9321XV73tS6E1Q~.html,10-15K,西安 碑林区 文艺路,1-3年,本科,数据分析师,xian,2
+北京沛合,https://www.zhipin.com/job_detail/ad1e34c2a756971c1XJ92Nu1E1I~.html,4-5K,西安  ,经验不限,本科,报表/数据分析,xian,5
+松毅软件,https://www.zhipin.com/job_detail/bffa9326a917d9011H180t-8ElA~.html,4-8K,西安 雁塔区 电子城,1年以内,本科,数据分析师,xian,4
+中科金审,https://www.zhipin.com/job_detail/bf3a3099657cdd0c1HV809m9ElA~.html,6-10K,西安 未央区 文景路,3-5年,本科,数据分析师,xian,4
+博锐森信息技术,https://www.zhipin.com/job_detail/2cba1de5efda622603V439y0E1Y~.html,5-10K,西安 新城区 万寿路,经验不限,本科,数据分析师,xian,3
+每日瑜伽,https://www.zhipin.com/job_detail/6eb7618afa8d53471Hxz39u_GVs~.html,5-10K·13薪,西安 雁塔区 沣惠南路,1-3年,本科,产品数据分析,xian,4
+鹏光环保科技,https://www.zhipin.com/job_detail/9a580b1c1f068e401Xd53N-8GFI~.html,5-8K,西安 碑林区 长安路,1-3年,本科,数据分析专员,xian,4
+增材院,https://www.zhipin.com/job_detail/8af97b381454b621031-39W0FlU~.html,10-15K,西安 长安区 郭杜,1-3年,硕士,数据分析工程师,xian,3
+泰豪软件,https://www.zhipin.com/job_detail/b673c46f06e3c5601Hd-39q0E1o~.html,10-15K,西安 新城区 东大街,3-5年,硕士,高级数据分析挖掘工程师,xian,5
+交大长天,https://www.zhipin.com/job_detail/1c72f4e1e526488403xy2925ElU~.html,10-12K,西安  ,3-5年,本科,数据分析,xian,4
+每日瑜伽,https://www.zhipin.com/job_detail/fc7f10a7e78da8d81HN709u9EFM~.html,10-15K·13薪,西安 雁塔区 沣惠南路,1-3年,本科,海外数据分析,xian,3
+九索,https://www.zhipin.com/job_detail/3cebc6d972995ef41XB_2tm_F1E~.html,8-13K·13薪,西安 雁塔区 小寨,3-5年,本科,数据分析师,xian,5
+爱特蜜医疗美容,https://www.zhipin.com/job_detail/dfcc28e26f8e724603Z52t6_GFU~.html,3-6K,西安 雁塔区 小寨,1-3年,大专,数据分析师,xian,1
+天邦测绘,https://www.zhipin.com/job_detail/2298a557bdfbaf671Hx-2d28F1Y~.html,4-6K,西安 雁塔区 唐延路,1年以内,本科,数据分析师,xian,2
+松毅软件,https://www.zhipin.com/job_detail/1a3ec8bdce9aa7fd03d80967FlA~.html,4-8K,西安 雁塔区 永松路,1-3年,本科,数据分析师,xian,3
+先进数通,https://www.zhipin.com/job_detail/9af5ba10ce06d6111XR809W0FlI~.html,6-10K,西安 莲湖区 土门,3-5年,本科,数据分析师,xian,3
+西安点扣,https://www.zhipin.com/job_detail/f7e3eda133102a6e031z2du4FFo~.html,5-8K,西安  ,1-3年,本科,数据分析,xian,1
+聚视界信息技术,https://www.zhipin.com/job_detail/0c90b3e3c99355e403N53Ni8GFs~.html,5-6K,西安 雁塔区 长延堡,3-5年,本科,数据分析师,xian,6
+潭州教育,https://www.zhipin.com/job_detail/0462ee192f5abc680nZ82dm0EFs~.html,4-6K,西安  ,1-3年,本科,BI数据分析师,xian,6
+西安开驰曼,https://www.zhipin.com/job_detail/6c1707ffbbec0e761HF73t60F1E~.html,4-6K,西安 雁塔区 唐延路,经验不限,本科,数据分析师,xian,3
+晨启航网络,https://www.zhipin.com/job_detail/b439d1e7ae6b8eb103N_39q8GVA~.html,3-5K,西安 雁塔区 等驾坡,经验不限,本科,数据分析师,xian,2
+交大长天,https://www.zhipin.com/job_detail/67cb0ac0fc2d92831n182Nq_FVU~.html,7-14K,西安 雁塔区 电子城,3-5年,本科,数据分析师,xian,4
+松毅软件,https://www.zhipin.com/job_detail/6c55120ab0ed46ff03Nz39-7EFY~.html,4-7K,西安 雁塔区 电子城,经验不限,本科,房地产数据分析师,xian,2
+西安思倍,https://www.zhipin.com/job_detail/929f92eca8a0e4b71nF_0tm4Elc~.html,5-8K,西安  ,1年以内,本科,数据分析师,xian,3
+海润通信,https://www.zhipin.com/job_detail/7e264dd2677fcae61H173du4ElM~.html,6-11K,西安 雁塔区 高新软件园,3-5年,大专,运营数据分析师,xian,2
+泰豪软件,https://www.zhipin.com/job_detail/de2e00c758316e661Hd-39W8FlE~.html,3-5K,西安 新城区 东大街,经验不限,本科,数据分析工程师（应届生）,xian,2
+慧方科技,https://www.zhipin.com/job_detail/e97633cd56f9188103Z_3tS_E1s~.html,10-15K,西安 长安区 长安广场,经验不限,硕士,数据分析,xian,5
+麦仓数据,https://www.zhipin.com/job_detail/0206dfdbdf3c47f503V82d64EVE~.html,3-6K,西安 雁塔区 电视塔,经验不限,大专,数据分析师,xian,4
+海润通信,https://www.zhipin.com/job_detail/3fbe230c3bc7b5711H163tm0FVA~.html,6-11K,西安 雁塔区 高新软件园,3-5年,大专,运营数据分析师,xian,3
+西安乐推,https://www.zhipin.com/job_detail/8eeca0464c45595c03V93N--E1o~.html,8-12K,西安  ,1年以内,本科,数据分析师,xian,2
+垚海科技,https://www.zhipin.com/job_detail/eb1df93db665bed71Xx_39q6GFM~.html,4-8K,西安 雁塔区 唐延路,经验不限,本科,金融数据分析师,xian,3
+微观学社,https://www.zhipin.com/job_detail/4b175f3a544c78b21Xd43tq0EVY~.html,6-8K,西安 雁塔区 高新路,1-3年,本科,数据分析师,xian,2
+西安乐推,https://www.zhipin.com/job_detail/fa6d399795113bb203Z43dm-FVA~.html,10-15K,西安  ,3-5年,本科,数据分析师,xian,2
+西安方元市场研究,https://www.zhipin.com/job_detail/c99d0e53a64e613f1XB53NS-E1A~.html,5-8K,西安 碑林区 文艺路,1-3年,本科,研究员/数据分析师,xian,1
+西安乐推,https://www.zhipin.com/job_detail/77cd04aeae14372c03Z43dm4ElQ~.html,8-13K,西安  ,1-3年,本科,数据分析师,xian,4
+陕西亿汇通,https://www.zhipin.com/job_detail/2fe54813c37d46c403d73ty8FFs~.html,4-6K,西安  ,经验不限,大专,数据分析助理,xian,1
+酷聊智能,https://www.zhipin.com/job_detail/4f065f269444506103N739-9EVA~.html,6-10K,西安  ,1-3年,本科,Python数据分析工程师,xian,5
+澳鹏网络,https://www.zhipin.com/job_detail/b33a4d7f583cb93c03Z42N68E1I~.html,4-8K,西安  ,经验不限,本科,全球facebook广告数据分析与优化师,xian,1
+聚思鸿,https://www.zhipin.com/job_detail/ab1ece1b481ad5551Xd60tW_F1s~.html,4-6K,西安 长安区 ,1-3年,大专,数据分析师,xian,6
+壬林商务,https://www.zhipin.com/job_detail/c3a7ef06ca5d64731H1529i0FFM~.html,5-6K,西安 雁塔区 长延堡,经验不限,本科,数据分析师,xian,1
+廷山大数据,https://www.zhipin.com/job_detail/1af46619538ffe1403N40968FFE~.html,9-10K,西安 莲湖区 红庙坡,经验不限,本科,数据分析师,xian,1
+华旗互动,https://www.zhipin.com/job_detail/7c9fc5b82d14442b1H1y3di-GVs~.html,3-6K,西安  ,3-5年,本科,数据分析师,xian,1
+西安航鑫石油商务...,https://www.zhipin.com/job_detail/bcd162d771fdc4791H140t21GVs~.html,4-5K,西安 未央区 文景路,1-3年,学历不限,原油数据分析师,xian,4
+西安浙顺商贸有限...,https://www.zhipin.com/job_detail/b93a58f21bd2b5621HR_2NW_EVo~.html,3-4K,西安 新城区 解放路,1年以内,本科,数据分析,xian,6
+恒熙达公司,https://www.zhipin.com/job_detail/d5a0d5458d6c0165031y2du0Flc~.html,4-5K,西安 碑林区 文艺路,经验不限,本科,数据分析专员,xian,5
+红牛,https://www.zhipin.com/job_detail/10d7b05bd42e4d6703d839i8GVA~.html,5-6K,西安  ,1-3年,本科,数据分析专员,xian,6
+熊赳赳数据科技,https://www.zhipin.com/job_detail/10536b765b6815ae03N73tu5GFA~.html,4-5K,西安  ,经验不限,学历不限,数据分析师,xian,2
+华元宏方,https://www.zhipin.com/job_detail/9e656ea48c1b59ea1H1929q1E1I~.html,3-6K,西安  ,应届生,大专,英语数据分析员,xian,1
+文都考研,https://www.zhipin.com/job_detail/74582b5132763e361Hx92Nm0FlU~.html,3-4K,西安 雁塔区 小寨,经验不限,硕士,数据分析（实习生）,xian,5
+西安画美医疗美容医院,https://www.zhipin.com/job_detail/d9847604952229de1XB43d66EFQ~.html,4-8K,西安 新城区 太华路,应届生,本科,数据分析师,xian,6
+微观学社,https://www.zhipin.com/job_detail/13fbe24940c7bb1b1Xd439y9GVQ~.html,4-5K,西安 雁塔区 高新路,经验不限,本科,数据分析师,xian,2
+图灵生物,https://www.zhipin.com/job_detail/a10ce7f8cd095eff1HB-39u6EFo~.html,5-8K,西安 雁塔区 高新软件园,应届生,硕士,数据分析师,xian,3
+华为,https://www.zhipin.com/job_detail/0db1e6a6e1b9b1c01XR-39W7GVY~.html,10-20K,西安  ,3-5年,本科,数据分析师,xian,5
+华为,https://www.zhipin.com/job_detail/282e6f0edd5e9c6c1Xdy39W7GFs~.html,12-24K,西安 雁塔区 高新软件园,5-10年,本科,数据分析师,xian,4
+直信立兴,https://www.zhipin.com/job_detail/d18c12fa789e23ae1XJ729m1GFE~.html,2-4K,西安 未央区 未央路,1年以内,大专,数据分析师,xian,3
+思普瑞数码,https://www.zhipin.com/job_detail/691bb3fbbc7bbd641nx82dq6E1s~.html,8-9K,西安 雁塔区 沣惠南路,1-3年,本科,数据分析师,xian,5
+中邮速递易,https://www.zhipin.com/job_detail/59d8d3ba89a86e3e1XV_2N-4FVo~.html,6-8K,西安 雁塔区 唐延路,1-3年,本科,数据分析师,xian,3
+斯维智能,https://www.zhipin.com/job_detail/7ace7eb68293650a1Xd40tW4EVU~.html,5-9K,西安 雁塔区 高新路,应届生,本科,算法工程师/数据分析师,xian,2
+长安信托,https://www.zhipin.com/job_detail/a6545482abf87e3e1n142d26EFE~.html,20-40K,西安 雁塔区 高新路,经验不限,学历不限,数据分析师,xian,5
+纷腾互动,https://www.zhipin.com/job_detail/9382945a386b6e0403Z929-6EVs~.html,4-5K,西安 雁塔区 高新软件园,1年以内,学历不限,运营支撑,xian,1
+百变科技,https://www.zhipin.com/job_detail/1960d4689ab6cd830nV40ti9Els~.html,8-10K,西安 莲湖区 北关,3-5年,本科,产品经理,xian,2
+海特,https://www.zhipin.com/job_detail/6cfe56a34049fdd11Hd629-5GFE~.html,5-10K,西安  ,3-5年,大专,工程造价,xian,1
+平安普惠信息服务,https://www.zhipin.com/job_detail/0bc7d13082e7dff1031_29W6FVY~.html,22-26K,西安 碑林区 太乙路,3-5年,本科,市场营销,xian,1
+引航有限公司,https://www.zhipin.com/job_detail/3ad7a4fc5cd60e1d03xy2dy4GVs~.html,3-4K,西安 长安区 航天城,经验不限,学历不限,产品助理,xian,1
+生发企业管理咨询,https://www.zhipin.com/job_detail/cea2ce04ca1146af1HF_09W6GVs~.html,4-8K,西安 雁塔区 电子城,经验不限,学历不限,移动产品经理,xian,5
+融盛公司,https://www.zhipin.com/job_detail/d539e33552422a960nZ43d-6E1M~.html,4-5K,西安 雁塔区 长延堡,经验不限,大专,数据统计岗,xian,2
+汉森石业,https://www.zhipin.com/job_detail/e0755322267b3a2f1XJ63dm8F1U~.html,4-8K,西安 未央区 北大学城,经验不限,学历不限,销售经理,xian,2
+浩祥文化,https://www.zhipin.com/job_detail/5fd25190bc7bb6f903J429W0Els~.html,5-8K,西安 雁塔区 小寨,经验不限,本科,拼多多运营,xian,3
+聚伟达,https://www.zhipin.com/job_detail/867310389b5a51c80nZ73Nm1F1A~.html,10-11K,西安 碑林区 长安路,1-3年,大专,团队经理,xian,1
+凯立德,https://www.zhipin.com/job_detail/0b7860de9193f1801HN62ty_E1o~.html,4-6K,西安 雁塔区 唐延路,1年以内,大专,网络营销,xian,1
+云为物流科技,https://www.zhipin.com/job_detail/c5084db5f182c18403Z93927FVA~.html,3-5K,西安 雁塔区 唐延路,经验不限,大专,物流内勤,xian,3
+康健一生,https://www.zhipin.com/job_detail/20c0dc56e507db651Xx-3tm5FVs~.html,4-8K,西安 碑林区 安西街,1-3年,大专,营销拓客,xian,4
+神州数码融信,https://www.zhipin.com/job_detail/a561ec155a87faee1Xx72NS-ElY~.html,10-18K,西安 雁塔区 电子城,3-5年,本科,数据仓库,xian,6
+阿尔泰科技,https://www.zhipin.com/job_detail/d3e361921707cd721XJ83tW0FFE~.html,3-4K,西安 雁塔区 高新路,经验不限,大专,产品专员,xian,1
+多米生活,https://www.zhipin.com/job_detail/c41f8118afd5fdd11HV42Nu9F1I~.html,8-13K,西安 长安区 韦曲,1年以内,学历不限,淘宝运营,xian,6
+布布逗儿童服饰,https://www.zhipin.com/job_detail/38317e9d374fe8771XJ90t61F1s~.html,3-5K,西安 新城区 胡家庙,经验不限,本科,配/理/拣/发货,xian,6
+华邦传媒,https://www.zhipin.com/job_detail/55e7ea6ab6e43eb11XZy2N-7F1E~.html,5-6K,西安 未央区 张家堡,3-5年,大专,媒介合作,xian,1
+艾美薇,https://www.zhipin.com/job_detail/f46c5dfd11d9c89d1nx92NW6EFQ~.html,8-10K,西安  ,3-5年,本科,品牌公关,xian,5
+西安中尚,https://www.zhipin.com/job_detail/03a40baf31b0d2391HBz2dm-EFI~.html,4-6K,西安  ,经验不限,大专,库房主管,xian,5
+陕西怡尚商贸有限公司,https://www.zhipin.com/job_detail/389c271526b317481XJz3tq_E1Q~.html,4-8K,西安 新城区 康复路,1年以内,本科,商品主管,xian,6
+佳佰汇,https://www.zhipin.com/job_detail/43d4c22ea21d98ec1H1y3dW0EFE~.html,6-7K,西安 新城区 胡家庙,1年以内,本科,买手主管,xian,5
+陕西大唐一品,https://www.zhipin.com/job_detail/3e7c40659cba079103J62dS7FVs~.html,8-10K,西安 碑林区 互助路立交,1-3年,学历不限,市场部经理,xian,2
+云为物流科技,https://www.zhipin.com/job_detail/fb127119bd6456e003d63dm1GVs~.html,3-4K,西安 雁塔区 唐延路,1年以内,大专,信息管理员,xian,2
+生活匠,https://www.zhipin.com/job_detail/e395f4b11b7560a61XN-29--ElM~.html,3-5K,西安 长安区 韦曲,经验不限,大专,管培生/业务主管,xian,3
+永盈贸易,https://www.zhipin.com/job_detail/702c3b80f2614c561HN43tW5FVQ~.html,3-6K,西安 未央区 三桥,1年以内,本科,外贸专员,xian,6
+勒科斯电子,https://www.zhipin.com/job_detail/8acffbeb3e9771721HNz29W6FFQ~.html,4-9K,西安 雁塔区 电子城,1-3年,学历不限,天猫淘宝运营,xian,6
+逆袭,https://www.zhipin.com/job_detail/d384a0e9b9df2e7e0nZ93t68E1Y~.html,3-4K,西安 雁塔区 科技二路,1年以内,本科,海外运营助理,xian,1
+天森禾,https://www.zhipin.com/job_detail/f3ecaa0a6f6c19661HF839W0FFM~.html,3-5K,西安  ,1-3年,本科,外贸业务员,xian,6
+小牛奔跑财税服务,https://www.zhipin.com/job_detail/5273c6592d6b9d9f1nFz3dm7GVs~.html,3-6K,西安 雁塔区 旺座现代城,经验不限,高中,财务咨询顾问,xian,4
+佳帮手,https://www.zhipin.com/job_detail/5e3f37de91cff1eb1XRz3t66F1A~.html,5-10K,西安 灞桥区 浐灞半岛,1-3年,学历不限,电商运营,xian,2
+高蒂商贸,https://www.zhipin.com/job_detail/1ef8c2d9c0cbc4501H153d6_FFc~.html,3-4K,西安 新城区 胡家庙,经验不限,学历不限,会计助理,xian,4
+佳佰汇,https://www.zhipin.com/job_detail/9c8f40be0dd3e70803B80927E1o~.html,6-7K,西安 新城区 胡家庙,经验不限,本科,服装买手,xian,1
+西行影视,https://www.zhipin.com/job_detail/7c58db1384d1b625031_2t--EFc~.html,5-6K,西安  ,1-3年,本科,新媒体运营,xian,6
+聚鑫荣汽车用品公司,https://www.zhipin.com/job_detail/e4406c0bd9bb23e11nV62d2-FlA~.html,3-6K,西安 未央区 北大学城,经验不限,学历不限,电商运营,xian,2
+毓秀文化,https://www.zhipin.com/job_detail/66f2e540b0ca40751Xd73tS0EVM~.html,5-8K,西安 长安区 韦曲,1-3年,大专,网络销售,xian,5
+三花良治,https://www.zhipin.com/job_detail/40af51a8408a078f1nJ429S6E1M~.html,8-12K,西安  ,3-5年,本科,电商运营管理,xian,2
+装小哥,https://www.zhipin.com/job_detail/81777c757f51a0741XJ-2d-4EFY~.html,4-8K,西安 未央区 未央路,3-5年,本科,采购经理,xian,4
+陕西鑫盛合,https://www.zhipin.com/job_detail/6069a2e4defd5a1d03J_2N-8ElY~.html,7-12K,西安 碑林区 文艺路,3-5年,大专,电商运营,xian,5
+时代共赢,https://www.zhipin.com/job_detail/3b3c99c9d76bf9e11nV63dS1FFY~.html,8-16K,西安 碑林区 怡丰城,3-5年,本科,管理会计,xian,2
+银志泾金,https://www.zhipin.com/job_detail/d5309794a30bff811XN739u0Flc~.html,6-10K,西安 新城区 长乐中路,3-5年,学历不限,电子商务运用总监,xian,1
+顺丰速运,https://www.zhipin.com/job_detail/4d4cd955dd2579e71HJ-2965EFQ~.html,9-13K,西安 雁塔区 曲江新区,1-3年,大专,西安BD主管,xian,4
+振森智能科技,https://www.zhipin.com/job_detail/bf3071948bff4c331nZ-39W0FFM~.html,4-7K,西安  ,1-3年,本科,java工程师,xian,3
+上海华卓生物,https://www.zhipin.com/job_detail/07147fc894973f2c0nd42Nm_EFE~.html,6-11K,西安 雁塔区 电子城,1-3年,硕士,科研学术专员,xian,2
+易联达西安分公司,https://www.zhipin.com/job_detail/90c050c9dc8d5cf703B40ty1EVQ~.html,11-17K,西安 雁塔区 旺座现代城,经验不限,本科,大数据开发,xian,6
+西安威司特食品,https://www.zhipin.com/job_detail/27a83bc3043934c503F_2968EVA~.html,5-6K,西安 雁塔区 曲江新区,5-10年,大专,ERP系统管理员,xian,1
+上海华卓生物,https://www.zhipin.com/job_detail/41066a6af59b04cc0nd43d2_EVM~.html,5-10K,西安 莲湖区 土门,1-3年,硕士,科研学术专员（西北）,xian,3
+Yeahmobi,https://www.zhipin.com/job_detail/8ef48d646aefdfca1HR609W_ElI~.html,4-6K,西安  ,1-3年,本科,facebook 广告投放,xian,1
+风享谷孵化器,https://www.zhipin.com/job_detail/81ab167d67c84ca103dz09u_EFc~.html,6-11K,西安  ,1-3年,学历不限,facebook广告投放,xian,2
+新成宝,https://www.zhipin.com/job_detail/a7c3df90f8902a961HBz3t--EVI~.html,3-5K,西安 长安区 韦曲,1年以内,大专,市场调研,xian,5
+每日瑜伽,https://www.zhipin.com/job_detail/b97ade39e13561741nxz3dS-GFE~.html,4-7K,西安 雁塔区 沣惠南路,1-3年,本科,FB广告投放师,xian,5
+旅拍通,https://www.zhipin.com/job_detail/3bf10d5e93d7d22e1HB42Ny9F1U~.html,4-8K,西安 未央区 张家堡,3-5年,本科,产品经理,xian,2
+西安锐拓,https://www.zhipin.com/job_detail/d5b6b11bbd3df20e1HVy3t-4EFU~.html,8-13K,西安 雁塔区 电视塔,3-5年,本科,创意总监,xian,4
+锦尚101团建,https://www.zhipin.com/job_detail/5f28f48e9c84702003dy2NS6EFc~.html,4-9K,西安 雁塔区 永松路,经验不限,学历不限,团建活动运营,xian,1
+亚购信息科技,https://www.zhipin.com/job_detail/4c3f5c985b9a50321Xd50t26F1s~.html,15-20K,西安  ,3-5年,本科,大数据开发工程师,xian,6
+陕西鲁班装饰工程有限,https://www.zhipin.com/job_detail/78b2e6f3c7cc27dc03162Nu6EFA~.html,5-10K,西安 雁塔区 郭杜,经验不限,学历不限,网络推广,xian,2
+咔咔芭芭,https://www.zhipin.com/job_detail/a03cfcf3dfebfdcf03V_39q0EVo~.html,4-9K·14薪,西安 雁塔区 紫薇田园都市,3-5年,本科,供应链总监,xian,4
+墨寒广告,https://www.zhipin.com/job_detail/3f4a249abbbbc7561HB839y7GFM~.html,4-5K,西安 碑林区 东大街,经验不限,学历不限,销售专员,xian,6
+艾恩婚礼,https://www.zhipin.com/job_detail/1f2e141381a9f25f0nVy3NS7EFY~.html,6-10K,西安 长安区 郭杜,3-5年,大专,艾恩•觅ART婚礼艺术场地-西安首店筹备,xian,6
+唯创匠心装饰,https://www.zhipin.com/job_detail/4bba660abff9504803R-3d68EFE~.html,12-20K,西安 未央区 凤城一路,3-5年,本科,设计部经理,xian,5
+积木家互联网装修,https://www.zhipin.com/job_detail/db0be9ce915060151nNy2ty0GFc~.html,8-10K,西安 未央区 未央路,3-5年,本科,产品经理,xian,4
+新邮通,https://www.zhipin.com/job_detail/b2dc45543d8f1e201Hxy396-Fls~.html,15-18K,西安 雁塔区 高新路,3-5年,本科,ORACLE数据架构师,xian,2
+亿信华辰,https://www.zhipin.com/job_detail/637a2a523f8d1fde1HR83ti5F1s~.html,4-8K,西安 雁塔区 高新路,经验不限,本科,实施工程师（可出差）,xian,6
+天仁咨询,https://www.zhipin.com/job_detail/161cda4aa2e7543a1nJ509q_EVY~.html,3-6K,西安 莲湖区 丰禾路,经验不限,本科,财务咨询顾问,xian,3
+天仁咨询,https://www.zhipin.com/job_detail/c6a690503f33ec3f1nN62tW5E1o~.html,8-12K,西安 莲湖区 丰禾路,经验不限,本科,咨询经理,xian,4
+天仁咨询,https://www.zhipin.com/job_detail/0c352e0f01ba660f1nBz0t67FVo~.html,5-10K,西安 莲湖区 丰禾路,经验不限,硕士,咨询项目管理,xian,2
+汇创五谷,https://www.zhipin.com/job_detail/744ad0c7e9f8990a1XF42di0E1s~.html,6-10K,西安 雁塔区 唐延路,3-5年,本科,运维开发工程师,xian,2
+陕西释然企业文化传播,https://www.zhipin.com/job_detail/32e66bae0bf0374903xy39W1EFA~.html,4-6K·13薪,西安 莲湖区 西关,经验不限,本科,优化工程师,xian,2
+百川影视,https://www.zhipin.com/job_detail/a265845610f1b6c01nN83dm4FVU~.html,3-4K,西安 未央区 张家堡,1年以内,大专,活动策划执行,xian,2
+云基华海,https://www.zhipin.com/job_detail/e2a002cd5fd5fd731nxy3dS4EFI~.html,15-30K,西安  ,5-10年,硕士,首席科学家,xian,5
+永辉资产,https://www.zhipin.com/job_detail/6cf9fb57aeb391c003N70t66E1E~.html,5-10K,西安  ,经验不限,中专,贷后管理,xian,1
+西安彩虹星球,https://www.zhipin.com/job_detail/e14f8701e41373db1HV62d28EFM~.html,4-7K,西安 雁塔区 政法,经验不限,本科,市场调研,xian,6
+启威,https://www.zhipin.com/job_detail/45c60a01c9b91f7b1Hdz2N-7EFE~.html,3-5K,西安  ,经验不限,大专,外贸专员,xian,6
+陕西开云商贸有限公司,https://www.zhipin.com/job_detail/e21025fbbc4ea9b81nxy3t-4FFU~.html,3-6K,西安 雁塔区 电视塔,1-3年,本科,商品专员,xian,5
+美易新家装饰,https://www.zhipin.com/job_detail/24a9cebb2c50eda81XR-2N68FFo~.html,3-6K,西安 雁塔区 电视塔,1年以内,本科,公关专员,xian,2
+开平市明亮贸易,https://www.zhipin.com/job_detail/76f2a86fb29447eb03183dm5E1E~.html,5-10K,西安 长安区 郭杜,经验不限,本科,法语翻译,xian,4
+华为,https://www.zhipin.com/job_detail/e7cdc9dc709db89a0nZ70t64FFI~.html,25-26K·24薪,西安  ,1-3年,博士,算法研究员,xian,1
+华源创世,https://www.zhipin.com/job_detail/2a2a7dee4d0f32321XZ60968EFo~.html,8-16K,西安 雁塔区 唐延路,3-5年,本科,高级软件开发工程师,xian,3
+福晟商贸,https://www.zhipin.com/job_detail/4e89734090e7f7eb1XV409m0FFQ~.html,3-6K,西安 雁塔区 紫薇田园都市,经验不限,大专,文案策划,xian,6
+中渊财务,https://www.zhipin.com/job_detail/aac44757bc2293281nx70921FlM~.html,3-5K,西安 莲湖区 环城西路,1-3年,本科,会计,xian,2
+唐潮品牌,https://www.zhipin.com/job_detail/60266878e59fef2a03Z829y7GVo~.html,6-8K,西安 莲湖区 高新路,5-10年,大专,产品经理,xian,1
+博源智慧,https://www.zhipin.com/job_detail/df8ec8b6f0ce871703F40t25ElM~.html,6-11K,西安 雁塔区 等驾坡,经验不限,本科,风险评估报告研究员,xian,5
+尊力建材,https://www.zhipin.com/job_detail/793005a983ae17971n1929y-FlQ~.html,3-6K,西安 未央区 草滩,应届生,学历不限,收银,xian,6
+佳帮手,https://www.zhipin.com/job_detail/9367a53dd5ba44c51XJ93d68EVo~.html,5-8K,西安 灞桥区 浐灞半岛,1年以内,本科,广告制作,xian,4
+建利集团,https://www.zhipin.com/job_detail/514613bdd5980c521XV73N-4FlA~.html,3-4K,西安 雁塔区 小寨,1年以内,本科,文案,xian,3
+德学教育科技,https://www.zhipin.com/job_detail/241a26621c698a481HBz2d28EFM~.html,3-8K,西安 未央区 张家堡,1-3年,学历不限,市场ZY,xian,1
+锦华科技,https://www.zhipin.com/job_detail/83a4ed5a8098e21d03d529W5FVI~.html,10-15K,西安 雁塔区 光华路,1年以内,本科,兼职高级算法工程师,xian,5
+企强企业文化传播,https://www.zhipin.com/job_detail/1abc6df565e547891Xdy09m_FFU~.html,4-6K,西安 碑林区 长安路,经验不限,学历不限,交易员,xian,2
+西安铂玺,https://www.zhipin.com/job_detail/dcf03c2114a0eea91HN809q_FFs~.html,5-10K,西安 长安区 郭杜,3-5年,大专,市场策划,xian,5
+陕西掌通家园,https://www.zhipin.com/job_detail/992e8f199e6e70ff1XB_09W5EVU~.html,3-5K,西安 碑林区 黄雁村,1年以内,大专,产品助理,xian,5
+金智,https://www.zhipin.com/job_detail/266873783c681db11XF-2Ni7FFY~.html,4-8K,西安 雁塔区 玫瑰大楼,经验不限,硕士,企业管理咨询/银行咨询培训/人力资源开发,xian,4
+陕西正华,https://www.zhipin.com/job_detail/dab88d1c7532bd201nd92t65Ew~~.html,5-10K,西安 未央区 文景路,3-5年,本科,产品经理,xian,3
+ohh智能家居,https://www.zhipin.com/job_detail/ce2923eb50983c721nF729S4GVI~.html,6-12K,西安  ,1-3年,本科,语音识别,xian,6
+西安图灵网络,https://www.zhipin.com/job_detail/ea9f85d1defb4bf51HZ839-5GFU~.html,4-6K,西安 莲湖区 高新路,1年以内,本科,自媒体运营,xian,3
+众智云启通讯,https://www.zhipin.com/job_detail/16c16f0a01b7d5af1HB52t2-FlE~.html,5-10K,西安 雁塔区 小寨,经验不限,大专,网络优化,xian,1
+国乾能源,https://www.zhipin.com/job_detail/516a448d86e8db001nJz2dm5ElA~.html,4-8K,西安 雁塔区 唐延路,3-5年,大专,产品经理,xian,1
+陕西德蓝特,https://www.zhipin.com/job_detail/294ec4ab1c0159e31Xx_2N-9FlA~.html,3-4K,西安 雁塔区 唐延路,经验不限,学历不限,调度中心行政支持,xian,5
+平安普惠金融,https://www.zhipin.com/job_detail/5a2d076446d676a91nx-09W4EFc~.html,6-12K,西安 雁塔区 唐延路,1年以内,大专,风控,xian,1
+创佳实业,https://www.zhipin.com/job_detail/c54207e12620f70c1nN42tm-FVQ~.html,4-5K,西安 未央区 三桥,3-5年,大专,工程造价(兼职),xian,5
+万邦创意文化,https://www.zhipin.com/job_detail/8cd68e7169d03eda1nF-09u8GVU~.html,5-8K,西安 雁塔区 小寨,1-3年,本科,企业管理咨询,xian,4
+华为,https://www.zhipin.com/job_detail/8bd01cfce15ad98b1X1729-8E1I~.html,20-40K,西安 雁塔区 高新软件园,3-5年,本科,大数据开发工程师,xian,1
+云控轨迹,https://www.zhipin.com/job_detail/d4f40d25b62156461HN52tS4FlU~.html,14-15K,西安 长安区 航天城,1-3年,硕士,产品经理,xian,6
+鑫安华邦,https://www.zhipin.com/job_detail/d508aef306bc12fc1XF-2tm8FVI~.html,4-8K,西安 雁塔区 玫瑰大楼,经验不限,学历不限,数据专员,xian,5
+华为,https://www.zhipin.com/job_detail/5557f963fa4161d01HVz39m0EVM~.html,25-50K,西安 雁塔区 高新软件园,3-5年,本科,大数据开发工程师,xian,4
+九彩神韵,https://www.zhipin.com/job_detail/e67453a6941eebf31XV729m1E1U~.html,2-3K,西安 莲湖区 北关,1年以内,大专,文案,xian,6
+无华宜品,https://www.zhipin.com/job_detail/2b5b7db5b13e57f71nJ7292-Elc~.html,4-8K,西安 碑林区 小寨,1-3年,大专,商品分析管理,xian,4
+瑞成华峰,https://www.zhipin.com/job_detail/97452f5bc25294d11XF53tm7E1Q~.html,3-6K,西安 雁塔区 旺座现代城,经验不限,学历不限,数据专员,xian,3
+陕西云川,https://www.zhipin.com/job_detail/0d62d27b923abe7b1nJ83di1E1I~.html,3-4K,西安 雁塔区 高新路,1年以内,大专,产品经理,xian,1
+平安普惠,https://www.zhipin.com/job_detail/e4eef1326348334d1XV53tW0ElA~.html,4-8K,西安 雁塔区 唐延路,经验不限,大专,风控,xian,5
+智睿思信咨询机构,https://www.zhipin.com/job_detail/65ae5be3af1b8ab01HZy0tS6FlU~.html,3-5K,西安 雁塔区 紫薇田园都市,经验不限,本科,咨询顾问助理,xian,5
+西安弘道管理,https://www.zhipin.com/job_detail/5e9455c6151d7bf31HV92967GFA~.html,3-8K,西安 未央区 张家堡,经验不限,学历不限,咨询顾问,xian,1
+双源文化,https://www.zhipin.com/job_detail/ee11b24aa608a7af1Xxz3d-1FVc~.html,3-5K,西安 莲湖区 玉祥门,1-3年,大专,SEO,xian,2
+youidea,https://www.zhipin.com/job_detail/966fc5aecaccb2f31ndz29i4GFU~.html,3-6K,西安 莲湖区 北关,经验不限,学历不限,游戏策划,xian,6
+咥中咥餐饮,https://www.zhipin.com/job_detail/bb323bb54d199bda1XJ60tu7E1U~.html,4-5K,西安 碑林区 东关南街,1年以内,学历不限,产品经理,xian,4
+九汇信息科技,https://www.zhipin.com/job_detail/6feb30e0c8a8f74c1nx63968FlY~.html,3-4K,西安 碑林区 交大,1年以内,高中,人力资源顾问,xian,2
+绿草科技,https://www.zhipin.com/job_detail/caeec3fc0c2612611nB43Nm_Flc~.html,4-8K,西安 长安区 郭杜,3-5年,本科,平台建设及维护,xian,2
+陕西秦诚,https://www.zhipin.com/job_detail/fa12dcee86fabada1Xd82di_GVc~.html,3-5K,西安 长安区 韦曲,经验不限,本科,技术经理,xian,4
+制通毅诚,https://www.zhipin.com/job_detail/efcac44e25a3ef111nJ63tu8GVM~.html,8-12K,西安 雁塔区 旺座现代城,3-5年,本科,数据架构师,xian,4
+陕西浩瀚生物科技,https://www.zhipin.com/job_detail/49f67c65d3ac2ece1XZ_0tu7FFs~.html,3-5K,西安 灞桥区 十里铺,1-3年,中专,电商美工 视觉经理,xian,2
+纳师达客特惠购车,https://www.zhipin.com/job_detail/39b9d5d3c3dbdb751XF43du8EVc~.html,3-6K,西安 长安区 郭杜,1年以内,学历不限,业务员,xian,6
+万和联商业运营,https://www.zhipin.com/job_detail/264ce35b0826290e1XF42928ElI~.html,3-4K,西安 雁塔区 唐延路,1年以内,高中,微信专员,xian,5
+测吧科技,https://www.zhipin.com/job_detail/1fe68006179a7aed1XRz2965FVs~.html,2-4K,西安 莲湖区 沣惠南路,经验不限,大专,IT技术支持,xian,4
+梦之童,https://www.zhipin.com/job_detail/30919c7cf258eaf31n1-392_FVM~.html,8-9K,西安 新城区 解放路,1年以内,大专,医学总监,xian,3
+平安普惠,https://www.zhipin.com/job_detail/43ff4c62473bd9571XV53tW0Fls~.html,5-10K,西安 雁塔区 唐延路,1年以内,大专,风控,xian,4
+耳垂网络科技,https://www.zhipin.com/job_detail/642bdb8c1427eacb1nJy2d60EFI~.html,15-18K,西安 雁塔区 小寨,1-3年,本科,算法研究员,xian,5
+森弗集团,https://www.zhipin.com/job_detail/74deebe8b8db5bfd0nx_29m_Fw~~.html,3-6K,西安  ,经验不限,本科,IT技术支持,xian,6
+达创,https://www.zhipin.com/job_detail/1f040e58dc4e9e141nB93dy0EVY~.html,5-8K,西安 未央区 未央路,1年以内,学历不限,策划经理,xian,1
+华信智慧,https://www.zhipin.com/job_detail/05ea4ab50f9e99e41Hx939u-Fls~.html,12-20K,西安  ,5-10年,本科,产品经理,xian,2
+杨凌农业云,https://www.zhipin.com/job_detail/2ae6acfcf3eefe281nRy09-6FFE~.html,8-16K,西安  ,1-3年,本科,产品经理,xian,4
+惠恩资本,https://www.zhipin.com/job_detail/1aba4ea7b9ddcfa91XJ-3tW_FFA~.html,5-10K,西安  ,3-5年,本科,产品经理,xian,1
+精创网络,https://www.zhipin.com/job_detail/14af20ed8400517e0Hd43N-_Eg~~.html,7-12K,西安 雁塔区 唐延路,3-5年,本科,产品经理,xian,5
+全美食,https://www.zhipin.com/job_detail/fdba0caa1692040603x62dq-FlU~.html,6-10K,西安 雁塔区 长延堡,3-5年,本科,产品经理,xian,1
+信大捷安,https://www.zhipin.com/job_detail/3f6507e2ccde67fa1XR82920EFA~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,2
+宝兰德,https://www.zhipin.com/job_detail/df192b9940bb17a51HV-3dq6GFE~.html,15-25K,西安  ,3-5年,本科,产品经理,xian,3
+步长制药,https://www.zhipin.com/job_detail/be5adfea6a19bfe60nR82di7FlA~.html,6-8K,西安 雁塔区 电子城,经验不限,大专,产品经理,xian,2
+卫宁健康,https://www.zhipin.com/job_detail/048794c4cc6e95de0nZ_3tS7Flo~.html,12-18K,西安  ,3-5年,本科,产品经理,xian,6
+每日瑜伽,https://www.zhipin.com/job_detail/7442ded71c22e575031739u-FFc~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,5
+知医堂,https://www.zhipin.com/job_detail/283bdc12b9f8c4800nR42N69EVE~.html,4-8K,西安 雁塔区 唐延路,1-3年,大专,产品经理,xian,6
+蝉鸣科技,https://www.zhipin.com/job_detail/59d56885c42d6e2c03173Nq9FVI~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,4
+卫宁健康,https://www.zhipin.com/job_detail/7b3e5b4c9595bb691XB-29q_EFQ~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,2
+当老师,https://www.zhipin.com/job_detail/25d4aa6a7dd9369e1XF70tq4E1E~.html,15-30K,西安 碑林区 小寨,5-10年,本科,产品经理,xian,4
+酷渲北京科技,https://www.zhipin.com/job_detail/b9315c824f49c33d1HJ52tS0EVc~.html,9-14K,西安 雁塔区 高新路,3-5年,本科,产品经理,xian,1
+西安图迹信息科技,https://www.zhipin.com/job_detail/4cd858e3e056af761nJ90927ElQ~.html,9-14K,西安  ,3-5年,本科,产品经理,xian,6
+敦煌智旅,https://www.zhipin.com/job_detail/722050b0e1fe3c221XZz2di9EVo~.html,5-10K,西安 雁塔区 紫薇田园都市,1-3年,本科,产品经理,xian,3
+医邦医疗服务集团,https://www.zhipin.com/job_detail/9fdf4975f85962f71HN83tW9EFU~.html,4-6K,西安 雁塔区 唐延路,1-3年,本科,产品经理,xian,2
+蝉鸣科技,https://www.zhipin.com/job_detail/dcc4531bb0f2556f1nF73Nq8EVE~.html,12-24K,西安  ,3-5年,本科,产品经理,xian,4
+积木家互联网装修,https://www.zhipin.com/job_detail/b64e581e3f59ea2d0nZy2tW5EVc~.html,5-10K,西安  ,3-5年,本科,产品经理,xian,5
+陕西商旺宝,https://www.zhipin.com/job_detail/99f02800b5e343911Hx82di4FlM~.html,7-12K,西安  ,3-5年,本科,产品经理,xian,3
+凡德,https://www.zhipin.com/job_detail/941030c7fbc7059c03Bz3tS1FFQ~.html,5-10K,西安 雁塔区 高新软件园,5-10年,本科,APP产品经理,xian,5
+知医堂,https://www.zhipin.com/job_detail/4404df8007f935351nJ83t-5FVs~.html,5-8K,西安 雁塔区 唐延路,1-3年,大专,产品经理,xian,4
+陕西金合,https://www.zhipin.com/job_detail/285b7eb2b1dce5361XV939i7EVo~.html,10-11K,西安  ,5-10年,本科,产品经理,xian,4
+极客原点,https://www.zhipin.com/job_detail/ce1ef7c51adcc3860XR539S-FlQ~.html,10-15K,西安  ,3-5年,学历不限,产品经理,xian,5
+软通动力,https://www.zhipin.com/job_detail/89f62988843fee281HJz3N2_E1M~.html,10-15K,西安 长安区 王寺,3-5年,本科,产品经理,xian,6
+柳林酒业,https://www.zhipin.com/job_detail/59b6d7083bcc19330nZy2N24FFM~.html,6-8K,西安  ,3-5年,大专,产品经理,xian,5
+坐标软件,https://www.zhipin.com/job_detail/bad1b7e96050dc3903d-3Ni8GFY~.html,10-11K,西安  ,5-10年,本科,产品经理,xian,6
+天网软件,https://www.zhipin.com/job_detail/79b8d1507905c43a1HV80tS4FlU~.html,9-12K,西安 雁塔区 紫薇田园都市,3-5年,本科,产品经理（工作地点：海南）,xian,4
+壹米滴答,https://www.zhipin.com/job_detail/157faee477cab1f51XR_3tq1F1M~.html,8-13K,西安  ,3-5年,本科,产品经理,xian,2
+每日瑜伽,https://www.zhipin.com/job_detail/bee560270015ebf31nJ509S6F1I~.html,12-22K·13薪,西安  ,1-3年,大专,移动产品经理,xian,5
+易思软件,https://www.zhipin.com/job_detail/ce41b60dabb355d71XF629-0E1M~.html,10-15K,西安 雁塔区 唐延路,3-5年,本科,产品经理,xian,1
+中钧,https://www.zhipin.com/job_detail/e89c94df26bf95bd03N639W_GVE~.html,8-12K,西安  ,3-5年,本科,中级产品经理,xian,6
+平安普惠,https://www.zhipin.com/job_detail/70cfafe1c853df271XV63Nm0EVE~.html,10-15K,西安 碑林区 南大街,经验不限,大专,金融产品经理,xian,6
+拼图科技,https://www.zhipin.com/job_detail/a3bd0d8b5e51d2541Hd42ty1EVU~.html,5-8K,西安 雁塔区 唐延路,1-3年,大专,产品经理,xian,1
+软通动力,https://www.zhipin.com/job_detail/1462048ee2b94da51HF609m9FlA~.html,12-22K,西安 长安区 王寺,3-5年,本科,产品经理,xian,1
+瑞丽诗连锁,https://www.zhipin.com/job_detail/7a477a145401d10703B63N-5ElA~.html,8-12K,西安 未央区 张家堡,3-5年,本科,化妆品产品经理,xian,6
+交大捷普,https://www.zhipin.com/job_detail/68e90cb9595d4aa11XF72N-1E1Y~.html,9-15K,西安 雁塔区 科技二路,1年以内,本科,产品经理,xian,3
+蝉鸣科技,https://www.zhipin.com/job_detail/f547a5ce5f8d7cf103N409i-EFY~.html,15-30K,西安  ,5-10年,本科,高级产品经理,xian,6
+极客原点,https://www.zhipin.com/job_detail/00b1500e3e9bb2260nx_3N-0EFU~.html,10-15K,西安  ,经验不限,学历不限,产品经理,xian,1
+悠游文化,https://www.zhipin.com/job_detail/2381a5f67e6cb80d03xy3t67F1c~.html,8-11K,西安 雁塔区 科技路西口,经验不限,本科,产品经理,xian,2
+轻屋,https://www.zhipin.com/job_detail/201347314355a5861HN72Nq5EFI~.html,6-8K,西安  ,3-5年,本科,产品经理,xian,1
+铭一知识产权集团,https://www.zhipin.com/job_detail/e4deda8b2f2ab8381HZ82Nq1F1Y~.html,7-12K,西安 雁塔区 唐延路,1-3年,本科,产品经理,xian,6
+创美科技有限公司,https://www.zhipin.com/job_detail/a200a5d92369c94e03J_3Nq5FVc~.html,5-8K,西安  ,3-5年,大专,产品经理,xian,6
+优创数字传媒,https://www.zhipin.com/job_detail/55d1aafa15fa1ea40nV_3Ny0EFA~.html,4-8K,西安 碑林区 文艺路,经验不限,大专,产品经理,xian,3
+鼎悦装饰,https://www.zhipin.com/job_detail/8769302ad515dd1f1HZ40ty8ElY~.html,4-8K,西安 未央区 凤城一路,1年以内,高中,产品经理,xian,2
+陕西华筑科技有限公司,https://www.zhipin.com/job_detail/1f41fe466cbd184103d_0ty8Fls~.html,8-16K,西安 雁塔区 电子城,3-5年,本科,产品经理,xian,6
+四叶草安全,https://www.zhipin.com/job_detail/9aedc27672f7bffb1nJ93N65FVY~.html,8-15K,西安  ,3-5年,本科,产品经理,xian,6
+诺维北斗,https://www.zhipin.com/job_detail/0236441b986b77be1nJ50tu6F1E~.html,15-20K,西安 长安区 航天城,5-10年,本科,高级产品经理,xian,2
+中钧,https://www.zhipin.com/job_detail/270624960ce88ee703N62N-9ElU~.html,7-9K,西安  ,1-3年,本科,初级产品经理,xian,2
+平安普惠,https://www.zhipin.com/job_detail/60a7ae384ae0e4e71HF_2N-5FVQ~.html,6-12K,西安  ,经验不限,大专,金融产品经理,xian,5
+畅移信息,https://www.zhipin.com/job_detail/8b3ed6d437a4b2641HB63Ny9FlU~.html,8-13K,西安 莲湖区 高新路,1-3年,大专,CRS产品经理,xian,6
+富立叶微电子,https://www.zhipin.com/job_detail/25ca6a04353c36401Hxy3Ni0EVQ~.html,10-15K,西安  ,5-10年,本科,产品经理,xian,5
+友信,https://www.zhipin.com/job_detail/c42a92fe10eabd9f1HRy3ty6EFY~.html,10-15K,西安 雁塔区 唐延路,经验不限,学历不限,金融产品经理,xian,4
+弘耀电子,https://www.zhipin.com/job_detail/46868586aafff5c703Nz0tm5FVo~.html,15-25K,西安  ,5-10年,学历不限,产品经理,xian,6
+陕西中矿科技有限公司,https://www.zhipin.com/job_detail/af2448ca8e1bdc6c1HF73t26GVY~.html,5-9K,西安  ,3-5年,本科,产品经理,xian,3
+康卓研学,https://www.zhipin.com/job_detail/728f4e8bcae07b5e0nZy3dy-ElQ~.html,9-10K,西安  ,经验不限,本科,产品经理,xian,2
+方联科技,https://www.zhipin.com/job_detail/9184a00e40e250b91HR52t20F1I~.html,7-12K,西安 莲湖区 土门,3-5年,本科,移动端产品经理,xian,1
+迅捷万通,https://www.zhipin.com/job_detail/fb4bf6ef29ae9d2f1n1929m_F1Q~.html,6-12K,西安 雁塔区 郭杜,1-3年,本科,WebGIS产品经理,xian,1
+澳鹏网络,https://www.zhipin.com/job_detail/8b00f11f385315881XFy0tq5ElQ~.html,10-20K,西安 雁塔区 鱼化寨,3-5年,本科,电商产品经理,xian,3
+蝉鸣科技,https://www.zhipin.com/job_detail/2710149adfd615d203J92ty8ElE~.html,12-24K,西安 雁塔区 高新软件园,5-10年,本科,产品经理（SaaS）,xian,6
+中钧,https://www.zhipin.com/job_detail/30de3db5c8b5a86403F-09u4EVA~.html,10-20K,西安  ,3-5年,本科,产品经理,xian,2
+汇中财富,https://www.zhipin.com/job_detail/0738d7a80023ccc01HJ92tm_GVo~.html,8-13K,西安  ,3-5年,本科,金融产品经理,xian,1
+得一创新,https://www.zhipin.com/job_detail/41221969e7428add1Xx62Ni_GFE~.html,8-12K,西安  ,3-5年,本科,产品经理,xian,5
+慧联佰川,https://www.zhipin.com/job_detail/d5b5006a2fbc0d401HB63dy6GVc~.html,7-12K,西安 雁塔区 科技路西口,5-10年,本科,产品经理,xian,3
+西安创梦,https://www.zhipin.com/job_detail/40c0786e715ae38903Jy09m9GFI~.html,6-10K,西安 未央区 张家堡,3-5年,大专,VR产品经理,xian,6
+海绵MBA,https://www.zhipin.com/job_detail/3ef1310dc34f1ebf1Hd639u4F1Q~.html,10-15K,西安 雁塔区 高新路,1-3年,本科,产品经理,xian,2
+时代锐思,https://www.zhipin.com/job_detail/92518ad13e5c69a41nx82t69FVo~.html,4-8K,西安 雁塔区 唐延路,3-5年,本科,软件产品经理,xian,4
+方联科技,https://www.zhipin.com/job_detail/63892f8e94a9921f1nx_09m6EVs~.html,6-11K,西安  ,3-5年,本科,产品经理,xian,4
+导航科技,https://www.zhipin.com/job_detail/1e4ec23268a1c54603143t-7GFQ~.html,7-8K,西安  ,3-5年,本科,TO B 端 产品经理,xian,6
+蝉鸣科技,https://www.zhipin.com/job_detail/f7e0b4ccc354f07c03N72928FVI~.html,20-40K·13薪,西安  ,5-10年,本科,产品总监/高级产品经理,xian,2
+网算数据,https://www.zhipin.com/job_detail/c965fed26d838b481nVy39u0FlI~.html,8-12K,西安 长安区 郭杜,3-5年,大专,产品经理,xian,6
+享乐途,https://www.zhipin.com/job_detail/96564ce208b725ef031909u7EVE~.html,5-10K,西安 未央区 二府庄,3-5年,本科,产品经理,xian,5
+尚居餐饮,https://www.zhipin.com/job_detail/d79261d607ff48dc031z3tW6F1A~.html,3-6K,西安 雁塔区 长延堡,1-3年,本科,产品经理,xian,5
+国联质检,https://www.zhipin.com/job_detail/aaaa9216cd96cac21Hx80969GVM~.html,8-12K,西安 长安区 王寺,3-5年,本科,产品经理,xian,6
+数图行信息,https://www.zhipin.com/job_detail/ad940e1a24312e9e03N73dS0EVo~.html,8-13K·13薪,西安 雁塔区 长延堡,3-5年,本科,产品经理,xian,1
+蜀海公司,https://www.zhipin.com/job_detail/23be198f4fd17d840nR43Nu_F1A~.html,12-24K,西安  ,5-10年,学历不限,供应链产品经理,xian,2
+网是科技,https://www.zhipin.com/job_detail/ab43c898ba5787920nV-09-5ElQ~.html,10-15K·13薪,西安  ,5-10年,本科,产品经理,xian,4
+小黄人工业互联,https://www.zhipin.com/job_detail/e77f3e557702db7a1Xdy2t-5EVs~.html,6-7K,西安 碑林区 小寨,3-5年,本科,产品经理,xian,1
+平安普惠,https://www.zhipin.com/job_detail/dbfdb7def7f189a81X172tm1F1I~.html,8-16K,西安 碑林区 东大街,1年以内,大专,金融产品经理,xian,3
+亚猫网络,https://www.zhipin.com/job_detail/f9a9e5603b9c644903F-09y6GFU~.html,7-12K,西安 雁塔区 长延堡,3-5年,学历不限,产品经理,xian,6
+西安惠普生物科技,https://www.zhipin.com/job_detail/1e8386886e3c42af1Xx93d6_FFM~.html,4-7K,西安 未央区 张家堡,1-3年,大专,产品经理,xian,2
+西安烽火,https://www.zhipin.com/job_detail/aefe67c750d2b34e03x829q_GVo~.html,11-20K,西安 雁塔区 沣惠南路,5-10年,本科,产品经理,xian,5
+伯图大数据西安分公司,https://www.zhipin.com/job_detail/1d1ca8478b0da2c41HVz2t21EFQ~.html,11-22K,西安  ,3-5年,本科,App高级产品经理（健康管理）,xian,1
+巴斯光年,https://www.zhipin.com/job_detail/17816965cc8277341Hxy0tu1F1o~.html,8-13K,西安 雁塔区 大雁塔,3-5年,本科,产品经理,xian,1
+安捷物联,https://www.zhipin.com/job_detail/c6bf40650192ab7703J40926EVo~.html,4-6K,西安  ,1-3年,大专,产品经理,xian,6
+犀牛网络科技,https://www.zhipin.com/job_detail/d3f182bc3af7aec51HF_0t68EVo~.html,8-13K,西安 雁塔区 旺座现代城,3-5年,本科,产品经理,xian,6
+理财通,https://www.zhipin.com/job_detail/86b09c1e92791eef1X152Nm0F1U~.html,3-5K,西安 碑林区 太乙路,1-3年,大专,产品经理/主管,xian,2
+领航遥感,https://www.zhipin.com/job_detail/2ba448328a927c0b1HJy2tS-F1M~.html,20-30K,西安 长安区 航天城,5-10年,本科,GIS产品经理,xian,3
+陕西金合,https://www.zhipin.com/job_detail/b1e02fb857271f3e1X1-3t29E1I~.html,6-10K,西安  ,3-5年,本科,产品经理,xian,4
+逆袭,https://www.zhipin.com/job_detail/f0a2f3e90f16d5111nJz2dm8FlI~.html,8-16K,西安 雁塔区 科技二路,3-5年,本科,产品经理,xian,3
+每一天,https://www.zhipin.com/job_detail/9ed503558ffe280c1HR-0ti1F1A~.html,7-12K,西安 碑林区 长安路,3-5年,本科,B2C产品经理,xian,4
+华科闪云,https://www.zhipin.com/job_detail/f44d1dba77f91fd403B43dq7FlQ~.html,8-12K,西安 未央区 徐家湾,3-5年,本科,APP产品经理,xian,5
+立达兴业科技,https://www.zhipin.com/job_detail/64b037320f9d0a121Hd72t29Elo~.html,7-9K,西安 雁塔区 长延堡,1-3年,本科,产品经理,xian,2
+深圳市成为智能交通,https://www.zhipin.com/job_detail/bc9cf6b60f4ae2e31H1939u7E1c~.html,10-15K,西安 雁塔区 沣惠南路,3-5年,本科,产品经理,xian,5
+星辰云计算有限公司,https://www.zhipin.com/job_detail/20a1e45f167a06aa03Ny2N25GVs~.html,6-10K,西安 碑林区 建设路,经验不限,学历不限,移动产品经理,xian,6
+西安惠普生物科技,https://www.zhipin.com/job_detail/54f1390b79f53cc71XB73tu9F1o~.html,6-8K,西安 未央区 张家堡,3-5年,本科,产品经理,xian,2
+陕西华筑科技有限公司,https://www.zhipin.com/job_detail/6da42290ecf6076a1nJz2dy7EVA~.html,10-20K,西安 雁塔区 高新软件园,3-5年,本科,产品经理,xian,2
+天邦测绘,https://www.zhipin.com/job_detail/1d06ab15680dd28c03N62NS_GFc~.html,6-11K,西安  ,1-3年,本科,产品经理,xian,6
+云谷创新,https://www.zhipin.com/job_detail/c8edfe46acb05e930nV42ti5EVc~.html,9-12K,西安 雁塔区 长延堡,3-5年,本科,产品经理,xian,1
+西安宝库网络,https://www.zhipin.com/job_detail/3fdcfe2fc574d8ee1XZy3NS5EFU~.html,12-15K,西安 雁塔区 沣惠南路,3-5年,本科,产品经理,xian,1
+至德智能科技,https://www.zhipin.com/job_detail/ea8db9b67b8481061XN-29i6E1s~.html,5-8K,西安 莲湖区 北大街,1年以内,本科,电商产品经理,xian,5
+予果微码,https://www.zhipin.com/job_detail/7717a71cf639b33a0nd62dm6Elo~.html,5-10K,西安 新城区 万寿路,经验不限,本科,产品经理,xian,4
+蝉鸣科技,https://www.zhipin.com/job_detail/4a89b838d16e1f721HB539y5GFU~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,硬件产品经理,xian,2
+平安普惠,https://www.zhipin.com/job_detail/f641b8b7cf3080f1031z2dy7GVs~.html,15-30K,西安 碑林区 长安路,经验不限,大专,金融产品经理,xian,6
+平安普惠信息服务,https://www.zhipin.com/job_detail/666bfb7bbb752bb80nZ72d66ElM~.html,20-30K,西安 莲湖区 土门,应届生,本科,金融产品经理,xian,2
+瓜豆科技,https://www.zhipin.com/job_detail/7092603475a74e931XZ_29S5EFs~.html,6-8K,西安 碑林区 朱雀大街,1-3年,学历不限,产品经理,xian,4
+星沙科技,https://www.zhipin.com/job_detail/ed9798988ee9078d1nBz3N-6F1I~.html,8-16K,西安 长安区 郭杜,3-5年,本科,产品经理,xian,1
+每一天,https://www.zhipin.com/job_detail/9aa645ac8f1b4f1703V839q-ElM~.html,7-12K,西安 碑林区 长安路,3-5年,本科,B2B产品经理,xian,6
+百变科技,https://www.zhipin.com/job_detail/1960d4689ab6cd830nV40ti9Els~.html,8-10K,西安 莲湖区 北关,3-5年,本科,产品经理,xian,4
+青韵,https://www.zhipin.com/job_detail/be53c12329597e9403x70ti4F1A~.html,4-5K,西安  ,经验不限,本科,产品经理,xian,6
+西安种子科技,https://www.zhipin.com/job_detail/c741eb4198080baf03R-2ti7EVc~.html,8-13K,西安 雁塔区 科技一路,3-5年,本科,产品经理,xian,1
+汉唐中天,https://www.zhipin.com/job_detail/a6d65d890484097d1HV43d25FlA~.html,4-5K,西安 雁塔区 紫薇田园都市,经验不限,本科,产品经理助理,xian,4
+99智慧云端,https://www.zhipin.com/job_detail/442ed637e792470a03d43d-8FFs~.html,8-10K,西安 未央区 文景路,1-3年,大专,产品经理,xian,5
+深圳坐标软件,https://www.zhipin.com/job_detail/f3a8cbad77f35c9f1HB429i-F1E~.html,10-15K,西安 未央区 太华路,3-5年,本科,产品经理,xian,3
+交大捷普,https://www.zhipin.com/job_detail/d6692b61fc76da041Hx-3927EFQ~.html,8-10K,西安 雁塔区 科技二路,3-5年,本科,产品经理/售前技术经理,xian,5
+我来,https://www.zhipin.com/job_detail/fde5871274f12cd60nZ52t65F1A~.html,8-12K,西安 雁塔区 电子城,3-5年,本科,产品经理,xian,2
+货大大,https://www.zhipin.com/job_detail/0c8513641542930503Zz2NW1GVM~.html,10-15K,西安 雁塔区 唐延路,5-10年,本科,产品经理,xian,4
+旅拍通,https://www.zhipin.com/job_detail/3bf10d5e93d7d22e1HB42Ny9F1U~.html,4-8K,西安 未央区 张家堡,3-5年,本科,产品经理,xian,6
+君凯电子,https://www.zhipin.com/job_detail/83136d10f50c712c1nZ53Nu5FlI~.html,7-12K,西安 未央区 辛家庙,3-5年,本科,产品经理,xian,4
+指舞飞游,https://www.zhipin.com/job_detail/6b1ecd7de12acda503x93Nu1F1o~.html,8-12K,西安  ,经验不限,本科,高级产品经理,xian,6
+易迅通,https://www.zhipin.com/job_detail/1e44b62d9c778cd11nFy29S0F1A~.html,10-15K,西安 未央区 文景路,3-5年,本科,产品经理,xian,4
+上海友而信,https://www.zhipin.com/job_detail/f86becf5bdb607ce1HJ_0t-8EVQ~.html,10-15K,西安 莲湖区 土门,1年以内,大专,金融产品经理,xian,6
+蝉鸣科技,https://www.zhipin.com/job_detail/a12a15c056c9d4c11HBy0t-_ElY~.html,12-22K,西安 雁塔区 高新软件园,3-5年,本科,智慧校园产品经理,xian,5
+每日瑜伽,https://www.zhipin.com/job_detail/7c077889424462c01HV_2dW_EFM~.html,11-20K,西安 雁塔区 沣惠南路,3-5年,本科,产品经理,xian,6
+佰博云农,https://www.zhipin.com/job_detail/bcb1e08b477fafbb03N80tq0GVQ~.html,12-16K·13薪,西安  ,经验不限,本科,产品经理,xian,5
+陕西华筑科技有限公司,https://www.zhipin.com/job_detail/e2d93ac076f79b4a1nJ729u7FlY~.html,5-10K,西安 雁塔区 高新软件园,1-3年,本科,产品经理助理,xian,1
+西安聚鼎科技,https://www.zhipin.com/job_detail/a5ad3f4be784fc7003Z8392_FFU~.html,4-7K,西安 雁塔区 小寨,3-5年,学历不限,互联网产品经理,xian,4
+誉百年教育科技,https://www.zhipin.com/job_detail/1920acd87c2c76e103N_2NS_FFs~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,3
+易迅通,https://www.zhipin.com/job_detail/59b7a342b86dfaa903B-0ti1ElU~.html,10-15K,西安 未央区 文景路,经验不限,本科,高级产品经理,xian,1
+睿鼎文化,https://www.zhipin.com/job_detail/bb00068be1d1766b0nV-3dW0GFQ~.html,7-10K,西安  ,3-5年,大专,产品经理,xian,6
+大麦科技,https://www.zhipin.com/job_detail/8b06b4aef6910fe11XV90ti7E1s~.html,4-6K,西安  ,1-3年,大专,产品经理,xian,1
+平安普惠信息服务,https://www.zhipin.com/job_detail/6195c26746dea4141HF-2tu6FVs~.html,10-12K,西安  ,经验不限,大专,金融产品经理,xian,6
+西安驭思软件,https://www.zhipin.com/job_detail/3cb74b929d43e81d03J73d60EFs~.html,5-8K,西安  ,1-3年,本科,产品经理,xian,1
+当老师,https://www.zhipin.com/job_detail/0fa127bca20265fe03V93N24EVs~.html,12-24K,西安 碑林区 小寨,经验不限,学历不限,产品经理,xian,5
+伯图大数据西安分公司,https://www.zhipin.com/job_detail/cc625c35eca44aad1HV_09S-EFs~.html,11-20K,西安  ,3-5年,本科,APP产品经理（健康医疗）,xian,5
+火银信息,https://www.zhipin.com/job_detail/7ecd10c469596c0d1Hdy0925EFo~.html,4-5K,西安 未央区 文景路,3-5年,大专,产品经理,xian,6
+白羊座,https://www.zhipin.com/job_detail/7dcda77befff794b03B639u9E1c~.html,5-6K,西安 灞桥区 浐灞半岛,1年以内,大专,产品经理,xian,1
+畅移信息,https://www.zhipin.com/job_detail/3440d1a6ed100ea81Hx-0t20EVU~.html,10-15K,西安 莲湖区 高新路,3-5年,本科,产品经理,xian,2
+木联能软件,https://www.zhipin.com/job_detail/0b286572d6ee3b920nd73di1EVM~.html,6-10K,西安 雁塔区 唐延路,1-3年,本科,功率预测模型分析产品经理,xian,6
+弘耀电子,https://www.zhipin.com/job_detail/7e4500a4ffe8d661031-2928EFI~.html,10-15K,西安  ,3-5年,本科,手持终端产品经理,xian,6
+比特教育科技,https://www.zhipin.com/job_detail/0651dbd0c911e0481H193ty1GFM~.html,15-20K,西安 长安区 南大学城,5-10年,本科,产品经理,xian,5
+北京国通创投,https://www.zhipin.com/job_detail/73470490bf4dd25803V62dS9FlU~.html,5-6K,西安 雁塔区 旺座现代城,1-3年,大专,产品经理助理,xian,4
+崤云安全,https://www.zhipin.com/job_detail/ed4330c562c369db1HZ-2Nq4EVs~.html,4-8K,西安 碑林区 环城南路,1-3年,本科,产品经理,xian,1
+得能投资,https://www.zhipin.com/job_detail/4894d47a14afffa20nZ-3t-4E1Q~.html,20-40K,西安 莲湖区 土门,5-10年,大专,金融产品经理,xian,2
+天邦测绘,https://www.zhipin.com/job_detail/ef9ee37635cfac161HN_39u4F1E~.html,6-10K,西安  ,3-5年,本科,产品经理（交通运输领域）,xian,5
+巴斯光年,https://www.zhipin.com/job_detail/c44052163ea2f87d0nV52Nu1GVU~.html,8-13K,西安 雁塔区 长延堡,5-10年,本科,售前产品经理,xian,4
+三盟科技,https://www.zhipin.com/job_detail/50c5ef310138ce250nZ73t68ElE~.html,8-12K,西安  ,3-5年,本科,产品经理,xian,6
+深圳宏崎达,https://www.zhipin.com/job_detail/8f21216fc2611f03031y29i9EFc~.html,10-15K,西安  ,经验不限,本科,数据产品经理,xian,3
+友信,https://www.zhipin.com/job_detail/265f773719ad154f1XJ439q5Elc~.html,10-11K,西安 雁塔区 唐延路,1年以内,高中,金融产品经理,xian,3
+陕西上博,https://www.zhipin.com/job_detail/8e2c8d470ff3d0cf1Xx92964F1c~.html,4-6K,西安 碑林区 南大街,3-5年,本科,ICL产品经理,xian,4
+友信,https://www.zhipin.com/job_detail/d6fc4efe0cafa86c1HR73tq4E1M~.html,8-15K,西安 未央区 文景路,1年以内,大专,金融产品经理,xian,3
+指舞飞游,https://www.zhipin.com/job_detail/0bf1993800dc40d4031-2Nq6ElE~.html,5-8K,西安  ,经验不限,本科,产品经理,xian,1
+西安宝库网络,https://www.zhipin.com/job_detail/42235e370c265cb91Xdy3Nq9EFo~.html,10-15K,西安 雁塔区 沣惠南路,1-3年,大专,移动产品经理,xian,2
+纳吉特,https://www.zhipin.com/job_detail/c2f300801a2edb961HR939q7EFA~.html,11-20K·13薪,西安 雁塔区 旺座现代城,5-10年,本科,数据产品经理,xian,4
+中汇融创,https://www.zhipin.com/job_detail/6c5993c4e1f6d95303Jz2t69FVI~.html,6-11K,西安 雁塔区 玫瑰大楼,1年以内,大专,金融产品经理,xian,2
+鹏松,https://www.zhipin.com/job_detail/066b734d416d2d7e0nd72d-_GFM~.html,10-11K,西安 雁塔区 电子城,经验不限,大专,产品经理,xian,5
+贝业思,https://www.zhipin.com/job_detail/886910bb0073502603J729S5FlA~.html,9-14K,西安 雁塔区 唐延路,3-5年,本科,产品经理,xian,1
+星垂智能,https://www.zhipin.com/job_detail/746695dcaf683ce91X1y39-8ElI~.html,15-25K,西安  ,3-5年,本科,敏捷开发产品经理,xian,3
+爱尚金服,https://www.zhipin.com/job_detail/d57c3f24d1b509ed1nF839y-FlA~.html,10-20K,西安 碑林区 长安路,3-5年,本科,产品经理,xian,3
+汇能科技,https://www.zhipin.com/job_detail/e303396cf9ab3bd70nRy2d-9FVc~.html,10-12K,西安  ,3-5年,本科,（B端）产品经理,xian,3
+欧必信息技术有限公司,https://www.zhipin.com/job_detail/3ecaa8ea21a5ce661HBy0tq-EVo~.html,7-10K,西安 雁塔区 旺座现代城,1-3年,大专,海外App产品经理,xian,2
+大明五洲,https://www.zhipin.com/job_detail/21096d11bf77e1ac03V53N65FVQ~.html,4-5K,西安 雁塔区 小寨,1年以内,大专,建大堂产品经理,xian,2
+几何信息,https://www.zhipin.com/job_detail/221ca2d5a796ffbd03152NS1E1s~.html,8-13K,西安 长安区 航天城,3-5年,本科,产品经理,xian,5
+陕西友杰,https://www.zhipin.com/job_detail/a76861f48cb165fc0nRy3tS1F1I~.html,4-7K,西安 雁塔区 长延堡,3-5年,本科,电商产品经理,xian,2
+大明五洲,https://www.zhipin.com/job_detail/8f9bbe979c3b9d1b03F539m_EFY~.html,3-6K,西安 碑林区 南院门,1-3年,大专,建行大堂产品经理,xian,2
+平安普惠,https://www.zhipin.com/job_detail/5d66ef76dce0743c1n1z3N-9F1I~.html,8-16K,西安 碑林区 东大街,经验不限,大专,金融产品经理,xian,2
+陕西华筑科技有限公司,https://www.zhipin.com/job_detail/8be9bec852116ebc1HB53t-9EVA~.html,10-15K,西安 雁塔区 高新软件园,3-5年,本科,BIM产品经理,xian,6
+每一天,https://www.zhipin.com/job_detail/e2edd0a87d99ca7b1HFy0965EVo~.html,8-12K,西安 碑林区 长安路,1-3年,本科,供应链产品经理（订单方向、库存方向）,xian,1
+青兆锐志,https://www.zhipin.com/job_detail/675a29700e36b7b40nR909W-EFs~.html,7-12K,西安 雁塔区 电子城,经验不限,本科,产品经理,xian,3
+吉通科脉智慧餐饮零售,https://www.zhipin.com/job_detail/17f0f426b784bdf01HJ939W7GFo~.html,3-8K,西安 碑林区 文艺路,经验不限,大专,电商产品经理,xian,4
+平安普惠信息服务,https://www.zhipin.com/job_detail/3dffb5ed0719e90b1Hxz29q7ElU~.html,8-9K,西安 雁塔区 沣惠南路,1年以内,本科,金融产品经理,xian,3
+指舞飞游,https://www.zhipin.com/job_detail/dae88c0463180ffe03Nz0t-6F1A~.html,8-12K,西安 雁塔区 科技二路,3-5年,本科,高级产品经理,xian,1
+平安普惠信息服务,https://www.zhipin.com/job_detail/e93a710c310e573b03V73Nu1Flo~.html,10-15K,西安 未央区 未央路,1-3年,本科,金融产品经理,xian,5
+中钧,https://www.zhipin.com/job_detail/e1fd1e74a0f6439903J-0ti4EFI~.html,11-18K,西安  ,3-5年,本科,产品经理,xian,6
+庖丁科技,https://www.zhipin.com/job_detail/74c4f03f2468dd5f03Z60tm9ElY~.html,3-5K,西安 雁塔区 唐延路,经验不限,本科,产品经理实习生,xian,1
+西安乐推,https://www.zhipin.com/job_detail/467f97d0d27c4e8d1XR509m-FVs~.html,8-15K,西安  ,1-3年,本科,产品经理,xian,3
+大明五洲,https://www.zhipin.com/job_detail/5d6a0d6fa5ac7da60nVy2dS6FFU~.html,3-6K,西安  ,应届生,中专,银行大堂产品经理,xian,6
+好桔,https://www.zhipin.com/job_detail/ec1b5e628c48cefb1nN63tq9FFE~.html,10-20K,西安 雁塔区 高新路,1年以内,本科,产品经理,xian,2
+平安普惠,https://www.zhipin.com/job_detail/7d773037ec8038361HR43Ni8EVY~.html,8-12K,西安 未央区 朱宏路,1年以内,大专,金融产品经理,xian,2
+伯图大数据西安分公司,https://www.zhipin.com/job_detail/dacf15350bc43c341HF72t-0EVA~.html,12-18K,西安  ,3-5年,大专,用户增长策略产品经理,xian,2
+浙江大华,https://www.zhipin.com/job_detail/b13ead79e2e3447e03180tq-FFI~.html,15-30K·15薪,西安  ,5-10年,本科,研发产品经理（智慧交通方向）,xian,6
+大明五洲,https://www.zhipin.com/job_detail/7ee2719ac762766d0nV809-1GFY~.html,3-7K,西安  ,经验不限,大专,建行大堂产品经理（西安）,xian,6
+指舞飞游,https://www.zhipin.com/job_detail/e46f0f5c75a415360nZy29u6ElU~.html,8-12K,西安 雁塔区 科技二路,经验不限,本科,C端产品经理,xian,5
+平安普惠,https://www.zhipin.com/job_detail/a0142142fb5b02f01Xx_3dm8FFo~.html,15-30K,西安 碑林区 南大街,应届生,大专,金融产品经理,xian,3
+陕西友杰,https://www.zhipin.com/job_detail/15b379e01f7610b00nV63tm7EFo~.html,4-6K,西安 雁塔区 长延堡,应届生,大专,美术产品经理,xian,6
+盛泰保理,https://www.zhipin.com/job_detail/7307a86f091018421XZ429i_Flc~.html,13-25K,西安 碑林区 环城南路,1-3年,大专,金融产品经理,xian,6
+诺君安,https://www.zhipin.com/job_detail/9fe32cbb72cd5cfa03F539m9FlM~.html,15-25K·13薪,西安  ,经验不限,本科,产品经理,xian,5
+平安普惠,https://www.zhipin.com/job_detail/d66c27fad12b9e8303d90ty6F1c~.html,8-13K,西安 碑林区 长安路,经验不限,本科,金融产品经理,xian,6
+平安普惠,https://www.zhipin.com/job_detail/e9b2302baf29b7860nV53NW9FFM~.html,11-18K,西安 未央区 凤城四路,3-5年,本科,金融产品经理,xian,5
+西安启泰,https://www.zhipin.com/job_detail/0a529b357bb52cba1HFy0t-6GFM~.html,7-12K,西安 未央区 龙首村,1年以内,学历不限,金融产品经理,xian,4
+美程旅行科技,https://www.zhipin.com/job_detail/48fcfcb3c248730203J_3d2_ElM~.html,10-15K,西安 碑林区 长安路,5-10年,学历不限,高级互联网产品经理,xian,5
+银志泾金,https://www.zhipin.com/job_detail/e481166fba0d22340nZ-09m8F1E~.html,5-8K,西安 新城区 长乐中路,经验不限,学历不限,电商产品经理,xian,6
+深圳宏崎达,https://www.zhipin.com/job_detail/1586713e83a2dcbf0nV809q_GFs~.html,13-25K,西安  ,5-10年,本科,产品经理（智慧城市）,xian,2
+村游,https://www.zhipin.com/job_detail/a19b627c0a33b9991XF90t-_E1c~.html,5-8K,西安 雁塔区 高新路,3-5年,大专,旅游产品经理,xian,6
+西安亿达,https://www.zhipin.com/job_detail/089e0d3478eedccd1XF73t-5F1I~.html,5-10K,西安 雁塔区 三森,经验不限,学历不限,金融产品经理,xian,2
+西安赋能,https://www.zhipin.com/job_detail/4eb559f46a8d2d9503R92NS5EFI~.html,5-6K,西安  ,1-3年,本科,区块链产品经理,xian,1
+联联周边游(西安站),https://www.zhipin.com/job_detail/63953a175fa21ff30nZ42d-6E1M~.html,8-13K,西安  ,1-3年,大专,旅游（酒店）产品经理 BD,xian,2
+东海万银股权投资基金,https://www.zhipin.com/job_detail/6a1534ba69ac2e530nV_2dq5GVM~.html,9-14K,西安  ,1-3年,本科,产品经理,xian,4
+友信,https://www.zhipin.com/job_detail/e93c04f85567a4661n1_2d60EFI~.html,8-16K,西安 雁塔区 唐延路,1年以内,大专,金融产品经理,xian,6
+PYT品牌创意机构,https://www.zhipin.com/job_detail/9b7ee5618a6dbee41HB_2du0FVQ~.html,6-9K,西安  ,1-3年,本科,产品经理合伙人,xian,4
+医邦医疗服务集团,https://www.zhipin.com/job_detail/30601eeb7beb5c1f1HJ43dS9E1A~.html,4-6K,西安 雁塔区 唐延路,3-5年,本科,互联网产品经理,xian,5
+松果商务,https://www.zhipin.com/job_detail/69551911997a7b210nV929m1FFY~.html,5-10K,西安 新城区 长乐西路,经验不限,大专,金融产品经理,xian,4
+优智乐,https://www.zhipin.com/job_detail/375e300bb3c1a9b91nZ53d61E1A~.html,11-20K·13薪,西安  ,5-10年,本科,产品经理,xian,6
+深圳宏崎达,https://www.zhipin.com/job_detail/96b677a01cdbe1d10nV_0t6_Flc~.html,13-25K,西安  ,5-10年,本科,高级产品经理（智慧城市方向）,xian,1
+游狗网络,https://www.zhipin.com/job_detail/4deaa3d55eb8763d1H1-2du0EVo~.html,10-15K,西安 雁塔区 电视塔,3-5年,大专,游戏产品经理,xian,5
+数尊科技,https://www.zhipin.com/job_detail/cdc48797594f65f103Fz39q1GFI~.html,12-18K,西安  ,经验不限,硕士,产品经理,xian,6
+交大长天,https://www.zhipin.com/job_detail/fef4712a92bae2441XBy0960Elo~.html,12-18K,西安  ,5-10年,本科,产品经理（电商方向）,xian,4
+畅移信息,https://www.zhipin.com/job_detail/8667a70faf2c87d31HN72t-8GFs~.html,7-12K,西安 莲湖区 高新路,1-3年,本科,汽车后市场产品经理,xian,5
+指舞飞游,https://www.zhipin.com/job_detail/7263a0c91886694a03V63N69FVE~.html,8-12K,西安 雁塔区 科技二路,1-3年,本科,高级产品经理（小程序方向）,xian,3
+生发企业管理咨询,https://www.zhipin.com/job_detail/cea2ce04ca1146af1HF_09W6GVs~.html,4-8K,西安 雁塔区 电子城,经验不限,学历不限,移动产品经理,xian,3
+大明五洲,https://www.zhipin.com/job_detail/d22d25601f4e866c0nZy2dq7FVU~.html,4-8K,西安  ,经验不限,大专,建行大堂产品经理（高陵）,xian,4
+精宸科技,https://www.zhipin.com/job_detail/34fed8a01aa11f441HBy2Ny0FFs~.html,8-13K,西安 雁塔区 科技二路,3-5年,大专,产品经理（医疗信息化）,xian,6
+纳兴电子,https://www.zhipin.com/job_detail/d7577551698f14f20nd73964F1c~.html,6-10K,西安 雁塔区 电子城,1-3年,本科,智能硬件产品经理,xian,4
+西安蜂语信息,https://www.zhipin.com/job_detail/a74c01a92370afc21XV60tm6EVs~.html,15-20K·14薪,西安  ,3-5年,本科,高级产品经理,xian,2
+美程旅行科技,https://www.zhipin.com/job_detail/b09c2f066ce9c78b03F72t-8Els~.html,6-8K,西安 碑林区 长安路,1-3年,大专,互联网产品经理,xian,3
+鲸鱼互动,https://www.zhipin.com/job_detail/29ec7e537d7fbbee1Hx43dS1GVI~.html,10-15K,西安  ,3-5年,本科,产品经理,xian,1
+西安创锐,https://www.zhipin.com/job_detail/fe8cd2df8651106e0nV-2Nu8FFE~.html,5-7K,西安  ,1-3年,大专,新零售产品经理,xian,4
+日月星辉,https://www.zhipin.com/job_detail/7ca510f4a4064e4a1nJ739S9FlY~.html,3-5K,西安 碑林区 长安路,1年以内,本科,产品经理,xian,6
+西安海派,https://www.zhipin.com/job_detail/36946032445262f503Z52tm8GVI~.html,20-25K,西安 未央区 未央路,5-10年,本科,软件产品经理,xian,5
+纳吉特,https://www.zhipin.com/job_detail/2bade83d3fc7d3fd1HR_3ty8GVA~.html,10-20K,西安 雁塔区 旺座现代城,5-10年,本科,数据产品经理,xian,5
+大明五洲,https://www.zhipin.com/job_detail/5dea9f4233496d8203d829y5FlY~.html,3-6K,西安 雁塔区 小寨,经验不限,大专,银行大堂产品经理,xian,4
+好桔,https://www.zhipin.com/job_detail/64ab1d212d34428c1XZ93Nu6GVA~.html,10-11K,西安 雁塔区 高新路,1年以内,本科,金融产品经理,xian,5
+西安亿达,https://www.zhipin.com/job_detail/ea74e52a69e974b51XF43ty_FlQ~.html,6-8K,西安 雁塔区 三森,经验不限,学历不限,金融产品经理,xian,6
+金合汇,https://www.zhipin.com/job_detail/e95f969a3958602f03J-3Nm7GVo~.html,10-11K,西安 未央区 张家堡,经验不限,学历不限,金融产品经理,xian,6
+顺位金服,https://www.zhipin.com/job_detail/d49633948767d7df031_0tq0E1Y~.html,4-9K,西安 碑林区 长安路,1-3年,大专,金融产品经理,xian,1
+西安唯奥生物科技...,https://www.zhipin.com/job_detail/eb62bcefd79323ed03F63dW8F1A~.html,3-8K,西安 雁塔区 唐延路,经验不限,本科,产品经理,xian,4
+微服科技,https://www.zhipin.com/job_detail/d710614446fcdb741HB_39S0GVo~.html,5-10K,西安 雁塔区 高新路,1年以内,大专,金融产品经理,xian,5
+泓源惠康,https://www.zhipin.com/job_detail/984d1dab7c6ca11803192Nu9EVA~.html,6-8K,西安  ,3-5年,学历不限,制药产品经理,xian,5
+西安聚鼎科技,https://www.zhipin.com/job_detail/5ef1c96e37be282b03Jz09i4FVA~.html,5-10K,西安 雁塔区 小寨,3-5年,学历不限,小程序产品经理,xian,1
+黄钺,https://www.zhipin.com/job_detail/d8d58f0b0d273e590nd43d20FVI~.html,4-8K,西安 雁塔区 高新路,1-3年,本科,物联网产品经理,xian,2
+斯威特,https://www.zhipin.com/job_detail/c27f27ae0ece97aa1Xx63dy8FVs~.html,5-10K,西安  ,1年以内,大专,产品经理,xian,4
+蔚兰嘉苑,https://www.zhipin.com/job_detail/98fb9adb9802704403R72dq7EFE~.html,5-8K,西安 未央区 太华路,1-3年,本科,广告设计接单/产品经理,xian,2
+西安教育文化数码...,https://www.zhipin.com/job_detail/764d30aa854b33821Hd72t27GFY~.html,6-8K,西安  ,1-3年,大专,幼教产品经理,xian,1
+唯得睿,https://www.zhipin.com/job_detail/2cd264f327c5b37603By29--GFE~.html,4-6K,西安 莲湖区 高新路,1-3年,大专,互联网产品经理（项目经理）,xian,1
+友信,https://www.zhipin.com/job_detail/6d4c4ee2676acc9f1XV439S6FVo~.html,8-16K,西安 雁塔区 唐延路,经验不限,大专,金融产品经理,xian,5
+平安普惠投资咨询有限公司,https://www.zhipin.com/job_detail/14195de8afb21dec03V739y_GVo~.html,8-9K,西安 碑林区 南大街,1-3年,大专,金融产品经理,xian,5
+万众商务,https://www.zhipin.com/job_detail/b185106fcf4f74cb1X1909-0F1s~.html,8-16K,西安 未央区 未央路,经验不限,大专,金融产品经理,xian,2
+陕西中旅,https://www.zhipin.com/job_detail/567be077488010221nF52ti6EVE~.html,5-6K,西安 莲湖区 玉祥门,3-5年,学历不限,旅游产品经理,xian,4
+陕西中旅,https://www.zhipin.com/job_detail/41166e0ba179462c1HF63Ni4GFY~.html,3-5K,西安 莲湖区 环城西路,经验不限,学历不限,旅游产品经理,xian,3
+纵冠旅业,https://www.zhipin.com/job_detail/351efb2d9730c2a01XN809S5E1c~.html,3-6K,西安 碑林区 长安路,1-3年,大专,旅游产品经理,xian,6
+炯有商务,https://www.zhipin.com/job_detail/4215a3a2423937da0nV42965F1Q~.html,5-10K,西安  ,经验不限,本科,金融产品经理,xian,3
+鹏松,https://www.zhipin.com/job_detail/6092f22a281e08e90nd729S-EFQ~.html,5-10K,西安 雁塔区 电子城,应届生,大专,金融产品经理,xian,5
+陕西华图城市规划,https://www.zhipin.com/job_detail/cbdfd1dc9d661d851XJ42Nq5FVo~.html,5-6K,西安 未央区 太华路,3-5年,大专,研学产品经理,xian,2
+酷渲北京科技,https://www.zhipin.com/job_detail/98f6bca5bb0ac41f1Hd509i5GFc~.html,14-20K,西安 雁塔区 高新路,3-5年,本科,产品经理,xian,1
+蜀海,https://www.zhipin.com/job_detail/e2a81366238bccd71H1z2tm-E1U~.html,20-40K,西安 雁塔区 唐延路,5-10年,大专,CRM高级产品经理,xian,3
+三盟科技,https://www.zhipin.com/job_detail/72abe4825ee5fcae0nVz3t67ElQ~.html,8-10K,西安  ,3-5年,本科,产品经理 西安,xian,1
+每一天,https://www.zhipin.com/job_detail/421c6eb59745470103Vy396-GVo~.html,8-11K,西安 碑林区 长安路,1-3年,本科,B2C产品经理,xian,3
+隆升投资,https://www.zhipin.com/job_detail/5078c52d2af6576e1Xdz0tq1GVI~.html,10-11K,西安 未央区 凤城四路,1年以内,学历不限,金融产品经理,xian,5
+酷渲北京科技,https://www.zhipin.com/job_detail/39bdb16046ef94f303x92dS9FVM~.html,15-30K,西安  ,经验不限,本科,机器人产品经理,xian,5
+友信,https://www.zhipin.com/job_detail/895ba21c9571b87203Z409u7EVU~.html,7-12K,西安 未央区 太华路,经验不限,高中,金融产品经理,xian,6
+华勤通讯技术,https://www.zhipin.com/job_detail/d0b16d6f0cb68ed51nd-09y-F1U~.html,12-20K,西安 雁塔区 高新软件园,3-5年,本科,产品经理(服务器产品),xian,2
+酷渲北京科技,https://www.zhipin.com/job_detail/e832a14ae2da10171X173tW6ElU~.html,14-20K,西安 雁塔区 高新路,3-5年,本科,高级产品经理,xian,2
+友信,https://www.zhipin.com/job_detail/152c6437ca70182903Jy3N61FFM~.html,8-13K,西安 雁塔区 唐延路,1-3年,大专,金融产品经理,xian,5
+友信普惠Ucredit,https://www.zhipin.com/job_detail/fd741c49704202f91HF90t24FVE~.html,8-13K,西安  ,经验不限,大专,金融产品经理,xian,5
+久益汽车,https://www.zhipin.com/job_detail/5948dafee2e1abfc03B-3Ni5F1A~.html,8-12K,西安 未央区 三桥,经验不限,中专,金融产品经理,xian,5
+每一天,https://www.zhipin.com/job_detail/48959c1455546c271HJ52d64Els~.html,6-10K,西安 碑林区 长安路,3-5年,本科,供应链产品经理（订单方向、库存方向）,xian,3
+长银消费金融,https://www.zhipin.com/job_detail/44975e0a43a59606031_29i6Flo~.html,13-24K·13薪,西安 未央区 张家堡,3-5年,本科,产品经理,xian,4
+兵匠仓库,https://www.zhipin.com/job_detail/51c5c297b2e7bfbb0nZ_29q9E1I~.html,8-13K·13薪,西安 雁塔区 长延堡,3-5年,本科,高级产品经理,xian,3
+美年大健康产业集团,https://www.zhipin.com/job_detail/e0e775f5a7ff993c1nJ-09i8FFY~.html,5-7K,西安 碑林区 长安路,经验不限,学历不限,产品经理,xian,2
+大澳PTE,https://www.zhipin.com/job_detail/cb89e198d0d16d410nZ609-1FVY~.html,5-10K,西安 莲湖区 西华门,1-3年,本科,英语APP，小程序，网站设计产品经理,xian,4
+海云数据,https://www.zhipin.com/job_detail/9afbbf975f18c12903J-2tq_F1c~.html,8-12K,西安 未央区 张家堡,经验不限,本科,产品经理,xian,4
+西安复华,https://www.zhipin.com/job_detail/acfd819a6478f4a91X1409y1FlA~.html,4-8K,西安 雁塔区 电子城,经验不限,大专,产品经理,xian,5
+星洲行文化旅游,https://www.zhipin.com/job_detail/22f28acafee6957703Rz2ti-FFM~.html,6-11K,西安 雁塔区 紫薇田园都市,3-5年,大专,旅游产品经理,xian,6
+网算数据,https://www.zhipin.com/job_detail/522d3d33032c78161HV-2d21FVc~.html,11-20K,西安 长安区 郭杜,5-10年,本科,高级产品经理,xian,3
+易协网络,https://www.zhipin.com/job_detail/f72ea5371e0897a01XB739m_E1A~.html,12-15K,西安  ,5-10年,本科,产品经理,xian,6
+平安普惠环南路分公司,https://www.zhipin.com/job_detail/be2b38064d2f2f2b1XZ73d64GFU~.html,9-18K,西安 雁塔区 沣惠南路,经验不限,大专,金融产品经理,xian,3
+骏途旅游网,https://www.zhipin.com/job_detail/b27bd7b6487395f21nx939-4FVY~.html,8-13K,西安 长安区 航天城,1-3年,大专,旅游产品经理,xian,2
+荣峰科技,https://www.zhipin.com/job_detail/b8b21940aff34a201n1z09-_E1M~.html,8-14K,西安 雁塔区 ,3-5年,本科,产品经理,xian,2
+陕西中融,https://www.zhipin.com/job_detail/e89d1551de81aa2103F_2ti1FVo~.html,10-18K,西安 新城区 解放路,1年以内,本科,金融产品经理,xian,5
+西安彩虹星球,https://www.zhipin.com/job_detail/d7917ce8a4b6cc821HV729m9GFo~.html,10-15K,西安 雁塔区 长延堡,3-5年,本科,产品经理,xian,5
+莲薏,https://www.zhipin.com/job_detail/ed22c7571fdcbf4f1Hx92tu_FlI~.html,8-13K,西安 雁塔区 紫薇田园都市,3-5年,本科,化妆品产品经理,xian,5
+西安胜任力管理咨询,https://www.zhipin.com/job_detail/5d0ea0cd9310f9f41nx82Nu4Flo~.html,5-10K,西安  ,1-3年,本科,管理课程产品经理,xian,6
+拾音智能,https://www.zhipin.com/job_detail/95fd19d88fea69770nd739W_GVI~.html,12-24K,西安 长安区 韦曲,5-10年,本科,高级产品经理,xian,5
+全通智汇,https://www.zhipin.com/job_detail/1fb088975491e79703V90tm6EVo~.html,7-12K,西安  ,3-5年,本科,产品经理,xian,1
+勺子科技,https://www.zhipin.com/job_detail/280e503b76e665b103F82Ni1E1I~.html,6-10K,西安  ,经验不限,本科,产品经理,xian,3
+长安停车,https://www.zhipin.com/job_detail/221d3f847b8eff5f03J-3NS9F1s~.html,10-15K,西安 雁塔区 高新软件园,5-10年,本科,产品经理,xian,2
+易锁宝科技,https://www.zhipin.com/job_detail/d5e38d340a94c4cd0HZ_29m-FA~~.html,6-8K,西安  ,3-5年,本科,产品经理,xian,6
+亿联优创,https://www.zhipin.com/job_detail/c77cf684c583f3b91Xx93ty4F1A~.html,6-8K,西安 雁塔区 科技路西口,1-3年,本科,产品经理,xian,2
+西安搜视,https://www.zhipin.com/job_detail/ab65626a648afeae1XJ_0tq8FlU~.html,7-12K·13薪,西安 雁塔区 高新路,5-10年,本科,产品经理,xian,2
+平安普惠,https://www.zhipin.com/job_detail/9b220f345cee66d51H1z09W1E1Y~.html,4-9K,西安 碑林区 南大街,应届生,大专,金融产品经理,xian,5
+金都商务,https://www.zhipin.com/job_detail/04867b0f0549adbc1H152N--EFc~.html,5-10K,西安 碑林区 建设路,经验不限,高中,信用卡产品经理,xian,3
+百善财富,https://www.zhipin.com/job_detail/ea58938b58ca6ba303J_0ti4FFI~.html,20-40K,西安 碑林区 长安路,1年以内,本科,互金产品经理,xian,6
+勺子科技,https://www.zhipin.com/job_detail/cdc37b83f52aaa9603B82dm_FlE~.html,6-10K,西安  ,3-5年,本科,产品经理,xian,6
+天合云创,https://www.zhipin.com/job_detail/259bcbf22e51bd7903140ti1FVU~.html,8-13K,西安 雁塔区 高新软件园,3-5年,本科,网络安全产品经理,xian,5
+陕西仁明医药,https://www.zhipin.com/job_detail/fb9d25baf2dad67c1H1-2d6-EFs~.html,3-4K,西安 莲湖区 高新路,3-5年,本科,医药产品经理,xian,4
+伯图大数据西安分公司,https://www.zhipin.com/job_detail/48c07e5afb85c9b903N62d-4FlU~.html,13-22K,西安  ,3-5年,本科,高级产品经理,xian,2
+伯图大数据西安分公司,https://www.zhipin.com/job_detail/0727d34f0f29797903N62tS_GVI~.html,6-10K,西安  ,1-3年,本科,产品经理,xian,4
+荣峰科技,https://www.zhipin.com/job_detail/577222e9707a202a03Fy2d25FFE~.html,10-11K,西安  ,3-5年,本科,产品经理,xian,2
+西安图迹信息科技,https://www.zhipin.com/job_detail/14c7f69fba65c0b303x-3ti9EFc~.html,8-13K,西安  ,3-5年,本科,产品经理,xian,2
+时代顾邦教育,https://www.zhipin.com/job_detail/1b9b32041f635ba01HB42t25EVY~.html,8-12K,西安 雁塔区 唐延路,3-5年,本科,产品经理(薪资：8-12k),xian,6
+驴妈妈,https://www.zhipin.com/job_detail/93eee810e11eacad1Hx73NS1FFA~.html,5-7K,西安 灞桥区 浐灞半岛,5-10年,本科,出境旅游产品经理,xian,4
+多米诺科技,https://www.zhipin.com/job_detail/a47007cc0bad32db0nd409W5GFs~.html,7-10K,西安 雁塔区 长延堡,1-3年,本科,产品经理,xian,3
+积木家互联网装修,https://www.zhipin.com/job_detail/db0be9ce915060151nNy2ty0GFc~.html,8-10K,西安 未央区 未央路,3-5年,本科,产品经理,xian,1
+美欣,https://www.zhipin.com/job_detail/69c6b0fcd2ec98c903N93t65EVc~.html,10-12K,西安  ,10年以上,本科,数据产品经理,xian,3
+公众智能,https://www.zhipin.com/job_detail/7b9c08dbce819bca1HF_09S_EVE~.html,8-10K,西安  ,3-5年,本科,产品经理,xian,2
+微感,https://www.zhipin.com/job_detail/c7e99005528f06d01nd_3tu5EVc~.html,8-10K,西安 雁塔区 紫薇田园都市,3-5年,大专,产品经理,xian,4
+巴斯光年,https://www.zhipin.com/job_detail/1045fe64f2485e221HV709-8E1Q~.html,10-20K,西安 雁塔区 大雁塔,3-5年,本科,产品经理,xian,6
+西大华特科技,https://www.zhipin.com/job_detail/e3c21cc748e7e2150nV82d-4ElM~.html,5-8K,西安 雁塔区 唐延路,1-3年,硕士,产品经理（农药）,xian,6
+西安纯粹科技,https://www.zhipin.com/job_detail/09965129db3e65c21HV80928E1o~.html,3-6K,西安 雁塔区 玫瑰大楼,1-3年,本科,产品经理,xian,5

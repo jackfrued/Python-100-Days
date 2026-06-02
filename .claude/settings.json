@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build)",
+      "Bash(npm run gen:content)",
+      "Bash(npm run validate:bank)",
+      "Bash(npm run check:solutions)",
+      "Bash(npm run lint)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(node scripts/build-content.mjs)",
+      "Bash(node scripts/validate-bank.mjs)",
+      "Bash(node scripts/check-solutions.mjs)"
+    ]
+  }
+}

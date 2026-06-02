@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --muted: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Markdown / lesson prose */
+.prose-cn {
+  line-height: 1.85;
+  color: #1e293b;
+}
+.prose-cn h1,
+.prose-cn h2,
+.prose-cn h3,
+.prose-cn h4 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  color: #0f172a;
+}
+.prose-cn h1 { font-size: 1.6rem; }
+.prose-cn h2 { font-size: 1.35rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+.prose-cn h3 { font-size: 1.15rem; }
+.prose-cn p { margin: 0.8em 0; }
+.prose-cn ul,
+.prose-cn ol { margin: 0.8em 0; padding-left: 1.6em; }
+.prose-cn ul { list-style: disc; }
+.prose-cn ol { list-style: decimal; }
+.prose-cn li { margin: 0.35em 0; }
+.prose-cn strong { font-weight: 700; color: #0f172a; }
+.prose-cn a { color: #2563eb; text-decoration: underline; }
+.prose-cn blockquote {
+  border-left: 4px solid #93c5fd;
+  background: #eff6ff;
+  padding: 0.6em 1em;
+  margin: 1em 0;
+  color: #1e3a8a;
+  border-radius: 0 6px 6px 0;
+}
+.prose-cn code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  background: #f1f5f9;
+  color: #be185d;
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.prose-cn pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1em 1.1em;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.1em 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.prose-cn pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+.prose-cn table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.92rem;
+}
+.prose-cn th,
+.prose-cn td {
+  border: 1px solid var(--border);
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+.prose-cn th { background: #f1f5f9; font-weight: 600; }
+
+/* Inline code in quiz / generic */
+.code-chip {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  background: #f1f5f9;
+  color: #be185d;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}

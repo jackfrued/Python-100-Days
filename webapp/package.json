@@ -1,0 +1,32 @@
+{
+  "name": "py100-learn-practice",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/build-content.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/build-content.mjs && node scripts/validate-bank.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "gen:content": "node scripts/build-content.mjs",
+    "validate:bank": "node scripts/validate-bank.mjs",
+    "check:solutions": "node scripts/check-solutions.mjs"
+  },
+  "dependencies": {
+    "next": "14.2.18",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.19",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.18",
+    "postcss": "8.4.38",
+    "tailwindcss": "3.4.4",
+    "typescript": "5.4.5"
+  }
+}

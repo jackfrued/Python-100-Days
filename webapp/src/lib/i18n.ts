@@ -1,0 +1,78 @@
+export type Lang = "cn" | "en";
+
+export const STRINGS = {
+  appName: { cn: "Python 百日学练", en: "Python 100 Days · Learn & Practice" },
+  tagline: {
+    cn: "跟着「Python-100-Days」边学边练，每个练习 20 分钟内完成。",
+    en: "Learn and drill the Python-100-Days course — every set under 20 minutes.",
+  },
+  navHome: { cn: "首页", en: "Home" },
+  navLearn: { cn: "学习", en: "Learn" },
+  navPractice: { cn: "练习", en: "Practice" },
+  learnTitle: { cn: "学习", en: "Learn" },
+  learnSub: { cn: "原汁原味的课程讲义，按主题分组。", en: "The original course notes, grouped by topic." },
+  practiceTitle: { cn: "练习", en: "Practice" },
+  practiceSub: {
+    cn: "基于讲义自动生成、经校验的小测，巩固每天所学。",
+    en: "Verified mini-quizzes generated from the notes — reinforce each day.",
+  },
+  startLearning: { cn: "开始学习", en: "Start Learning" },
+  startPracticing: { cn: "开始练习", en: "Start Practicing" },
+  read: { cn: "阅读讲义", en: "Read Notes" },
+  practice: { cn: "去练习", en: "Practice" },
+  minutesRead: { cn: "分钟阅读", en: "min read" },
+  questions: { cn: "道编程题", en: "exercises" },
+  estMinutes: { cn: "约", en: "~" },
+  minutes: { cn: "分钟", en: "min" },
+  day: { cn: "第", en: "Day " },
+  dayUnit: { cn: "天", en: "" },
+  backToLessons: { cn: "← 返回讲义列表", en: "← Back to lessons" },
+  backToPractice: { cn: "← 返回练习列表", en: "← Back to practice" },
+  goPractice: { cn: "练习本课 →", en: "Practice this lesson →" },
+  // quiz runner
+  question: { cn: "第", en: "Problem" },
+  questionUnit: { cn: "题", en: "" },
+  of: { cn: "/", en: "of" },
+  next: { cn: "下一题", en: "Next" },
+  finish: { cn: "完成", en: "Finish" },
+  allLessons: { cn: "全部课程", en: "All lessons" },
+  noQuestions: { cn: "该课程的题目正在准备中。", en: "Questions for this lesson are being prepared." },
+  difficulty: { cn: "难度", en: "Difficulty" },
+  easy: { cn: "简单", en: "Easy" },
+  medium: { cn: "中等", en: "Medium" },
+  hard: { cn: "困难", en: "Hard" },
+  totalQuestions: { cn: "道已校验编程题", en: "verified coding exercises" },
+  totalLessons: { cn: "节课程", en: "lessons" },
+  estTime: { cn: "预计用时", en: "Est. time" },
+  langLabel: { cn: "EN", en: "中文" },
+  // coding
+  run: { cn: "运行测试", en: "Run Tests" },
+  running: { cn: "运行中…", en: "Running…" },
+  loadingRuntime: { cn: "正在加载 Python 运行时（首次约几秒）…", en: "Loading Python runtime (a few seconds on first run)…" },
+  reset: { cn: "重置代码", en: "Reset" },
+  hint: { cn: "提示", en: "Hint" },
+  showHint: { cn: "显示提示", en: "Show hint" },
+  showSolution: { cn: "查看参考答案", en: "Show solution" },
+  solution: { cn: "参考答案", en: "Reference solution" },
+  testsPassed: { cn: "全部测试通过！", en: "All tests passed!" },
+  testsFailed: { cn: "测试未通过", en: "Tests failed" },
+  passedOf: { cn: "通过", en: "passed" },
+  cases: { cn: "项", en: "cases" },
+  runtimeError: { cn: "代码报错", en: "Your code raised an error" },
+  output: { cn: "输出", en: "Output" },
+  failedCase: { cn: "未通过的测试", en: "Failing check" },
+  solved: { cn: "已解决", en: "solved" },
+  yourResult: { cn: "练习结果", en: "Your Result" },
+  retry: { cn: "重新练习", en: "Try Again" },
+  retryUnsolved: { cn: "只做未解决的", en: "Retry unsolved" },
+  allSolved: { cn: "全部解决，太棒了 🎉", en: "All solved! 🎉" },
+  someSolved: { cn: "做得不错，继续加油！", en: "Nice work — keep going!" },
+  fewSolved: { cn: "多动手写一写就掌握啦。", en: "Keep coding — you'll get it." },
+  loadRuntimeFailed: { cn: "Python 运行时加载失败，请刷新重试。", en: "Failed to load the Python runtime. Refresh and retry." },
+} as const;
+
+export type StringKey = keyof typeof STRINGS;
+
+export function t(key: StringKey, lang: Lang): string {
+  return STRINGS[key][lang];
+}

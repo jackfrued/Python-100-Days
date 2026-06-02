@@ -14,3 +14,7 @@ __pycache__
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+# claude runtime
+.claude/scheduled_tasks.lock
+.claude/*.lock

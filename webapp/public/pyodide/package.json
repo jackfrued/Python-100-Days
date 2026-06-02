@@ -1,0 +1,135 @@
+{
+  "name": "pyodide",
+  "version": "0.26.4",
+  "description": "The Pyodide JavaScript package",
+  "keywords": [
+    "python",
+    "webassembly"
+  ],
+  "homepage": "https://github.com/pyodide/pyodide",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyodide/pyodide"
+  },
+  "bugs": {
+    "url": "https://github.com/pyodide/pyodide/issues"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/assert": "^1.5.6",
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^20.8.4",
+    "@types/ws": "^8.5.3",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^7.0.3",
+    "dts-bundle-generator": "^8.1.1",
+    "esbuild": "^0.17.12",
+    "express": "^4.17.3",
+    "mocha": "^9.0.2",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "ts-mocha": "^9.0.2",
+    "tsd": "^0.24.1",
+    "typedoc": "^0.25.1",
+    "typescript": "^4.6.4",
+    "wabt": "^1.0.32"
+  },
+  "main": "pyodide.js",
+  "exports": {
+    ".": {
+      "require": "./pyodide.js",
+      "import": "./pyodide.mjs",
+      "types": "./pyodide.d.ts"
+    },
+    "./ffi": {
+      "types": "./ffi.d.ts"
+    },
+    "./pyodide.asm.wasm": "./pyodide.asm.wasm",
+    "./pyodide.asm.js": "./pyodide.asm.js",
+    "./python_stdlib.zip": "./python_stdlib.zip",
+    "./pyodide.mjs": "./pyodide.mjs",
+    "./pyodide.js": "./pyodide.js",
+    "./package.json": "./package.json",
+    "./pyodide-lock.json": "./pyodide-lock.json"
+  },
+  "files": [
+    "pyodide.asm.js",
+    "pyodide.asm.wasm",
+    "python_stdlib.zip",
+    "pyodide.mjs",
+    "pyodide.js.map",
+    "pyodide.mjs.map",
+    "pyodide.d.ts",
+    "ffi.d.ts",
+    "pyodide-lock.json",
+    "console.html"
+  ],
+  "browser": {
+    "child_process": false,
+    "crypto": false,
+    "fs": false,
+    "fs/promises": false,
+    "path": false,
+    "url": false,
+    "vm": false,
+    "ws": false
+  },
+  "scripts": {
+    "build": "tsc --noEmit && node esbuild.config.mjs",
+    "test": "npm-run-all test:*",
+    "test:unit": "cross-env TEST_NODE=1 ts-mocha --node-option=experimental-loader=./test/loader.mjs --node-option=experimental-wasm-stack-switching -p tsconfig.test.json test/unit/**/*.test.*",
+    "test:node": "cross-env TEST_NODE=1 mocha test/integration/**/*.test.js",
+    "test:browser": "mocha test/integration/**/*.test.js",
+    "tsc": "tsc --noEmit",
+    "coverage": "cross-env TEST_NODE=1 npm-run-all coverage:*",
+    "coverage:build": "nyc npm run test:node"
+  },
+  "mocha": {
+    "bail": false,
+    "timeout": 30000,
+    "full-trace": true,
+    "inline-diffs": true,
+    "check-leaks": false,
+    "global": [
+      "pyodide",
+      "page",
+      "chai"
+    ]
+  },
+  "nyc": {
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "include": [
+      "*.ts"
+    ],
+    "all": true,
+    "clean": true,
+    "cache": false,
+    "instrument": false,
+    "checkCoverage": true,
+    "statements": 95,
+    "functions": 95,
+    "branches": 80,
+    "lines": 95
+  },
+  "tsd": {
+    "compilerOptions": {
+      "lib": [
+        "ES2017",
+        "DOM"
+      ]
+    }
+  },
+  "dependencies": {
+    "ws": "^8.5.0"
+  },
+  "types": "./pyodide.d.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

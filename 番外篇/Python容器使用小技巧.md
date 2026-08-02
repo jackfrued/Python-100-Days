@@ -32,7 +32,7 @@ Python中提供了非常丰富的容器型数据类型，大家最为熟悉的�
     max(my_dict.items(), key=operator.itemgetter(1))
     ```
     
-    > **说明**：上面用到了`operator`模块的`itemgetter`函数，这个函数的的作用如下所示。在上面的代码中，`itemgetter`帮我们获取到了二元组中的第2个元素。
+    > **说明**：上面用到了`operator`模块的`itemgetter`函数，这个函数的作用如下所示。在上面的代码中，`itemgetter`帮我们获取到了二元组中的第2个元素。
     >
     > ```Python
     > def itemgetter(*items):

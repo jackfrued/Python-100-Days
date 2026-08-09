@@ -26,7 +26,7 @@ git --version
 我们可以使用 npm 来安装 Hexo，npm 是 node.js 的包管理工具，跟 Python 的 pip 工具作用一样，可以用它来安装依赖库和三方工具。在第一次使用 npm 的时候，我们可以先将 npm 的下载源更换为国内的淘宝镜像，这样下载的速度会有非常显著的提升。
 
 ```Shell
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 ```
 
 接下来我们就通过 npm 来安装 Hexo，命令如下所示。

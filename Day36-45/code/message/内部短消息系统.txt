@@ -20,3 +20,5 @@
 用户 (用户名, 口令, 最后登录时间)
 短消息 (编号, 发送者, 接收者, 标题, 内容, 发送时间, 是否读取, 已删除)
 
+
+# Local fallback improvement: appended a small comment.
